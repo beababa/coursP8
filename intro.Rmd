@@ -1,0 +1,40 @@
+---
+title: "Introduction"
+author: "BMaranget"
+date: "26/08/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Déroulé
+
+- jour 1 : limites administratives et population
+- jour 2 : équipements commerciaux OSM
+- jour 3 : ça reste ouvert
+
+pour chaque séquence, une carte et un quizz. pas d'évaluation officielle.
+
+
+```{r}
+# stats temps / séquence
+```
+
+# Présentation en binôme
+
+passé / présent / futur
+fichier framapad, celui qui parle, celui qui écrit
+https://lite.framacalc.org/9ilj-coursp8
+
+```{r}
+# stats sur le framapad...
+```
+
+
+# Pratique
+
+prénom
+copie du répertoire réseau
+quelle diffusion ?

@@ -1,0 +1,26 @@
+name: "coursP8"
+navbar:
+  left:
+    - text: "Introduction"
+      href: intro.html
+    - text: "Limites administratives et population"
+      href: jour1.html
+    - text: "Equipements commerciaux dans OSM"
+      href: jour2.html
+    - text: "Ca reste ouvert"
+      href: jour3.html
+    - text: "Données"
+      href: data.html    
+  right:
+    - icon: fa-github
+      href: https://github.com/beababa/coursP8
+output: 
+  html_document:
+    toc_float: TRUE  
+    theme: united
+    highlight: tango
+    include:
+      after_body: footer.html
+    number_sections: yes
+    exclude: [data-raw, data]
+    css: css/styles.css
