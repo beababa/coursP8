@@ -1,7 +1,7 @@
 ---
 title: "Introduction"
 author: "BMaranget"
-date: "26/08/2020"
+date: "16/08/2021"
 output: html_document
 ---
 
@@ -11,15 +11,24 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Déroulé
 
-- jour 1 : limites administratives et population
-- jour 2 : équipements commerciaux OSM
-- jour 3 : ça reste ouvert
+- theme 1 : stations Arvalis (1 j)
+- theme 2 : le parcellaire agricole RPG (1,5 j)
+- theme 3 : cartograhier stations et parcellaire : atlas et rapport dans Qgis (0.5 j)
 
-pour chaque séquence, une carte et un quizz. pas d'évaluation officielle.
+Pour chaque séquence, plusieurs cartes et un quizz. pas d'évaluation officielle.
+Les cartes sont à mettre dans le répertoire réseau "cartes" dans le répertoire indiqué
+Le support sert uniquement de "fil rouge" et permet des calculs plus rapides qu'avec Qgis.
+Les procédures employées sont à
+rechercher sur internet avec Qgis permet de les trouver.
+Essai : "Qgis compter les points dans un polygone"
+
+
 
 
 ```{r}
 # stats temps / séquence
+temps <- read.csv("data/sequences.csv")
+sum(temps$tps)
 ```
 
 # Présentation en binôme
@@ -38,3 +47,23 @@ https://lite.framacalc.org/9ilj-coursp8
 prénom
 copie du répertoire réseau
 quelle diffusion ?
+
+
+# Quizz
+
+séquence 1
+https://forms.gle/gqJyGFQ8mTVSSghNA
+
+séquence 2
+https://forms.gle/cAC54VfF7bJHPaWM9
+
+séquence 3
+https://forms.gle/wUMgB7VLu8YW1FY8A
+
+Quizz final
+https://forms.gle/DPdx6yQgGr5eSL5D8
+
+
+# Sources d'inspiration
+http://conf.qgis.osgeo.fr/z28_redif.html
+et notamment Qgis outil global à partir de la 6e minute
