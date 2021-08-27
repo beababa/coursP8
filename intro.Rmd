@@ -27,8 +27,8 @@ Essai : "Qgis compter les points dans un polygone"
 
 ```{r}
 # stats temps / séquence
-temps <- read.csv("data/sequences.csv")
-sum(temps$tps)
+temps <- read.csv("data/tps.csv")
+sum(temps$tps, na.rm=TRUE)
 ```
 
 # Présentation en binôme
@@ -44,7 +44,7 @@ https://lite.framacalc.org/9ilj-coursp8
 
 # Pratique
 
-prénom
+prénom et répertoires de cartes
 copie du répertoire réseau
 quelle diffusion ?
 

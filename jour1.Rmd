@@ -43,9 +43,9 @@ Avec l'assistant, essayer
   - name~valis
 ```
   
-Sur différentes échelles (région île de france, france)
+Sur différentes échelles (région île de france, région pays de la loire, france)
 
-Que se passe-t-il ?
+Que se passe-t-il ? (faire un tableau)
 
 ## Osmosis
 
@@ -65,7 +65,7 @@ Environ 1 h
 
 2 stations
 
-celle de Boigneville (name=Arvalis), et en Bretagne (name=arvalis)
+celle de Boigneville (name=arvalis), et à la Jaillère (name=Arvalis)
 
 
 # Contribuer à OSM

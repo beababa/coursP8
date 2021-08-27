@@ -1,0 +1,39 @@
+op,tps
+PRESENTATION,
+se présenter,60
+définir objectif cours,60
+STATIONS ARVALIS,
+PRESENTER ARVALIS,
+définir arvalis,15
+faire une carte des stations,60
+EXTRAIRE OSM,
+overpass,30
+osmose,60
+CONTRIBUER OSM,
+définir les tags,30
+utiliser josm,30
+attribuer les stations,10
+saisir,60
+contrôle de la saisie,30
+RPG,
+définir rpg,10
+manipuler le rpg 2019,30
+observer utilisation rpg dans overpass,30
+les données rpg de l’inrae,60
+TAMPONS,
+créer des tampons,
+extraire des tampons de 5 km par stations Arvalis,
+SAISIE,
+définir tag rpg,60
+Saisie 1,60
+contrôle de la saisie,30
+Saisie 2,60
+Contrôle 2,30
+cartographier sa saisie,60
+CARTOGRAPHIE ATLAS,
+récupérer la donnée sur la France,60
+faire des propostiions de carto,30
+faire un atlas par zone,60
+faire un atlas par catégorie,60
+initier le rapport,
+et sous R…,
