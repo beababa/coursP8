@@ -1,7 +1,7 @@
 ---
-title: "Limites administratives et population"
+title: "Stations Arvalis"
 author: "BMaranget"
-date: "26/08/2020"
+date: "16/08/2021"
 output: html_document
 ---
 
@@ -9,22 +9,97 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+# Faire une carte des stations Arvalis (CARTE 1)
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+## Savoir faire
+- mettre un favori dans l'explorateur
+- intégrer une couche dans Qgis
+- afficher une tuile OSM
+- mettre un filtre sur une couche (expression régulière)
+- étiquettes
+- symbole svg
+- chercher les limites régionales et les intégrer
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+## Résultat
+![](img/stations.png)
+
+## Méthode
+
+Que chaque stagiaire essaie de faire la carte en fonction de ce qu'il sait faire.
+En amont, remplissage d'un tableau.
+
+# Extraire données OSM autour des stations Arvalis
+
+## Overpass
+
+Avec l'assistant, essayer 
+
+
+```
+  - amenity=research_institute
+  - name=arvalis
+  - name=Arvalis
+  - name~valis
+```
+  
+Sur différentes échelles (région île de france, france)
+
+Que se passe-t-il ?
+
+## Osmosis
+
+https://wiki.openstreetmap.org/wiki/Osmosis/Quick_Install_(Windows)
+
+créer un toto.bat et y mettre ce contenu
+
+```{bash, eval=FALSE}
+"C:\Program Files (x86)\osmosis\bin\osmosis.bat" --read-pbf france-latest.osm.pbf --tf accept-ways amenity=research_center --tf reject-relations --used-node --write-xml output.osm
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
+![](img/osmosis.jpg)
+Environ 1 h
 
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
+## l'existant pour Arvalis
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+2 stations
+
+celle de Boigneville (name=Arvalis), et en Bretagne (name=arvalis)
+
+
+# Contribuer à OSM
+
+## Créer son profil OSM
+
+## Définir les tags
+
+research_institute
+name (attention à ce qu'on nomme, penser à la requête sous overpassturbo)
+
+et quoi d'autre ? utiliser taginfo
+
+## Se partager les stations, il y en a 22
+
+dans le framapad chaque étudiant consigne le nom de la station
+
+## Utiliser JOSM
+
+### Paramétrage
+
+F12
+
+### Basiques
+
+* interface
+* ajouter / modifier
+
+### Première saisie
+
+### Saisie de la station
+
+### Contrôle de la saisie
+
+
+
+

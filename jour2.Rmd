@@ -1,0 +1,62 @@
+---
+title: "Parcellaire agricole RPG"
+author: "BMaranget"
+date: "16/08/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# RPG
+
+## Définir et utiliser
+
+Essai : télécharger et cartographier
+
+2 questions : où ? combien pèse le fichier ?
+
+## Le rpg dans OSM, où est-il présent (faire mail)
+
+## RPG de l'INRAE (Carte 2)
+
+Lire le texte de présentation. Quelle cartographie envisager ?
+
+Style catégorisé sous Qgis
+
+Télécharger un département où existe une station et cartographier
+
+
+# RPG et tampons
+
+## Utilisation de Qgis
+
+### Faire un tampon sous Qgis
+
+![](img/tampons.jpg)
+
+### Extraction de données
+
+
+
+
+## Consigne
+
+Faire des tampons de 5 km autour des stations, y extraire le RPG de la zone
+Procédure pas à pas à définir
+
+# Saisir le RPG
+
+## Définir les tags
+
+### Liste OSM : mot clé rpg
+
+### Etablir la liste
+
+## 2 saisies / 2 contrôles
+
+- Définir les critères.
+- Comment quantifier la saisie ?
+
+## Cartographier sa saisie (carte 3)

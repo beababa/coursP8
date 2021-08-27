@@ -8,9 +8,7 @@ navbar:
     - text: "Equipements commerciaux dans OSM"
       href: jour2.html
     - text: "Ca reste ouvert"
-      href: jour3.html
-    - text: "Données"
-      href: data.html    
+      href: jour3.html   
   right:
     - icon: fa-github
       href: https://github.com/beababa/coursP8

@@ -1,0 +1,31 @@
+---
+title: "Cartographier stations et parcellaire"
+author: "BMaranget"
+date: "16/08/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Objet
+
+L'objectif est cette fois de cartographier toutes les stations et leur parcellaire
+en utilisant la fonction Atlas.
+
+Cette fonction permet de faire un atlas classique, une feuille par lieu
+
+Elle permet également de faire un atlas thématique
+
+La fonction de rapport.
+
+Les expressions permettent d'automatiser les titres etc...
+
+# La base fonction d'atlas
+
+Deux éléments
+
+# Atlas thématique
+
+# Rapport
