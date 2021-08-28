@@ -70,7 +70,7 @@ exemple (à ne pas prendre) : Boigneville, département 91
 ![](img/boignevilleINRAE.png)
 Création du tampon
 
-```{r, eval=TRUE}
+```{r, eval=FALSE}
 data <- st_read("data/essonne_91_asp/filiation_19_15.shp")
 str(data)
 boigneville <- st_read("data/station.shp", query = "SELECT * FROM station where Ville LIKE 'Boigneville' ")
@@ -96,6 +96,7 @@ tail(tab <- sort(table(tot)))
 (tab2 <- table(tab))
 suite <- as.integer(names(tab2))
 sum (suite [suite > 9])
+write.csv(tab, "data/cptSeq.csv")
 ```
 Donc, s'il y a beaucoup de séquences uniques, il existe également des séquences qui reviennent plus de 
 10 fois. Sur 501 séquences, 341 reviennent plusieurs fois, ce sont celles qu'on va choisir de cartographier.
@@ -108,9 +109,8 @@ st_write(dataSel, "data/rpg.gpkg", "rpgBoignevilleSeqMaj", delete_layer=T, quiet
 ```
 
 
-Style catégorisé sous Qgis
-
-
+## Style gradué sous Qgis
+Utilise
 
 
 # RPG et tampons
