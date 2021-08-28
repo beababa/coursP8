@@ -65,10 +65,10 @@ https://data.inrae.fr/dataset.xhtml?persistentId=doi:10.15454/XH84QB
 
 Consigne : Télécharger un département où existe une station et cartographier
 
-exemple (à ne pas prendre) : Boigneville, département 91
+### Exemple (à ne pas prendre) : Boigneville, département 91
 
 ![](img/boignevilleINRAE.png)
-Création du tampon
+#### Création du tampon
 
 ```{r, eval=FALSE}
 data <- st_read("data/essonne_91_asp/filiation_19_15.shp")
@@ -79,7 +79,9 @@ inter <-  st_intersection(tampon, data)
 inter <- inter [,"SEQUENCES"]
 st_write(inter,"data/rpg.gpkg","rpgBoigneville", delete_layer = T, quiet = T)
 ```
-Carte du tampon
+
+
+#### Carte du tampon
 
 ```{r}
 data <- st_read("data/rpg.gpkg", "rpgBoigneville")
@@ -110,38 +112,49 @@ st_write(dataSel, "data/rpg.gpkg", "rpgBoignevilleSeqMaj", delete_layer=T, quiet
 
 
 ## Style gradué sous Qgis
-Utilise
+
+Utiliser plutôt l'indicateur au début de séquences, pour l'extraire,
+
+```
+string_to_array("SEQUENCES", '(',))[0]
+to_real(substr("indic2",2,9))
+```
+
+TODO stylegraduedivers
+
+# RPG, tampons et extraction sous Qgis
+
+Menu vecteur / géotraitement, items tampon et couper
 
 
-# RPG et tampons
-
-## Utilisation de Qgis
-
-### Faire un tampon sous Qgis
-
-![](img/tampons.jpg)
-
-### Extraction de données
-
-
-
-
-## Consigne
-
-Faire des tampons de 5 km autour des stations, y extraire le RPG de la zone
-Procédure pas à pas à définir
-
-# Saisir le RPG
+# Saisir le RPG dans OSM
 
 ## Définir les tags
 
-### Liste OSM : mot clé rpg
+3 sources : wiki features, taginfo et overpassturbo
+
+### Explorer la donnée
+
+Faire remonter les types de culture majoritaires, pour Boigneville, c'est blé colza orge mais
+Et les tags correspondants sont crop=cereal en majorité
+
+Les autres zones sont peut-être plus diversifiées...
 
 ### Etablir la liste
 
+Liste commune sous framapad
+
 ## 2 saisies / 2 contrôles
 
-- Définir les critères.
-- Comment quantifier la saisie ?
+- Définir l'état existant
+
+- convertir le rpg extrait en geojson
+
+```{r}
+data <- st_read("data/rpg.gpkg", "rpgBoignevilleSeq",quiet=T)
+data <- st_transform(data,4326)
+st_write (data, "data/rpgBoigneville.geojson")
+```
+
 
 ## Cartographier sa saisie (carte 3)
