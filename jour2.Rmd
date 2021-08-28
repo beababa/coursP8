@@ -142,13 +142,11 @@ Les autres zones sont peut-être plus diversifiées...
 
 ### Etablir la liste
 
-Liste commune sous framapad
+Liste commune sous framapad. 5 tags maximum.
 
 ## 2 saisies / 2 contrôles
 
-- Définir l'état existant
-
-- convertir le rpg extrait en geojson
+### Convertir le rpg extrait en geojson
 
 ```{r}
 data <- st_read("data/rpg.gpkg", "rpgBoignevilleSeq",quiet=T)
@@ -156,5 +154,10 @@ data <- st_transform(data,4326)
 st_write (data, "data/rpgBoigneville.geojson")
 ```
 
+Observer les tags importés, les modifier, ajouter les autres, et surtout un fixme : P8 afin de pouvoir
+tout sélectionner après.
 
-## Cartographier sa saisie (carte 3)
+Utiliser le validateur avant d'envoyer sur le serveur
+
+Envoyer les modifications sur le serveur (noter le nombre de parcelles, et le nombre de modifications)
+
