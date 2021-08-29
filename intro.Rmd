@@ -52,18 +52,15 @@ quelle diffusion ?
 # Quizz
 
 séquence 1
-https://forms.gle/gqJyGFQ8mTVSSghNA
+https://forms.gle/kGcJqfadz4A5Tfsr9
 
 séquence 2
-https://forms.gle/cAC54VfF7bJHPaWM9
+https://forms.gle/HPUycPyCqAQriZQY8
 
 séquence 3
-https://forms.gle/wUMgB7VLu8YW1FY8A
+https://forms.gle/rXH3C5fwBiE6p6av5
 
 Quizz final
-https://forms.gle/DPdx6yQgGr5eSL5D8
+https://forms.gle/R5W9DooDPMmRn3kF6
 
 
-# Sources d'inspiration
-http://conf.qgis.osgeo.fr/z28_redif.html
-et notamment Qgis outil global à partir de la 6e minute

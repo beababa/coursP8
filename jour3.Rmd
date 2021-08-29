@@ -1,5 +1,5 @@
 ---
-title: "Cartographier stations et parcellaire"
+title: "Cartographier stations et parcellaire avec les atlas"
 author: "BMaranget"
 date: "16/08/2021"
 output: html_document
@@ -22,10 +22,34 @@ La fonction de rapport.
 
 Les expressions permettent d'automatiser les titres etc...
 
+# Les données
+
+Toutes les stations d'Arvalis et les données rpg pour toutes les stations si possible
+à partir d'OSM.
+
 # La base fonction d'atlas
 
-Deux éléments
+https://www.qgistutorials.com/fr/docs/automating_map_creation.html
+
+Attention deux éléments de paramétrage
+
+- Onglet atlas à paramétrer 
+- Dans les propriétés de la carte (contrôlé par l'atlas)
+
+Quelques expressions à caser :
+[%'Page '||@atlas_featurenumber || '/' || @atlas_totalfeatures%]
+
 
 # Atlas thématique
 
+https://naturagis.fr/qgis/atlas-repartition-especes-qgis/
+
+La couche thématique peut-être celle des séquences de culture.
+
 # Rapport
+
+Le Rapport fait la même chose que l'atlas thématique (section de groupe de champ).
+
+https://docs.qgis.org/3.10/fr/docs/user_manual/print_composer/create_reports.html
+
+

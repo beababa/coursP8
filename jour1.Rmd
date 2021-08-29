@@ -85,16 +85,24 @@ dans le framapad chaque étudiant consigne le nom de la station
 
 ## Utiliser JOSM
 
+https://learnosm.org/fr/josm/
+
 ### Paramétrage
 
 F12
 
 ### Basiques
 
-* interface
-* ajouter / modifier
+* interface (panneaux)
+https://wikis.cdrflorac.fr/wikis/CartoEICC/files/TutoJOSM_josm_ui_20170116151152_20170116143347.jpg
+
 
 ### Première saisie
+
+- exercice 1 : sur un calque vierge, utiliser mode s (sélectionner), a (ajouter), et w (modifier)
+
+- exercice 2 : Saisir un point familier avec JOSM, utiliser les tags et le validateur
+
 
 ### Saisie de la station
 
