@@ -1,7 +1,7 @@
 ---
-title: "Stations Arvalis"
+title: "opendata et OSM"
 author: "BMaranget"
-date: "16/08/2021"
+date: "02/08/2021"
 output: html_document
 ---
 
@@ -9,16 +9,42 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Faire une carte des stations Arvalis (CARTE 1)
+# Définir l'opendata à travers l'exemple de la matrice cadastrale
+
+
+## Repères chronologiques
+
+Question : De quand date le principe de libre communication de la matrice cadastrale ?
+
+* loi du 7 messidor an II
+* Décret n° 2012-59 du 18 janvier 2012 relatif à la délivrance au public de certaines informations cadastrales qui modifie le livre des procédures fiscales
+*	loi du 17 juillet 1978 (dont l’article 6 (protège les secrets de la vie privée)
+
+
+## Faire une demande de nom de propriétaire sur france cadastre
+
+
+## En guise de conclusion
+
+Voir les commentaires
+
+https://pasq.fr/fichier-des-proprietes-des-personnes-morales
+
+# Faire une carte à partir des données opendata cadastre et rpls (CARTE 1)
+
+## Télécharger les données
+
+pour le cadastre à la commune
+pour le RPLS à la région, puis filtre sur Bondy
+
+
+
 
 ## Savoir faire
 - mettre un favori dans l'explorateur
-- intégrer une couche dans Qgis
-- afficher une tuile OSM
-- mettre un filtre sur une couche (expression régulière)
-- étiquettes
-- symbole svg
-- chercher les limites régionales et les intégrer
+- intégrer deux couches dans Qgis : un fichier forme et un fichier texte
+- symbologie groupe de points pour le RPLS
+- symbologie pour catégorisé pour la personne morale
 
 
 ## Résultat

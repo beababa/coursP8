@@ -1,7 +1,7 @@
 ---
 title: "Introduction"
 author: "BMaranget"
-date: "16/08/2021"
+date: "2/08/2022"
 output: html_document
 ---
 
@@ -11,15 +11,14 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Déroulé
 
-- theme 1 : stations Arvalis (1 j)
-- theme 2 : le parcellaire agricole RPG (1,5 j)
-- theme 3 : cartograhier stations et parcellaire : atlas et rapport dans Qgis (0.5 j)
+- theme 1 : fichiers fonciers, rpls, opendata et ré-utilisations (1 j)
+- theme 2 : les bailleurs sociaux sur Bondy (1,5 j)
+- theme 3 : cartographier cités : atlas et rapport dans Qgis (0.5 j)
 
 Pour chaque séquence, plusieurs cartes et un quizz. pas d'évaluation officielle.
 Les cartes sont à mettre dans le répertoire réseau "cartes" dans le répertoire indiqué
 Le support sert uniquement de "fil rouge" et permet des calculs plus rapides qu'avec Qgis.
-Les procédures employées sont à
-rechercher sur internet avec Qgis permet de les trouver.
+Les procédures employées sont à rechercher sur internet avec Qgis permet de les trouver.
 Essai : "Qgis compter les points dans un polygone"
 
 
