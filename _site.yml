@@ -3,11 +3,11 @@ navbar:
   left:
     - text: "Introduction"
       href: intro.html
-    - text: "Stations Arvalis"
+    - text: "saisie 1"
       href: jour1.html
-    - text: "RPG"
+    - text: "saisie 2"
       href: jour2.html
-    - text: "Cartographies en atlas"
+    - text: "saisie 3"
       href: jour3.html   
   right:
     - icon: fa-github

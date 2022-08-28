@@ -1,66 +1,78 @@
 ---
-title: "opendata et OSM"
+title: "1e saisie : apprendre"
 author: "BMaranget"
 date: "02/08/2021"
-output: html_document
+output: 
+  html_document: 
+    number_sections: yes
+    toc: yes
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Définir l'opendata à travers l'exemple de la matrice cadastrale
+
+# Objectif
+
+Faire une 1e saisie sous OSM d'une résidence
+Essayer d'établir une méthode simple
+
+# 1e saisie pour comprendre
+
+## Création du profil
+
+https://www.openstreetmap.org
+
+## Primitives géométriques
+
+## Tag = clé + valeur
+
+https://taginfo.openstreetmap.org/
+
+exercice : faire une saisie sur un point connu
+
+# Extractions diverses OSM
+
+## Overpass pour extraire
+
+### Première approche : les rues
 
 
-## Repères chronologiques
+```
+highway = * in Bondy
+```
 
-Question : De quand date le principe de libre communication de la matrice cadastrale ?
-
-* loi du 7 messidor an II
-* Décret n° 2012-59 du 18 janvier 2012 relatif à la délivrance au public de certaines informations cadastrales qui modifie le livre des procédures fiscales
-*	loi du 17 juillet 1978 (dont l’article 6 (protège les secrets de la vie privée)
+Ca tombe bien, les résidences sont souvent appelées par le nom de leurs rues...
 
 
-## Faire une demande de nom de propriétaire sur france cadastre
+#### CARTE 1 : les rues OSM sous QGIS
+
+Savoir-faire QGIS : 
+
+- mettre un favori dans l'explorateur sur le répertoire Téléchargement
+
+- intégrer une couche dans Qgis
+
+- étiquetage des rues sous Qgis
+
+![](img/rue.png)
 
 
-## En guise de conclusion
+- mise en page qgis (3 boutons)
 
-Voir les commentaires
-
-https://pasq.fr/fichier-des-proprietes-des-personnes-morales
-
-# Faire une carte à partir des données opendata cadastre et rpls (CARTE 1)
-
-## Télécharger les données
-
-pour le cadastre à la commune
-pour le RPLS à la région, puis filtre sur Bondy
-
-
-
-
-## Savoir faire
-- mettre un favori dans l'explorateur
-- intégrer deux couches dans Qgis : un fichier forme et un fichier texte avec coordonnées
-géographiques
-- symbologie groupe de points pour le RPLS
-- symbologie pour catégorisé pour la personne morale
-- tuile osm
-
-
-## Résultat
-
-![](RPLSvignette.png)
-
-## Méthode
+#### Méthode
 
 Que chaque stagiaire essaie de faire la carte en fonction de ce qu'il sait faire.
 En amont, remplissage d'un tableau.
 
-# Extraire données OSM autour du logement social
 
-## Overpass
+### Deuxième approche : les bâtiments
+
+
+#### Quelques requêtes
 
 Avec l'assistant, essayer 
 
@@ -74,48 +86,84 @@ Avec l'assistant, essayer
   
 Sur différentes échelles (région île de france, bondy)
 
-Que se passe-t-il ? (faire un tableau)
+Que se passe-t-il ? (faire un tableau échelle par requête)
 
-## Osmosis
 
-https://wiki.openstreetmap.org/wiki/Osmosis/Quick_Install_(Windows)
 
-créer un toto.bat et y mettre ce contenu
+#### L'existant pour building:owner
 
-```{bash, eval=FALSE}
-"C:\Program Files (x86)\osmosis\bin\osmosis.bat" --read-pbf france-latest.osm.pbf --tf accept-ways amenity=research_center --tf reject-relations --used-node --write-xml output.osm
+Trouver les 2 villes pour lesquelles ces tags ont été utilisés.
+
+# Saisissons !
+
+## Les données cadastrales : les personnes morales
+
+Faire une carte Qgis sur la catégorie 5 (La catégorie "5" concerne les bailleurs sociaux.)
+
+### Traitements sur la donnée initiale
+
+```{r}
+library(sf)
+pmorale <- st_read("data/logement.gpkg", "pmorale")
+# on filtre sur la catégorie
+categ5 <- pmorale [pmorale$categorie == 5,]
+# dénombrement
+tab <- table(categ5$nom)
+knitr::kable(tab)
+# enregistrement du fichier des formes et de la liste des bailleurs.
+st_write(categ5, "data/logement.gpkg", "categ5",delete_layer = T)
+write.csv(tab, "data/bailleurCadastre.csv")
+```
+
+Attention à Bondy Habitat, recoder le fichier de manière à utiliser les mêmes noms et plus courts.
+
+```{r}
+txt <- read.csv("data/bailleurCadastreCorrige.csv")
+# jointure entre le fichier forme et texte
+jointure <- merge(categ5, txt, by.x = "nom", by.y = "nomLong" )
+st_write(jointure, "data/logement.gpkg", "categ5",delete_layer = T)
 ```
 
 
-![](img/osmosis.jpg)
-Environ 1 h
+### CARTE 2 : bailleurs propriétaires
 
-## l'existant pour building:owner
-
-2 villes : Garges et Villiers le bel
+#### Savoir faire QGIS
 
 
-# Contribuer à OSM
+- utiliser le traitement *de morceaux multiples à morceaux uniques*
 
-## Créer son profil OSM
+- style catégorisé sur le nom
 
-## Définir les tags
+- affichage tuile osm
 
-utiliser le vademecum building
+- Légende du style catégorisé
 
-que mettre pour le bailleurs social ?
+## Distribuer les saisies
 
-## Se partager les patrimoines des bailleurs
+On rajoute le prénom de chaque étudiant concerné sur l'objet de saisie
 
-dans le framapad chaque étudiant consigne le nom des bailleurs.
+
+## Fixer les tags
+
+Un seul tag pour cette première saisie
 
 ## Utiliser JOSM
 
+
+### Paramétrage F12 pour lien remote
+
+- serveur OSM
+
+- contrôle à distance
+
+
+
+
+### bases JOSM
+
 https://learnosm.org/fr/josm/
 
-### Paramétrage
 
-F12
 
 ### Basiques
 
@@ -123,16 +171,44 @@ F12
 https://wikis.cdrflorac.fr/wikis/CartoEICC/files/TutoJOSM_josm_ui_20170116151152_20170116143347.jpg
 
 
-### Première saisie
+### Première saisie JOSM
 
 - exercice 1 : sur un calque vierge, utiliser mode s (sélectionner), a (ajouter), et w (modifier)
 
-- exercice 2 : Saisir un point familier avec JOSM, utiliser les tags et le validateur
+- exercice 2 : Saisir le tag avec JOSM, utiliser les tags et le validateur
+
+- exercice 3 : osmecum *intégrer le bati*
 
 
-### Saisie de la station
+# Saisie de l'immeuble / résidence choisi dans le fichier
 
-### Contrôle de la saisie
+## Contrôle de la saisie
+
+### Règles
+
+Pour pouvoir faire ce contrôle, la 1e chose, noter la saisie faite dans le fichier commun.
+
+Et ensuite, attention au calque, utiliser le validateur..
+
+Lister les autres règles.
+
+### Les outils OSM du contrôle de qualité
+
+http://resultmaps.neis-one.org
+
+http://osmose.openstreetmap.fr/fr/map/#zoom=16&lat=48.90695&lon=2.49237
+
+et plus...
+
+https://www.maproulette.org/
+
+https://forum.openstreetmap.fr
+
+
+
+
+
+
 
 
 
