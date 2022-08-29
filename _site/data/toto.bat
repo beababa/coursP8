@@ -1,1 +1,0 @@
-"C:\Program Files (x86)\osmosis\bin\osmosis.bat" --read-pbf france-latest.osm.pbf --tf accept-ways amenity=research_institute --tf reject-relations --used-node --write-xml output-ways.osm

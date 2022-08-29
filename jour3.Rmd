@@ -1,8 +1,13 @@
 ---
-title: "Cartographier stations et parcellaire avec les atlas"
+title: "Une saisie exhaustive ?"
 author: "BMaranget"
 date: "16/08/2021"
-output: html_document
+output: 
+  html_document: 
+    number_sections: yes
+    toc: yes
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -11,23 +16,17 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Objet
 
-L'objectif est cette fois de cartographier toutes les stations et leur parcellaire
-en utilisant la fonction Atlas.
-
-Cette fonction permet de faire un atlas classique, une feuille par lieu
-
-Elle permet également de faire un atlas thématique
-
-La fonction de rapport.
+Il s'agit d'essayer de faire une saisie exhaustive puis de l'exploiter avec les
+outils qgis d'atlas et de rapport (cartographie par secteur et par bailleurs.)
 
 Les expressions permettent d'automatiser les titres etc...
 
 # Les données
 
-Toutes les stations d'Arvalis et les données rpg pour toutes les stations si possible
-à partir d'OSM.
+Toutes les données sont issues d'OSM, faire une 3e saisie si nécessaire en partant
+des lignes non remplies et des dernières cartes sous forme d'atlas par quartier
 
-# La base fonction d'atlas
+#  CARTE 6 : La base fonction d'atlas
 
 https://www.qgistutorials.com/fr/docs/automating_map_creation.html
 
@@ -44,7 +43,7 @@ Quelques expressions à caser :
 
 https://naturagis.fr/qgis/atlas-repartition-especes-qgis/
 
-La couche thématique peut-être celle des séquences de culture.
+La couche thématique peut-être celle des noms de bailleurs.
 
 # Rapport
 

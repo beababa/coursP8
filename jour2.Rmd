@@ -1,8 +1,13 @@
 ---
-title: "Parcellaire agricole RPG"
+title: "2e saisie OSM : tester"
 author: "BMaranget"
 date: "16/08/2021"
-output: html_document
+output: 
+  html_document: 
+    number_sections: yes
+    toc: yes
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -10,277 +15,156 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-```{r}
-library(sf)
-library(mapsf)
-library(tictoc)
-```
-
-# Introduction : pourquoi le RPG ?
-
-Le RPG est une donnée libre.
-
-cf liste de discussion osm (https://lists.openstreetmap.org/pipermail/talk-fr/2020-December/subject.html)
-avec le mot clé *rpg*
-
-Quelle conclusion retirer de cet échange ?
-
-La solution de facilité serait de faire l'import de tout le RPG mais ce n'est pas
-l'esprit d'OSM, les imports automatiques sont très déconseillés.
-
-Aussi, l'objectif ici est, en fonction des zones, de mettre en place différentes
-stratégies de saisie.
-
-# Différents types de RPG
-
-## Définir et utiliser le rpg opendata
-
-Essai : télécharger et cartographier
-
-2 questions : où ? combien pèse le fichier ?
-
-```{r, eval = FALSE}
-lien <- "https://www.data.gouv.fr/fr/datasets/r/0e28d7bb-c833-4c76-a180-b75f35d417c6"
-lien2 <- "http://data.cquest.org/registre_parcellaire_graphique/2019/RPG_2-0__GPKG_LAMB93_FR-2019_2019-01-15.7z"
-options(timeout=10000)
-tic()
-download.file(lien2, destfile='data.7z')
-toc()
-# temps très long !
-res <- unzip("data.7z")
-# cela ne marche pas, on le fait hors R
-data <- st_read("PARCELLES_GRAPHIQUES.gpkg", "parcelle_graphique",query = "select * from parcelle_graphique limit 10;")
-st_write(data, "data/rpg.gpkg", "rpgExtract")
-```
-
-![](img/rpgquest.png)
-
-à titre de remarque
-https://georezo.net/forum/viewtopic.php?id=123178
-
-```{r}
-data <- st_read("data/rpg.gpkg", "rpgExtract")
-data
-```
 
 
 
+# Objectif
 
-## Le rpg dans OSM, où est-il présent ?
-
-
-
-Essayer avec le tag *source~RPG* sur le département 91
-
-![](img/rpgoverpass.png)
-Puis autour de la station Arvalis de Boigneville, que se passe-t-il ?
-
-## RPG de l'INRAE (Carte 2)
-
-https://data.inrae.fr/dataset.xhtml?persistentId=doi:10.15454/XH84QB
-
-Objectif : Quelle information est-intéressante à cartographier ?
-
-Consigne : Télécharger un département où existe une station et cartographier
+Saisir plus d'une résidence avec plusieurs attributs, faire évoluer la méthode de saisie.
 
 
-### Exemple (à ne pas prendre) : Boigneville, département 91
+# Préparation
 
-Le traitement est sous R pour l'exemple. 
-
-![](img/boignevilleINRAE.png)
-
-#### Création du tampon de 5 km
-
-```{r, eval=FALSE}
-data <- st_read("data/essonne_91_asp/filiation_19_15.shp")
-str(data)
-boigneville <- st_read("data/station.shp", query = "SELECT * FROM station where Ville LIKE 'Boigneville' ")
-tampon <- st_buffer(boigneville, 5000)
-inter <-  st_intersection(tampon, data)
-inter <- inter [,"SEQUENCES"]
-st_write(inter,"data/rpg.gpkg","rpgBoigneville", delete_layer = T, quiet = T)
-```
-
-Le tampon de 5 km génère 1200 polygones. C'est déjà beaucoup.
-
-#### Quelle donnée cartographier ?
-
-```{r}
-data <- st_read("data/rpg.gpkg", "rpgBoigneville")
-plot(data$geom)
-# On cherche l'information à cartographier
-str(data)
-head(data$SEQUENCES)
-# On éclate les chaînes de séquences
-ecl <- strsplit(data$SEQUENCES, "= ")
-tot <- NULL
-for (i in 1:1200){
-seq <- ecl[[i]][2]
-tot <- c(tot, seq)
-}
-data$seq <- tot
-# On récupère le shéma des cultures sur 5 ans
-st_write(data, "data/rpg.gpkg", "rpgBoignevilleSeq", delete_layer = T, quiet = T)
-tail(tab <- sort(table(tot)))
-(tab2 <- table(tab))
-# On mesure la fréquence des shémas
-suite <- as.integer(names(tab2))
-sum (suite [suite > 9])
-# On sauvegarde les sequences qui reviennent au moins 10 fois.
-write.csv(tab, "data/cptSeq.csv")
-```
-Donc, s'il y a beaucoup de séquences uniques, il existe également des séquences qui reviennent plus de 
-10 fois. Sur 501 séquences, 341 reviennent plusieurs fois, ce sont celles qu'on va choisir de cartographier.
-
-```{r}
-# colonnes concernées
-sel <- names(tab [tab > 9])
-dataSel <- data [data$seq %in% sel,]
-st_write(dataSel, "data/rpg.gpkg", "rpgBoignevilleSeqMaj", delete_layer=T, quiet = T)
-```
-
-
-### Choix d'une cartographie
-
-
-```{r}
-library(mapsf)
-data <- st_read("data/rpg.gpkg", "rpgBoignevilleSeq",quiet= T, stringsAsFactors = T)
-tab <- read.csv("data/cptSeq.csv")
-# jointure
-data <- merge(data, tab [, c("tot", "Freq")], by.x = "seq", by.y="tot")
-```
-
-
-```{r}
-mf_init(data, theme = "candy", expandBB = c(0,0,0,.15))
-mf_shadow(data, add = TRUE)
-mf_map(data, var = "Freq", type = "choro", breaks = "jenks", nbreaks = 5,
-       col ="Mint", border = NA, lwd = 0.5, leg_pos = "right", leg_val_rnd = 0,
-       leg_title = "Fréq des rotations", add = T)
-mf_layout(title = "RGPD autour de Boigneville", credits = "Sources : INRAE, 2019\nParis8, août 2021")
-knitr::kable(tab [tab$Freq > 9, c(2,3)], row.names = F,
-             col.names = c("séquence", "fréquence"))
-```
-
-
-### Autres zones : utilisation de Qgis
-
-La démarche peut donc se résumer ainsi :
-
-- tampon et extraction des parcelles
-- choix de l'information à cartographier
-- extraction en manipulant la chaîne de caractère du champs SEQUENCES
-- cartographie gradué du champs
-
-#### Tampons et extraction sous Qgis
-
-Menu vecteur / géotraitement, items tampon et couper
-
-Enregistrement du fichier avec le nom de la station. Dépôt sur le réseau (afin de
-récupérer le tout pour la cartographie en atlas.
-
-
-#### Déterminer l'information à cartographier
-
-Quelle information veut-on cartographier ?
-
-Utiliser plutôt l'indicateur au début de séquences, pour l'extraire,
-
-```
-string_to_array("SEQUENCES", '(',))[0]
-to_real(substr("indic2",2,9))
-
-```
-
-#### Cartographie
-
-Propriétés / symbologie / style gradué
-
-
-Nous sommes désormais familier du jeu de données du RPG de l'INRAE, la question 
-est maintenant de savoir comment le saisir dans OSM
-
-# Saisir le RPG INRAE dans OSM
 
 ## Définir les tags
 
-3 sources : wiki features, taginfo et overpassturbo
+utiliser l'osmecum building
 
-### Explorer la donnée
+https://wiki.openstreetmap.org/wiki/France/Osmecum
 
-Faire remonter les types de culture majoritaires, pour Boigneville, c'est blé colza orge mais
-Et les tags correspondants sont crop=cereal en majorité
+que mettre pour le bailleurs social ?
 
-Les autres zones sont peut-être plus diversifiées...
+## Se partager les zones
 
-### Etablir la liste
+### 2 type de sources : internes et opendata
 
-Liste commune sous framapad. 5 tags maximum.
+#### Données internes : l'inventaire de 2013 
 
-Observer les tags importés, les modifier, ajouter les autres, et surtout un fixme : P8 afin de pouvoir
-tout sélectionner après.
+##### Les zones
 
-### Convertir le rpg extrait en geojson
+La problématique : que cartographier ?
+
+Rappel : la carte voulue est une carte des résidences, donc on va essayer de cerner ces résidences.
+
+Pour celà nous avons un outil interne à la commune : le répertoire du patrimoine HLM dont on va pouvoir reprendre la sectorisation.
+
+
+
+
+##### Le nom des résidences
+
+
+```{r}
+resid <- read.csv("data/bailleurInventaireCorrigeUTF8.csv", fileEncoding = "UTF-8")
+knitr::kable(resid)
+```
+ 
+Ce fichier va saisir de base de saisie.
+
+#### RPLS données opendata
+
+##### Définir l'opendata à travers l'exemple de la matrice cadastrale
+
+
+###### Repères chronologiques
+
+Question : De quand date le principe de libre communication de la matrice cadastrale ?
+
+* loi du 7 messidor an II
+* Décret n° 2012-59 du 18 janvier 2012 relatif à la délivrance au public de certaines informations cadastrales qui modifie le livre des procédures fiscales
+*	loi du 17 juillet 1978 (dont l’article 6 (protège les secrets de la vie privée)
+
+
+###### Faire une demande de nom de propriétaire sur france cadastre
+
+
+###### En guise de conclusion
+
+Voir les commentaires
+
+https://pasq.fr/fichier-des-proprietes-des-personnes-morales
+
+## CARTE 3 : zonage inventaire et RPLS
+
+## Télécharger les données
+
+pour le RPLS au département
+
+Quels traitements faut-il appliquer au RPLS téléchargé ?
 
 ```{r, eval=FALSE}
-data <- st_read("data/rpg.gpkg", "rpgBoignevilleSeq",quiet=T)
-data <- st_transform(data,4326)
-st_write (data, "data/rpgBoigneville.geojson", quiet = T)
+library(sf)
+library(mapsf)
+data <- read.csv2( "data/RPLS2019_detail_IDF_DEP_93.csv", encoding = "UTF-8")
+# 1er traitement
+data <- data [data$CODEPOSTAL == '93140',]
+# 2e traitement
+str(data [, c("longitude", "latitude")])
+data <- st_as_sf(data, coords =c("longitude", "latitude"), crs = 4326)
+# 3e traitement
+st_write(data,"data/logement.gpkg","RPLS4326", delete_layer = T)
 ```
 
-L'ouvrir sous josm
 
-## Quoi importer ?
+## Savoir faire QGIS
 
-### Nettoyage de la couche
+- charger 2 couches (RPLS et quartiersBailleurs dans le gpkg logement)
 
-### Niveau géométrique
+- symbologie groupe de points pour le RPLS
 
-![](img/validateur.png)
-Josm permet de nettyer rapidement avec le validateur et *réparer*
+![](img/symbologiePoints.png)
 
-Utiliser également l'outil de simplification des chemins, sur un seul polygone en faisant varier le paramètre
+- symbologie pour catégorisé pour le quartier en bordure ligne simple
 
-Observer les géométries, quelles sont les problèmes possibles ?
+![](img/bordurelgsimple.png)
+- tuile osm ou rues de la première carte
 
-### Niveau attributaire
+- mise en page qgis
 
-Il faut que tous les attributs de la couche soient compatibles avec OSM.
+## Résultat
 
-Ne pas oublier un fixme=coursP8
-
-
-### Attention aux deux couches !
-
-![](img/calques.png)
-
-On peut d'abord gérer les couches séparemment afin d'observer ce que l'on  ajouter comme information.
-
-Sur Boigneville, c'est complexe car le rpg a été ajouté... en 2010
-
-![](img/pbObsolete.png)
-cf la discussion de décembre 2020.
-
-Deux directions possibles :
-
-- Repérer les zones ou saisie non effective
-- Modifier juste les tags et non pas les géométries si elles correspondent.
-
-Utiliser le validateur avant d'envoyer sur le serveur
-
-Quantifier la saisie : une petite saisie correctement effectuée, vaut mieux qu'un
-chargement en masse !
-
-### Saisie : 2 sessions
-
-On travaille sur un calque et on envoie les changements de ce calque (envoyer les
-changements depuis *le calque actif*)
-
-Ainsi, le calque importé sert simplement aux changements attributaires et aux 
-suppressions de géométrie.
-
-Et le calque geosjon aux ajouts géométriques.
+![](img/carte2.png)
 
 
+
+
+
+# Saisissons !
+
+## Définir une méthode
+
+### Quelles informations dans nos sources ?
+
+![](img/residence1.png)
+Donner les sources de cette carte
+
+Examiner le RPLS, que peut-on mettre comme informations ?
+
+
+### proposition à partir d'un exemple
+Qu
+A partir d'un exemple sur la carte 25 rue Fontaine :
+- on identifie son adresse, son nom, sa hauteur, le bailleur, le nombre d'appartements, l'age.
+- on vérifie cohérence hauteur et nb appartements
+Dans ce cas, comme il n'existe pas dans le répertoire,  on rajoute la ligne.
+
+
+
+# Vérifions !
+
+## Extractions
+
+## CARTE 4 : carte par bailleurs
+
+style catégorisé, reste-t-il beaucoup à saisir... on le fera demain
+
+comparer également avec le tableau
+
+## CARTE 5 : carte en 2,5 sur secteur précis
+
+Jouer avec les paramétrages
+
+![](img/2D5.png)
+
+
+extraction d'OSM : https://osmbuildings.org/
