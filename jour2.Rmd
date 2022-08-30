@@ -22,6 +22,46 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Saisir plus d'une résidence avec plusieurs attributs, faire évoluer la méthode de saisie.
 
+On utilise désormais l'éditeur JOSM
+
+
+
+# Utiliser JOSM
+
+
+## Paramétrage F12 pour lien remote
+
+- serveur OSM
+
+Utiliser l'identification simple
+
+- contrôle à distance
+
+
+
+
+## Basiques
+
+* interface (panneaux)
+https://wikis.cdrflorac.fr/wikis/CartoEICC/files/TutoJOSM_josm_ui_20170116151152_20170116143347.jpg
+
+
+## 2 petits exercices JOSM
+
+- exercice 1 : sur un calque vierge, utiliser mode s (sélectionner), a (ajouter), et w (modifier)
+
+- exercice 2 : osmecum *intégrer le bati*
+
+Essayer par exemple de fusionner deux points, un point et une ligne... en suivant les indications de la fiche
+
+
+## Contrôle de la saisie
+
+Le validateur permet de repérer les erreurs possibles
+
+exercice : sans avoir fait de changement sur une zone, activer le validateur et zoomer sur un objet posant problème.
+
+On s'aperçoit que souvent le validateur est trop rigoureux.
 
 # Préparation
 
@@ -84,9 +124,9 @@ Voir les commentaires
 
 https://pasq.fr/fichier-des-proprietes-des-personnes-morales
 
-## CARTE 3 : zonage inventaire et RPLS
+## CARTE 2 : zonage inventaire et RPLS
 
-## Télécharger les données
+## Traitements appliqués au RPLS
 
 pour le RPLS au département
 
