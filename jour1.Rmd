@@ -133,14 +133,16 @@ st_write(jointure, "data/logement.gpkg", "categ5",delete_layer = T)
 
 ### Se répartir les zones
 
+
 #### Savoir faire QGIS
 
 
 - utiliser le traitement *de morceaux multiples à morceaux uniques*
 
-On rajoute le prénom de chaque étudiant concerné sur l'objet de saisie
+On rajoute le prénom de chaque étudiant concerné sur l'objet de saisie en choisissant
+les plus gros polygones (cf dans divers.gpkg, couche parcelleAttribue)
 
-
+![](img/attributionParcelles.png)
 ## Fixer les tags
 
 Un seul tag pour cette première saisie 

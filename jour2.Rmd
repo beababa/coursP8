@@ -76,7 +76,12 @@ que mettre pour le bailleurs social ?
 
 ## Se partager les zones
 
-### 2 type de sources : internes et opendata
+2 type de sources : internes et opendata
+
+- La première va permettre de définir le zonage et de servir de base de saisie
+
+- La deuxième va amener la définition des tags à utiliser
+
 
 #### Données internes : l'inventaire de 2013 
 
@@ -88,6 +93,15 @@ Rappel : la carte voulue est une carte des résidences, donc on va essayer de ce
 
 Pour celà nous avons un outil interne à la commune : le répertoire du patrimoine HLM dont on va pouvoir reprendre la sectorisation.
 
+```{r}
+library(sf)
+zone <- st_read("data/logement.gpkg", "quartiersBailleurs")
+library(mapsf)
+mf_map(zone)
+mf_label(zone, "NOM_IRIS", halo = T, cex = 0.8, lines = T)
+```
+
+
 
 
 
@@ -96,37 +110,21 @@ Pour celà nous avons un outil interne à la commune : le répertoire du patrimo
 
 ```{r}
 resid <- read.csv("data/bailleurInventaireCorrigeUTF8.csv", fileEncoding = "UTF-8")
-knitr::kable(resid)
+head(resid [resid$rue.si.différente.de.nom.résidence != "",])
 ```
  
-Ce fichier va saisir de base de saisie.
+Il s'agit du début de fichier. La colonne "rue.si..." indique la rue concernée si elle est différente du nom de la cité. Généralement, les résidences portent le nom de la rue qui passe devant l'immeuble.
+Ce fichier va saisir de base de saisie. Il s'agit de chercher les résidences concernées sur la carte.
 
 #### RPLS données opendata
 
-##### Définir l'opendata à travers l'exemple de la matrice cadastrale
 
 
-###### Repères chronologiques
+#####  Découverte du RPLS
 
-Question : De quand date le principe de libre communication de la matrice cadastrale ?
+CARTE 2 : zonage inventaire et RPLS
 
-* loi du 7 messidor an II
-* Décret n° 2012-59 du 18 janvier 2012 relatif à la délivrance au public de certaines informations cadastrales qui modifie le livre des procédures fiscales
-*	loi du 17 juillet 1978 (dont l’article 6 (protège les secrets de la vie privée)
-
-
-###### Faire une demande de nom de propriétaire sur france cadastre
-
-
-###### En guise de conclusion
-
-Voir les commentaires
-
-https://pasq.fr/fichier-des-proprietes-des-personnes-morales
-
-## CARTE 2 : zonage inventaire et RPLS
-
-## Traitements appliqués au RPLS
+##### Traitements appliqués au RPLS
 
 pour le RPLS au département
 
@@ -146,7 +144,7 @@ st_write(data,"data/logement.gpkg","RPLS4326", delete_layer = T)
 ```
 
 
-## Savoir faire QGIS
+##### Savoir faire QGIS
 
 - charger 2 couches (RPLS et quartiersBailleurs dans le gpkg logement)
 
@@ -161,50 +159,58 @@ st_write(data,"data/logement.gpkg","RPLS4326", delete_layer = T)
 
 - mise en page qgis
 
-## Résultat
+##### Résultat
 
 ![](img/carte2.png)
 
 
+##### Définition des tags
+
+
+D'après l'inventaire, les tags *name* et *building:owner* seront utilisés.
+D'après le RPLS, on décide d'utiliser également :
+
+- building_levels
+
+- 
 
 
 
 # Saisissons !
 
-## Définir une méthode
+Nous avons 2 sources :
 
-### Quelles informations dans nos sources ?
+- La liste des résidences en .csv qui nous sert de base de saisie
 
-![](img/residence1.png)
-Donner les sources de cette carte
+- le contenu du RPLS qui nous permet de remplir les tags
 
-Examiner le RPLS, que peut-on mettre comme informations ?
-
-
-### proposition à partir d'un exemple
-Qu
-A partir d'un exemple sur la carte 25 rue Fontaine :
-- on identifie son adresse, son nom, sa hauteur, le bailleur, le nombre d'appartements, l'age.
-- on vérifie cohérence hauteur et nb appartements
-Dans ce cas, comme il n'existe pas dans le répertoire,  on rajoute la ligne.
+Au bout de quelques saisies, la méthode suivante peut-être envisagée.
 
 
+## Méthode de saisie
 
-# Vérifions !
+- Choisir une résidence dans le .csv
 
-## Extractions
+- Chercher sur la carte Qgis s'il y a des logements correspondant
 
-## CARTE 4 : carte par bailleurs
+- si oui, avec l'outil d'identification, chercher l'année de construction et le nombre d'étages (l'étage maximum).
 
-style catégorisé, reste-t-il beaucoup à saisir... on le fera demain
+Vérifier également que le nom de la résidence est le même, mais c'est le nom de l'inventaire qui prévaut.
 
-comparer également avec le tableau
+- dans JOSM, repérer l'immeuble ou la résidence concernée et mettre les tags.
 
-## CARTE 5 : carte en 2,5 sur secteur précis
-
-Jouer avec les paramétrages
-
-![](img/2D5.png)
+Attention, il peut être nécessaire si plusieurs immeubles sont concernés de tracer un polygone et de lui attribuer les tags sauf building:levels qui est propre à chaque immeuble.
 
 
-extraction d'OSM : https://osmbuildings.org/
+- dans le framapad, mettre son prénom au niveau de la résidence pour signaler que la saisie a été faite
+
+## Bilan de l'heure de saisie
+
+- Il est difficile de se repérer géographiquement.
+
+- Les sources RPLS et inventaire pourtant censée être solides ne coincident pas entre elles.
+
+- tagger building:owner sur un polygone qui n'est pas un polygone n'est pas très malin...
+
+
+

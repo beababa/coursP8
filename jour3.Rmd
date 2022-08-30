@@ -21,12 +21,79 @@ outils qgis d'atlas et de rapport (cartographie par secteur et par bailleurs.)
 
 Les expressions permettent d'automatiser les titres etc...
 
-# Les données
+# Vérifions la saisie du jour 2
 
-Toutes les données sont issues d'OSM, faire une 3e saisie si nécessaire en partant
-des lignes non remplies et des dernières cartes sous forme d'atlas par quartier
+## Extractions avec overpass turbo
 
-#  CARTE 6 : La base fonction d'atlas
+Quels tags allons nous utiliser ?
+
+## CARTE 3 : carte par bailleurs
+
+- style catégorisé, reste-t-il beaucoup à saisir... on le fera tout à l'heure...
+
+- comparer également avec le tableau pour voir si la saisie annoncée correspond à la 
+saisie récupérée.
+
+## CARTE 4 : carte en 2,5 sur secteur précis
+
+Jouer avec les paramétrages
+
+![](img/2D5.png)
+
+
+extraction d'OSM : https://osmbuildings.org/
+
+
+
+# Troisième saisie
+
+## Simplifier le RPLS
+
+Il s'agit avant tout de changer de méthode.
+
+Au final seule 2 informations nous intéressent dans le RPLS, le nombre d'étages (le nom de la résidence éventuellement).
+
+Nous allons donc simplifier le fichier RPLS.
+
+Nous avons également remarqué qu'il y avait incohérence entre les 2 sources.
+
+Essayons de partir uniquement du RPLS modifié.
+Nous rajouterons le tag *source=rpls2019*
+
+```{r, eval=FALSE}
+library(sf)
+rpls <- st_read("data/logement.gpkg", "RPLS")
+# Pour une adresse, on aura un point
+rplsSimplifie <- aggregate(rpls [,c("NUMAPPT")], by = list(rpls$NUMVOIE, rpls$NOMVOIE, rpls$COMPLGEO), length)
+names(rplsSimplifie) [1:4] <- c("num", "voie", "appartements", "residence")
+
+```
+
+On peut également extraire l'étage maximum pour chaque immeuble.
+
+
+```{r, eval=FALSE}
+nbEtage <- aggregate(rpls$ETAGE, by = list (rpls$NUMVOIE, rpls$NOMVOIE), max)
+names(nbEtage) <- c("num", "voie", "etage")
+# jointure avec le 1er fichier
+jointure <- merge(rplsSimplifie, nbEtage, by = c("num", "voie"), all.x = T)
+st_write (jointure,"data/divers.gpkg","rplsSimplifie",delete_layer=T)
+```
+
+
+## Nouvelle méthode à partir du RPLS
+
+Quelles sont vos propositions ? 
+
+
+## Résultat de la saisie
+
+On utilise la fonction atlas pour faire les cartes
+
+
+
+
+###  CARTE 5 : La base fonction d'atlas
 
 https://www.qgistutorials.com/fr/docs/automating_map_creation.html
 
@@ -39,13 +106,15 @@ Quelques expressions à caser :
 [%'Page '||@atlas_featurenumber || '/' || @atlas_totalfeatures%]
 
 
-# Atlas thématique
+# Bonus : atlas thématique et rapport
+
+## Atlas thématique
 
 https://naturagis.fr/qgis/atlas-repartition-especes-qgis/
 
 La couche thématique peut-être celle des noms de bailleurs.
 
-# Rapport
+## Rapport
 
 Le Rapport fait la même chose que l'atlas thématique (section de groupe de champ).
 
