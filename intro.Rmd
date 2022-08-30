@@ -80,7 +80,12 @@ Ce fichier va permettre de s'attribuer les zones de saisie et toutes les opérat
 collaboratives du cours.
 
 ```{r}
-# stats sur le framapad...
+data <- read.csv2("data/etudiant.csv", fileEncoding = "UTF-8")
+table(data$passé)
+par(mar = c(8,2,2,2))
+barplot(table(data$passé), las = 2)
+barplot(table(data$présent), las = 2)
+barplot(table(data$futur), las = 2)
 ```
 
 
