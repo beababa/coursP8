@@ -172,7 +172,7 @@ D'après le RPLS, on décide d'utiliser également :
 
 - building_levels
 
-- 
+- start_date (année de construction)
 
 
 
@@ -193,7 +193,10 @@ Au bout de quelques saisies, la méthode suivante peut-être envisagée.
 
 - Chercher sur la carte Qgis s'il y a des logements correspondant
 
+
 - si oui, avec l'outil d'identification, chercher l'année de construction et le nombre d'étages (l'étage maximum).
+
+Il est intéressant de simplifier le fichier RPLS en supprimant des colonnes et en appliquant un filtre sur les résidences à saisir.
 
 Vérifier également que le nom de la résidence est le même, mais c'est le nom de l'inventaire qui prévaut.
 
@@ -208,9 +211,10 @@ Attention, il peut être nécessaire si plusieurs immeubles sont concernés de t
 
 - Il est difficile de se repérer géographiquement.
 
+
 - Les sources RPLS et inventaire pourtant censée être solides ne coincident pas entre elles.
 
-- tagger building:owner sur un polygone qui n'est pas un polygone n'est pas très malin...
+- tagger building:owner sur un polygone qui n'est pas un bâtiment n'est pas très malin...
 
 
 
