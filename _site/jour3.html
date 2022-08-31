@@ -489,6 +489,16 @@ nombre d’étages, l’année de construction (le nom de la résidence
 sources.</p>
 <p>Essayons de partir uniquement du RPLS modifié. Nous rajouterons le
 tag <em>source=rpls2019</em></p>
+<p>Enfin, nous introduisons la clé <em>dwellings</em> qui correspond au
+nombre d’appartements (colonne appartements)</p>
+<p>Donc :</p>
+<ul>
+<li><p>name</p></li>
+<li><p>building:levels</p></li>
+<li><p>start:date (colonne construction)</p></li>
+<li><p>dwellings (appartements)</p></li>
+<li><p>source = rps2019</p></li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>rpls <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/logement.gpkg&quot;</span>, <span class="st">&quot;RPLS&quot;</span>)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Pour une adresse, on aura un point</span></span>
@@ -507,7 +517,10 @@ l’année de construction.</p>
 class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Nouvelle méthode à
 partir du RPLS simplifié</h2>
-<p>Quelles sont vos propositions ?</p>
+<p>On ouvre Qgis, on filtre sur son nom dans la couche
+“pointsDansZone”</p>
+<p>On utilise l’outil pour identifier</p>
+<p>On repère le bâtiment dans JOSM et on met les 5 tags.</p>
 </div>
 <div id="résultat-de-la-saisie" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Résultat de la

@@ -59,6 +59,20 @@ Nous avons également remarqué qu'il y avait incohérence entre les 2 sources.
 Essayons de partir uniquement du RPLS modifié.
 Nous rajouterons le tag *source=rpls2019*
 
+Enfin, nous introduisons la clé *dwellings* qui correspond au nombre d'appartements (colonne appartements)
+
+Donc :
+
+- name
+
+- building:levels
+
+- start:date (colonne construction)
+
+- dwellings (appartements)
+
+- source = rps2019
+
 ```{r, eval=FALSE}
 library(sf)
 rpls <- st_read("data/logement.gpkg", "RPLS")
@@ -82,7 +96,11 @@ st_write (jointure,"data/divers.gpkg","rplsSimplifie",delete_layer=T)
 
 ## Nouvelle méthode à partir du RPLS simplifié
 
-Quelles sont vos propositions ? 
+On ouvre Qgis, on filtre sur son nom dans la couche "pointsDansZone"
+
+On utilise l'outil pour identifier
+
+On repère le bâtiment dans JOSM et on met les 5 tags.
 
 
 ## Résultat de la saisie
