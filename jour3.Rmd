@@ -26,7 +26,7 @@ outils qgis d'atlas et de rapport (cartographie par secteur et par bailleurs.)
 
 Quels tags allons nous utiliser ?
 
-## CARTE 3 : carte par bailleurs
+## CARTE 3 : carte pour la 3e saisie
 
 - style catégorisé, reste-t-il beaucoup à saisir ?
 
