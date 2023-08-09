@@ -19,7 +19,6 @@ knitr::opts_chunk$set(echo = TRUE)
 Il s'agit d'essayer de faire une saisie exhaustive puis de l'exploiter avec les
 outils qgis d'atlas et de rapport (cartographie par secteur et par bailleurs.)
 
-Les expressions permettent d'automatiser les titres etc...
 
 # Vérifions la saisie du jour 2
 
@@ -27,9 +26,9 @@ Les expressions permettent d'automatiser les titres etc...
 
 Quels tags allons nous utiliser ?
 
-## CARTE 3 : carte par bailleurs
+## CARTE 3 : carte pour la 3e saisie
 
-- style catégorisé, reste-t-il beaucoup à saisir... on le fera tout à l'heure...
+- style catégorisé, reste-t-il beaucoup à saisir ?
 
 - comparer également avec le tableau pour voir si la saisie annoncée correspond à la 
 saisie récupérée.
@@ -51,7 +50,7 @@ extraction d'OSM : https://osmbuildings.org/
 
 Il s'agit avant tout de changer de méthode.
 
-Au final seule 2 informations nous intéressent dans le RPLS, le nombre d'étages (le nom de la résidence éventuellement).
+Au final, seules 3 informations nous intéressent dans le RPLS, le nombre d'étages, l'année de construction (le nom de la résidence éventuellement).
 
 Nous allons donc simplifier le fichier RPLS.
 
@@ -60,30 +59,48 @@ Nous avons également remarqué qu'il y avait incohérence entre les 2 sources.
 Essayons de partir uniquement du RPLS modifié.
 Nous rajouterons le tag *source=rpls2019*
 
+Enfin, nous introduisons la clé *dwellings* qui correspond au nombre d'appartements (colonne appartements)
+
+Donc :
+
+- name
+
+- building:levels
+
+- start:date (colonne construction)
+
+- dwellings (appartements)
+
+- source = rps2019
+
 ```{r, eval=FALSE}
 library(sf)
 rpls <- st_read("data/logement.gpkg", "RPLS")
 # Pour une adresse, on aura un point
 rplsSimplifie <- aggregate(rpls [,c("NUMAPPT")], by = list(rpls$NUMVOIE, rpls$NOMVOIE, rpls$COMPLGEO), length)
-names(rplsSimplifie) [1:4] <- c("num", "voie", "appartements", "residence")
-
+# renommer les colonnes
+names(rplsSimplifie) [1:4] <- c("num", "voie", "residence", "appartements")
 ```
 
-On peut également extraire l'étage maximum pour chaque immeuble.
+On peut également extraire l'étage maximum pour chaque immeuble, et l'année de construction.
 
 
 ```{r, eval=FALSE}
-nbEtage <- aggregate(rpls$ETAGE, by = list (rpls$NUMVOIE, rpls$NOMVOIE), max)
-names(nbEtage) <- c("num", "voie", "etage")
+nbEtage <- aggregate(rpls$ETAGE, by = list (rpls$NUMVOIE, rpls$NOMVOIE, rpls$CONSTRUCT), max)
+names(nbEtage) <- c("num", "voie", "construction", "etage")
 # jointure avec le 1er fichier
 jointure <- merge(rplsSimplifie, nbEtage, by = c("num", "voie"), all.x = T)
 st_write (jointure,"data/divers.gpkg","rplsSimplifie",delete_layer=T)
 ```
 
 
-## Nouvelle méthode à partir du RPLS
+## Nouvelle méthode à partir du RPLS simplifié
 
-Quelles sont vos propositions ? 
+On ouvre Qgis, on filtre sur son nom dans la couche "pointsDansZone"
+
+On utilise l'outil pour identifier
+
+On repère le bâtiment dans JOSM et on met les 5 tags.
 
 
 ## Résultat de la saisie

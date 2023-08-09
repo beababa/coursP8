@@ -14,8 +14,8 @@
 
 <title>Une saisie exhaustive ?</title>
 
-<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
-<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -45,7 +45,6 @@
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
     </style>
-
 
 
 <style type="text/css">
@@ -170,9 +169,6 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
-}
-details > summary > p:only-child {
-  display: inline;
 }
 pre code {
   padding: 0;
@@ -398,7 +394,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -448,7 +444,6 @@ div.tocify {
 <p>Il s’agit d’essayer de faire une saisie exhaustive puis de
 l’exploiter avec les outils qgis d’atlas et de rapport (cartographie par
 secteur et par bailleurs.)</p>
-<p>Les expressions permettent d’automatiser les titres etc…</p>
 </div>
 <div id="vérifions-la-saisie-du-jour-2" class="section level1"
 number="2">
@@ -460,13 +455,12 @@ number="2.1">
 overpass turbo</h2>
 <p>Quels tags allons nous utiliser ?</p>
 </div>
-<div id="carte-3-carte-par-bailleurs" class="section level2"
+<div id="carte-3-carte-pour-la-3e-saisie" class="section level2"
 number="2.2">
-<h2><span class="header-section-number">2.2</span> CARTE 3 : carte par
-bailleurs</h2>
+<h2><span class="header-section-number">2.2</span> CARTE 3 : carte pour
+la 3e saisie</h2>
 <ul>
-<li><p>style catégorisé, reste-t-il beaucoup à saisir… on le fera tout à
-l’heure…</p></li>
+<li><p>style catégorisé, reste-t-il beaucoup à saisir ?</p></li>
 <li><p>comparer également avec le tableau pour voir si la saisie
 annoncée correspond à la saisie récupérée.</p></li>
 </ul>
@@ -487,41 +481,46 @@ class="uri">https://osmbuildings.org/</a></p>
 <h2><span class="header-section-number">3.1</span> Simplifier le
 RPLS</h2>
 <p>Il s’agit avant tout de changer de méthode.</p>
-<p>Au final seule 2 informations nous intéressent dans le RPLS, le
-nombre d’étages (le nom de la résidence éventuellement).</p>
+<p>Au final, seules 3 informations nous intéressent dans le RPLS, le
+nombre d’étages, l’année de construction (le nom de la résidence
+éventuellement).</p>
 <p>Nous allons donc simplifier le fichier RPLS.</p>
 <p>Nous avons également remarqué qu’il y avait incohérence entre les 2
 sources.</p>
 <p>Essayons de partir uniquement du RPLS modifié. Nous rajouterons le
 tag <em>source=rpls2019</em></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code></pre></div>
-<pre><code>## Linking to GEOS 3.9.1, GDAL 3.3.2, PROJ 7.2.1; sf_use_s2() is TRUE</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>rpls <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/logement.gpkg&quot;</span>, <span class="st">&quot;RPLS&quot;</span>)</span></code></pre></div>
-<pre><code>## Reading layer `RPLS&#39; from data source 
-##   `C:\Users\tachasa\coursP8\data\logement.gpkg&#39; using driver `GPKG&#39;
-## Simple feature collection with 9390 features and 72 fields
-## Geometry type: POINT
-## Dimension:     XY
-## Bounding box:  xmin: 661284.6 ymin: 6865691 xmax: 663295 ymax: 6868803
-## Projected CRS: RGF93 / Lambert-93</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pour une adresse, on aura un point</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>rplsSimplifie <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(rpls [,<span class="fu">c</span>(<span class="st">&quot;NUMAPPT&quot;</span>)], <span class="at">by =</span> <span class="fu">list</span>(rpls<span class="sc">$</span>NUMVOIE, rpls<span class="sc">$</span>NOMVOIE, rpls<span class="sc">$</span>COMPLGEO), length)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(rplsSimplifie) [<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;num&quot;</span>, <span class="st">&quot;voie&quot;</span>, <span class="st">&quot;appartements&quot;</span>, <span class="st">&quot;residence&quot;</span>)</span></code></pre></div>
-<p>On peut également extraire l’étage maximum pour chaque immeuble.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>nbEtage <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(rpls<span class="sc">$</span>ETAGE, <span class="at">by =</span> <span class="fu">list</span> (rpls<span class="sc">$</span>NUMVOIE, rpls<span class="sc">$</span>NOMVOIE), max)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(nbEtage) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;num&quot;</span>, <span class="st">&quot;voie&quot;</span>, <span class="st">&quot;etage&quot;</span>)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># jointure avec le 1er fichier</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>jointure <span class="ot">&lt;-</span> <span class="fu">merge</span>(rplsSimplifie, nbEtage, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;num&quot;</span>, <span class="st">&quot;voie&quot;</span>), <span class="at">all.x =</span> T)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">st_write</span> (jointure,<span class="st">&quot;data/divers.gpkg&quot;</span>,<span class="st">&quot;rplsSimplifie&quot;</span>,<span class="at">delete_layer=</span>T)</span></code></pre></div>
-<pre><code>## Deleting layer `rplsSimplifie&#39; using driver `GPKG&#39;
-## Writing layer `rplsSimplifie&#39; to data source `data/divers.gpkg&#39; using driver `GPKG&#39;
-## Writing 694 features with 5 fields and geometry type Point.</code></pre>
+<p>Enfin, nous introduisons la clé <em>dwellings</em> qui correspond au
+nombre d’appartements (colonne appartements)</p>
+<p>Donc :</p>
+<ul>
+<li><p>name</p></li>
+<li><p>building:levels</p></li>
+<li><p>start:date (colonne construction)</p></li>
+<li><p>dwellings (appartements)</p></li>
+<li><p>source = rps2019</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>rpls <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/logement.gpkg&quot;</span>, <span class="st">&quot;RPLS&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Pour une adresse, on aura un point</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>rplsSimplifie <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(rpls [,<span class="fu">c</span>(<span class="st">&quot;NUMAPPT&quot;</span>)], <span class="at">by =</span> <span class="fu">list</span>(rpls<span class="sc">$</span>NUMVOIE, rpls<span class="sc">$</span>NOMVOIE, rpls<span class="sc">$</span>COMPLGEO), length)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># renommer les colonnes</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(rplsSimplifie) [<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>] <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;num&quot;</span>, <span class="st">&quot;voie&quot;</span>, <span class="st">&quot;residence&quot;</span>, <span class="st">&quot;appartements&quot;</span>)</span></code></pre></div>
+<p>On peut également extraire l’étage maximum pour chaque immeuble, et
+l’année de construction.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>nbEtage <span class="ot">&lt;-</span> <span class="fu">aggregate</span>(rpls<span class="sc">$</span>ETAGE, <span class="at">by =</span> <span class="fu">list</span> (rpls<span class="sc">$</span>NUMVOIE, rpls<span class="sc">$</span>NOMVOIE, rpls<span class="sc">$</span>CONSTRUCT), max)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(nbEtage) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;num&quot;</span>, <span class="st">&quot;voie&quot;</span>, <span class="st">&quot;construction&quot;</span>, <span class="st">&quot;etage&quot;</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># jointure avec le 1er fichier</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>jointure <span class="ot">&lt;-</span> <span class="fu">merge</span>(rplsSimplifie, nbEtage, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;num&quot;</span>, <span class="st">&quot;voie&quot;</span>), <span class="at">all.x =</span> T)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">st_write</span> (jointure,<span class="st">&quot;data/divers.gpkg&quot;</span>,<span class="st">&quot;rplsSimplifie&quot;</span>,<span class="at">delete_layer=</span>T)</span></code></pre></div>
 </div>
-<div id="nouvelle-méthode-à-partir-du-rpls" class="section level2"
-number="3.2">
+<div id="nouvelle-méthode-à-partir-du-rpls-simplifié"
+class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Nouvelle méthode à
-partir du RPLS</h2>
-<p>Quelles sont vos propositions ?</p>
+partir du RPLS simplifié</h2>
+<p>On ouvre Qgis, on filtre sur son nom dans la couche
+“pointsDansZone”</p>
+<p>On utilise l’outil pour identifier</p>
+<p>On repère le bâtiment dans JOSM et on met les 5 tags.</p>
 </div>
 <div id="résultat-de-la-saisie" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Résultat de la
