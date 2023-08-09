@@ -1,0 +1,146 @@
+---
+title: "Utilisation mapvotr pour Bondy"
+author: "BMaranget"
+date: "2/08/2023"
+output: 
+  html_document: 
+    number_sections: yes
+    toc: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+# Objectif
+
+Utiliser le package pour Bondy
+
+```{r}
+library(mapvotr)
+library(sqldf)
+data <- read.csv("data/table-adresses-reu.csv", nrows = -10)
+str(data)
+data <- read.csv.sql("data/table-adresses-reu.csv", sql = "select * from file where code_commune_ref = '93140' ")
+```
+
+
+```{r}
+st_layers(../data/vote.gpkg)
+bv <- st_read
+```
+
+
+
+![](img/exemple.png)
+
+*extraction de la carte du patrimoine de Bondy Habitat 1er septembre 2019*
+
+
+
+
+## Remarques diverses
+
+- Etalab / data.gouv.fr
+
+- Pourquoi utiliser OSM ?
+
+
+
+
+
+# Méthode et déroulé
+
+Il s'agit de mettre en place un *cercle vertueux* dans l'utilisation d'OSM : extraire, contribuer, vérifier sa saisie en extrayant de nouveau et contribuer pour l'améliorer.
+
+JOUR 1 : extraction - saisie - contrôle données existantes et ajout des bureaux de vote
+
+JOUR 2 : vérification des contours locaux
+
+JOUR 3 : cartos variées
+
+Comme l'objectif est d'utiliser des sources internes, OSM et de l'opendata
+
+Pour chaque séquence, plusieurs cartes et un quizz. pas d'évaluation officielle.
+Les cartes sont à mettre dans le répertoire réseau "cartes" dans le répertoire indiqué
+Le support sert uniquement de "fil rouge" et permet des calculs plus rapides qu'avec Qgis.
+Les procédures employées sont à rechercher sur internet.
+
+
+Essai : "Qgis compter les points dans un polygone"
+Quel est le menu qui permet de le faire ?
+
+
+
+```{r}
+# stats temps / séquence
+temps <- read.csv("data/tps.csv")
+sum(temps$tps, na.rm=TRUE)
+```
+
+# Présentation en binôme
+
+passé / présent / futur
+fichier framapad, celui qui parle, celui qui écrit
+https://lite.framacalc.org/9ilj-coursp8
+
+Ce fichier va permettre de s'attribuer les zones de saisie et toutes les opérations
+collaboratives du cours.
+
+```{r}
+data <- read.csv2("data/etudiant.csv", fileEncoding = "UTF-8")
+table(data$passé)
+par(mar = c(8,2,2,2))
+barplot(table(data$passé), las = 2)
+barplot(table(data$présent), las = 2)
+barplot(table(data$futur), las = 2)
+```
+
+
+# Pratique
+
+prénom et répertoires de cartes
+copie du répertoire réseau
+quelle diffusion ?
+
+
+# Quizz
+
+Introduction
+https://forms.gle/ShMFrVz1s447ubcPA
+
+séquence 1
+https://forms.gle/sDSz2LXPVKd99c8v7
+
+séquence 2
+https://forms.gle/m6no4Vt9hxDhGKgp6
+
+séquence 3
+https://forms.gle/GDZWbSydMtmMZAJi9
+
+Quizz final
+https://forms.gle/R5W9DooDPMmRn3kF6
+
+# Bonus sur l'opendata
+
+
+## Repères chronologiques
+
+Question : De quand date le principe de libre communication de la matrice cadastrale ?
+
+* loi du 7 messidor an II
+* Décret n° 2012-59 du 18 janvier 2012 relatif à la délivrance au public de certaines informations cadastrales qui modifie le livre des procédures fiscales
+*	loi du 17 juillet 1978 (dont l’article 6 (protège les secrets de la vie privée)
+
+
+## Faire une demande de nom de propriétaire sur france cadastre
+
+
+## En guise de conclusion
+
+Voir les commentaires
+
+https://pasq.fr/fichier-des-proprietes-des-personnes-morales

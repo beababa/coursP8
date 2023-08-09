@@ -1,7 +1,7 @@
 ---
 title: "Introduction"
 author: "BMaranget"
-date: "2/08/2022"
+date: "2/08/2023"
 output: 
   html_document: 
     number_sections: yes
@@ -17,10 +17,20 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Objectif
 
-## Une carte des bailleurs sociaux
+## Des cartes électorales à la maille du bureau
 
-Faire une carte des bailleurs sociaux de la ville de Bondy avec des sources opendata
-et en utilisant Qgis et OSM.
+Fin juin ont été publié en opendata bueaux de vote et adresse des électeurs (REU), Etalab et data.gouv.fr ont travaillé sur la génération des contours des bureaux de vote.
+
+L'objectif est de vérifier au niveau local le travail d'Etalab puis de croiser contours et sociologie.
+
+```{r}
+devtools::install_github("InseeFrLab/mapvotr")
+library(mapvotr)
+```
+
+
+https://inseefrlab.github.io/mapvotr/articles/mapvotr.html
+
 
 ![](img/exemple.png)
 
@@ -31,7 +41,7 @@ et en utilisant Qgis et OSM.
 
 ## Remarques diverses
 
-- Observations sur la donnée à avoir pour obtenir une telle carte
+- Etalab / data.gouv.fr
 
 - Pourquoi utiliser OSM ?
 
@@ -43,16 +53,14 @@ et en utilisant Qgis et OSM.
 
 Il s'agit de mettre en place un *cercle vertueux* dans l'utilisation d'OSM : extraire, contribuer, vérifier sa saisie en extrayant de nouveau et contribuer pour l'améliorer.
 
-JOUR 1 : extraction - saisie - contrôle données existantes et ajout d'une résidence en test
+JOUR 1 : extraction - saisie - contrôle données existantes et ajout des bureaux de vote
 
-JOUR 2 : la même chose sur des données ajoutées (nombre d'étages etc, plusieurs résidences)
+JOUR 2 : vérification des contours locaux
 
-JOUR 3 : saisie exhaustive sur les résidences
+JOUR 3 : cartos variées
 
-Comme l'objectif est d'utiliser OSM, tous les traitements des données sont faits sous R afin
-de gagner du temps.
-Ils permettent de montrer ce qu'on fait à la donnée mais sans entrer dans l'écriture du code.
-... cours R à venir...
+Comme l'objectif est d'utiliser des sources internes, OSM et de l'opendata
+
 Pour chaque séquence, plusieurs cartes et un quizz. pas d'évaluation officielle.
 Les cartes sont à mettre dans le répertoire réseau "cartes" dans le répertoire indiqué
 Le support sert uniquement de "fil rouge" et permet des calculs plus rapides qu'avec Qgis.
