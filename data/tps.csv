@@ -1,29 +1,26 @@
-op,tps détail
-se présenter,60
-définir objectif cours,60
-faire une 1e saisie OSM,30
-1e saisie,
-bases osm,30
-extractions overpass,60
-prép saisie : personnes morales,15
-CARTE 2 bailleurs propriétaaires,60
-prep saisie : distribuer,15
-utiliser josm,60
-controles de saisie,30
-Saisie 1,60
-outils de contrôle,60
-2e saisie,
-définir les tags,30
-zones d’inventaire et nom des résidences,15
-définir opendata RPLS,30
-CARTE3 inventaire et RPLS,60
-Saisir 1 résidence,60
-contrôle : extraction,30
-CARTE 4 carte par bailleurs,30
-"CARTE 5 carte en 2,5 sur secteur",30
-3e saisie : une saisie exhaustive ?,
-récupérer la données,60
-3e saisie : une saisie exhaustive ?,60
-faire un atlas par zone,60
-faire un atlas par catégorie,60
-quizz finale,10
+"op","tps"
+"se présenter",60
+"définir objectif cours",60
+"faire une 1e saisie OSM",30
+"évaluer",10
+"bases osm",30
+"extractions overpass et carte 1",60
+"prép saisie : bureaux de vote manquants",15
+"trouver les tags",10
+"CARTE 2 superposition bv OSM et bv bondy et secteurs bureau",60
+"prep saisie : distribuer",15
+"Saisie 1",60
+"outils de contrôle",60
+"utiliser josm",60
+"controles de saisie dans josm",30
+"définir les tags",60
+"CARTE 3",60
+"repérer sa zone de logement social et éventuellement les pts RPLS non saisis dans OSM",30
+"saisir",60
+"contrôle : extraction et CARTE 4",60
+"quizz",10
+"récupérer la données",60
+"faire jointure",60
+"carto tx abstention / logements sociaux",60
+"carto vote LE PEN / logements sociaux",60
+"quizz finale",10

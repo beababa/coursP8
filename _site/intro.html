@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="BMaranget" />
+
+
+<title>Introduction</title>
+
+<script src="site_libs/header-attrs-2.23/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="intro.html">Introduction</a>
+</li>
+<li>
+  <a href="jour1.html">saisie 1</a>
+</li>
+<li>
+  <a href="jour2.html">saisie 2</a>
+</li>
+<li>
+  <a href="jour3.html">saisie 3</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/beababa/coursP8">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Introduction</h1>
+<h4 class="author">BMaranget</h4>
+<h4 class="date">2/08/2023</h4>
+
+</div>
+
+
+<div id="objectif" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Objectif</h1>
+<div id="des-cartes-électorales-à-la-maille-du-bureau"
+class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Des cartes
+électorales à la maille du bureau</h2>
+<p>Fin juin ont été publiés en opendata bureaux de vote et adresse des
+électeurs (REU), Etalab et data.gouv.fr ont travaillé sur la génération
+des contours des bureaux de vote.</p>
+<p><img src="img/opendataREU.png" /></p>
+<p>L’objectif est de vérifier au niveau local le travail d’Etalab puis
+de croiser résultat des votes et habitat social permettant ainsi une
+approche fine du territoire avec la <em>variable lourde</em> que
+représente l’habitat social.</p>
+</div>
+<div id="et-osm-dans-tout-celà" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Et OSM dans tout celà
+?</h2>
+<p>Dans OSM, on va améliorer voire mettre en place pour la ville de
+Bondy :</p>
+<ul>
+<li>les bureaux de vote</li>
+<li>les secteurs de ces bureaux</li>
+<li>les ensembles sociaux (objets du cours de 2022)</li>
+</ul>
+<p><img src="img/exemple.png" width="300" /> <em>extraction de la carte
+du patrimoine de Bondy Habitat 2019</em></p>
+<p><img src="img/bailleurSocialOSM.png" width="300"
+alt="résultat saisie 2023" /> <em>résultat saisie OSM 2022</em></p>
+</div>
+<div id="remarques-diverses" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Remarques
+diverses</h2>
+<ul>
+<li><p>Etalab / data.gouv.fr</p></li>
+<li><p>Pourquoi utiliser OSM ?</p></li>
+</ul>
+</div>
+</div>
+<div id="méthode-et-déroulé" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Méthode et déroulé</h1>
+<div id="le-cercle-vertueux" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Le cercle
+vertueux</h2>
+<p>Il s’agit de mettre en place un <em>cercle vertueux</em> dans
+l’utilisation d’OSM : extraire, contribuer, vérifier sa saisie en
+extrayant de nouveau et contribuer pour l’améliorer.</p>
+<p>JOUR 1 : extraction - saisie - contrôle données existantes et ajout
+des bureaux de vote manquants dans OSM</p>
+<p>JOUR 2 : vérification des contours des bureaux, insertion dans OSM,
+modification des ensembles sociaux éventuellement</p>
+<p>JOUR 3 : évaluation de la saisie, puis améliorations et enfin
+cartographies variées permettant d’éventuelles nouvelles
+modifications</p>
+</div>
+<div id="evaluation" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Evaluation</h2>
+<p>Pour chaque séquence, plusieurs cartes et un quizz. pas d’évaluation
+officielle.</p>
+<p>Mais une évaluation collective, de type, combien d’éléments rajoutés
+dans OSM et un essai de mesure de leur qualité.</p>
+<p>Eviter absolument le retour de bâton OSM, notamment pour l’année
+dernière :</p>
+<p><a
+href="https://forum.openstreetmap.fr/t/landuse-residential-supprime-a-bondy-et-pavillon-sous-bois/9562/9"
+class="uri">https://forum.openstreetmap.fr/t/landuse-residential-supprime-a-bondy-et-pavillon-sous-bois/9562/9</a></p>
+<p><img src="img/tagContrib.png" /></p>
+<p>donc impérativement mettre dans le commentaire de changeset :
+#Paris8-Bondy2023 et examiner les contributions dans le détail le matin
+du 3e jour.</p>
+</div>
+<div id="le-collaboratif" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Le collaboratif</h2>
+<p>Un mot au sujet du collectif, ce cours est aussi l’occasion de tester
+une organisation de travail en groupe (c’est la raison d’être d’OSM)
+donc autant de groupe que de secteurs de bureaux (31)</p>
+</div>
+<div id="précisions-techniques" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Précisions
+techniques</h2>
+<div id="répertoire-réseau" class="section level3" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Répertoire
+réseau</h3>
+<p>Les cartes sont à mettre dans le répertoire réseau “cartes” dans le
+répertoire indiqué</p>
+</div>
+<div id="support-et-procédures" class="section level3" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Support et
+procédures</h3>
+<p>Le support, fait sous R, sert uniquement de “fil rouge”.</p>
+<p>Les procédures employées sous QGIS sont à rechercher sur
+internet.</p>
+<p>Essai : “Qgis compter les points dans un polygone” Quel est le menu
+qui permet de le faire ?</p>
+</div>
+</div>
+<div id="déroulé" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Déroulé</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># stats temps / séquence</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>temps <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/tps.csv&quot;</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">sum</span>(temps<span class="sc">$</span>tps, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 1090</code></pre>
+<p>10 mn de trop et sans compter les pauses… 15 mn toutes les 1 H 30</p>
+<p>Voir également heures de repas et 1er jour</p>
+</div>
+</div>
+<div id="présentation-en-binôme" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Présentation en
+binôme</h1>
+<p>passé / présent / futur / attentes par rapport OSM / niveau QGIS
+fichier framapad, celui qui parle, celui qui écrit <a
+href="https://lite.framacalc.org/9ilj-coursp8"
+class="uri">https://lite.framacalc.org/9ilj-coursp8</a></p>
+<p>Ce fichier va permettre de s’attribuer les zones de saisie et toutes
+les opérations collaboratives du cours.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;data/etudiant.csv&quot;</span>, <span class="at">fileEncoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>passé)</span></code></pre></div>
+<pre><code>## 
+##   aménagement environnement    géographie    géomatique  informatique 
+##             3             1             7             5             1 
+## télédétection 
+##             1</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>))</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(data<span class="sc">$</span>passé), <span class="at">las =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="intro_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(data<span class="sc">$</span>présent), <span class="at">las =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="intro_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(data<span class="sc">$</span>futur), <span class="at">las =</span> <span class="dv">2</span>)</span></code></pre></div>
+<p><img src="intro_files/figure-html/unnamed-chunk-2-3.png" width="672" /></p>
+</div>
+<div id="pratique" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Pratique</h1>
+<p>prénom et répertoires de cartes copie du répertoire réseau quelle
+diffusion ?</p>
+</div>
+<div id="quizz" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Quizz</h1>
+<p>Introduction <a
+href="https://framaforms.org/paris8-bondy2023-introduction-1693048391"
+class="uri">https://framaforms.org/paris8-bondy2023-introduction-1693048391</a></p>
+<p>séquence 1 <a
+href="https://framaforms.org/paris8-bondy2023-basiques-osm-1693075060"
+class="uri">https://framaforms.org/paris8-bondy2023-basiques-osm-1693075060</a></p>
+<p>séquence 2 <a
+href="https://framaforms.org/paris8-bondy2023-premiere-saisie-1693156617"
+class="uri">https://framaforms.org/paris8-bondy2023-premiere-saisie-1693156617</a></p>
+<p>séquence 3 pas de quizz, car surtout des cartos.</p>
+<p>Evaluation de satisfaction <a
+href="https://forms.gle/R5W9DooDPMmRn3kF6"
+class="uri">https://forms.gle/R5W9DooDPMmRn3kF6</a></p>
+</div>
+<div id="sitographie" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Sitographie</h1>
+<div id="reu-et-applicatif" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> REU et
+applicatif</h2>
+<p>La librairie R de l’INSEE</p>
+<p><a href="https://inseefrlab.github.io/mapvotr/index.html"
+class="uri">https://inseefrlab.github.io/mapvotr/index.html</a></p>
+<p><a
+href="https://blog.insee.fr/a-vote-a-chaque-bureau-de-vote-ses-electeurs/"
+class="uri">https://blog.insee.fr/a-vote-a-chaque-bureau-de-vote-ses-electeurs/</a></p>
+</div>
+<div id="analyse-électorale" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Analyse
+électorale</h2>
+<p>pour la notion de <em>variable lourde</em></p>
+<p><a
+href="https://metropolitiques.eu/Elections-nationales-2022-pour-une-analyse-localisee-du-vote-et-de-ses-enjeux.html"
+class="uri">https://metropolitiques.eu/Elections-nationales-2022-pour-une-analyse-localisee-du-vote-et-de-ses-enjeux.html</a></p>
+<p>sur l’historique des données, un article de 2012</p>
+<p><a href="http://cartelec.univ-rouen.fr/?p=408"
+class="uri">http://cartelec.univ-rouen.fr/?p=408</a></p>
+</div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<small><p>cours Paris8-Bondy2023 - bureaux de vote </p></small>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

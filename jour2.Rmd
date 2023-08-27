@@ -1,7 +1,7 @@
 ---
 title: "2e saisie OSM : tester"
 author: "BMaranget"
-date: "16/08/2021"
+date: "16/08/2023"
 output: 
   html_document: 
     number_sections: yes
@@ -20,7 +20,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Objectif
 
-Saisir plus d'une résidence avec plusieurs attributs, faire évoluer la méthode de saisie.
+Après les bureaux de vote validés, la saisie va se faire sur les secteurs et les résidences sociales.
 
 On utilise désormais l'éditeur JOSM
 
@@ -37,23 +37,42 @@ Utiliser l'identification simple
 
 - contrôle à distance
 
+## Choix de la zone
 
+Trouver les boutons :
 
+![](img/AR.png)
+
+Essayer de télécharger toute la zone de Bondy, que se passe-t-il ?
+
+Partir sur sa zone.
 
 ## Basiques
 
 * interface (panneaux)
 https://wikis.cdrflorac.fr/wikis/CartoEICC/files/TutoJOSM_josm_ui_20170116151152_20170116143347.jpg
 
+repérer notamment les différents calques et créer un calque vierge pour faire quelques exercices.
 
-## 2 petits exercices JOSM
 
-- exercice 1 : sur un calque vierge, utiliser mode s (sélectionner), a (ajouter), et w (modifier)
+* affichage imagerie aérienne
+
+* filtre
+
+On annule les tracés des bâtiments, c'est pratique pour tracer d'autres zones sans en effacer.
+
+![](img/filtre.png)
+
+## 3 petits exercices JOSM
+
+- exercice 1 : utiliser mode s (sélectionner), a (ajouter), et w (modifier)
 
 - exercice 2 : osmecum *intégrer le bati*
 
-Essayer par exemple de fusionner deux points, un point et une ligne... en suivant les indications de la fiche
+Essayer par exemple de faire un polygone, d'intégrer un nouveau point afin de pouvoir étirer le polygone.
 
+
+- exercice 3 : sur le calque OSM, rechercher tous les names, tous les dwellings:owner de sa zone, essayer de repérer dans le tableau des résidences ceux qui sont présents.
 
 ## Contrôle de la saisie
 
@@ -63,158 +82,214 @@ exercice : sans avoir fait de changement sur une zone, activer le validateur et 
 
 On s'aperçoit que souvent le validateur est trop rigoureux.
 
+## Commentaire du changeset
+
+Ne pas oublier
+
+![](img/changeset.png)
+
 # Préparation
 
 
 ## Définir les tags
 
-utiliser l'osmecum building
+Il s'agit d'utiliser un type particulier de primitive OSM : la relation.
 
-https://wiki.openstreetmap.org/wiki/France/Osmecum
+![](img/relationPrincipe.png)
 
-que mettre pour le bailleurs social ?
+Celle-ci est de type politique (=political)
 
-## Se partager les zones
+Quelques questions :
 
-2 type de sources : internes et opendata
+- Que donne une recherche dans overpass : boundary=political ?
 
-- La première va permettre de définir le zonage et de servir de base de saisie
+- Dans le wiki, https://wiki.openstreetmap.org/wiki/France/Limites_administratives/Tracer_les_limites_administratives
 
-- La deuxième va amener la définition des tags à utiliser
+- Combien de fois la valeur *political* est utilisée avec la clé *boundary* (dans taginfo) ?
+
+- au niveau du forum openstreetmap.fr, quelles sont les interventions autour des bureaux de vote ?
+
+## CARTE 3 : zoom sur son secteur
+
+Vérifier les limites de son secteur avec un zoom dessus dans QGIS
+
+Dans Qgis, créer une carte pour sa zone avec les couches suivantes :
+
+![](img/coucheQGIS.png)
+
+Savoirs faire QGIS :
+
+- outil groupe de couches
+
+- algorithme du peintre
+
+- ordonner ses couches en thématiques
+
+- la Couche regroupée est la parcelle cadastrale contenant le bâtiment OSM.
+
+Le résultat est le suivant pour le bureau 1 (hôtel de ville)
+
+![](img/monSecteur.png) ![](img/AbertThomas.png)
+
+Essayer de reproduire le même type de carte pour son secteur.
 
 
-#### Données internes : l'inventaire de 2013 
+## Données internes : l'inventaire de 2013 
 
-##### Les zones
+### Les zones
 
-La problématique : que cartographier ?
+Repérer pour son bureau, la zone de logement social concernée
 
-Rappel : la carte voulue est une carte des résidences, donc on va essayer de cerner ces résidences.
-
-Pour celà nous avons un outil interne à la commune : le répertoire du patrimoine HLM dont on va pouvoir reprendre la sectorisation.
+#### Les données
 
 ```{r}
 library(sf)
-zone <- st_read("data/logement.gpkg", "quartiersBailleurs")
-library(mapsf)
-mf_map(zone)
-mf_label(zone, "NOM_IRIS", halo = T, cex = 0.8, lines = T)
+st_layers("data/logement.gpkg")
+zone<- st_read("data/logement.gpkg", "quartier", quiet=T)
+rpls <- st_read("data/logement.gpkg", "RPLS", quiet = T)
 ```
 
+#### Cartographie
 
+```{r}
+library(mapsf)
+png("img/zoneInventaire.png")
+mf_map(zone)
+mf_map(rpls, add = T)
+mf_label(zone, "NOM_IRIS", halo = T, cex = 0.8, lines = T, overlap=F, pos = 3)
+mf_layout("Zones inventaire bailleurs 2013 et logements sociaux 2021", credits = "Mairie de Bondy, août 2023")
+dev.off()
+```
 
+![](img/zoneInventaire.png)
 
+#### Bureau d'exemple
 
-##### Le nom des résidences
+Pour le cas du bureau 1, on reconnait la zone * centre ville - gare*
+
+### Le nom des résidences
 
 
 ```{r}
 resid <- read.csv("data/bailleurInventaireCorrigeUTF8.csv", fileEncoding = "UTF-8")
+# début du fichier
 head(resid [resid$rue.si.différente.de.nom.résidence != "",])
+# filtre sur le secteur du bureau 1
+resid [resid$secteurs == "Secteur Centre Ville/Gare",]
 ```
  
 Il s'agit du début de fichier. La colonne "rue.si..." indique la rue concernée si elle est différente du nom de la cité. Généralement, les résidences portent le nom de la rue qui passe devant l'immeuble.
-Ce fichier va saisir de base de saisie. Il s'agit de chercher les résidences concernées sur la carte.
 
-#### RPLS données opendata
+Le nom de la résidence est bien Albert Thomas.
+
+On cherche à identifier également les autres points non saisis dans OSM en utilisant l'outil identifier de QGIS.
+
+![](img/ptRestant.png)
+Il s'agit ici du 84 et 88 avenue Carnot. Noter également la position de 15 et du 17 Albert Thomas qui appartiennent à l'ensemble.
+
+Le rpls donne l'année, le nom du bailleur et le nom de la résidence. Ces 3 informations sont également à saisir dans OSM.
+
+Retrouver les tags utilisés par les étudiants de l'année dernière soit sous overpass turbo, soit sous JOSM. Comment faire ?
 
 
+## Modfication des limites du secteur
 
-#####  Découverte du RPLS
 
-CARTE 2 : zonage inventaire et RPLS
+### Au niveau des résidences sociales
 
-##### Traitements appliqués au RPLS
+Dans Qgis, on va utiliser les outils dits de *numérisation* pour modifier son secteur en englobant les résidences sociales exclues des périmètres.
 
-pour le RPLS au département
+![](img/avtAT.png) ![](img/aprèsAT.png)
 
-Quels traitements faut-il appliquer au RPLS téléchargé ?
+### Au niveau des rues
 
-```{r, eval=FALSE}
-library(sf)
-library(mapsf)
-data <- read.csv2( "data/RPLS2019_detail_IDF_DEP_93.csv", encoding = "UTF-8")
-# 1er traitement
-data <- data [data$CODEPOSTAL == '93140',]
-# 2e traitement
-str(data [, c("longitude", "latitude")])
-data <- st_as_sf(data, coords =c("longitude", "latitude"), crs = 4326)
-# 3e traitement
-st_write(data,"data/logement.gpkg","RPLS4326", delete_layer = T)
+On pourrait également utiliser le listing des bureaux de vote (découpagePropre.csv) pour vérifier les tracés.
+
+
+![](img/filtreRepu.png)
+
+![](img/avant.png)![](img/après.png)
+
+Dans ce cas, on décide de modifier le contour Autocad en suivant celui de Makina.
+
+
+```{r}
+st_layers("data/vote.gpkg")
+monSecteur <- st_read("data/vote.gpkg", "monSecteur")
+autocad <- st_read("data/vote.gpkg", "bureauPolyZone")
+makina <- st_read("data/vote.gpkg", "bvMakina")
+png("img/bureau1.png")
+mf_map(monSecteur, border = "green")
+mf_map(autocad, border = "red",col = NA,add = T)
+mf_map(makina, border= "blue", col = NA,add = T)
+mf_layout("Modification secteur bureau 1", credits = "Mairie de Bondy, août 2023")
+dev.off()
 ```
 
-
-##### Savoir faire QGIS
-
-- charger 2 couches (RPLS et quartiersBailleurs dans le gpkg logement)
-
-- symbologie groupe de points pour le RPLS
-
-![](img/symbologiePoints.png)
-
-- symbologie pour catégorisé pour le quartier en bordure ligne simple
-
-![](img/bordurelgsimple.png)
-- tuile osm ou rues de la première carte
-
-- mise en page qgis
-
-##### Résultat
-
-![](img/carte2.png)
-
-
-##### Définition des tags
-
-
-D'après l'inventaire, les tags *name* et *building:owner* seront utilisés.
-D'après le RPLS, on décide d'utiliser également :
-
-- building_levels
-
-- start_date (année de construction)
-
-
+![](img/bureau1.png)
 
 # Saisissons !
 
-Nous avons 2 sources :
+Nous avons 2 types de modifications à faire :
 
-- La liste des résidences en .csv qui nous sert de base de saisie
+- Les résidences sociales manquantes
 
-- le contenu du RPLS qui nous permet de remplir les tags
+- le périmètre du bureau de vote à insérer
 
-Au bout de quelques saisies, la méthode suivante peut-être envisagée.
+## Les résidences sociales
 
+Dans le calque OSM, cliquer sur le bâtiment concerné et mettre name, start_date et dwellings:owner.
 
-## Méthode de saisie
+Dans le framapad, mettre son prénom au niveau de la résidence pour signaler que la saisie a été faite
 
-- Choisir une résidence dans le .csv
+Exemple pour la résidence Albert Thomas du secteur 1. En fait la clôture avait été saisie avec les bons tags sauf dwellings:owner.
 
-- Chercher sur la carte Qgis s'il y a des logements correspondant
+De plus, la clôture était incomplète n'englobant pas les numéros 15 et 17.
 
-
-- si oui, avec l'outil d'identification, chercher l'année de construction et le nombre d'étages (l'étage maximum).
-
-Il est intéressant de simplifier le fichier RPLS en supprimant des colonnes et en appliquant un filtre sur les résidences à saisir.
-
-Vérifier également que le nom de la résidence est le même, mais c'est le nom de l'inventaire qui prévaut.
-
-- dans JOSM, repérer l'immeuble ou la résidence concernée et mettre les tags.
-
-Attention, il peut être nécessaire si plusieurs immeubles sont concernés de tracer un polygone et de lui attribuer les tags sauf building:levels qui est propre à chaque immeuble.
+![](img/modif.png)
 
 
-- dans le framapad, mettre son prénom au niveau de la résidence pour signaler que la saisie a été faite
+## périmètre bureau de vote
 
-## Bilan de l'heure de saisie
+- importer le calque dans JOSM (format geojson et projection 4326)
 
-- Il est difficile de se repérer géographiquement.
+![](img/export.png)
 
+![](img/2calques.png)
 
-- Les sources RPLS et inventaire pourtant censée être solides ne coincident pas entre elles.
+- repérer les tracés (ways) déjà existants et rajouter les autres
 
-- tagger building:owner sur un polygone qui n'est pas un bâtiment n'est pas très malin...
+- sélectionner l'ensemble des tracés et tagger comme une relation
+
+Dans notre cas, bureau de vote numéro 1, comme c'est le premier, il n'y a pas de 
+polygone adjacent, donc la relation est utilisée uniquement pour associer le bureau de vote et le périmètre.
+
+On sélectionne le secteur, et on fusionne sur le calque d'OSM
 
 
 
+Le panneau relation est à afficher (Alt + Maj + R)
+
+Les tags sont :
+
+- boundary=political
+
+- political_division=bureau de vote
+
+- source=ville de Bondy
+
+- type=boundary
+
+![](img/relation.png)
+
+Ne pas oublier de donner le rôle : admin_centre et outer
+
+## Bilan de la saisie
+
+Temps de saisie, 15 mn puis cycles de 30 mn.
+
+A compléter sur retour des étudiants
+
+quantitatif : combien de saisies par étudiants
+
+qualitatif : quelles difficultés ?

@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="BMaranget" />
+
+
+<title>2e saisie OSM : tester</title>
+
+<script src="site_libs/header-attrs-2.23/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
+  }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #204a87; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #8f5902; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #204a87; font-weight: bold; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+
+
+
+
+<link rel="stylesheet" href="css/styles.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="intro.html">Introduction</a>
+</li>
+<li>
+  <a href="jour1.html">saisie 1</a>
+</li>
+<li>
+  <a href="jour2.html">saisie 2</a>
+</li>
+<li>
+  <a href="jour3.html">saisie 3</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="https://github.com/beababa/coursP8">
+    <span class="fa fa-github"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">2e saisie OSM : tester</h1>
+<h4 class="author">BMaranget</h4>
+<h4 class="date">16/08/2023</h4>
+
+</div>
+
+
+<div id="objectif" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Objectif</h1>
+<p>Après les bureaux de vote validés, la saisie va se faire sur les
+secteurs et les résidences sociales.</p>
+<p>On utilise désormais l’éditeur JOSM</p>
+</div>
+<div id="utiliser-josm" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Utiliser JOSM</h1>
+<div id="paramétrage-f12-pour-lien-remote" class="section level2"
+number="2.1">
+<h2><span class="header-section-number">2.1</span> Paramétrage F12 pour
+lien remote</h2>
+<ul>
+<li>serveur OSM</li>
+</ul>
+<p>Utiliser l’identification simple</p>
+<ul>
+<li>contrôle à distance</li>
+</ul>
+</div>
+<div id="choix-de-la-zone" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Choix de la zone</h2>
+<p>Trouver les boutons :</p>
+<p><img src="img/AR.png" /></p>
+<p>Essayer de télécharger toute la zone de Bondy, que se passe-t-il
+?</p>
+<p>Partir sur sa zone.</p>
+</div>
+<div id="basiques" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Basiques</h2>
+<ul>
+<li>interface (panneaux) <a
+href="https://wikis.cdrflorac.fr/wikis/CartoEICC/files/TutoJOSM_josm_ui_20170116151152_20170116143347.jpg"
+class="uri">https://wikis.cdrflorac.fr/wikis/CartoEICC/files/TutoJOSM_josm_ui_20170116151152_20170116143347.jpg</a></li>
+</ul>
+<p>repérer notamment les différents calques et créer un calque vierge
+pour faire quelques exercices.</p>
+<ul>
+<li><p>affichage imagerie aérienne</p></li>
+<li><p>filtre</p></li>
+</ul>
+<p>On annule les tracés des bâtiments, c’est pratique pour tracer
+d’autres zones sans en effacer.</p>
+<p><img src="img/filtre.png" /></p>
+</div>
+<div id="petits-exercices-josm" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> 3 petits exercices
+JOSM</h2>
+<ul>
+<li><p>exercice 1 : utiliser mode s (sélectionner), a (ajouter), et w
+(modifier)</p></li>
+<li><p>exercice 2 : osmecum <em>intégrer le bati</em></p></li>
+</ul>
+<p>Essayer par exemple de faire un polygone, d’intégrer un nouveau point
+afin de pouvoir étirer le polygone.</p>
+<ul>
+<li>exercice 3 : sur le calque OSM, rechercher tous les names, tous les
+dwellings:owner de sa zone, essayer de repérer dans le tableau des
+résidences ceux qui sont présents.</li>
+</ul>
+</div>
+<div id="contrôle-de-la-saisie" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Contrôle de la
+saisie</h2>
+<p>Le validateur permet de repérer les erreurs possibles</p>
+<p>exercice : sans avoir fait de changement sur une zone, activer le
+validateur et zoomer sur un objet posant problème.</p>
+<p>On s’aperçoit que souvent le validateur est trop rigoureux.</p>
+</div>
+<div id="commentaire-du-changeset" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Commentaire du
+changeset</h2>
+<p>Ne pas oublier</p>
+<p><img src="img/changeset.png" /></p>
+</div>
+</div>
+<div id="préparation" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> Préparation</h1>
+<div id="définir-les-tags" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Définir les tags</h2>
+<p>Il s’agit d’utiliser un type particulier de primitive OSM : la
+relation.</p>
+<p><img src="img/relationPrincipe.png" /></p>
+<p>Celle-ci est de type politique (=political)</p>
+<p>Quelques questions :</p>
+<ul>
+<li><p>Que donne une recherche dans overpass : boundary=political
+?</p></li>
+<li><p>Dans le wiki, <a
+href="https://wiki.openstreetmap.org/wiki/France/Limites_administratives/Tracer_les_limites_administratives"
+class="uri">https://wiki.openstreetmap.org/wiki/France/Limites_administratives/Tracer_les_limites_administratives</a></p></li>
+<li><p>Combien de fois la valeur <em>political</em> est utilisée avec la
+clé <em>boundary</em> (dans taginfo) ?</p></li>
+<li><p>au niveau du forum openstreetmap.fr, quelles sont les
+interventions autour des bureaux de vote ?</p></li>
+</ul>
+</div>
+<div id="carte-3-zoom-sur-son-secteur" class="section level2"
+number="3.2">
+<h2><span class="header-section-number">3.2</span> CARTE 3 : zoom sur
+son secteur</h2>
+<p>Vérifier les limites de son secteur avec un zoom dessus dans QGIS</p>
+<p>Dans Qgis, créer une carte pour sa zone avec les couches suivantes
+:</p>
+<p><img src="img/coucheQGIS.png" /></p>
+<p>Savoirs faire QGIS :</p>
+<ul>
+<li><p>outil groupe de couches</p></li>
+<li><p>algorithme du peintre</p></li>
+<li><p>ordonner ses couches en thématiques</p></li>
+<li><p>la Couche regroupée est la parcelle cadastrale contenant le
+bâtiment OSM.</p></li>
+</ul>
+<p>Le résultat est le suivant pour le bureau 1 (hôtel de ville)</p>
+<p><img src="img/monSecteur.png" /> <img
+src="img/AbertThomas.png" /></p>
+<p>Essayer de reproduire le même type de carte pour son secteur.</p>
+</div>
+<div id="données-internes-linventaire-de-2013" class="section level2"
+number="3.3">
+<h2><span class="header-section-number">3.3</span> Données internes :
+l’inventaire de 2013</h2>
+<div id="les-zones" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Les zones</h3>
+<p>Repérer pour son bureau, la zone de logement social concernée</p>
+<div id="les-données" class="section level4" number="3.3.1.1">
+<h4><span class="header-section-number">3.3.1.1</span> Les données</h4>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code></pre></div>
+<pre><code>## Warning: le package &#39;sf&#39; a été compilé avec la version R 4.2.3</code></pre>
+<pre><code>## Linking to GEOS 3.9.3, GDAL 3.5.2, PROJ 8.2.1; sf_use_s2() is TRUE</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;data/logement.gpkg&quot;</span>)</span></code></pre></div>
+<pre><code>## Driver: GPKG 
+## Available layers:
+##   layer_name geometry_type features fields              crs_name
+## 1       RPLS         Point     9390     72 RGF93 v1 / Lambert-93
+## 2   quartier Multi Polygon        8      1 RGF93 v1 / Lambert-93</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>zone<span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/logement.gpkg&quot;</span>, <span class="st">&quot;quartier&quot;</span>, <span class="at">quiet=</span>T)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>rpls <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/logement.gpkg&quot;</span>, <span class="st">&quot;RPLS&quot;</span>, <span class="at">quiet =</span> T)</span></code></pre></div>
+</div>
+<div id="cartographie" class="section level4" number="3.3.1.2">
+<h4><span class="header-section-number">3.3.1.2</span> Cartographie</h4>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">library</span>(mapsf)</span></code></pre></div>
+<pre><code>## Warning: le package &#39;mapsf&#39; a été compilé avec la version R 4.2.3</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">png</span>(<span class="st">&quot;img/zoneInventaire.png&quot;</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="fu">mf_map</span>(zone)</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="fu">mf_map</span>(rpls, <span class="at">add =</span> T)</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="fu">mf_label</span>(zone, <span class="st">&quot;NOM_IRIS&quot;</span>, <span class="at">halo =</span> T, <span class="at">cex =</span> <span class="fl">0.8</span>, <span class="at">lines =</span> T, <span class="at">overlap=</span>F, <span class="at">pos =</span> <span class="dv">3</span>)</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="fu">mf_layout</span>(<span class="st">&quot;Zones inventaire bailleurs 2013 et logements sociaux 2021&quot;</span>, <span class="at">credits =</span> <span class="st">&quot;Mairie de Bondy, août 2023&quot;</span>)</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
+<pre><code>## png 
+##   2</code></pre>
+<p><img src="img/zoneInventaire.png" /></p>
+</div>
+<div id="bureau-dexemple" class="section level4" number="3.3.1.3">
+<h4><span class="header-section-number">3.3.1.3</span> Bureau
+d’exemple</h4>
+<p>Pour le cas du bureau 1, on reconnait la zone * centre ville -
+gare*</p>
+</div>
+</div>
+<div id="le-nom-des-résidences" class="section level3" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Le nom des
+résidences</h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>resid <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/bailleurInventaireCorrigeUTF8.csv&quot;</span>, <span class="at">fileEncoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="co"># début du fichier</span></span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="fu">head</span>(resid [resid<span class="sc">$</span>rue.si.différente.de.nom.résidence <span class="sc">!=</span> <span class="st">&quot;&quot;</span>,])</span></code></pre></div>
+<pre><code>##         bailleurs                      secteurs numSecteur
+## 14  BONDY HABITAT     Secteur Centre Ville/Gare          2
+## 27  BONDY HABITAT Secteur de Lattre de Tassigny          3
+## 32        EFIDIS  Secteur De Lattre de Tassigny          3
+## 34  BONDY HABITAT    Secteur La Mare a la Veuve          5
+## 36  3F IMMOBILIER    Secteur Fosse de la Régale          4
+## 40 ESPACE HABITAT    Secteur La Mare a la Veuve          5
+##                residence rue.si.différente.de.nom.résidence      numeros
+## 14             Lamartine              Polissard et Galliéni      2 et 80
+## 27   Résidence de ’Ourcq              De Lattre de Tassigny 2bis – 4 bis
+## 32 Résidence des Cerises                   Robert Douvillez            2
+## 34   Résidence du Levant                            la Paix      27 – 31
+## 36          Cos Résiduel                           Barbusse          121
+## 40    Résidence l’Europe                           Salengro      107-117</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># filtre sur le secteur du bureau 1</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>resid [resid<span class="sc">$</span>secteurs <span class="sc">==</span> <span class="st">&quot;Secteur Centre Ville/Gare&quot;</span>,]</span></code></pre></div>
+<pre><code>##          bailleurs                  secteurs numSecteur     residence
+## 14   BONDY HABITAT Secteur Centre Ville/Gare          2     Lamartine
+## 15   BONDY HABITAT Secteur Centre Ville/Gare          2        Guesde
+## 16   BONDY HABITAT Secteur Centre Ville/Gare          2    Le Potager
+## 17   BONDY HABITAT Secteur Centre Ville/Gare          2 Albert Thomas
+## 18   BONDY HABITAT Secteur Centre Ville/Gare          2         Furci
+## 19   BONDY HABITAT Secteur Centre Ville/Gare          2       Egalité
+## 20   3F IMMOBILIER Secteur Centre Ville/Gare          2        Guesde
+## 21 ICF LA SABLIERE Secteur Centre Ville/Gare          2     Polissard
+##    rue.si.différente.de.nom.résidence        numeros
+## 14              Polissard et Galliéni        2 et 80
+## 15                                             15-23
+## 16                                              2-22
+## 17                                          ensemble
+## 18                                          1-7 2-16
+## 19                                    un seul numéro
+## 20                                             49-53
+## 21                                             24-28</code></pre>
+<p>Il s’agit du début de fichier. La colonne “rue.si…” indique la rue
+concernée si elle est différente du nom de la cité. Généralement, les
+résidences portent le nom de la rue qui passe devant l’immeuble.</p>
+<p>Le nom de la résidence est bien Albert Thomas.</p>
+<p>On cherche à identifier également les autres points non saisis dans
+OSM en utilisant l’outil identifier de QGIS.</p>
+<p><img src="img/ptRestant.png" /> Il s’agit ici du 84 et 88 avenue
+Carnot. Noter également la position de 15 et du 17 Albert Thomas qui
+appartiennent à l’ensemble.</p>
+<p>Le rpls donne l’année, le nom du bailleur et le nom de la résidence.
+Ces 3 informations sont également à saisir dans OSM.</p>
+<p>Retrouver les tags utilisés par les étudiants de l’année dernière
+soit sous overpass turbo, soit sous JOSM. Comment faire ?</p>
+</div>
+</div>
+<div id="modfication-des-limites-du-secteur" class="section level2"
+number="3.4">
+<h2><span class="header-section-number">3.4</span> Modfication des
+limites du secteur</h2>
+<div id="au-niveau-des-résidences-sociales" class="section level3"
+number="3.4.1">
+<h3><span class="header-section-number">3.4.1</span> Au niveau des
+résidences sociales</h3>
+<p>Dans Qgis, on va utiliser les outils dits de <em>numérisation</em>
+pour modifier son secteur en englobant les résidences sociales exclues
+des périmètres.</p>
+<p><img src="img/avtAT.png" /> <img src="img/apr%C3%A8sAT.png" /></p>
+</div>
+<div id="au-niveau-des-rues" class="section level3" number="3.4.2">
+<h3><span class="header-section-number">3.4.2</span> Au niveau des
+rues</h3>
+<p>On pourrait également utiliser le listing des bureaux de vote
+(découpagePropre.csv) pour vérifier les tracés.</p>
+<p><img src="img/filtreRepu.png" /></p>
+<p><img src="img/avant.png" /><img src="img/apr%C3%A8s.png" /></p>
+<p>Dans ce cas, on décide de modifier le contour Autocad en suivant
+celui de Makina.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;data/vote.gpkg&quot;</span>)</span></code></pre></div>
+<pre><code>## Driver: GPKG 
+## Available layers:
+##       layer_name geometry_type features fields              crs_name
+## 1    bureauxPoly Multi Polygon       32      4 RGF93 v1 / Lambert-93
+## 2       bvMakina Multi Polygon       32      4 RGF93 v1 / Lambert-93
+## 3 bureauPolyZone Multi Polygon       32      2 RGF93 v1 / Lambert-93
+## 4     monSecteur Multi Polygon        1      2 RGF93 v1 / Lambert-93
+## 5       resultat Multi Polygon       32      6 RGF93 v1 / Lambert-93</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>monSecteur <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/vote.gpkg&quot;</span>, <span class="st">&quot;monSecteur&quot;</span>)</span></code></pre></div>
+<pre><code>## Reading layer `monSecteur&#39; from data source 
+##   `C:\Users\tachasa\coursP8\data\vote.gpkg&#39; using driver `GPKG&#39;
+## Simple feature collection with 1 feature and 2 fields
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: 661781.8 ymin: 6866550 xmax: 662062.4 ymax: 6867135
+## Projected CRS: RGF93 v1 / Lambert-93</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>autocad <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/vote.gpkg&quot;</span>, <span class="st">&quot;bureauPolyZone&quot;</span>)</span></code></pre></div>
+<pre><code>## Reading layer `bureauPolyZone&#39; from data source 
+##   `C:\Users\tachasa\coursP8\data\vote.gpkg&#39; using driver `GPKG&#39;
+## Simple feature collection with 32 features and 2 fields
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: 661088.1 ymin: 6865338 xmax: 663354.7 ymax: 6869043
+## Projected CRS: RGF93 v1 / Lambert-93</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>makina <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/vote.gpkg&quot;</span>, <span class="st">&quot;bvMakina&quot;</span>)</span></code></pre></div>
+<pre><code>## Reading layer `bvMakina&#39; from data source 
+##   `C:\Users\tachasa\coursP8\data\vote.gpkg&#39; using driver `GPKG&#39;
+## Simple feature collection with 32 features and 4 fields
+## Geometry type: MULTIPOLYGON
+## Dimension:     XY
+## Bounding box:  xmin: 661067.2 ymin: 6865340 xmax: 663349.8 ymax: 6869044
+## Projected CRS: RGF93 v1 / Lambert-93</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">png</span>(<span class="st">&quot;img/bureau1.png&quot;</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="fu">mf_map</span>(monSecteur, <span class="at">border =</span> <span class="st">&quot;green&quot;</span>)</span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a><span class="fu">mf_map</span>(autocad, <span class="at">border =</span> <span class="st">&quot;red&quot;</span>,<span class="at">col =</span> <span class="cn">NA</span>,<span class="at">add =</span> T)</span>
+<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a><span class="fu">mf_map</span>(makina, <span class="at">border=</span> <span class="st">&quot;blue&quot;</span>, <span class="at">col =</span> <span class="cn">NA</span>,<span class="at">add =</span> T)</span>
+<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a><span class="fu">mf_layout</span>(<span class="st">&quot;Modification secteur bureau 1&quot;</span>, <span class="at">credits =</span> <span class="st">&quot;Mairie de Bondy, août 2023&quot;</span>)</span>
+<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
+<pre><code>## png 
+##   2</code></pre>
+<p><img src="img/bureau1.png" /></p>
+</div>
+</div>
+</div>
+<div id="saisissons" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Saisissons !</h1>
+<p>Nous avons 2 types de modifications à faire :</p>
+<ul>
+<li><p>Les résidences sociales manquantes</p></li>
+<li><p>le périmètre du bureau de vote à insérer</p></li>
+</ul>
+<div id="les-résidences-sociales" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Les résidences
+sociales</h2>
+<p>Dans le calque OSM, cliquer sur le bâtiment concerné et mettre name,
+start_date et dwellings:owner.</p>
+<p>Dans le framapad, mettre son prénom au niveau de la résidence pour
+signaler que la saisie a été faite</p>
+<p>Exemple pour la résidence Albert Thomas du secteur 1. En fait la
+clôture avait été saisie avec les bons tags sauf dwellings:owner.</p>
+<p>De plus, la clôture était incomplète n’englobant pas les numéros 15
+et 17.</p>
+<p><img src="img/modif.png" /></p>
+</div>
+<div id="périmètre-bureau-de-vote" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> périmètre bureau de
+vote</h2>
+<ul>
+<li>importer le calque dans JOSM (format geojson et projection
+4326)</li>
+</ul>
+<p><img src="img/export.png" /></p>
+<p><img src="img/2calques.png" /></p>
+<ul>
+<li><p>repérer les tracés (ways) déjà existants et rajouter les
+autres</p></li>
+<li><p>sélectionner l’ensemble des tracés et tagger comme une
+relation</p></li>
+</ul>
+<p>Dans notre cas, bureau de vote numéro 1, comme c’est le premier, il
+n’y a pas de polygone adjacent, donc la relation est utilisée uniquement
+pour associer le bureau de vote et le périmètre.</p>
+<p>On sélectionne le secteur, et on fusionne sur le calque d’OSM</p>
+<p>Le panneau relation est à afficher (Alt + Maj + R)</p>
+<p>Les tags sont :</p>
+<ul>
+<li><p>boundary=political</p></li>
+<li><p>political_division=bureau de vote</p></li>
+<li><p>source=ville de Bondy</p></li>
+<li><p>type=boundary</p></li>
+</ul>
+<p><img src="img/relation.png" /></p>
+<p>Ne pas oublier de donner le rôle : admin_centre et outer</p>
+</div>
+<div id="bilan-de-la-saisie" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Bilan de la
+saisie</h2>
+<p>Temps de saisie, 15 mn puis cycles de 30 mn.</p>
+<p>A compléter sur retour des étudiants</p>
+<p>quantitatif : combien de saisies par étudiants</p>
+<p>qualitatif : quelles difficultés ?</p>
+</div>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<small><p>cours Paris8-Bondy2023 - bureaux de vote </p></small>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -12,13 +12,16 @@ editor_options:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(cache = TRUE)
+# Passer la valeur suivante à TRUE pour reproduire les extractions.
+knitr::opts_chunk$set(eval = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
 ```
 
 
 # Objectif
 
-Faire une 1e saisie sous OSM d'une résidence
-Essayer d'établir une méthode simple
+Faire une 1e saisie sous OSM d'un bureau de vote s'il est manquant.
 
 # 1e saisie pour comprendre
 
@@ -34,23 +37,21 @@ https://taginfo.openstreetmap.org/
 
 exercice : faire une saisie sur un point connu
 
-# Extractions diverses OSM
-
-## Overpass pour extraire
+# Extractions diverses OSM : utilisation d'overpass
 
 https://overpass-turbo.eu/
 
-### Première approche : les rues
+## Première approche : les rues
 
 
 ```
 highway = * in Bondy
 ```
 
-Cela tombe bien, les résidences sont souvent appelées par le nom de leurs rues...
+Cela tombe bien, les rues permettent de définir les secteurs des bureaux de vote
 
 
-#### CARTE 1 : les rues OSM sous QGIS
+### CARTE 1 : les rues OSM sous QGIS
 
 Savoir-faire QGIS : 
 
@@ -69,85 +70,123 @@ résultat
 
 - mise en page qgis (3 boutons)
 
-#### Méthode
+### Méthode
 
 Que chaque stagiaire essaie de faire la carte en fonction de ce qu'il sait faire.
-En amont, remplissage d'un tableau.
+En amont, remplissage d'un tableau sur les 3 points
 
 
-### Deuxième approche : les bâtiments
+## Deuxième approche : les bureaux de vote
+
+### Chercher le tag
 
 
-#### Quelques requêtes
+Dans overpass, observer la mairie de Bondy, quels sont les tags correspondant au bureau de vote ?
+
+Dans taginfo, constater l'aire d'utilisation des tags et les combinaisons possibles.
+
+
+### Quelques requêtes
 
 Avec l'assistant, essayer 
 
 
 ```
-  - building:owner=*
-  - building:levels=*
-  - dwellings=*
-  - building!~yes and building=*
+  - polling_station=yes
+  - polling_station_ref=*
+  - ~polling~".*"
 ```
-  
-Sur différentes échelles (région île de france, bondy)
 
-Que se passe-t-il ? (faire un tableau échelle par requête)
+Que signifie la dernière requête ? s'aider de l'aide de l'assistant d'overpass.
+
+Effectuer cette requête sur l'ensemble de la France, que permet-elle de voir ?
 
 
-
-#### L'existant pour building:owner
-
-Trouver les 2 villes pour lesquelles ces tags ont été utilisés.
 
 # Saisissons !
 
-## Les données cadastrales : les personnes morales
+## CARTE 2 : sources locales, opendata, et OSM sur les bureaux de vote
 
-Faire une carte Qgis sur la catégorie 5 (La catégorie "5" concerne les bailleurs sociaux.)
-
-### Traitements sur la donnée initiale
+### Utiliser le vote.gpkg
 
 ```{r}
 library(sf)
-pmorale <- st_read("data/logement.gpkg", "pmorale")
-# on filtre sur la catégorie
-categ5 <- pmorale [pmorale$categorie == 5,]
-# dénombrement
-tab <- table(categ5$nom)
-knitr::kable(tab)
-# enregistrement du fichier des formes et de la liste des bailleurs.
-st_write(categ5, "data/logement.gpkg", "categ5",delete_layer = T)
-write.csv(tab, "data/bailleurCadastre.csv")
+library(mapsf)
+st_layers("data/vote.gpkg")
+# Combien de bureaux ?
+bvAutocad <- st_read("data/vote.gpkg", "bureauxPoly")
+bvOpendata <- read.csv("data/bvOpendata.csv")
+str(bvOpendata)
+# pas de coordonnées, il faut géocoder. Cette liste servira juste de vérification.
+zoneAutocad <- st_read("data/vote.gpkg", "bureauPolyZone")
+zoneAutocad <- zoneAutocad  [, c("numBureau","bureauNo_1")]
+names(zoneAutocad)[2]<-"nom"
+st_write(zoneAutocad, "data/vote.gpkg", "bureauPolyZone", delete_layer = T)
+zoneMakina <- st_read("data/vote.gpkg", "bvMakina")
 ```
 
-Attention à Bondy Habitat, recoder le fichier de manière à utiliser les mêmes noms et plus courts.
+### Y rajouter une couche d'OSM 
 
 ```{r}
-txt <- read.csv("data/bailleurCadastreCorrige.csv")
-# jointure entre le fichier forme et texte
-jointure <- merge(categ5, txt, by.x = "nom", by.y = "nomLong" )
-st_write(jointure, "data/logement.gpkg", "categ5",delete_layer = T)
+bvOSM <- st_read("data/export.geojson")
+# attention projection et pb géométrie
+bvOSM <- st_transform(bvOSM, crs = 2154)
+bvOSM <- st_centroid(bvOSM)
+```
+ 
+### Carte sous QGIS
+
+
+Faire la carte sous QGIS en essayant de repérer les bureaux manquants sous OSM
+
+```{r}
+png("img/bv.png")
+mf_map(zoneAutocad, col = "antiquewhite1", border = NA)
+mf_label(zoneAutocad, var = "numBureau")
+mf_map(bvAutocad, col = "green", add = T)
+#mf_label(bvAutocad, var = "Layer", col = "green", halo = T, bg= "antiquewhite4",
+ #        overlap = F, pos = 2)
+mf_map(bvOSM, col= "red",add = T)
+mf_layout("Differences Autocad, OSM", credits = "Bondy / OSM\nAoût 2023")
+dev.off()
+```
+
+![](img/bv.png)
+
+### Questionnements auxquels devrait répondre la carte
+
+Les bureaux sont-ils dans les zones ?
+
+Y-a-t-il des bureaux manquants ?
+
+Est-il possible de repérer les manques dans la saisie d'OSM afin de mieux viser les zones à se répartir ?
+
+
+
+### Utilisation de Umap pour se répartir le travail.
+
+```{r}
+export <- st_transform(zoneAutocad [, c("numBureau", "nom")], crs=4326)
+export$etudiant <- NA
+st_write(export, "data/exportBV5.geojson")
 ```
 
 
-### Se répartir les zones
+
+https://umap.openstreetmap.fr/fr/map/paris8-bondy2023_953589
 
 
-#### Savoir faire QGIS
 
 
-- utiliser le traitement *de morceaux multiples à morceaux uniques*
 
-On rajoute le prénom de chaque étudiant concerné sur l'objet de saisie en choisissant
-les plus gros polygones (cf dans divers.gpkg, couche parcelleAttribue)
-
-![](img/attributionParcelles.png)
 ## Fixer les tags
 
-Un seul tag pour cette première saisie 
-building:owner = le nom du bailleur foncier propriétaire de la parcelle.
-On utilise ID pour saisir.
+Les deux tags
+
+  - polling_station=yes
+  
+  - polling_station_ref=*
+  
 
 ## Les outils OSM du contrôle de qualité
 
