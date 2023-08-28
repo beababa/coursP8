@@ -187,6 +187,11 @@ Les deux tags
   
   - polling_station_ref=*
   
+  - s'il y a un 2e bureau de vote sur la même structure, on rajoute polling_station_ref_2
+  
+  
+![](img/montpellier.PNG)
+  
 
 ## Les outils OSM du contrôle de qualité
 

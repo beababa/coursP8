@@ -121,7 +121,7 @@ Ce fichier va permettre de s'attribuer les zones de saisie et toutes les opérat
 collaboratives du cours.
 
 ```{r}
-data <- read.csv2("data/etudiant.csv", fileEncoding = "UTF-8")
+data <- read.csv("data/etudiant.csv")
 table(data$passé)
 par(mar = c(8,2,2,2))
 barplot(table(data$passé), las = 2)
@@ -132,9 +132,16 @@ barplot(table(data$futur), las = 2)
 
 # Pratique
 
-prénom et répertoires de cartes
-copie du répertoire réseau
-quelle diffusion ?
+- prénom et répertoires de cartes
+
+Déposer son image dans github dans le répertoire *img* du dépot *coursP8* avec comme syntaxe : *P8_prenom.png*
+
+![](img/depotGIT.PNG)
+
+- copie du projet GIT en début et en fin de session
+
+
+- quelle diffusion ?
 
 
 # Quizz
