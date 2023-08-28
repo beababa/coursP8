@@ -139,6 +139,18 @@ bvOSM <- st_centroid(bvOSM)
 
 Faire la carte sous QGIS en essayant de repérer les bureaux manquants sous OSM
 
+
+- carte uniquement sur son secteur
+
+- données dans vote.gpkg
+
+
+```{r, eval = T}
+library(sf)
+st_layers("data/vote.gpkg")
+```
+
+
 ```{r}
 png("img/bv.png")
 mf_map(zoneAutocad, col = "antiquewhite1", border = NA)

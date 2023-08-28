@@ -80,14 +80,13 @@ donc impérativement mettre dans le commentaire de changeset : #Paris8-Bondy2023
 
 ## Le collaboratif
 
-Un mot au sujet du collectif, ce cours est aussi l'occasion de tester une organisation de travail en groupe (c'est la raison d'être d'OSM) donc autant de groupe que de secteurs de bureaux (31)
+Un mot au sujet du collectif, ce cours est aussi l'occasion de tester une organisation de travail en groupe (c'est la raison d'être d'OSM) donc autant de groupe que de secteurs de bureaux (32). Pour chaque étudiant, 2 secteurs.
 
+
+
+![](img/attribBureau.png)
 
 ## Précisions techniques
-
-### Répertoire réseau
-
-Les cartes sont à mettre dans le répertoire réseau "cartes" dans le répertoire indiqué
 
 ### Support et procédures
 
@@ -98,6 +97,20 @@ Les procédures employées sous QGIS sont à rechercher sur internet.
 
 Essai : "Qgis compter les points dans un polygone"
 Quel est le menu qui permet de le faire ?
+
+### Dépôt git
+
+
+- copie du projet GIT en début et en fin de session
+
+
+- Dépôt des cartes sur le dépot P8
+
+Déposer son image dans github dans le répertoire *img/carteEtudiant* du dépot *coursP8* avec comme syntaxe : *P8_prenom.png*
+
+![](img/depotGIT.PNG)
+
+
 
 ## Déroulé
 
@@ -130,15 +143,7 @@ barplot(table(data$futur), las = 2)
 ```
 
 
-# Pratique
 
-- prénom et répertoires de cartes
-
-Déposer son image dans github dans le répertoire *img* du dépot *coursP8* avec comme syntaxe : *P8_prenom.png*
-
-![](img/depotGIT.PNG)
-
-- copie du projet GIT en début et en fin de session
 
 
 - quelle diffusion ?

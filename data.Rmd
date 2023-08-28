@@ -60,3 +60,27 @@ st_write(RPLS, "data/logement.gpkg", "RPLS")
 st_write(quartiers, "data/logement.gpkg", "quartier")
 ```
 
+carte des attributions
+
+```{r}
+attribBureau <- read.csv("data/attribBureau.csv")
+# jointure avec zones 
+library(sf)
+zone <- st_read("data/vote.gpkg", "bureauPolyZone")
+joint1 <- merge(zone, attribBureau, by.x="numBureau", "bureau1")
+joint2 <- merge(zone, attribBureau, by.x="numBureau", "bureau2")
+joint1 <- joint1  [,-4]
+joint2 <- joint2 [,-4]
+joint <- rbind(joint1, joint2)
+```
+
+
+```{r}
+library(mapsf)
+png("img/attribBureau.png", res=200, width = 1200, height = 1200)
+mf_map(joint, type = "typo", var="prénom", border=NA, leg_pos = NA)
+mf_label(joint, "prénom", halo =T, cex = 0.7, overlap=F)
+mf_layout("attribution des zones", credits = "Cours P8\naoût 2023")
+dev.off()
+st_write(joint,"data/vote.gpkg", "bureauPolyZone", delete_layer=T)
+```

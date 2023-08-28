@@ -575,15 +575,30 @@ couche d’OSM</h3>
 QGIS</h3>
 <p>Faire la carte sous QGIS en essayant de repérer les bureaux manquants
 sous OSM</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">png</span>(<span class="st">&quot;img/bv.png&quot;</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">mf_map</span>(zoneAutocad, <span class="at">col =</span> <span class="st">&quot;antiquewhite1&quot;</span>, <span class="at">border =</span> <span class="cn">NA</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="fu">mf_label</span>(zoneAutocad, <span class="at">var =</span> <span class="st">&quot;numBureau&quot;</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="fu">mf_map</span>(bvAutocad, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>, <span class="at">add =</span> T)</span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="co">#mf_label(bvAutocad, var = &quot;Layer&quot;, col = &quot;green&quot;, halo = T, bg= &quot;antiquewhite4&quot;,</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a> <span class="co">#        overlap = F, pos = 2)</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="fu">mf_map</span>(bvOSM, <span class="at">col=</span> <span class="st">&quot;red&quot;</span>,<span class="at">add =</span> T)</span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="fu">mf_layout</span>(<span class="st">&quot;Differences Autocad, OSM&quot;</span>, <span class="at">credits =</span> <span class="st">&quot;Bondy / OSM</span><span class="sc">\n</span><span class="st">Août 2023&quot;</span>)</span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
+<ul>
+<li><p>carte uniquement sur son secteur</p></li>
+<li><p>données dans vote.gpkg</p></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code></pre></div>
+<pre><code>## Linking to GEOS 3.9.3, GDAL 3.5.2, PROJ 8.2.1; sf_use_s2() is TRUE</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;data/vote.gpkg&quot;</span>)</span></code></pre></div>
+<pre><code>## Driver: GPKG 
+## Available layers:
+##       layer_name geometry_type features fields              crs_name
+## 1    bureauxPoly Multi Polygon       32      4 RGF93 v1 / Lambert-93
+## 2       bvMakina Multi Polygon       32      4 RGF93 v1 / Lambert-93
+## 3     monSecteur Multi Polygon        1      2 RGF93 v1 / Lambert-93
+## 4       resultat Multi Polygon       32      6 RGF93 v1 / Lambert-93
+## 5 bureauPolyZone Multi Polygon       32      3 RGF93 v1 / Lambert-93</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">png</span>(<span class="st">&quot;img/bv.png&quot;</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="fu">mf_map</span>(zoneAutocad, <span class="at">col =</span> <span class="st">&quot;antiquewhite1&quot;</span>, <span class="at">border =</span> <span class="cn">NA</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="fu">mf_label</span>(zoneAutocad, <span class="at">var =</span> <span class="st">&quot;numBureau&quot;</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="fu">mf_map</span>(bvAutocad, <span class="at">col =</span> <span class="st">&quot;green&quot;</span>, <span class="at">add =</span> T)</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="co">#mf_label(bvAutocad, var = &quot;Layer&quot;, col = &quot;green&quot;, halo = T, bg= &quot;antiquewhite4&quot;,</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a> <span class="co">#        overlap = F, pos = 2)</span></span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="fu">mf_map</span>(bvOSM, <span class="at">col=</span> <span class="st">&quot;red&quot;</span>,<span class="at">add =</span> T)</span>
+<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a><span class="fu">mf_layout</span>(<span class="st">&quot;Differences Autocad, OSM&quot;</span>, <span class="at">credits =</span> <span class="st">&quot;Bondy / OSM</span><span class="sc">\n</span><span class="st">Août 2023&quot;</span>)</span>
+<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
 <p><img src="img/bv.png" /></p>
 </div>
 <div id="questionnements-auxquels-devrait-répondre-la-carte"
@@ -599,9 +614,9 @@ mieux viser les zones à se répartir ?</p>
 class="section level3" number="4.1.5">
 <h3><span class="header-section-number">4.1.5</span> Utilisation de Umap
 pour se répartir le travail.</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>export <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(zoneAutocad [, <span class="fu">c</span>(<span class="st">&quot;numBureau&quot;</span>, <span class="st">&quot;nom&quot;</span>)], <span class="at">crs=</span><span class="dv">4326</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>export<span class="sc">$</span>etudiant <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="fu">st_write</span>(export, <span class="st">&quot;data/exportBV5.geojson&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>export <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(zoneAutocad [, <span class="fu">c</span>(<span class="st">&quot;numBureau&quot;</span>, <span class="st">&quot;nom&quot;</span>)], <span class="at">crs=</span><span class="dv">4326</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>export<span class="sc">$</span>etudiant <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="fu">st_write</span>(export, <span class="st">&quot;data/exportBV5.geojson&quot;</span>)</span></code></pre></div>
 <p><a
 href="https://umap.openstreetmap.fr/fr/map/paris8-bondy2023_953589"
 class="uri">https://umap.openstreetmap.fr/fr/map/paris8-bondy2023_953589</a></p>
@@ -613,7 +628,10 @@ class="uri">https://umap.openstreetmap.fr/fr/map/paris8-bondy2023_953589</a></p>
 <ul>
 <li><p>polling_station=yes</p></li>
 <li><p>polling_station_ref=*</p></li>
+<li><p>s’il y a un 2e bureau de vote sur la même structure, on rajoute
+polling_station_ref_2</p></li>
 </ul>
+<p><img src="img/montpellier.PNG" /></p>
 </div>
 <div id="les-outils-osm-du-contrôle-de-qualité" class="section level2"
 number="4.3">

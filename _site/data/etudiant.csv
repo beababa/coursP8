@@ -1,19 +1,16 @@
-prenom;passé;présent;futur;qgis
-oumar;géomatique;FPT;dvp;3
-Béatrice;informatique;FPT;administration;3
-Quentin;géographie;fibre;?;1
-Mehdi;aménagement;recherche;cartographe;1
-Karla;géographie;santé;?;1
-Nikolozi;aménagement;recherche;cartographe;1
-Gautier;aménagement;fibre;dvp;1
-Amine;géomatique;habitat;dvp;1
-Laurent;géographie;assurance;dvp;1
-CASSET;géomatique;BTP;bdd;3
-Althéa;télédétection;transport;?;2
-ousmane;géographie;habitat;?;2
-Madani;géographie;fibre;dvp;2
-Yann;géomatique;energie;smart city;2
-ouarda ;géomatique;recherche;analyse;2
-Ababacar;géographie;energie;dvp;1
-Arsène;environnement;recherche;cartographe;1
-Soatiana;géographie;M1 G2M ;géomarketing;2
+prénom,adresse mail,passé,présent,futur,OSM,QGIS
+Marianne,marianne.jouffroy@hotmail.fr,p8,en recherche,carto,apprendre,2
+Violette,violettedesbordes@icloud.com,paris,en recherche,dvp,apprendre,3
+Anais,anaisabdelhamid.15@gmail.com,sud,alternance,dvp,apprendre,3
+Louis Camille,loumercier@pm.me,paris,en recherche,dvp,utiliser plus OSM ,4
+NIKOLOZI,baido.niccolo@gmail.com,paris,alternance,dvp,utiliser plus OSM ,3
+Siméon,simeon.seck3@gmail.com,sud,alternance,dvp,utiliser plus OSM ,2
+Thomas,tom.95060101@gmail.com,p8,alternance,dvp,apprendre,1
+Morgane,naguini.ms@gmail.com,?,alternance,anything,utiliser plus OSM ,3
+Daria,podlovchenkodaria@gmail.com,est,en recherche,carto,utiliser plus OSM ,2
+Mawa,mawadiaw@gmail.com,sud,alternance,dvp,apprendre,3
+Jules,julednkongosame@gmail.com,sud,alternance,dvp,apprendre,3
+maou,diarramaou@gmail.com,sud,alternance,dvp,utiliser plus OSM ,3
+Camille,camilleesteve1904@gmail.com,?,alternance,dvp,apprendre,4
+Amaury,amaury.bourgeois78@gmail.com,?,alternance,dvp,apprendre,3
+SYDOL,sydoladomade@gmail.com,ouest,alternance,dvp,apprendre,4

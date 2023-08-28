@@ -522,25 +522,32 @@ du 3e jour.</p>
 <h2><span class="header-section-number">2.3</span> Le collaboratif</h2>
 <p>Un mot au sujet du collectif, ce cours est aussi l’occasion de tester
 une organisation de travail en groupe (c’est la raison d’être d’OSM)
-donc autant de groupe que de secteurs de bureaux (31)</p>
+donc autant de groupe que de secteurs de bureaux (32). Pour chaque
+étudiant, 2 secteurs.</p>
+<p><img src="img/attribBureau.png" /></p>
 </div>
 <div id="précisions-techniques" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> Précisions
 techniques</h2>
-<div id="répertoire-réseau" class="section level3" number="2.4.1">
-<h3><span class="header-section-number">2.4.1</span> Répertoire
-réseau</h3>
-<p>Les cartes sont à mettre dans le répertoire réseau “cartes” dans le
-répertoire indiqué</p>
-</div>
-<div id="support-et-procédures" class="section level3" number="2.4.2">
-<h3><span class="header-section-number">2.4.2</span> Support et
+<div id="support-et-procédures" class="section level3" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Support et
 procédures</h3>
 <p>Le support, fait sous R, sert uniquement de “fil rouge”.</p>
 <p>Les procédures employées sous QGIS sont à rechercher sur
 internet.</p>
 <p>Essai : “Qgis compter les points dans un polygone” Quel est le menu
 qui permet de le faire ?</p>
+</div>
+<div id="dépôt-git" class="section level3" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Dépôt git</h3>
+<ul>
+<li><p>copie du projet GIT en début et en fin de session</p></li>
+<li><p>Dépôt des cartes sur le dépot P8</p></li>
+</ul>
+<p>Déposer son image dans github dans le répertoire
+<em>img/carteEtudiant</em> du dépot <em>coursP8</em> avec comme syntaxe
+: <em>P8_prenom.png</em></p>
+<p><img src="img/depotGIT.PNG" /></p>
 </div>
 </div>
 <div id="déroulé" class="section level2" number="2.5">
@@ -562,13 +569,11 @@ href="https://lite.framacalc.org/9ilj-coursp8"
 class="uri">https://lite.framacalc.org/9ilj-coursp8</a></p>
 <p>Ce fichier va permettre de s’attribuer les zones de saisie et toutes
 les opérations collaboratives du cours.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">&quot;data/etudiant.csv&quot;</span>, <span class="at">fileEncoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/etudiant.csv&quot;</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>passé)</span></code></pre></div>
 <pre><code>## 
-##   aménagement environnement    géographie    géomatique  informatique 
-##             3             1             7             5             1 
-## télédétection 
-##             1</code></pre>
+##     ?   est ouest    p8 paris   sud 
+##     3     1     1     2     3     5</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">8</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">2</span>))</span>
 <span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(data<span class="sc">$</span>passé), <span class="at">las =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="intro_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
@@ -576,14 +581,12 @@ les opérations collaboratives du cours.</p>
 <p><img src="intro_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(data<span class="sc">$</span>futur), <span class="at">las =</span> <span class="dv">2</span>)</span></code></pre></div>
 <p><img src="intro_files/figure-html/unnamed-chunk-2-3.png" width="672" /></p>
+<ul>
+<li>quelle diffusion ?</li>
+</ul>
 </div>
-<div id="pratique" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> Pratique</h1>
-<p>prénom et répertoires de cartes copie du répertoire réseau quelle
-diffusion ?</p>
-</div>
-<div id="quizz" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Quizz</h1>
+<div id="quizz" class="section level1" number="4">
+<h1><span class="header-section-number">4</span> Quizz</h1>
 <p>Introduction <a
 href="https://framaforms.org/paris8-bondy2023-introduction-1693048391"
 class="uri">https://framaforms.org/paris8-bondy2023-introduction-1693048391</a></p>
@@ -598,10 +601,10 @@ class="uri">https://framaforms.org/paris8-bondy2023-premiere-saisie-1693156617</
 href="https://forms.gle/R5W9DooDPMmRn3kF6"
 class="uri">https://forms.gle/R5W9DooDPMmRn3kF6</a></p>
 </div>
-<div id="sitographie" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Sitographie</h1>
-<div id="reu-et-applicatif" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> REU et
+<div id="sitographie" class="section level1" number="5">
+<h1><span class="header-section-number">5</span> Sitographie</h1>
+<div id="reu-et-applicatif" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> REU et
 applicatif</h2>
 <p>La librairie R de l’INSEE</p>
 <p><a href="https://inseefrlab.github.io/mapvotr/index.html"
@@ -610,8 +613,8 @@ class="uri">https://inseefrlab.github.io/mapvotr/index.html</a></p>
 href="https://blog.insee.fr/a-vote-a-chaque-bureau-de-vote-ses-electeurs/"
 class="uri">https://blog.insee.fr/a-vote-a-chaque-bureau-de-vote-ses-electeurs/</a></p>
 </div>
-<div id="analyse-électorale" class="section level2" number="6.2">
-<h2><span class="header-section-number">6.2</span> Analyse
+<div id="analyse-électorale" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Analyse
 électorale</h2>
 <p>pour la notion de <em>variable lourde</em></p>
 <p><a
