@@ -197,15 +197,17 @@ Les deux tags
 
   - polling_station=yes
   
-  - polling_station_ref=*
+  - polling_station:ref=*
   
-  - s'il y a un 2e bureau de vote sur la même structure, on rajoute polling_station_ref_2
+  - s'il y a un 2e bureau de vote sur la même structure, on rajoute polling_station:ref_1
   
   
 ![](img/montpellier.PNG)
   
 
 ## Les outils OSM du contrôle de qualité
+
+### Quelques liens
 
 http://resultmaps.neis-one.org
 
@@ -218,6 +220,10 @@ https://www.maproulette.org/
 https://forum.openstreetmap.fr
 
 
+
+### Extraire et refaire une nouvelle carte
+
+Chaque étudiant vérifie son nouveau secteur.
 
 
 

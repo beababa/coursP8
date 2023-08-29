@@ -75,12 +75,23 @@ joint <- rbind(joint1, joint2)
 ```
 
 
+#modif à la main et export carte umap
+
+
+```{r}
+zone <- st_read("data/secteurFinal.geojson")
+joint <- zone
+```
+
+
 ```{r}
 library(mapsf)
 png("img/attribBureau.png", res=200, width = 1200, height = 1200)
 mf_map(joint, type = "typo", var="prénom", border=NA, leg_pos = NA)
-mf_label(joint, "prénom", halo =T, cex = 0.7, overlap=F)
+joint$txt <- paste(joint$numBureau,joint$prénom)
+mf_label(joint, "txt", halo =T, cex = 0.7, overlap=F)
 mf_layout("attribution des zones", credits = "Cours P8\naoût 2023")
 dev.off()
 st_write(joint,"data/vote.gpkg", "bureauPolyZone", delete_layer=T)
 ```
+
