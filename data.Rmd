@@ -23,9 +23,12 @@ Utiliser le package pour Bondy
 library(mapvotr)
 library(sqldf)
 library(sf)
-data <- read.csv("data/table-adresses-reu.csv", nrows = -10)
+data <- read.csv("c:/Users/Etudiant/Downloads/table-adresses-reu.csv", nrows = 10)
 str(data)
-data <- read.csv.sql("data/table-adresses-reu.csv", sql = "select * from file where code_commune_ref = '93140' ")
+write.csv(data, "data/test.csv")
+data <- read.csv.sql("c:/Users/Etudiant/Downloads/table-adresses-reu.csv", sql = "select * from file where code_commune_ref like '9329'")
+data2 <- read.csv.sql("data/test.csv", sql = "select * from file where code_commune_ref = '9329'")
+data2
 ```
 
 

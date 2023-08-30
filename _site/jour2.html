@@ -14,7 +14,7 @@
 
 <title>2e saisie OSM : tester</title>
 
-<script src="site_libs/header-attrs-2.23/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.24/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/united.min.css" rel="stylesheet" />
@@ -34,8 +34,8 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -575,27 +575,25 @@ l’inventaire de 2013</h2>
 <div id="les-données" class="section level4" number="3.3.1.1">
 <h4><span class="header-section-number">3.3.1.1</span> Les données</h4>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(sf)</span></code></pre></div>
-<pre><code>## Warning: le package &#39;sf&#39; a été compilé avec la version R 4.2.3</code></pre>
-<pre><code>## Linking to GEOS 3.9.3, GDAL 3.5.2, PROJ 8.2.1; sf_use_s2() is TRUE</code></pre>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;data/logement.gpkg&quot;</span>)</span></code></pre></div>
+<pre><code>## Linking to GEOS 3.11.2, GDAL 3.6.2, PROJ 9.2.0; sf_use_s2() is TRUE</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;data/logement.gpkg&quot;</span>)</span></code></pre></div>
 <pre><code>## Driver: GPKG 
 ## Available layers:
 ##   layer_name geometry_type features fields              crs_name
 ## 1       RPLS         Point     9390     72 RGF93 v1 / Lambert-93
 ## 2   quartier Multi Polygon        8      1 RGF93 v1 / Lambert-93</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>zone<span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/logement.gpkg&quot;</span>, <span class="st">&quot;quartier&quot;</span>, <span class="at">quiet=</span>T)</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>rpls <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/logement.gpkg&quot;</span>, <span class="st">&quot;RPLS&quot;</span>, <span class="at">quiet =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>zone<span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/logement.gpkg&quot;</span>, <span class="st">&quot;quartier&quot;</span>, <span class="at">quiet=</span>T)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>rpls <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/logement.gpkg&quot;</span>, <span class="st">&quot;RPLS&quot;</span>, <span class="at">quiet =</span> T)</span></code></pre></div>
 </div>
 <div id="cartographie" class="section level4" number="3.3.1.2">
 <h4><span class="header-section-number">3.3.1.2</span> Cartographie</h4>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="fu">library</span>(mapsf)</span></code></pre></div>
-<pre><code>## Warning: le package &#39;mapsf&#39; a été compilé avec la version R 4.2.3</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">png</span>(<span class="st">&quot;img/zoneInventaire.png&quot;</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="fu">mf_map</span>(zone)</span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="fu">mf_map</span>(rpls, <span class="at">add =</span> T)</span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="fu">mf_label</span>(zone, <span class="st">&quot;NOM_IRIS&quot;</span>, <span class="at">halo =</span> T, <span class="at">cex =</span> <span class="fl">0.8</span>, <span class="at">lines =</span> T, <span class="at">overlap=</span>F, <span class="at">pos =</span> <span class="dv">3</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="fu">mf_layout</span>(<span class="st">&quot;Zones inventaire bailleurs 2013 et logements sociaux 2021&quot;</span>, <span class="at">credits =</span> <span class="st">&quot;Mairie de Bondy, août 2023&quot;</span>)</span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="fu">library</span>(mapsf)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">png</span>(<span class="st">&quot;img/zoneInventaire.png&quot;</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="fu">mf_map</span>(zone)</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="fu">mf_map</span>(rpls, <span class="at">add =</span> T)</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="fu">mf_label</span>(zone, <span class="st">&quot;NOM_IRIS&quot;</span>, <span class="at">halo =</span> T, <span class="at">cex =</span> <span class="fl">0.8</span>, <span class="at">lines =</span> T, <span class="at">overlap=</span>F, <span class="at">pos =</span> <span class="dv">3</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="fu">mf_layout</span>(<span class="st">&quot;Zones inventaire bailleurs 2013 et logements sociaux 2021&quot;</span>, <span class="at">credits =</span> <span class="st">&quot;Mairie de Bondy, août 2023&quot;</span>)</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
 <pre><code>## png 
 ##   2</code></pre>
 <p><img src="img/zoneInventaire.png" /></p>
@@ -610,9 +608,9 @@ gare*</p>
 <div id="le-nom-des-résidences" class="section level3" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> Le nom des
 résidences</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>resid <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/bailleurInventaireCorrigeUTF8.csv&quot;</span>, <span class="at">fileEncoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="co"># début du fichier</span></span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="fu">head</span>(resid [resid<span class="sc">$</span>rue.si.différente.de.nom.résidence <span class="sc">!=</span> <span class="st">&quot;&quot;</span>,])</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>resid <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/bailleurInventaireCorrigeUTF8.csv&quot;</span>, <span class="at">fileEncoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co"># début du fichier</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="fu">head</span>(resid [resid<span class="sc">$</span>rue.si.différente.de.nom.résidence <span class="sc">!=</span> <span class="st">&quot;&quot;</span>,])</span></code></pre></div>
 <pre><code>##         bailleurs                      secteurs numSecteur
 ## 14  BONDY HABITAT     Secteur Centre Ville/Gare          2
 ## 27  BONDY HABITAT Secteur de Lattre de Tassigny          3
@@ -627,8 +625,8 @@ résidences</h3>
 ## 34   Résidence du Levant                            la Paix      27 – 31
 ## 36          Cos Résiduel                           Barbusse          121
 ## 40    Résidence l’Europe                           Salengro      107-117</code></pre>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="co"># filtre sur le secteur du bureau 1</span></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>resid [resid<span class="sc">$</span>secteurs <span class="sc">==</span> <span class="st">&quot;Secteur Centre Ville/Gare&quot;</span>,]</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co"># filtre sur le secteur du bureau 1</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>resid [resid<span class="sc">$</span>secteurs <span class="sc">==</span> <span class="st">&quot;Secteur Centre Ville/Gare&quot;</span>,]</span></code></pre></div>
 <pre><code>##          bailleurs                  secteurs numSecteur     residence
 ## 14   BONDY HABITAT Secteur Centre Ville/Gare          2     Lamartine
 ## 15   BONDY HABITAT Secteur Centre Ville/Gare          2        Guesde
@@ -684,45 +682,46 @@ rues</h3>
 <p><img src="img/avant.png" /><img src="img/apr%C3%A8s.png" /></p>
 <p>Dans ce cas, on décide de modifier le contour Autocad en suivant
 celui de Makina.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;data/vote.gpkg&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">&quot;data/vote.gpkg&quot;</span>)</span></code></pre></div>
 <pre><code>## Driver: GPKG 
 ## Available layers:
 ##       layer_name geometry_type features fields              crs_name
 ## 1    bureauxPoly Multi Polygon       32      4 RGF93 v1 / Lambert-93
 ## 2       bvMakina Multi Polygon       32      4 RGF93 v1 / Lambert-93
-## 3 bureauPolyZone Multi Polygon       32      2 RGF93 v1 / Lambert-93
-## 4     monSecteur Multi Polygon        1      2 RGF93 v1 / Lambert-93
-## 5       resultat Multi Polygon       32      6 RGF93 v1 / Lambert-93</code></pre>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>monSecteur <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/vote.gpkg&quot;</span>, <span class="st">&quot;monSecteur&quot;</span>)</span></code></pre></div>
+## 3     monSecteur Multi Polygon        1      2 RGF93 v1 / Lambert-93
+## 4       resultat Multi Polygon       32      6 RGF93 v1 / Lambert-93
+## 5 bureauPolyZone Multi Polygon       32      4                WGS 84
+## 6            res            NA       32      5                  &lt;NA&gt;</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>monSecteur <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/vote.gpkg&quot;</span>, <span class="st">&quot;monSecteur&quot;</span>)</span></code></pre></div>
 <pre><code>## Reading layer `monSecteur&#39; from data source 
-##   `C:\Users\tachasa\coursP8\data\vote.gpkg&#39; using driver `GPKG&#39;
+##   `C:\Users\Etudiant\coursP8\data\vote.gpkg&#39; using driver `GPKG&#39;
 ## Simple feature collection with 1 feature and 2 fields
 ## Geometry type: MULTIPOLYGON
 ## Dimension:     XY
-## Bounding box:  xmin: 661781.8 ymin: 6866550 xmax: 662062.4 ymax: 6867135
+## Bounding box:  xmin: 661781.8 ymin: 6866425 xmax: 662062.4 ymax: 6867135
 ## Projected CRS: RGF93 v1 / Lambert-93</code></pre>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a>autocad <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/vote.gpkg&quot;</span>, <span class="st">&quot;bureauPolyZone&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>autocad <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/vote.gpkg&quot;</span>, <span class="st">&quot;bureauPolyZone&quot;</span>)</span></code></pre></div>
 <pre><code>## Reading layer `bureauPolyZone&#39; from data source 
-##   `C:\Users\tachasa\coursP8\data\vote.gpkg&#39; using driver `GPKG&#39;
-## Simple feature collection with 32 features and 2 fields
+##   `C:\Users\Etudiant\coursP8\data\vote.gpkg&#39; using driver `GPKG&#39;
+## Simple feature collection with 32 features and 4 fields
 ## Geometry type: MULTIPOLYGON
 ## Dimension:     XY
-## Bounding box:  xmin: 661088.1 ymin: 6865338 xmax: 663354.7 ymax: 6869043
-## Projected CRS: RGF93 v1 / Lambert-93</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>makina <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/vote.gpkg&quot;</span>, <span class="st">&quot;bvMakina&quot;</span>)</span></code></pre></div>
+## Bounding box:  xmin: 2.469229 ymin: 48.88696 xmax: 2.500187 ymax: 48.92024
+## Geodetic CRS:  WGS 84</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>makina <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">&quot;data/vote.gpkg&quot;</span>, <span class="st">&quot;bvMakina&quot;</span>)</span></code></pre></div>
 <pre><code>## Reading layer `bvMakina&#39; from data source 
-##   `C:\Users\tachasa\coursP8\data\vote.gpkg&#39; using driver `GPKG&#39;
+##   `C:\Users\Etudiant\coursP8\data\vote.gpkg&#39; using driver `GPKG&#39;
 ## Simple feature collection with 32 features and 4 fields
 ## Geometry type: MULTIPOLYGON
 ## Dimension:     XY
 ## Bounding box:  xmin: 661067.2 ymin: 6865340 xmax: 663349.8 ymax: 6869044
 ## Projected CRS: RGF93 v1 / Lambert-93</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="fu">png</span>(<span class="st">&quot;img/bureau1.png&quot;</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="fu">mf_map</span>(monSecteur, <span class="at">border =</span> <span class="st">&quot;green&quot;</span>)</span>
-<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a><span class="fu">mf_map</span>(autocad, <span class="at">border =</span> <span class="st">&quot;red&quot;</span>,<span class="at">col =</span> <span class="cn">NA</span>,<span class="at">add =</span> T)</span>
-<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a><span class="fu">mf_map</span>(makina, <span class="at">border=</span> <span class="st">&quot;blue&quot;</span>, <span class="at">col =</span> <span class="cn">NA</span>,<span class="at">add =</span> T)</span>
-<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a><span class="fu">mf_layout</span>(<span class="st">&quot;Modification secteur bureau 1&quot;</span>, <span class="at">credits =</span> <span class="st">&quot;Mairie de Bondy, août 2023&quot;</span>)</span>
-<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="fu">png</span>(<span class="st">&quot;img/bureau1.png&quot;</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="fu">mf_map</span>(monSecteur, <span class="at">border =</span> <span class="st">&quot;green&quot;</span>)</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a><span class="fu">mf_map</span>(autocad, <span class="at">border =</span> <span class="st">&quot;red&quot;</span>,<span class="at">col =</span> <span class="cn">NA</span>,<span class="at">add =</span> T)</span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="fu">mf_map</span>(makina, <span class="at">border=</span> <span class="st">&quot;blue&quot;</span>, <span class="at">col =</span> <span class="cn">NA</span>,<span class="at">add =</span> T)</span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a><span class="fu">mf_layout</span>(<span class="st">&quot;Modification secteur bureau 1&quot;</span>, <span class="at">credits =</span> <span class="st">&quot;Mairie de Bondy, août 2023&quot;</span>)</span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div>
 <pre><code>## png 
 ##   2</code></pre>
 <p><img src="img/bureau1.png" /></p>
@@ -731,26 +730,14 @@ celui de Makina.</p>
 </div>
 <div id="saisissons" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> Saisissons !</h1>
-<p>Nous avons 2 types de modifications à faire :</p>
+<p>Nous avons 3 types d’objets à traiter :</p>
 <ul>
+<li><p>la vérification du taggage du bureau de vote</p></li>
+<li><p>le périmétre du bureau de vote</p></li>
 <li><p>Les résidences sociales manquantes</p></li>
-<li><p>le périmètre du bureau de vote à insérer</p></li>
 </ul>
-<div id="les-résidences-sociales" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Les résidences
-sociales</h2>
-<p>Dans le calque OSM, cliquer sur le bâtiment concerné et mettre name,
-start_date et dwellings:owner.</p>
-<p>Dans le framapad, mettre son prénom au niveau de la résidence pour
-signaler que la saisie a été faite</p>
-<p>Exemple pour la résidence Albert Thomas du secteur 1. En fait la
-clôture avait été saisie avec les bons tags sauf dwellings:owner.</p>
-<p>De plus, la clôture était incomplète n’englobant pas les numéros 15
-et 17.</p>
-<p><img src="img/modif.png" /></p>
-</div>
-<div id="périmètre-bureau-de-vote" class="section level2" number="4.2">
-<h2><span class="header-section-number">4.2</span> périmètre bureau de
+<div id="périmètre-bureau-de-vote" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> périmètre bureau de
 vote</h2>
 <ul>
 <li>importer le calque dans JOSM (format geojson et projection
@@ -767,7 +754,8 @@ relation</p></li>
 <p>Dans notre cas, bureau de vote numéro 1, comme c’est le premier, il
 n’y a pas de polygone adjacent, donc la relation est utilisée uniquement
 pour associer le bureau de vote et le périmètre.</p>
-<p>On sélectionne le secteur, et on fusionne sur le calque d’OSM</p>
+<p>On sélectionne le secteur, et on fusionne sur le calque d’OSM (menu
+édition, fusionner la sélection)</p>
 <p>Le panneau relation est à afficher (Alt + Maj + R)</p>
 <p>Les tags sont :</p>
 <ul>
@@ -779,13 +767,18 @@ pour associer le bureau de vote et le périmètre.</p>
 <p><img src="img/relation.png" /></p>
 <p>Ne pas oublier de donner le rôle : admin_centre et outer</p>
 </div>
-<div id="bilan-de-la-saisie" class="section level2" number="4.3">
-<h2><span class="header-section-number">4.3</span> Bilan de la
+<div id="bilan-de-la-saisie" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> Bilan de la
 saisie</h2>
-<p>Temps de saisie, 15 mn puis cycles de 30 mn.</p>
+<p>Temps de saisie, plus de 2 h.</p>
 <p>A compléter sur retour des étudiants</p>
 <p>quantitatif : combien de saisies par étudiants</p>
+<p><img src="img/resSaisie.PNG" /></p>
+<p>Mais, aucun champs attributaire concernant le numéro de bureau.</p>
 <p>qualitatif : quelles difficultés ?</p>
+<p>Difficultés de JOSM Manque de clarté des consignes Manque de clarté
+de l’objectif, processus trop longs Trop de données superposées (filtre
+d’exclusion -boundary)</p>
 </div>
 </div>
 
