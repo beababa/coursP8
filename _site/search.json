@@ -1,0 +1,156 @@
+[
+  {
+    "objectID": "02_jour1.html",
+    "href": "02_jour1.html",
+    "title": "Premier jour",
+    "section": "",
+    "text": "Faire une 1e saisie sous OSM d’une résidence Essayer d’établir une méthode simple"
+  },
+  {
+    "objectID": "02_jour1.html#création-du-profil",
+    "href": "02_jour1.html#création-du-profil",
+    "title": "Premier jour",
+    "section": "2.1 Création du profil",
+    "text": "2.1 Création du profil\nhttps://www.openstreetmap.org"
+  },
+  {
+    "objectID": "02_jour1.html#primitives-géométriques",
+    "href": "02_jour1.html#primitives-géométriques",
+    "title": "Premier jour",
+    "section": "2.2 Primitives géométriques",
+    "text": "2.2 Primitives géométriques"
+  },
+  {
+    "objectID": "02_jour1.html#tag-clé-valeur",
+    "href": "02_jour1.html#tag-clé-valeur",
+    "title": "Premier jour",
+    "section": "2.3 Tag = clé + valeur",
+    "text": "2.3 Tag = clé + valeur\nhttps://taginfo.openstreetmap.org/\nexercice : faire une saisie sur un point connu"
+  },
+  {
+    "objectID": "02_jour1.html#overpass-pour-extraire",
+    "href": "02_jour1.html#overpass-pour-extraire",
+    "title": "Premier jour",
+    "section": "3.1 Overpass pour extraire",
+    "text": "3.1 Overpass pour extraire\n\n3.1.1 Première approche : les rues\nhighway = * in Bondy\nCa tombe bien, les résidences sont souvent appelées par le nom de leurs rues…\n\n3.1.1.1 CARTE 1 : les rues OSM sous QGIS\nSavoir-faire QGIS :\n\nmettre un favori dans l’explorateur sur le répertoire Téléchargement\nintégrer une couche dans Qgis\nétiquetage des rues sous Qgis\n\n\n\nmise en page qgis (3 boutons)\n\n\n\n3.1.1.2 Méthode\nQue chaque stagiaire essaie de faire la carte en fonction de ce qu’il sait faire. En amont, remplissage d’un tableau.\n\n\n\n3.1.2 Deuxième approche : les bâtiments\n\n3.1.2.1 Quelques requêtes\nAvec l’assistant, essayer\n  - building:owner=*\n  - building:levels=*\n  - dwellings=*\n  - building!~yes and building=*\nSur différentes échelles (région île de france, bondy)\nQue se passe-t-il ? (faire un tableau échelle par requête)\n\n\n3.1.2.2 L’existant pour building:owner\nTrouver les 2 villes pour lesquelles ces tags ont été utilisés."
+  },
+  {
+    "objectID": "02_jour1.html#les-données-cadastrales-les-personnes-morales",
+    "href": "02_jour1.html#les-données-cadastrales-les-personnes-morales",
+    "title": "Premier jour",
+    "section": "4.1 Les données cadastrales : les personnes morales",
+    "text": "4.1 Les données cadastrales : les personnes morales\nFaire une carte Qgis sur la catégorie 5 (La catégorie “5” concerne les bailleurs sociaux.)\n\n4.1.1 Traitements sur la donnée initiale\nAttention à Bondy Habitat, recoder le fichier de manière à utiliser les mêmes noms et plus courts.\n\n\n4.1.2 CARTE 2 : bailleurs propriétaires\n\n4.1.2.1 Savoir faire QGIS\n\nutiliser le traitement de morceaux multiples à morceaux uniques\nstyle catégorisé sur le nom\naffichage tuile osm\nLégende du style catégorisé"
+  },
+  {
+    "objectID": "02_jour1.html#distribuer-les-saisies",
+    "href": "02_jour1.html#distribuer-les-saisies",
+    "title": "Premier jour",
+    "section": "4.2 Distribuer les saisies",
+    "text": "4.2 Distribuer les saisies\nOn rajoute le prénom de chaque étudiant concerné sur l’objet de saisie"
+  },
+  {
+    "objectID": "02_jour1.html#fixer-les-tags",
+    "href": "02_jour1.html#fixer-les-tags",
+    "title": "Premier jour",
+    "section": "4.3 Fixer les tags",
+    "text": "4.3 Fixer les tags\nUn seul tag pour cette première saisie"
+  },
+  {
+    "objectID": "02_jour1.html#utiliser-josm",
+    "href": "02_jour1.html#utiliser-josm",
+    "title": "Premier jour",
+    "section": "4.4 Utiliser JOSM",
+    "text": "4.4 Utiliser JOSM\n\n4.4.1 Paramétrage F12 pour lien remote\n\nserveur OSM\ncontrôle à distance\n\n\n\n4.4.2 bases JOSM\nhttps://learnosm.org/fr/josm/\n\n\n4.4.3 Basiques\n\ninterface (panneaux) https://wikis.cdrflorac.fr/wikis/CartoEICC/files/TutoJOSM_josm_ui_20170116151152_20170116143347.jpg\n\n\n\n4.4.4 Première saisie JOSM\n\nexercice 1 : sur un calque vierge, utiliser mode s (sélectionner), a (ajouter), et w (modifier)\nexercice 2 : Saisir le tag avec JOSM, utiliser les tags et le validateur\nexercice 3 : osmecum intégrer le bati"
+  },
+  {
+    "objectID": "02_jour1.html#contrôle-de-la-saisie",
+    "href": "02_jour1.html#contrôle-de-la-saisie",
+    "title": "Premier jour",
+    "section": "5.1 Contrôle de la saisie",
+    "text": "5.1 Contrôle de la saisie\n\n5.1.1 Règles\nPour pouvoir faire ce contrôle, la 1e chose, noter la saisie faite dans le fichier commun.\nEt ensuite, attention au calque, utiliser le validateur..\nLister les autres règles.\n\n\n5.1.2 Les outils OSM du contrôle de qualité\nhttp://resultmaps.neis-one.org\nhttp://osmose.openstreetmap.fr/fr/map/#zoom=16&lat=48.90695&lon=2.49237\net plus…\nhttps://www.maproulette.org/\nhttps://forum.openstreetmap.fr"
+  },
+  {
+    "objectID": "01_intro.html",
+    "href": "01_intro.html",
+    "title": "01_introduction",
+    "section": "",
+    "text": "options en tête knitr::opts_chunk$set(echo = TRUE)"
+  },
+  {
+    "objectID": "01_intro.html#le-plan-sucette-de-la-ville-de-bondy",
+    "href": "01_intro.html#le-plan-sucette-de-la-ville-de-bondy",
+    "title": "01_introduction",
+    "section": "1.1 Le plan sucette de la ville de Bondy",
+    "text": "1.1 Le plan sucette de la ville de Bondy\nA distribuer\nQu’observe t on ?\n\nles noms des rues : ils sont tous présents mais sous quel forme ?\nles différents bâtiments\nle graticule / la liste des rues / la liste des bâtiments\n\nAutres remarques.\n\nextraction de la carte du patrimoine de Bondy Habitat 2019"
+  },
+  {
+    "objectID": "01_intro.html#la-proposition-osmatic",
+    "href": "01_intro.html#la-proposition-osmatic",
+    "title": "01_introduction",
+    "section": "1.2 La proposition OSMatic",
+    "text": "1.2 La proposition OSMatic\nhttps://print.get-map.org/"
+  },
+  {
+    "objectID": "01_intro.html#osm",
+    "href": "01_intro.html#osm",
+    "title": "01_introduction",
+    "section": "2.1 OSM",
+    "text": "2.1 OSM"
+  },
+  {
+    "objectID": "01_intro.html#qgis",
+    "href": "01_intro.html#qgis",
+    "title": "01_introduction",
+    "section": "2.2 Qgis",
+    "text": "2.2 Qgis"
+  },
+  {
+    "objectID": "01_intro.html#le-cercle-vertueux",
+    "href": "01_intro.html#le-cercle-vertueux",
+    "title": "01_introduction",
+    "section": "3.1 Le cercle vertueux",
+    "text": "3.1 Le cercle vertueux\nIl s’agit de mettre en place un cercle vertueux dans l’utilisation d’OSM : extraire, contribuer, vérifier sa saisie en extrayant de nouveau et contribuer pour l’améliorer.\nJOUR 1 : extraction - saisie - contrôle données existantes et ajout de données manquantes dans OSM autour des bâtiments importants pour la ville.\nJOUR 2 : nouvelle extraction etc…\nJOUR 3 : cartographies variées permettant d’éventuelles nouvelles modifications"
+  },
+  {
+    "objectID": "01_intro.html#evaluation",
+    "href": "01_intro.html#evaluation",
+    "title": "01_introduction",
+    "section": "3.2 Evaluation",
+    "text": "3.2 Evaluation\nPour chaque séquence, plusieurs cartes et un quizz. pas d’évaluation officielle.\nMais une évaluation collective, de type, combien d’éléments rajoutés dans OSM et un essai de mesure de leur qualité.\nEviter absolument le retour de bâton OSM, notamment pour il y a deux ans :\nhttps://forum.openstreetmap.fr/t/landuse-residential-supprime-a-bondy-et-pavillon-sous-bois/9562/9\n\ndonc impérativement mettre dans le commentaire de changeset : #Paris8-Bondy2024 et examiner les contributions dans le détail avec les outils de contrôle de qualité d’OSM\nhttps://resultmaps.neis-one.org/"
+  },
+  {
+    "objectID": "01_intro.html#le-collaboratif",
+    "href": "01_intro.html#le-collaboratif",
+    "title": "01_introduction",
+    "section": "3.3 Le collaboratif",
+    "text": "3.3 Le collaboratif\nUn mot au sujet du collectif, ce cours est aussi l’occasion de tester une organisation de travail en groupe (c’est la raison d’être d’OSM) donc autant de groupe que d’IRIS. Un secteur pour 2 étudiants."
+  },
+  {
+    "objectID": "01_intro.html#précisions-techniques",
+    "href": "01_intro.html#précisions-techniques",
+    "title": "01_introduction",
+    "section": "3.4 Précisions techniques",
+    "text": "3.4 Précisions techniques\n\n3.4.1 Support et procédures\nLe support, fait sous R Quarto, sert uniquement de “fil rouge”.\nLes procédures employées sous QGIS sont à rechercher sur internet.\nEssai : “Qgis compter les points dans un polygone” Quel est le menu qui permet de le faire ?\n\n\n3.4.2 Dépôt git\n\ncopie du projet GIT en début et en fin de session\nDépôt des cartes sur le dépôt P8\n\nDéposer son image dans github dans le répertoire img/carteEtudiant du dépot coursP8 avec comme syntaxe : P8_prenom.pngf"
+  },
+  {
+    "objectID": "01_intro.html#déroulé",
+    "href": "01_intro.html#déroulé",
+    "title": "01_introduction",
+    "section": "3.5 Déroulé",
+    "text": "3.5 Déroulé\n\n\n[1] 1090\n\n\n10 mn de trop et sans compter les pauses… 15 mn toutes les 1 H 30\nVoir également heures de repas et 1er jour"
+  },
+  {
+    "objectID": "01_intro.html#qgis-1",
+    "href": "01_intro.html#qgis-1",
+    "title": "01_introduction",
+    "section": "6.1 Qgis",
+    "text": "6.1 Qgis\nze manuel le tuto passage https://tutoqgis.cnrs.fr/\nhttps://gis.stackexchange.com/questions/91612/adding-graticules-to-the-edge-of-the-map-only-in-qgis"
+  },
+  {
+    "objectID": "01_intro.html#osm-1",
+    "href": "01_intro.html#osm-1",
+    "title": "01_introduction",
+    "section": "6.2 OSM",
+    "text": "6.2 OSM\nforum, wiki, taginfo"
+  }
+]

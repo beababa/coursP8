@@ -1,17 +1,10 @@
 ---
 title: "01_introduction"
 format:
-  docx:
-    toc: true
-    number-sections: true
-    highlight-style: github
   html:
     toc: true
     number-sections: true
     code-fold: true
-  pdf:
-    toc: true
-    number-sections: true 
 editor: visual
 editor_options: 
   chunk_output_type: console
@@ -19,13 +12,9 @@ execute:
   echo: false
 ---
 
+options en tête knitr::opts_chunk\$set(echo = TRUE)
 
-options en tête
-knitr::opts_chunk$set(echo = TRUE)
-
-
-
-#  Objectif καλὸς κἀγαθός
+# Objectif καλὸς κἀγαθός
 
 Faire un plan de ville *kalos kagathos* avec OSM.
 
@@ -35,16 +24,15 @@ A distribuer
 
 Qu'observe t on ?
 
-- les noms des rues : ils sont tous présents mais sous quel forme ?
+-   les noms des rues : ils sont tous présents mais sous quel forme ?
 
-- les différents bâtiments
+-   les différents bâtiments
 
-- le graticule / la liste des rues / la liste des bâtiments
+-   le graticule / la liste des rues / la liste des bâtiments
 
 Autres remarques.
 
-
-![](img/exemple.png){width=300}
+![](img/exemple.png){width="300"}
 
 *extraction de la carte du patrimoine de Bondy Habitat 2019*
 
@@ -52,15 +40,11 @@ Autres remarques.
 
 https://print.get-map.org/
 
-
-# Les outils 
-
+# Les outils
 
 ## OSM
 
 ## Qgis
-
-
 
 # Méthode et déroulé
 
@@ -84,8 +68,6 @@ Eviter absolument le retour de bâton OSM, notamment pour il y a deux ans :
 
 https://forum.openstreetmap.fr/t/landuse-residential-supprime-a-bondy-et-pavillon-sous-bois/9562/9
 
-
-
 ![](img/tagContrib.png)
 
 donc impérativement mettre dans le commentaire de changeset : #Paris8-Bondy2024 et examiner les contributions dans le détail avec les outils de contrôle de qualité d'OSM
@@ -95,8 +77,6 @@ https://resultmaps.neis-one.org/
 ## Le collaboratif
 
 Un mot au sujet du collectif, ce cours est aussi l'occasion de tester une organisation de travail en groupe (c'est la raison d'être d'OSM) donc autant de groupe que d'IRIS. Un secteur pour 2 étudiants.
-
-
 
 ![](img/attribBureau.png)
 
@@ -108,23 +88,17 @@ Le support, fait sous R Quarto, sert uniquement de "fil rouge".
 
 Les procédures employées sous QGIS sont à rechercher sur internet.
 
-
-Essai : "Qgis compter les points dans un polygone"
-Quel est le menu qui permet de le faire ?
+Essai : "Qgis compter les points dans un polygone" Quel est le menu qui permet de le faire ?
 
 ### Dépôt git
 
+-   copie du projet GIT en début et en fin de session
 
-- copie du projet GIT en début et en fin de session
-
-
-- Dépôt des cartes sur le dépôt P8
+-   Dépôt des cartes sur le dépôt P8
 
 Déposer son image dans github dans le répertoire *img/carteEtudiant* du dépot *coursP8* avec comme syntaxe : *P8_prenom.png*f
 
 ![](img/depotGIT.PNG)
-
-
 
 ## Déroulé
 
@@ -140,12 +114,9 @@ Voir également heures de repas et 1er jour
 
 # Présentation en binôme
 
-passé / présent / futur / attentes par rapport OSM / niveau QGIS
-fichier framapad, celui qui parle, celui qui écrit
-https://lite.framacalc.org/9ilj-coursp8
+passé / présent / futur / attentes par rapport OSM / niveau QGIS fichier framapad, celui qui parle, celui qui écrit https://lite.framacalc.org/9ilj-coursp8
 
-Ce fichier va permettre de s'attribuer les zones de saisie et toutes les opérations
-collaboratives du cours.
+Ce fichier va permettre de s'attribuer les zones de saisie et toutes les opérations collaboratives du cours.
 
 ```{r}
 data <- read.csv("data/etudiant.csv")
@@ -156,32 +127,21 @@ barplot(table(data$présent), las = 2)
 barplot(table(data$futur), las = 2)
 ```
 
-
-
-
-
-:::{.callout-note} 
-
+::: callout-note
 quelle diffusion ?
 :::
 
 # Quizz
 
-Introduction
-https://framaforms.org/paris8-bondy2023-introduction-1693048391
+Introduction https://framaforms.org/paris8-bondy2023-introduction-1693048391
 
-séquence 1
-https://framaforms.org/paris8-bondy2023-basiques-osm-1693075060
+séquence 1 https://framaforms.org/paris8-bondy2023-basiques-osm-1693075060
 
-séquence 2
-https://framaforms.org/paris8-bondy2023-premiere-saisie-1693156617
+séquence 2 https://framaforms.org/paris8-bondy2023-premiere-saisie-1693156617
 
-séquence 3
-pas de quizz, car surtout des cartos.
+séquence 3 pas de quizz, car surtout des cartos.
 
-Evaluation de satisfaction
-https://forms.gle/R5W9DooDPMmRn3kF6
-
+Evaluation de satisfaction https://forms.gle/R5W9DooDPMmRn3kF6
 
 # Sitographie
 
@@ -191,16 +151,10 @@ clin d'oeil
 
 ## Qgis
 
-
 ze manuel le tuto passage https://tutoqgis.cnrs.fr/
 
-
 https://gis.stackexchange.com/questions/91612/adding-graticules-to-the-edge-of-the-map-only-in-qgis
-
-
 
 ## OSM
 
 forum, wiki, taginfo
-
-

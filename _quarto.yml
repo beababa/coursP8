@@ -1,28 +1,24 @@
 project: 
   type: website
-  output-dir: docs
 
-name: "coursP8"
-navbar:
-  left:
-    - text: "Introduction"
-      href: intro.html
-    - text: "saisie 1"
-      href: jour1.html
-    - text: "saisie 2"
-      href: jour2.html
-    - text: "saisie 3"
-      href: jour3.html   
-  right:
-    - icon: fa-github
-      href: https://github.com/beababa/coursP8
-output: 
-  html_document:
-    toc_float: TRUE  
-    theme: united
-    highlight: tango
-    include:
-      after_body: footer.html
+website:
+  title: "Cours P8 2024"
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Introduction"
+        href: O1_intro.qmd
+      - text: "Jour1"
+        href: 02_jour1.qmd
+    right:
+      - icon: fa-github
+        href: https://github.com/beababa/coursP8
+
+format: 
+  html:
+    theme: yeti
     number_sections: yes
     exclude: [data-raw, data]
-    css: css/styles.css
+    css: styles.css
+    toc : true
