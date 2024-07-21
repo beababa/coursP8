@@ -1,0 +1,11 @@
+"","code_commune_ref","reconstitution_code_commune","id_brut_bv_reu","id","geo_adresse","geo_type","geo_score","longitude","latitude","api_line","nb_bv_commune","nb_adresses"
+"1",1001,2,"01001_1","01001_0045","Rue des Bles d'Or 01400 L'Abergement-Clémenciat","street",0.85,4.92609,46.151757,"BANN",1,5
+"2",1001,1,"01001_1","01001_0040_00101","101 Impasse Bellevue 01400 L'Abergement-Clémenciat","housenumber",0.91,4.924261,46.134889,"BANG",1,1
+"3",1001,1,"01001_1","01001_0175_00106","106 Route des Garaudes 01400 L'Abergement-Clémenciat","housenumber",0.91,4.923428,46.13393,"BANG",1,1
+"4",1001,1,"01001_1","01001_0230_00190","190 Impasse des Lilas 01400 L'Abergement-Clémenciat","housenumber",0.91,4.923083,46.146773,"BANG",1,2
+"5",1001,2,"01001_1","01001_0175_00192","192 Route des Garaudes 01400 L'Abergement-Clémenciat","housenumber",0.95,4.923743,46.133608,"BANG",1,3
+"6",1001,1,"01001_1","01001_0115_00194","194 Route de Clémenciat 01400 L'Abergement-Clémenciat","housenumber",0.91,4.926512,46.13339,"BANG",1,1
+"7",1001,1,"01001_1","01001_0265_00194","194 Rue de Munetville 01400 L'Abergement-Clémenciat","housenumber",0.91,4.923193,46.150688,"BANG",1,1
+"8",1001,1,"01001_1","01001_0175_00194","194 Route des Garaudes 01400 L'Abergement-Clémenciat","housenumber",0.91,4.92359,46.133477,"BANG",1,1
+"9",1001,1,"01001_1","01001_0175_00196","196 Route des Garaudes 01400 L'Abergement-Clémenciat","housenumber",0.91,4.923156,46.133561,"BANG",1,2
+"10",1001,1,"01001_1","01001_0300_00108","108 Impasse du Panoramique 01400 L'Abergement-Clémenciat","housenumber",0.91,4.921115,46.148606,"BANG",1,1

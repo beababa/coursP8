@@ -230,23 +230,13 @@ dev.off()
 
 # Saisissons !
 
-Nous avons 2 types de modifications à faire :
+Nous avons 3 types d'objets à traiter :
+
+- la vérification du taggage du bureau de vote
+
+- le périmétre du bureau de vote
 
 - Les résidences sociales manquantes
-
-- le périmètre du bureau de vote à insérer
-
-## Les résidences sociales
-
-Dans le calque OSM, cliquer sur le bâtiment concerné et mettre name, start_date et dwellings:owner.
-
-Dans le framapad, mettre son prénom au niveau de la résidence pour signaler que la saisie a été faite
-
-Exemple pour la résidence Albert Thomas du secteur 1. En fait la clôture avait été saisie avec les bons tags sauf dwellings:owner.
-
-De plus, la clôture était incomplète n'englobant pas les numéros 15 et 17.
-
-![](img/modif.png)
 
 
 ## périmètre bureau de vote
@@ -259,12 +249,12 @@ De plus, la clôture était incomplète n'englobant pas les numéros 15 et 17.
 
 - repérer les tracés (ways) déjà existants et rajouter les autres
 
+
 - sélectionner l'ensemble des tracés et tagger comme une relation
 
-Dans notre cas, bureau de vote numéro 1, comme c'est le premier, il n'y a pas de 
-polygone adjacent, donc la relation est utilisée uniquement pour associer le bureau de vote et le périmètre.
+Dans notre cas, bureau de vote numéro 1, comme c'est le premier, il n'y a pas de polygone adjacent, donc la relation est utilisée uniquement pour associer le bureau de vote et le périmètre.
 
-On sélectionne le secteur, et on fusionne sur le calque d'OSM
+On sélectionne le secteur, et on fusionne sur le calque d'OSM (menu édition, fusionner la sélection)
 
 
 
@@ -284,12 +274,28 @@ Les tags sont :
 
 Ne pas oublier de donner le rôle : admin_centre et outer
 
+
+
+
 ## Bilan de la saisie
 
-Temps de saisie, 15 mn puis cycles de 30 mn.
+Temps de saisie, plus de 2 h.
 
 A compléter sur retour des étudiants
 
 quantitatif : combien de saisies par étudiants
 
+
+![](img/resSaisie.PNG)
+
+
+Mais, aucun champs attributaire concernant le numéro de bureau.
+
+
 qualitatif : quelles difficultés ?
+
+
+Difficultés de JOSM
+Manque de clarté des consignes
+Manque de clarté de l'objectif, processus trop longs
+Trop de données superposées (filtre d'exclusion -boundary)

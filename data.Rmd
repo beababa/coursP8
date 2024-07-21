@@ -23,9 +23,12 @@ Utiliser le package pour Bondy
 library(mapvotr)
 library(sqldf)
 library(sf)
-data <- read.csv("data/table-adresses-reu.csv", nrows = -10)
+data <- read.csv("c:/Users/Etudiant/Downloads/table-adresses-reu.csv", nrows = 10)
 str(data)
-data <- read.csv.sql("data/table-adresses-reu.csv", sql = "select * from file where code_commune_ref = '93140' ")
+write.csv(data, "data/test.csv")
+data <- read.csv.sql("c:/Users/Etudiant/Downloads/table-adresses-reu.csv", sql = "select * from file where code_commune_ref like '9329'")
+data2 <- read.csv.sql("data/test.csv", sql = "select * from file where code_commune_ref = '9329'")
+data2
 ```
 
 
@@ -75,12 +78,23 @@ joint <- rbind(joint1, joint2)
 ```
 
 
+#modif à la main et export carte umap
+
+
+```{r}
+zone <- st_read("data/secteurFinal.geojson")
+joint <- zone
+```
+
+
 ```{r}
 library(mapsf)
 png("img/attribBureau.png", res=200, width = 1200, height = 1200)
 mf_map(joint, type = "typo", var="prénom", border=NA, leg_pos = NA)
-mf_label(joint, "prénom", halo =T, cex = 0.7, overlap=F)
+joint$txt <- paste(joint$numBureau,joint$prénom)
+mf_label(joint, "txt", halo =T, cex = 0.7, overlap=F)
 mf_layout("attribution des zones", credits = "Cours P8\naoût 2023")
 dev.off()
 st_write(joint,"data/vote.gpkg", "bureauPolyZone", delete_layer=T)
 ```
+
