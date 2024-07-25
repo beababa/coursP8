@@ -7,18 +7,20 @@ website:
     background: primary
     search: true
     left:
-      - text: "Introduction"
-        href: O1_intro.qmd
-      - text: "Jour1"
-        href: 02_jour1.qmd
+      - text: "Introduction |"
+        href: 01_intro.qmd
+      - text: " Première carte |"
+        href: 02_carte1.qmd
+      - text: " Bureaux de vote |"
+        href: 03_bv.qmd
+      - text: " Rues et bâtiments |"
+        href: 04_rueBat.qmd
     right:
-      - icon: fa-github
+      - icon: github
         href: https://github.com/beababa/coursP8
 
 format: 
   html:
     theme: yeti
     number_sections: yes
-    exclude: [data-raw, data]
-    css: styles.css
-    toc : true
+    toc: true

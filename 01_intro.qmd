@@ -1,5 +1,5 @@
 ---
-title: "01_introduction"
+title: "0bjectif et méthode"
 format:
   html:
     toc: true
@@ -9,14 +9,12 @@ editor: visual
 editor_options: 
   chunk_output_type: console
 execute:
-  echo: false
+  echo: true
 ---
 
-options en tête knitr::opts_chunk\$set(echo = TRUE)
+Faire un plan de ville *kalos kagathos* (καλὸς κἀγαθός) avec OSM.
 
-# Objectif καλὸς κἀγαθός
-
-Faire un plan de ville *kalos kagathos* avec OSM.
+# Modèles
 
 ## Le plan sucette de la ville de Bondy
 
@@ -34,17 +32,43 @@ Autres remarques.
 
 ![](img/exemple.png){width="300"}
 
-*extraction de la carte du patrimoine de Bondy Habitat 2019*
+*extraction du plan sucette de la ville*
 
 ## La proposition OSMatic
 
-https://print.get-map.org/
+[OSMatic](https://print.get-map.org/)
+
+voir notamment le menu *cartes*
 
 # Les outils
 
+## Le framapad
+
+Il va servir pour la présentation, la répartition des tâches etc... [Framapad Paris 8](https://lite.framacalc.org/9ilj-coursp8)
+
 ## OSM
 
+Faire une recherche internet pour définir OSM.
+
+Questions :
+
+-   Quelle différence entre openstreetmap.org et openstreetmap.fr
+
+-   Que faut-il retenir des [10 commandements](https://www.openstreetmap.fr/les-10-cosmandements/) ?
+
+Créer son profil sur [openstreetmap.org](https://www.openstreetmap.org), attention au pseudo.
+
+## JOSM
+
+Paramétrage F12 pour lien remote
+
+-   serveur OSM
+
+-   contrôle à distance
+
 ## Qgis
+
+Qui connait Qgis ? quel niveau ? (remplir le framapad) =\> définir des étudiants ressource
 
 # Méthode et déroulé
 
@@ -52,33 +76,50 @@ https://print.get-map.org/
 
 Il s'agit de mettre en place un *cercle vertueux* dans l'utilisation d'OSM : extraire, contribuer, vérifier sa saisie en extrayant de nouveau et contribuer pour l'améliorer.
 
-JOUR 1 : extraction - saisie - contrôle données existantes et ajout de données manquantes dans OSM autour des bâtiments importants pour la ville.
+## Déroulé
 
-JOUR 2 : nouvelle extraction etc...
+JOUR 1 : Présentation et faire une première carte de la ville à partir des données OSM principalement.
 
-JOUR 3 : cartographies variées permettant d'éventuelles nouvelles modifications
+JOUR 2 : Répartition du zonage par bureau de vote et étude des rues OSM (nom et typologie : place et ponts)
+
+JOUR 3 : Bâtiments, comment valoriser l'emprise du terrain qui les contient ? et carte finale,
+
+Pour finir, nous évoquerons la possibilité de traitement reproductible. Si les données changent, la carte évolue également.
+
+Au niveau du temps, cela donne :
+
+```{r}
+#| echo: true 
+# stats temps / séquence
+temps <- read.csv("data/tps.csv")
+sum(temps$tps, na.rm=TRUE)
+```
+
+10 mn de trop et sans compter les pauses... 15 mn toutes les 1 H 30
+
+Voir également heures de repas et 1er jour
 
 ## Evaluation
 
-Pour chaque séquence, plusieurs cartes et un quizz. pas d'évaluation officielle.
+Pour chaque séquence, plusieurs cartes et des quizz pour valider les termes précis. pas d'évaluation officielle.
 
 Mais une évaluation collective, de type, combien d'éléments rajoutés dans OSM et un essai de mesure de leur qualité.
 
-Eviter absolument le retour de bâton OSM, notamment pour il y a deux ans :
+Eviter absolument le [retour de bâton OSM](https://forum.openstreetmap.fr/t/landuse-residential-supprime-a-bondy-et-pavillon-sous-bois/9562/9), notamment pour il y a deux ans.
 
-https://forum.openstreetmap.fr/t/landuse-residential-supprime-a-bondy-et-pavillon-sous-bois/9562/9
+Donc, impérativement mettre dans le commentaire de changeset : **#Paris8-Bondy2024**
 
 ![](img/tagContrib.png)
 
-donc impérativement mettre dans le commentaire de changeset : #Paris8-Bondy2024 et examiner les contributions dans le détail avec les outils de contrôle de qualité d'OSM
-
-https://resultmaps.neis-one.org/
+Egalement, examiner les contributions dans le détail avec les outils de contrôle de qualité d'OSM : chez [neis](https://resultmaps.neis-one.org/)
 
 ## Le collaboratif
 
-Un mot au sujet du collectif, ce cours est aussi l'occasion de tester une organisation de travail en groupe (c'est la raison d'être d'OSM) donc autant de groupe que d'IRIS. Un secteur pour 2 étudiants.
+Un mot au sujet du collectif, ce cours est aussi l'occasion de tester une organisation de travail en groupe (c'est la raison d'être d'OSM) donc répartition des étudiants par bureau de vote (2).
 
 ![](img/attribBureau.png)
+
+L'attribution se fera par une [carte umap](http://u.osmfr.org/m/954238/)
 
 ## Précisions techniques
 
@@ -92,29 +133,21 @@ Essai : "Qgis compter les points dans un polygone" Quel est le menu qui permet d
 
 ### Dépôt git
 
+Le dépot des cartes se fera sur le git s'il n'y a pas de partage réseau.
+
 -   copie du projet GIT en début et en fin de session
 
 -   Dépôt des cartes sur le dépôt P8
 
-Déposer son image dans github dans le répertoire *img/carteEtudiant* du dépot *coursP8* avec comme syntaxe : *P8_prenom.png*f
+Déposer son image dans github dans le répertoire *img/carteEtudiant* du dépot *coursP8* avec comme syntaxe : *P8_prenom.png*
 
 ![](img/depotGIT.PNG)
 
-## Déroulé
-
-```{r}
-# stats temps / séquence
-temps <- read.csv("data/tps.csv")
-sum(temps$tps, na.rm=TRUE)
-```
-
-10 mn de trop et sans compter les pauses... 15 mn toutes les 1 H 30
-
-Voir également heures de repas et 1er jour
-
 # Présentation en binôme
 
-passé / présent / futur / attentes par rapport OSM / niveau QGIS fichier framapad, celui qui parle, celui qui écrit https://lite.framacalc.org/9ilj-coursp8
+passé / présent / futur / attentes par rapport OSM / niveau QGIS fichier framapad, celui qui parle, celui qui écrit
+
+sur le [framacalc](https://lite.framacalc.org/9ilj-coursp8)
 
 Ce fichier va permettre de s'attribuer les zones de saisie et toutes les opérations collaboratives du cours.
 
@@ -133,28 +166,48 @@ quelle diffusion ?
 
 # Quizz
 
-Introduction https://framaforms.org/paris8-bondy2023-introduction-1693048391
+[Introduction](https://framaforms.org/paris8-bondy2024-introduction-1693048391)
 
-séquence 1 https://framaforms.org/paris8-bondy2023-basiques-osm-1693075060
+[Basiques OSM](https://framaforms.org/paris8-bondy2024-basiques-osm-1693075060)
 
 séquence 2 https://framaforms.org/paris8-bondy2023-premiere-saisie-1693156617
 
 séquence 3 pas de quizz, car surtout des cartos.
 
-Evaluation de satisfaction https://forms.gle/R5W9DooDPMmRn3kF6
+Évaluation de satisfaction https://forms.gle/R5W9DooDPMmRn3kF6
 
 # Sitographie
 
-https://christophe-lebas.medium.com/tuto-visualiser-une-ville-et-ses-rues-gr%C3%A2ce-%C3%A0-qgis-simplement-avant-den-faire-un-mug-shp-et-a57cf4607f64
-
-clin d'oeil
+[clin d'oeil](https://christophe-lebas.medium.com/tuto-visualiser-une-ville-et-ses-rues-gr%C3%A2ce-%C3%A0-qgis-simplement-avant-den-faire-un-mug-shp-et-a57cf4607f64)
 
 ## Qgis
 
-ze manuel le tuto passage https://tutoqgis.cnrs.fr/
+[ze manuel le tuto passage](https://tutoqgis.cnrs.fr/)
 
-https://gis.stackexchange.com/questions/91612/adding-graticules-to-the-edge-of-the-map-only-in-qgis
+une référence en livre : **QGIS Map Design - Second Edition** by Anita Graser and Gretchen N. Peterson
+
+[graticules](https://gis.stackexchange.com/questions/91612/adding-graticules-to-the-edge-of-the-map-only-in-qgis)
 
 ## OSM
 
-forum, wiki, taginfo
+### La base
+
+[forum](https://forum.openstreetmap.fr)
+
+[wiki](https://wiki.openstreetmap.org/)
+
+[features](https://wiki.openstreetmap.org/wiki/Map_Features) souvent très lent
+
+[taginfo](https://taginfo.openstreetmap.org/) plus rapide
+
+[overpass](https://overpass-turbo.eu/)
+
+### JOSM
+
+[base](https://learnosm.org/fr/josm/)
+
+### Le contrôle de qualité
+
+[neiss](http://resultmaps.neis-one.org)
+
+[osmose](http://osmose.openstreetmap.fr/fr/map/#zoom=16&lat=48.90695&lon=2.49237)
