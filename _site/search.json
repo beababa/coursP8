@@ -1,0 +1,303 @@
+[
+  {
+    "objectID": "01_intro.html",
+    "href": "01_intro.html",
+    "title": "0bjectif et méthode",
+    "section": "",
+    "text": "Faire un plan de ville kalos kagathos (καλὸς κἀγαθός) avec OSM."
+  },
+  {
+    "objectID": "01_intro.html#le-plan-sucette-de-la-ville-de-bondy",
+    "href": "01_intro.html#le-plan-sucette-de-la-ville-de-bondy",
+    "title": "0bjectif et méthode",
+    "section": "1.1 Le plan sucette de la ville de Bondy",
+    "text": "1.1 Le plan sucette de la ville de Bondy\nA distribuer\nQu’observe t on ?\n\nles noms des rues : ils sont tous présents mais sous quel forme ?\nles différents bâtiments\nle graticule / la liste des rues / la liste des bâtiments\n\nAutres remarques.\n\nextraction du plan sucette de la ville"
+  },
+  {
+    "objectID": "01_intro.html#la-proposition-osmatic",
+    "href": "01_intro.html#la-proposition-osmatic",
+    "title": "0bjectif et méthode",
+    "section": "1.2 La proposition OSMatic",
+    "text": "1.2 La proposition OSMatic\nOSMatic\nvoir notamment le menu cartes"
+  },
+  {
+    "objectID": "01_intro.html#le-framapad",
+    "href": "01_intro.html#le-framapad",
+    "title": "0bjectif et méthode",
+    "section": "2.1 Le framapad",
+    "text": "2.1 Le framapad\nIl va servir pour la présentation, la répartition des tâches etc… Framapad Paris 8"
+  },
+  {
+    "objectID": "01_intro.html#osm",
+    "href": "01_intro.html#osm",
+    "title": "0bjectif et méthode",
+    "section": "2.2 OSM",
+    "text": "2.2 OSM\nFaire une recherche internet pour définir OSM.\nQuestions :\n\nQuelle différence entre openstreetmap.org et openstreetmap.fr\nQue faut-il retenir des 10 commandements ?\n\nCréer son profil sur openstreetmap.org, attention au pseudo."
+  },
+  {
+    "objectID": "01_intro.html#josm",
+    "href": "01_intro.html#josm",
+    "title": "0bjectif et méthode",
+    "section": "2.3 JOSM",
+    "text": "2.3 JOSM\nParamétrage F12 pour lien remote\n\nserveur OSM\ncontrôle à distance"
+  },
+  {
+    "objectID": "01_intro.html#qgis",
+    "href": "01_intro.html#qgis",
+    "title": "0bjectif et méthode",
+    "section": "2.4 Qgis",
+    "text": "2.4 Qgis\nQui connait Qgis ? quel niveau ? (remplir le framapad) =&gt; définir des étudiants ressource"
+  },
+  {
+    "objectID": "01_intro.html#le-cercle-vertueux",
+    "href": "01_intro.html#le-cercle-vertueux",
+    "title": "0bjectif et méthode",
+    "section": "3.1 Le cercle vertueux",
+    "text": "3.1 Le cercle vertueux\nIl s’agit de mettre en place un cercle vertueux dans l’utilisation d’OSM : extraire, contribuer, vérifier sa saisie en extrayant de nouveau et contribuer pour l’améliorer."
+  },
+  {
+    "objectID": "01_intro.html#déroulé",
+    "href": "01_intro.html#déroulé",
+    "title": "0bjectif et méthode",
+    "section": "3.2 Déroulé",
+    "text": "3.2 Déroulé\nJOUR 1 : Présentation et faire une première carte de la ville à partir des données OSM principalement.\nJOUR 2 : Répartition du zonage par bureau de vote et étude des rues OSM (nom et typologie : place et ponts)\nJOUR 3 : Bâtiments, comment valoriser l’emprise du terrain qui les contient ? et carte finale,\nPour finir, nous évoquerons la possibilité de traitement reproductible. Si les données changent, la carte évolue également.\nAu niveau du temps, cela donne :\n\n\nCode\n# stats temps / séquence\ntemps &lt;- read.csv(\"data/tps.csv\")\nsum(temps$tps, na.rm=TRUE)\n\n\n[1] 1100\n\n\n10 mn de trop et sans compter les pauses… 15 mn toutes les 1 H 30\nVoir également heures de repas et 1er jour"
+  },
+  {
+    "objectID": "01_intro.html#evaluation",
+    "href": "01_intro.html#evaluation",
+    "title": "0bjectif et méthode",
+    "section": "3.3 Evaluation",
+    "text": "3.3 Evaluation\nPour chaque séquence, plusieurs cartes et des quizz pour valider les termes précis. pas d’évaluation officielle.\nMais une évaluation collective, de type, combien d’éléments rajoutés dans OSM et un essai de mesure de leur qualité.\nEviter absolument le retour de bâton OSM, notamment pour il y a deux ans.\nDonc, impérativement mettre dans le commentaire de changeset : #Paris8-Bondy2024\n\nEgalement, examiner les contributions dans le détail avec les outils de contrôle de qualité d’OSM : chez neis"
+  },
+  {
+    "objectID": "01_intro.html#le-collaboratif",
+    "href": "01_intro.html#le-collaboratif",
+    "title": "0bjectif et méthode",
+    "section": "3.4 Le collaboratif",
+    "text": "3.4 Le collaboratif\nUn mot au sujet du collectif, ce cours est aussi l’occasion de tester une organisation de travail en groupe (c’est la raison d’être d’OSM) donc répartition des étudiants par bureau de vote (2).\n\nL’attribution se fera par une carte umap"
+  },
+  {
+    "objectID": "01_intro.html#précisions-techniques",
+    "href": "01_intro.html#précisions-techniques",
+    "title": "0bjectif et méthode",
+    "section": "3.5 Précisions techniques",
+    "text": "3.5 Précisions techniques\n\n3.5.1 Support et procédures\nLe support, fait sous R Quarto, sert uniquement de “fil rouge”.\nLes procédures employées sous QGIS sont à rechercher sur internet.\nEssai : “Qgis compter les points dans un polygone” Quel est le menu qui permet de le faire ?\n\n\n3.5.2 Dépôt des cartes\nLe dépôt des cartes se fera sur le partage réseau.\nAu niveau de la zone de recherche, taper\n\\\\C210-P\nSélectionner ensuite le répertoire partage géographie et OSM, clic droit Ajouter un raccourci rapide\nDéposer son image dans le répertoire img/cartes avec comme syntaxe : prenom.png\n\n\n3.5.3 Projet git\nEn utilisant l’icone à droite du cours, copie du projet GIT en début et en fin de session (via l’option download zip)"
+  },
+  {
+    "objectID": "01_intro.html#qgis-1",
+    "href": "01_intro.html#qgis-1",
+    "title": "0bjectif et méthode",
+    "section": "6.1 Qgis",
+    "text": "6.1 Qgis\nze manuel le tuto passage\nune référence en livre : QGIS Map Design - Second Edition by Anita Graser and Gretchen N. Peterson\ngraticules"
+  },
+  {
+    "objectID": "01_intro.html#osm-1",
+    "href": "01_intro.html#osm-1",
+    "title": "0bjectif et méthode",
+    "section": "6.2 OSM",
+    "text": "6.2 OSM\n\n6.2.1 La base\nforum\nwiki\nfeatures souvent très lent\ntaginfo plus rapide\noverpass\n\n\n6.2.2 JOSM\nbase\n\n\n6.2.3 Le contrôle de qualité\nneiss\nosmose"
+  },
+  {
+    "objectID": "data/listePOI.html",
+    "href": "data/listePOI.html",
+    "title": "Cours P8 2024",
+    "section": "",
+    "text": "&lt;!DOCTYPE qgis PUBLIC ‘http://mrcc.com/qgis.dtd’ ‘SYSTEM’&gt;     dataset\n\n\n                GEOGCRS[“WGS 84”,ENSEMBLE[“World Geodetic System 1984 ensemble”,MEMBER[“World Geodetic System 1984 (Transit)”],MEMBER[“World Geodetic System 1984 (G730)”],MEMBER[“World Geodetic System 1984 (G873)”],MEMBER[“World Geodetic System 1984 (G1150)”],MEMBER[“World Geodetic System 1984 (G1674)”],MEMBER[“World Geodetic System 1984 (G1762)”],MEMBER[“World Geodetic System 1984 (G2139)”],ELLIPSOID[“WGS 84”,6378137,298.257223563,LENGTHUNIT[“metre”,1]],ENSEMBLEACCURACY[2.0]],PRIMEM[“Greenwich”,0,ANGLEUNIT[“degree”,0.0174532925199433]],CS[ellipsoidal,2],AXIS[“geodetic latitude (Lat)”,north,ORDER[1],ANGLEUNIT[“degree”,0.0174532925199433]],AXIS[“geodetic longitude (Lon)”,east,ORDER[2],ANGLEUNIT[“degree”,0.0174532925199433]],USAGE[SCOPE[“Horizontal component of 3D system.”],AREA[“World.”],BBOX[-90,-180,90,180]],ID[“EPSG”,4326]] +proj=longlat +datum=WGS84 +no_defs 3452 4326 EPSG:4326 WGS 84 longlat EPSG:7030 true"
+  },
+  {
+    "objectID": "03_bv.html",
+    "href": "03_bv.html",
+    "title": "Se répartir le travail : les bureaux de vote",
+    "section": "",
+    "text": "Les étudiants de 2023 ont travaillé sur les bureaux de vote. L’idée est de repartir de leur travail pour montrer la nécessité du cercle vertueux.\n\nLe zonage en bureau de vote permettra ensuite aux étudiants de travailler sur une portion restreinte du territoire."
+  },
+  {
+    "objectID": "03_bv.html#les-données-opendata-et-osm",
+    "href": "03_bv.html#les-données-opendata-et-osm",
+    "title": "Se répartir le travail : les bureaux de vote",
+    "section": "2.1 Les données : opendata et OSM",
+    "text": "2.1 Les données : opendata et OSM\n\ncharger les bv existants sur data.gouv dans réutilisations\nrequête overpass dans l’assistant : boundary=political in bondy"
+  },
+  {
+    "objectID": "03_bv.html#mise-en-forme-qgis",
+    "href": "03_bv.html#mise-en-forme-qgis",
+    "title": "Se répartir le travail : les bureaux de vote",
+    "section": "2.2 Mise en forme Qgis",
+    "text": "2.2 Mise en forme Qgis\n\n2.2.1 Data.gouv\n\nFiltrer sa couche sur le code INSEE (93010)\nafficher les bv data.gouv avec étiquettes\ncouleur du symbole pour l’étiquette (@symbol_color)\ndans le constructeur d’expression des étiquettes, utiliser la fonction «replace » pour afficher uniquement le numéro du bv\nutiliser le champs couleur même si tout est vert…\n\n\n\n2.2.2 OSM\n\nRajouter un style catégorisé avec couleurs aléatoires"
+  },
+  {
+    "objectID": "03_bv.html#attributs",
+    "href": "03_bv.html#attributs",
+    "title": "Se répartir le travail : les bureaux de vote",
+    "section": "3.1 Attributs",
+    "text": "3.1 Attributs\nobserver les attributs, repérer les erreurs d’attributs"
+  },
+  {
+    "objectID": "03_bv.html#géométries",
+    "href": "03_bv.html#géométries",
+    "title": "Se répartir le travail : les bureaux de vote",
+    "section": "3.2 Géométries",
+    "text": "3.2 Géométries\nobserver les géométries et noter les bureaux manquants ou incomplets (notamment polygone non fermés)\nutiliser les outils identification / sélection / loupe attributaire"
+  },
+  {
+    "objectID": "03_bv.html#répétition-de-la-séquence-dinitiation",
+    "href": "03_bv.html#répétition-de-la-séquence-dinitiation",
+    "title": "Se répartir le travail : les bureaux de vote",
+    "section": "4.1 Répétition de la séquence d’initiation",
+    "text": "4.1 Répétition de la séquence d’initiation\nvoir ici"
+  },
+  {
+    "objectID": "03_bv.html#saisie-avancée-quelques-points",
+    "href": "03_bv.html#saisie-avancée-quelques-points",
+    "title": "Se répartir le travail : les bureaux de vote",
+    "section": "4.2 Saisie avancée, quelques points",
+    "text": "4.2 Saisie avancée, quelques points\n\n4.2.1 Filtre\nle wiki\nDétailler le fonctionnement.\n Il s’agit de travailler uniquement sur les contours des bureaux de vote.\n\n\n4.2.2 Rassembler 2 lignes\nPourquoi ce polygone est une polyligne ?\n\n4.2.2.1 Analyse dans Qgis\nUtiliser l’outil de sélection, d’identification, la loupe attributaire\n Il faut unir les deux chemins ou plutôt superposer les noeuds.\n\n\n4.2.2.2 Réparer dans JOSM\nOn les sélectionne les 2 géométries\n Bien vérifier dans la fenêtre sélection c pour fusionner\n\n\n\n\n4.2.3 Couper une ligne\nsélectionner les 2 noeuds puis outil / couper le chemin\n\n\n4.2.4 Comprendre une relation\nRemarquer 2 outer et l’ admin_centre .\n Principe d’une relation"
+  },
+  {
+    "objectID": "02_carte1.html",
+    "href": "02_carte1.html",
+    "title": "Première carte de la ville",
+    "section": "",
+    "text": "Faire une première extraction des données OSM pour établir une carte. cela permet d’appréhender OSM et Qgis."
+  },
+  {
+    "objectID": "02_carte1.html#interface-josm",
+    "href": "02_carte1.html#interface-josm",
+    "title": "Première carte de la ville",
+    "section": "2.1 Interface JOSM",
+    "text": "2.1 Interface JOSM\ninterface (panneaux)\nAttention, clic droit pour se déplacer"
+  },
+  {
+    "objectID": "02_carte1.html#primitives-géométriques-noeud-et-chemin",
+    "href": "02_carte1.html#primitives-géométriques-noeud-et-chemin",
+    "title": "Première carte de la ville",
+    "section": "2.2 Primitives géométriques : noeud et chemin",
+    "text": "2.2 Primitives géométriques : noeud et chemin\nOuvrir une page vierge sous JOSM et créer un triangle avec 3 noeuds en utilisant les modes :\n\na pour ajout\ns pour sélection\nw pour write\n\nFaire le triangle, ajouter un point, le déformer."
+  },
+  {
+    "objectID": "02_carte1.html#la-relation",
+    "href": "02_carte1.html#la-relation",
+    "title": "Première carte de la ville",
+    "section": "2.3 La relation",
+    "text": "2.3 La relation\nIl existe une 3e primitive, plus difficile à utiliser, la relation. Elle est utilisée pour construire les itinéraires de bus par exemple. On verra, pour les bureaux de vote, qu’elle sert à lier le bureau et sa zone."
+  },
+  {
+    "objectID": "02_carte1.html#tag-clé-valeur",
+    "href": "02_carte1.html#tag-clé-valeur",
+    "title": "Première carte de la ville",
+    "section": "2.4 Tag = clé + valeur",
+    "text": "2.4 Tag = clé + valeur\nhttps://taginfo.openstreetmap.org/\non utilise directement l’éditeur intégré id sur osm.org trouver le tag directement à partir de l’éditeur.\nexercice 1 : faire une saisie sur un point connu\nexercice 2 : faire une saisie sur un point pmr sur Bondy, attention à la concordance image aérienne et carte terrain."
+  },
+  {
+    "objectID": "02_carte1.html#outil-de-qualité",
+    "href": "02_carte1.html#outil-de-qualité",
+    "title": "Première carte de la ville",
+    "section": "2.5 outil de qualité",
+    "text": "2.5 outil de qualité\nutilisation du changeset\ncarte des utilisateurs\nVoir les saisies pmr effectuées par les étudiants avec overpass turbo\négalement dans osmose\nMais le mieux reste :\nhistorique dans openstreetmap.org"
+  },
+  {
+    "objectID": "02_carte1.html#quels-tags",
+    "href": "02_carte1.html#quels-tags",
+    "title": "Première carte de la ville",
+    "section": "3.1 Quels tags ?",
+    "text": "3.1 Quels tags ?\nrues et bâtiments, aller dans taginfo. Quelles sont les principales valeurs ?"
+  },
+  {
+    "objectID": "02_carte1.html#overpass-pour-extraire",
+    "href": "02_carte1.html#overpass-pour-extraire",
+    "title": "Première carte de la ville",
+    "section": "3.2 Overpass pour extraire",
+    "text": "3.2 Overpass pour extraire\nIl existe beaucoup d’outils, y compris intégrés dans Qgis.\nUtiliser l’assistant et extraire rues et bâtiments avec le caractère joker.\n\ncomment limiter l’extraction à Bondy\nquel est ce caractère ?\nattention au et"
+  },
+  {
+    "objectID": "02_carte1.html#autres-extractions",
+    "href": "02_carte1.html#autres-extractions",
+    "title": "Première carte de la ville",
+    "section": "3.3 Autres extractions",
+    "text": "3.3 Autres extractions\n\nles bureaux de vote (boundary=political)\net les limites de la commune (admin_level=8)"
+  },
+  {
+    "objectID": "02_carte1.html#savoir-faire-qgis",
+    "href": "02_carte1.html#savoir-faire-qgis",
+    "title": "Première carte de la ville",
+    "section": "5.1 Savoir-faire QGIS",
+    "text": "5.1 Savoir-faire QGIS\n\nmettre un favori dans l’explorateur sur le répertoire Téléchargement\nintégrer une couche dans Qgis\nétiquetage des rues sous Qgis\n\n\n\nstyle en polygone inversé et remplissage dégradé suivant la forme (ou plugin mask)\nmise en page qgis (3 boutons)"
+  },
+  {
+    "objectID": "02_carte1.html#consignes",
+    "href": "02_carte1.html#consignes",
+    "title": "Première carte de la ville",
+    "section": "5.2 Consignes",
+    "text": "5.2 Consignes\n\n5.2.1 Les couches\n\nLe cadastre sert de fond afin de faire ressortir les axes, du coup, pas de symbole pour les rues uniquement des étiquettes. Pas d’utilisation de la donnée ponctuelle Fond positron (plugin Qgis)\n\n\n5.2.2 Les contours de la commune\nTag = admin_level=8 in Bondy\nstyle en polygone inversé et remplissage dégradé suivant la forme (ou plugin mask)\n\n\n5.2.3 Les étiquettes des rues\nune police condensée / étroite et une position incurvée sur la ligne\n\n\n5.2.4 Mise en page\nclassique : titre / échelle / crédits"
+  },
+  {
+    "objectID": "04_rueBat.html",
+    "href": "04_rueBat.html",
+    "title": "Rues et bâtiments",
+    "section": "",
+    "text": "Exploiter rues et bâtiments dans OSM pour obtenir une carte sympathique."
+  },
+  {
+    "objectID": "04_rueBat.html#le-nom-des-rues",
+    "href": "04_rueBat.html#le-nom-des-rues",
+    "title": "Rues et bâtiments",
+    "section": "2.1 Le nom des rues",
+    "text": "2.1 Le nom des rues\nComment est caractérisé le nom des rues ?\nQuels sont les différents types de tags utiliser pour les noms ?\nLe wiki est très clair."
+  },
+  {
+    "objectID": "04_rueBat.html#observer-osm",
+    "href": "04_rueBat.html#observer-osm",
+    "title": "Rues et bâtiments",
+    "section": "2.2 Observer OSM",
+    "text": "2.2 Observer OSM\nReprendre la carte 1 et faire un zoom sur son bureau de vote."
+  },
+  {
+    "objectID": "04_rueBat.html#la-solution-du-plan-sucette",
+    "href": "04_rueBat.html#la-solution-du-plan-sucette",
+    "title": "Rues et bâtiments",
+    "section": "2.3 La solution du plan sucette",
+    "text": "2.3 La solution du plan sucette\n\nQuel tag utiliser pour régler ce problème.\nIl s’agit également des noms de rue trop long.\n\n\nCode\nrue &lt;- read.csv(\"data/rue.csv\", fileEncoding = \"UTF-8\")\nrue$longueur &lt;- nchar(rue$NOM2)\nhist(rue$longueur)\n\n\n\n\n\nCode\ntab &lt;-tail(rue  [order(rue$longueur),c(\"NATURE\", \"NOM2\", \"longueur\")], decreasing=F, 20)\nknitr::kable (tab, row.names = F)\n\n\n\n\n\nNATURE\nNOM2\nlongueur\n\n\n\n\nR\nPIERRE BROSSOLETTE\n18\n\n\nR\nSIMONE DE BEAUVOIR\n18\n\n\nR\nFRANCOISE HERITIER\n18\n\n\nESPL\nESPL CLAUDE FUZIER\n18\n\n\nR\nMARCELLIN BERTHELOT\n19\n\n\nR\nABBE MAURICE BAURIT\n19\n\n\nR\nLOUIS LEON COLLIGNON\n20\n\n\nR\nALEXANDRA DAVID NEEL\n20\n\n\nR\nCHEMIN DE FEPROLONGEE\n21\n\n\nR\nJULIE VICTOIRE DAUBIE\n21\n\n\nR\nGUILLAUME APOLLINAIRE\n21\n\n\nR\nSAINT-LOUIS PROLONGEE\n21\n\n\nR\nJEAN JACQUES ROUSSEAU\n21\n\n\nR\nLOUIS AUGUSTE BLANQUI\n21\n\n\nR\nPAUL VAILLANT COUTURIER\n23\n\n\nMAIL\nMARIE-MADELEINE FOURCADE\n24\n\n\nCH\nMARE A LA VEUVE PROLONGEE\n25\n\n\nAV\nMAL DE LATTRE DE TASSIGNY\n25\n\n\nAV\nGENEVIEVE ANTHONIOZ DE GAULLE\n29\n\n\nRPT\nNA\nNA"
+  },
+  {
+    "objectID": "04_rueBat.html#les-possibilités-post-saisie-osm-dans-qgis",
+    "href": "04_rueBat.html#les-possibilités-post-saisie-osm-dans-qgis",
+    "title": "Rues et bâtiments",
+    "section": "2.4 Les possibilités post saisie OSM dans QGIS",
+    "text": "2.4 Les possibilités post saisie OSM dans QGIS\n\n2.4.1 Les fonctions\n Utiliser juste la fonction replace par exemple non seulement pour remplacer Rue et Allée\nAu passage, au niveau d’OSM, vérifier si les noms de rue sont corrects avec l’extraction suivante.\n\n\nCode\nlibrary(sf)\n\n\nWarning: le package 'sf' a été compilé avec la version R 4.2.3\n\n\nLinking to GEOS 3.9.3, GDAL 3.5.2, PROJ 8.2.1; sf_use_s2() is TRUE\n\n\nCode\nbv &lt;- st_read(\"data/bondy.gpkg\", \"bureaudevoteinseereuopenstreetmap__bureauBondy\", quiet=T)\nst_layers(\"data/socle.gpkg\")\n\n\nDriver: GPKG \nAvailable layers:\n                   layer_name        geometry_type features fields\n1                    tout_poi                Point      177     10\n2                      grille              Polygon       24      3\n3 hydrographie_surfacique_idf        Multi Polygon      420      9\n4                       bondy              Polygon        1      4\n5                     proprio        Multi Polygon     7094      2\n6                rue2023__rue 3D Multi Line String      370      6\n7               qgis_projects                   NA        1      3\n8              interruegrille                   NA      371      3\n               crs_name\n1 RGF93 v1 / Lambert-93\n2 RGF93 v1 / Lambert-93\n3      RGF93 Lambert 93\n4 RGF93 v1 / Lambert-93\n5 RGF93 v1 / Lambert-93\n6 RGF93 v1 / Lambert-93\n7                  &lt;NA&gt;\n8                  &lt;NA&gt;\n\n\nCode\nrue &lt;- st_read(\"data/socle.gpkg\", \"rue2023__rue\", quiet=T)\nbv &lt;- st_transform(bv, crs = 2154)\nbv$numBureau &lt;- gsub(\"93010_\",\"\",bv$bureau)\ninter &lt;- st_intersection(rue, bv)\n\n\nWarning: attribute variables are assumed to be spatially constant throughout\nall geometries\n\n\nCode\ninter &lt;- inter [, c(\"NATURE\", \"NOM_1_G\",\"numBureau\")]\nst_write(inter, \"data/bondy.gpkg\", \"rueParBureau\", delete_layer = T, quiet =T )"
+  },
+  {
+    "objectID": "04_rueBat.html#etat-des-lieux-pour-chaque-étudiant",
+    "href": "04_rueBat.html#etat-des-lieux-pour-chaque-étudiant",
+    "title": "Rues et bâtiments",
+    "section": "2.5 Etat des lieux pour chaque étudiant",
+    "text": "2.5 Etat des lieux pour chaque étudiant\ndans le framapad, sur sa zone, nb de noms ajoutés.\n\n\nCode\npbNoms &lt;- read.csv(\"data/pbNoms.csv\")\nknitr::kable(pbNoms)\n\n\n\n\n\n\n\n\n\n\ncas\nsolution\nobs\n\n\n\n\nnom rue trop long\nalt_name OU sort_name\ntout ce qui peut être automatisé n’est pas noté\n\n\nrue trop petite\n\nEst-ce possible de le saisir dans OSM ?\n\n\n\n\n\n\n2.5.1 Agréger les rues\nTrouver le géotraitement à utiliser pour que toutes les rues ayant le même nom soient avec une seule géométrie."
+  },
+  {
+    "objectID": "04_rueBat.html#cercle-vertueux",
+    "href": "04_rueBat.html#cercle-vertueux",
+    "title": "Rues et bâtiments",
+    "section": "2.6 Cercle vertueux",
+    "text": "2.6 Cercle vertueux\nRelever les problèmes, les solutions données au cas par cas.\nSaisie / Import / Carto (la 3e), le tout sur son secteur\nQuel progrès ? Comment les lister ?"
+  },
+  {
+    "objectID": "04_rueBat.html#deux-axes",
+    "href": "04_rueBat.html#deux-axes",
+    "title": "Rues et bâtiments",
+    "section": "3.1 Deux axes",
+    "text": "3.1 Deux axes\nPour les bâtiments, deux aspects sont à étudier :\n\nle type du bâtiment (la couleur)\nl’emprise du terrain sur lequel est ce bâtiment (une couleur moins foncée)\n\ntableau des équivalences bâtiment / emprise pour faire la jointure\n\n\nCode\nst_layers(\"data/socle.gpkg\")\n\n\nDriver: GPKG \nAvailable layers:\n                   layer_name        geometry_type features fields\n1                    tout_poi                Point      177     10\n2                      grille              Polygon       24      3\n3 hydrographie_surfacique_idf        Multi Polygon      420      9\n4                       bondy              Polygon        1      4\n5                     proprio        Multi Polygon     7094      2\n6                rue2023__rue 3D Multi Line String      370      6\n7               qgis_projects                   NA        1      3\n8              interruegrille                   NA      371      3\n               crs_name\n1 RGF93 v1 / Lambert-93\n2 RGF93 v1 / Lambert-93\n3      RGF93 Lambert 93\n4 RGF93 v1 / Lambert-93\n5 RGF93 v1 / Lambert-93\n6 RGF93 v1 / Lambert-93\n7                  &lt;NA&gt;\n8                  &lt;NA&gt;\n\n\nCode\npoi &lt;- st_read(\"data/socle.gpkg\", \"tout_poi\", quiet=T)\n# retrouver la table d'équivalence des couleurs à partir du fichier final\ncouleur &lt;- poi [,c(1:2,5,6), drop=T]\ncouleur &lt;- unique(couleur)\nwrite.csv(couleur, \"data/equivCouleur.csv\", fileEncoding = \"UTF-8\")\nknitr::kable (head(couleur))\n\n\n\n\n\n\n\n\n\n\n\n\n\ncategorie\nCatégories.de.point.dinterêt\ncouleurs.x\nsousCouleurs\n\n\n\n\n1\nAction sociale\nAction sociale\n#a04c64\n#FFE4E1\n\n\n5\nAction sociale\nAction sociale|Santé|Séniors\n#a04c64\n#FFE4E1\n\n\n6\nAction sociale\nAction sociale|Séniors\n#a04c64\n#FFE4E1\n\n\n7\nAction sociale\nSeniors\n#a04c64\n#FFE4E1\n\n\n9\nCommerce\nCommerce\n#FF7F50\n#FAEBD7\n\n\n10\nCulte\nCulte\n#b0c8ed\n#F0F8FF\n\n\n\n\n\nFaire une jointure sous Qgis après avoir fait évoluer les catégories.\nUtiliser également une jointure spatiale point / batiment / emprise pour faire le lien entre les différentes géométries."
+  },
+  {
+    "objectID": "04_rueBat.html#méthode",
+    "href": "04_rueBat.html#méthode",
+    "title": "Rues et bâtiments",
+    "section": "3.2 Méthode",
+    "text": "3.2 Méthode\n\nétudier tag info et l’export avec QGIS (style catégorisé)\nchoisir les tags à mettre en valeur en commun\ncorriger son secteur\nrefaire un export et une carte"
+  },
+  {
+    "objectID": "04_rueBat.html#pour-les-emprises-terrain-quelques-idées",
+    "href": "04_rueBat.html#pour-les-emprises-terrain-quelques-idées",
+    "title": "Rues et bâtiments",
+    "section": "3.3 Pour les emprises terrain, quelques idées",
+    "text": "3.3 Pour les emprises terrain, quelques idées\n\ncas parcs (key leisure)\ncas écoles (solution sur le forum)\nles résidences (landuse=residential)"
+  }
+]

@@ -1,16 +1,16 @@
-prénom,adresse mail,passé,présent,futur,OSM,QGIS
-Marianne,marianne.jouffroy@hotmail.fr,p8,en recherche,carto,apprendre,2
-Violette,violettedesbordes@icloud.com,paris,en recherche,dvp,apprendre,3
-Anais,anaisabdelhamid.15@gmail.com,sud,alternance,dvp,apprendre,3
-Louis Camille,loumercier@pm.me,paris,en recherche,dvp,utiliser plus OSM ,4
-NIKOLOZI,baido.niccolo@gmail.com,paris,alternance,dvp,utiliser plus OSM ,3
-Siméon,simeon.seck3@gmail.com,sud,alternance,dvp,utiliser plus OSM ,2
-Thomas,tom.95060101@gmail.com,p8,alternance,dvp,apprendre,1
-Morgane,naguini.ms@gmail.com,?,alternance,anything,utiliser plus OSM ,3
-Daria,podlovchenkodaria@gmail.com,est,en recherche,carto,utiliser plus OSM ,2
-Mawa,mawadiaw@gmail.com,sud,alternance,dvp,apprendre,3
-Jules,julednkongosame@gmail.com,sud,alternance,dvp,apprendre,3
-maou,diarramaou@gmail.com,sud,alternance,dvp,utiliser plus OSM ,3
-Camille,camilleesteve1904@gmail.com,?,alternance,dvp,apprendre,4
-Amaury,amaury.bourgeois78@gmail.com,?,alternance,dvp,apprendre,3
-SYDOL,sydoladomade@gmail.com,ouest,alternance,dvp,apprendre,4
+"prénom","passé lieu","passé thème","présent","futur","attentes par rapport à OSM","niveau QGIS (1 mauvais / 4 très bon)"
+"Lucas","sud","géographie","Alternance CT","géomaticien territorial","maitrise ",1
+"Hanae","sud","topographie","Alternance CT","géomaticien","maitrise ",2
+"Djibril","sud","aménagement","Alternance Recherche","géomaticien","exploitation de données",3
+"Fano","sud","topographie","Alternance Entreprise Services","géomaticien","exploitation de données",3
+"cheikh","paris","géographie","en recherche d'alt","géomaticien","exploitation de données",1
+"Adam","paris","géographie","en recherche d'alt","géomaticien","exploitation de données",2
+"Dan","paris","géographie","en recherche d'alt","géomaticien / cartographe","maitrise ",1
+"El Hadji ","paris","aménagement","en recherche d'alt","géomaticien","maitrise ",3
+"Abdelkarim","paris","informatique","en recherche d'alt","Data / dev","exploitation de données",2
+"Oumar Franck","paris","informatique","en recherche d'alt","Data / dev","projets avec OSM",1
+"Samuel","paris","géographie","Alternance Entreprise Services","géomaticien territorial","projets avec OSM",2
+"farida","?","?","?","géomaticien","maitrise ",2
+"Charlie","paris","géographie","Alternance Entreprise Services","géomaticien","approfondissement",3
+"Quentin","paris","technique","en recherche d'alt","Data / dev","approfondissement",2
+"Khaled","?","assainissement","en recherche d'alt","géomaticien","maitrise ",1

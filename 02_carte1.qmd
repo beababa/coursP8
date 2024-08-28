@@ -52,11 +52,17 @@ exercice 2 : faire une saisie sur un [point pmr](img/pmr.html) sur Bondy, attent
 
 ## outil de qualité
 
-[neiss](https://resultmaps.neis-one.org/oooc?zoom=15&lat=48.90494&lon=2.493&layers=BTFFFFFT&contributors=TTTTFF)
+[utilisation du changeset](https://resultmaps.neis-one.org/osm-changesets?comment=paris8#4/32.58/-6.77)
 
-Voir les saisies pmr effectuées par les étudiants
+[carte des utilisateurs](https://resultmaps.neis-one.org/oooc?zoom=15&lat=48.90494&lon=2.493&layers=BTFFFFFT&contributors=TTTTFF)
+
+Voir les saisies pmr effectuées par les étudiants avec overpass turbo
 
 également dans [osmose](http://osmose.openstreetmap.fr/fr/map/#zoom=16&lat=48.90695&lon=2.49237)
+
+Mais le mieux reste :
+
+[historique dans openstreetmap.org](https://www.openstreetmap.org/history#map=18/48.916214/2.486000)
 
 # Extractions diverses OSM
 

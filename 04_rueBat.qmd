@@ -61,14 +61,14 @@ Au passage, au niveau d'OSM, vérifier si les noms de rue sont corrects avec l'e
 
 ```{r}
 library(sf)
-bv <- st_read("data/bondy.gpkg", "bureaudevoteinseereuopenstreetmap__bureauBondy")
+bv <- st_read("data/bondy.gpkg", "bureaudevoteinseereuopenstreetmap__bureauBondy", quiet=T)
 st_layers("data/socle.gpkg")
-rue <- st_read("data/socle.gpkg", "rue2023__rue")
+rue <- st_read("data/socle.gpkg", "rue2023__rue", quiet=T)
 bv <- st_transform(bv, crs = 2154)
 bv$numBureau <- gsub("93010_","",bv$bureau)
 inter <- st_intersection(rue, bv)
 inter <- inter [, c("NATURE", "NOM_1_G","numBureau")]
-st_write(inter, "data/bondy.gpkg", "rueParBureau", delete_layer = T)
+st_write(inter, "data/bondy.gpkg", "rueParBureau", delete_layer = T, quiet =T )
 ```
 
 ## Etat des lieux pour chaque étudiant
@@ -110,7 +110,7 @@ tableau des équivalences bâtiment / emprise pour faire la jointure
 
 ```{r}
 st_layers("data/socle.gpkg")
-poi <- st_read("data/socle.gpkg", "tout_poi")
+poi <- st_read("data/socle.gpkg", "tout_poi", quiet=T)
 # retrouver la table d'équivalence des couleurs à partir du fichier final
 couleur <- poi [,c(1:2,5,6), drop=T]
 couleur <- unique(couleur)

@@ -75,6 +75,10 @@ voir [ici](02_carte1.html#primitives-géométriques-noeud-et-chemin)
 
 ### Filtre
 
+[le wiki](https://josm.openstreetmap.de/wiki/Fr%3AHelp/Dialog/Filter)
+
+Détailler le fonctionnement.
+
 ![](img/filtre2.png) Il s'agit de travailler uniquement sur les contours des bureaux de vote.
 
 ### Rassembler 2 lignes
@@ -115,4 +119,4 @@ Y-a-t-il des améliorations ?
 
 [carte umap](https://umap.openstreetmap.fr/fr/map/secteurs_954238#15/48.8960/2.4821)
 
-Chaque étudiant remplace le prénom + 2024
+Chaque étudiant remplace le prénom en fonction des bureaux attribués dans le [framacalc](https://lite.framacalc.org/9ilj-coursp8) (1 à 32)

@@ -131,17 +131,28 @@ Les procédures employées sous QGIS sont à rechercher sur internet.
 
 Essai : "Qgis compter les points dans un polygone" Quel est le menu qui permet de le faire ?
 
-### Dépôt git
+### Dépôt des cartes
 
-Le dépot des cartes se fera sur le git s'il n'y a pas de partage réseau.
+Le dépôt des cartes se fera sur le partage réseau.
 
--   copie du projet GIT en début et en fin de session
+Au niveau de la zone de recherche, taper
 
--   Dépôt des cartes sur le dépôt P8
 
-Déposer son image dans github dans le répertoire *img/carteEtudiant* du dépot *coursP8* avec comme syntaxe : *P8_prenom.png*
+```{}
+\\C210-P
+```
 
-![](img/depotGIT.PNG)
+Sélectionner ensuite le répertoire *partage géographie* et *OSM*, clic droit *Ajouter
+un raccourci rapide*
+
+Déposer son image dans le répertoire *img/cartes* avec comme syntaxe : *prenom.png*
+
+### Projet git
+
+En utilisant l'icone à droite du cours, copie du projet GIT en *début* et en *fin* de session (via l'option *download zip*)
+
+
+
 
 # Présentation en binôme
 
@@ -153,9 +164,10 @@ Ce fichier va permettre de s'attribuer les zones de saisie et toutes les opérat
 
 ```{r}
 data <- read.csv("data/etudiant.csv")
-table(data$passé)
-par(mar = c(8,2,2,2))
-barplot(table(data$passé), las = 2)
+table(data$passé.lieu)
+par(mar = c(12,2,2,2))
+barplot(table(data$passé.lieu), las = 2)
+barplot(table(data$passé.thème), las = 2)
 barplot(table(data$présent), las = 2)
 barplot(table(data$futur), las = 2)
 ```
