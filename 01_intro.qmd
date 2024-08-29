@@ -137,22 +137,17 @@ Le dépôt des cartes se fera sur le partage réseau.
 
 Au niveau de la zone de recherche, taper
 
-
-```{}
+```         
 \\C210-P
 ```
 
-Sélectionner ensuite le répertoire *partage géographie* et *OSM*, clic droit *Ajouter
-un raccourci rapide*
+Sélectionner ensuite le répertoire *partage géographie* et *OSM*, clic droit *Ajouter un raccourci rapide*
 
 Déposer son image dans le répertoire *img/cartes* avec comme syntaxe : *prenom.png*
 
 ### Projet git
 
 En utilisant l'icone à droite du cours, copie du projet GIT en *début* et en *fin* de session (via l'option *download zip*)
-
-
-
 
 # Présentation en binôme
 
@@ -182,9 +177,11 @@ quelle diffusion ?
 
 [Basiques OSM](https://framaforms.org/paris8-bondy2024-basiques-osm-1693075060)
 
-séquence 2 https://framaforms.org/paris8-bondy2023-premiere-saisie-1693156617
+[Basiques JOSM et Qgis](https://framaforms.org/paris8-bondy2023-premiere-saisie-1693156617)
 
-séquence 3 pas de quizz, car surtout des cartos.
+[Quelques astuces](https://framaforms.org/astuces-qgis-et-osm-1724914508)
+
+Par la suite pas de quizz, car surtout des cartos.
 
 Évaluation de satisfaction https://forms.gle/R5W9DooDPMmRn3kF6
 
