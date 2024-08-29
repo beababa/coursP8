@@ -41,7 +41,7 @@ Reprendre la carte 1 et faire un zoom sur son bureau de vote.
 
 Quel tag utiliser pour régler ce problème.
 
-Il s'agit également des noms de rue trop long.
+Il s'agit également des noms de rue trop longs.
 
 ```{r}
 rue <- read.csv("data/rue.csv", fileEncoding = "UTF-8")
@@ -51,36 +51,50 @@ tab <-tail(rue  [order(rue$longueur),c("NATURE", "NOM2", "longueur")], decreasin
 knitr::kable (tab, row.names = F)
 ```
 
-## Les possibilités post saisie OSM dans QGIS
 
-### Les fonctions
+## En guise d'évaluation : état des lieux pour chaque étudiant
 
-![Qgis Map Design chap. labeling](img/automatisationNomRue.png) Utiliser juste la fonction *replace* par exemple non seulement pour remplacer Rue et Allée
+dans le framapad, sur sa zone, nb de noms ajoutés
 
-Au passage, au niveau d'OSM, vérifier si les noms de rue sont corrects avec l'extraction suivante.
-
-```{r}
-library(sf)
-bv <- st_read("data/bondy.gpkg", "bureaudevoteinseereuopenstreetmap__bureauBondy", quiet=T)
-st_layers("data/socle.gpkg")
-rue <- st_read("data/socle.gpkg", "rue2023__rue", quiet=T)
-bv <- st_transform(bv, crs = 2154)
-bv$numBureau <- gsub("93010_","",bv$bureau)
-inter <- st_intersection(rue, bv)
-inter <- inter [, c("NATURE", "NOM_1_G","numBureau")]
-st_write(inter, "data/bondy.gpkg", "rueParBureau", delete_layer = T, quiet =T )
-```
-
-## Etat des lieux pour chaque étudiant
-
-dans le framapad, sur sa zone, nb de noms ajoutés.
 
 ```{r}
 pbNoms <- read.csv("data/pbNoms.csv")
 knitr::kable(pbNoms)
 ```
 
-### Agréger les rues
+
+
+## Les possibilités post saisie OSM dans QGIS
+
+### Les fonctions
+
+Exemple d'une fonction complexe (cf bibliographie, A. Graser), à votre avis que fait-elle ?
+
+![Qgis Map Design chap. labeling](img/automatisationNomRue.png) 
+
+Essayer d'utiliser juste la fonction *replace* imbriquée seulement pour remplacer Rue et Allée
+
+Au passage, au niveau d'OSM, vérifier si les noms de rue sont corrects pour votre zone avec l'extraction suivante.
+
+```{r}
+library(sf)
+# on charge bv et rue
+bv <- st_read("data/bondy.gpkg", "bureaudevoteinseereuopenstreetmap__bureauBondy", quiet=T)
+rue <- st_read("data/socle.gpkg", "rue2023__rue", quiet=T)
+# projection de bv modifiée
+bv <- st_transform(bv, crs = 2154)
+# extraction du numéro de bureau
+bv$numBureau <- gsub("93010_","",bv$bureau)
+# intersection rue et bv
+inter <- st_intersection(rue, bv)
+# filtrage sur 3 attributs
+inter <- inter [, c("NATURE", "NOM_1_G","numBureau")]
+# sauvegarde de la couche
+st_write(inter, "data/bondy.gpkg", "rueParBureau", delete_layer = T, quiet =T )
+```
+
+
+### Géotraitement : agréger les rues
 
 Trouver le géotraitement à utiliser pour que toutes les rues ayant le même nom soient avec une seule géométrie.
 
@@ -88,7 +102,7 @@ Trouver le géotraitement à utiliser pour que toutes les rues ayant le même no
 
 Relever les problèmes, les solutions données au cas par cas.
 
-Saisie / Import / Carto (la 3e), le tout sur son secteur
+Saisie / Import / Carto (la 4e), le tout sur son secteur
 
 Quel progrès ? Comment les lister ?
 
@@ -109,7 +123,6 @@ Pour les bâtiments, deux aspects sont à étudier :
 tableau des équivalences bâtiment / emprise pour faire la jointure
 
 ```{r}
-st_layers("data/socle.gpkg")
 poi <- st_read("data/socle.gpkg", "tout_poi", quiet=T)
 # retrouver la table d'équivalence des couleurs à partir du fichier final
 couleur <- poi [,c(1:2,5,6), drop=T]
@@ -118,9 +131,10 @@ write.csv(couleur, "data/equivCouleur.csv", fileEncoding = "UTF-8")
 knitr::kable (head(couleur))
 ```
 
+
 Faire une jointure sous Qgis après avoir fait évoluer les catégories.
 
-Utiliser également une jointure spatiale point / batiment / emprise pour faire le lien entre les différentes géométries.
+Utiliser également une jointure spatiale point / bâtiment / emprise pour faire le lien entre les différentes géométries.
 
 ## Méthode
 
@@ -140,6 +154,17 @@ Utiliser également une jointure spatiale point / batiment / emprise pour faire 
 
 -   les résidences (landuse=residential)
 
-# Carte finale
+# Carte finale (carte 4)
+
+
+
+::: callout-caution
+quizz avant la carte ! (Quelques astuces dans les quizz de l'intro)
+:::
 
 Essayer de faire une carte de son secteur, puis de l'ensemble de la ville. Y-a-t-il beaucoup d'incohérences ?
+
+::: callout-caution
+évaluation de satisfaction !
+:::
+

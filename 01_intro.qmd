@@ -177,13 +177,15 @@ quelle diffusion ?
 
 [Basiques OSM](https://framaforms.org/paris8-bondy2024-basiques-osm-1693075060)
 
-[Basiques JOSM et Qgis](https://framaforms.org/paris8-bondy2023-premiere-saisie-1693156617)
+Début jour 3 après la 3e carte
+
+[Basiques JOSM et Qgis](https://framaforms.org/paris8-bondy2024-premiere-saisie-1693156617)
+
+A la fin du cours :
 
 [Quelques astuces](https://framaforms.org/astuces-qgis-et-osm-1724914508)
 
-Par la suite pas de quizz, car surtout des cartos.
-
-Évaluation de satisfaction https://forms.gle/R5W9DooDPMmRn3kF6
+[Évaluation de satisfaction](https://forms.gle/R5W9DooDPMmRn3kF6)
 
 # Sitographie
 

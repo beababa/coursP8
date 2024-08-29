@@ -24,7 +24,8 @@ Le zonage en bureau de vote permettra ensuite aux étudiants de travailler sur u
 
 ## Les données : opendata et OSM
 
--   charger les bv existants sur data.gouv dans réutilisations
+-   charger les bv existants sur data.gouv en utilisant le mot clé *reu* (Répertoire
+Électoral Unique) et en choisissant le travail de Frédéric Rodrigo.
 
 -   requête overpass dans l'assistant : boundary=political in bondy
 
@@ -57,11 +58,11 @@ knitr::kable(anomalie)
 
 ## Attributs
 
-observer les attributs, repérer les erreurs d'attributs
+Observer les attributs, repérer les erreurs d'attributs
 
 ## Géométries
 
-observer les géométries et noter les bureaux manquants ou incomplets (notamment polygone non fermés)
+Observer les géométries et noter les bureaux manquants ou incomplets (notamment polygone non fermés)
 
 utiliser les outils identification / sélection / loupe attributaire
 
@@ -79,7 +80,9 @@ voir [ici](02_carte1.html#primitives-géométriques-noeud-et-chemin)
 
 Détailler le fonctionnement.
 
-![](img/filtre2.png) Il s'agit de travailler uniquement sur les contours des bureaux de vote.
+![](img/filtre2.png) 
+
+Il s'agit de travailler uniquement sur les contours des bureaux de vote.
 
 ### Rassembler 2 lignes
 
@@ -89,34 +92,44 @@ Pourquoi ce polygone est une polyligne ?
 
 Utiliser l'outil de sélection, d'identification, la loupe attributaire
 
-![](img/pbBV.png) Il faut unir les deux chemins ou plutôt superposer les noeuds.
+![](img/pbBV.png) 
+
+Il faut unir les deux chemins ou plutôt superposer les noeuds.
 
 #### Réparer dans JOSM
 
 On les sélectionne les 2 géométries
 
-![](img/selectionJOSM.png) Bien vérifier dans la fenêtre sélection c pour fusionner
+![](img/selectionJOSM.png) 
+
+Bien vérifier dans la fenêtre sélection c pour fusionner
 
 ![](img/fusionAttention.png)
 
 ### Couper une ligne
 
-sélectionner les 2 noeuds puis outil / couper le chemin
+sélectionner les 2 nœuds puis outil / couper le chemin
 
 ### Comprendre une relation
 
-Remarquer 2 outer et l' admin_centre .
+Remarquer 2 outer et l' admin_centre.
 
-![](img/relationJOSM.png) Principe d'une relation
+![](img/relationJOSM.png) 
+
+Principe d'une relation
 
 ![](img/relationPrincipe.png)
 
-# Nouvelle extraction, nouvelle carte
+# Nouvelle extraction, nouvelle carte (carte 3)
 
 Y-a-t-il des améliorations ?
+
+::: callout-note
+quizz *basiques JOSM et Qgis* dans les quizz de l'intro !
+:::
 
 # Partage des zones
 
 [carte umap](https://umap.openstreetmap.fr/fr/map/secteurs_954238#15/48.8960/2.4821)
 
-Chaque étudiant remplace le prénom en fonction des bureaux attribués dans le [framacalc](https://lite.framacalc.org/9ilj-coursp8) (1 à 32)
+Dans la carte umap, chaque étudiant remplace le prénom en fonction des bureaux attribués dans le [framacalc](https://lite.framacalc.org/9ilj-coursp8) (1 à 32)

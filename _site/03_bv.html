@@ -179,7 +179,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#comprendre-une-relation" id="toc-comprendre-une-relation" class="nav-link" data-scroll-target="#comprendre-une-relation"><span class="header-section-number">4.2.4</span> Comprendre une relation</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#nouvelle-extraction-nouvelle-carte" id="toc-nouvelle-extraction-nouvelle-carte" class="nav-link" data-scroll-target="#nouvelle-extraction-nouvelle-carte"><span class="header-section-number">5</span> Nouvelle extraction, nouvelle carte</a></li>
+  <li><a href="#nouvelle-extraction-nouvelle-carte-carte-3" id="toc-nouvelle-extraction-nouvelle-carte-carte-3" class="nav-link" data-scroll-target="#nouvelle-extraction-nouvelle-carte-carte-3"><span class="header-section-number">5</span> Nouvelle extraction, nouvelle carte (carte 3)</a></li>
   <li><a href="#partage-des-zones" id="toc-partage-des-zones" class="nav-link" data-scroll-target="#partage-des-zones"><span class="header-section-number">6</span> Partage des zones</a></li>
   </ul>
 </nav>
@@ -215,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="les-données-opendata-et-osm" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="les-données-opendata-et-osm"><span class="header-section-number">2.1</span> Les données : opendata et OSM</h2>
 <ul>
-<li><p>charger les bv existants sur data.gouv dans réutilisations</p></li>
+<li><p>charger les bv existants sur data.gouv en utilisant le mot clé <em>reu</em> (Répertoire Électoral Unique) et en choisissant le travail de Frédéric Rodrigo.</p></li>
 <li><p>requête overpass dans l’assistant&nbsp;: boundary=political in bondy</p></li>
 </ul>
 </section>
@@ -295,11 +295,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <section id="attributs" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="attributs"><span class="header-section-number">3.1</span> Attributs</h2>
-<p>observer les attributs, repérer les erreurs d’attributs</p>
+<p>Observer les attributs, repérer les erreurs d’attributs</p>
 </section>
 <section id="géométries" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="géométries"><span class="header-section-number">3.2</span> Géométries</h2>
-<p>observer les géométries et noter les bureaux manquants ou incomplets (notamment polygone non fermés)</p>
+<p>Observer les géométries et noter les bureaux manquants ou incomplets (notamment polygone non fermés)</p>
 <p>utiliser les outils identification / sélection / loupe attributaire</p>
 </section>
 </section>
@@ -315,7 +315,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 data-number="4.2.1" class="anchored" data-anchor-id="filtre"><span class="header-section-number">4.2.1</span> Filtre</h3>
 <p><a href="https://josm.openstreetmap.de/wiki/Fr%3AHelp/Dialog/Filter">le wiki</a></p>
 <p>Détailler le fonctionnement.</p>
-<p><img src="img/filtre2.png" class="img-fluid"> Il s’agit de travailler uniquement sur les contours des bureaux de vote.</p>
+<p><img src="img/filtre2.png" class="img-fluid"></p>
+<p>Il s’agit de travailler uniquement sur les contours des bureaux de vote.</p>
 </section>
 <section id="rassembler-2-lignes" class="level3" data-number="4.2.2">
 <h3 data-number="4.2.2" class="anchored" data-anchor-id="rassembler-2-lignes"><span class="header-section-number">4.2.2</span> Rassembler 2 lignes</h3>
@@ -323,35 +324,51 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="analyse-dans-qgis" class="level4" data-number="4.2.2.1">
 <h4 data-number="4.2.2.1" class="anchored" data-anchor-id="analyse-dans-qgis"><span class="header-section-number">4.2.2.1</span> Analyse dans Qgis</h4>
 <p>Utiliser l’outil de sélection, d’identification, la loupe attributaire</p>
-<p><img src="img/pbBV.png" class="img-fluid"> Il faut unir les deux chemins ou plutôt superposer les noeuds.</p>
+<p><img src="img/pbBV.png" class="img-fluid"></p>
+<p>Il faut unir les deux chemins ou plutôt superposer les noeuds.</p>
 </section>
 <section id="réparer-dans-josm" class="level4" data-number="4.2.2.2">
 <h4 data-number="4.2.2.2" class="anchored" data-anchor-id="réparer-dans-josm"><span class="header-section-number">4.2.2.2</span> Réparer dans JOSM</h4>
 <p>On les sélectionne les 2 géométries</p>
-<p><img src="img/selectionJOSM.png" class="img-fluid"> Bien vérifier dans la fenêtre sélection c pour fusionner</p>
+<p><img src="img/selectionJOSM.png" class="img-fluid"></p>
+<p>Bien vérifier dans la fenêtre sélection c pour fusionner</p>
 <p><img src="img/fusionAttention.png" class="img-fluid"></p>
 </section>
 </section>
 <section id="couper-une-ligne" class="level3" data-number="4.2.3">
 <h3 data-number="4.2.3" class="anchored" data-anchor-id="couper-une-ligne"><span class="header-section-number">4.2.3</span> Couper une ligne</h3>
-<p>sélectionner les 2 noeuds puis outil / couper le chemin</p>
+<p>sélectionner les 2 nœuds puis outil / couper le chemin</p>
 </section>
 <section id="comprendre-une-relation" class="level3" data-number="4.2.4">
 <h3 data-number="4.2.4" class="anchored" data-anchor-id="comprendre-une-relation"><span class="header-section-number">4.2.4</span> Comprendre une relation</h3>
-<p>Remarquer 2 outer et l’ admin_centre&nbsp;.</p>
-<p><img src="img/relationJOSM.png" class="img-fluid"> Principe d’une relation</p>
+<p>Remarquer 2 outer et l’ admin_centre.</p>
+<p><img src="img/relationJOSM.png" class="img-fluid"></p>
+<p>Principe d’une relation</p>
 <p><img src="img/relationPrincipe.png" class="img-fluid"></p>
 </section>
 </section>
 </section>
-<section id="nouvelle-extraction-nouvelle-carte" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Nouvelle extraction, nouvelle carte</h1>
+<section id="nouvelle-extraction-nouvelle-carte-carte-3" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Nouvelle extraction, nouvelle carte (carte 3)</h1>
 <p>Y-a-t-il des améliorations ?</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>quizz <em>basiques JOSM et Qgis</em> dans les quizz de l’intro !</p>
+</div>
+</div>
 </section>
 <section id="partage-des-zones" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Partage des zones</h1>
 <p><a href="https://umap.openstreetmap.fr/fr/map/secteurs_954238#15/48.8960/2.4821">carte umap</a></p>
-<p>Chaque étudiant remplace le prénom en fonction des bureaux attribués dans le <a href="https://lite.framacalc.org/9ilj-coursp8">framacalc</a> (1 à 32)</p>
+<p>Dans la carte umap, chaque étudiant remplace le prénom en fonction des bureaux attribués dans le <a href="https://lite.framacalc.org/9ilj-coursp8">framacalc</a> (1 à 32)</p>
 
 
 </section>

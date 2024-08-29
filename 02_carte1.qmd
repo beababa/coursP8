@@ -96,7 +96,7 @@ Enfin en fond de carte, on affichera OSM Positron obtenu à partir du [plugin](h
 
 # CARTE 1 : les rues et les bâtiments OSM sous QGIS
 
-::: callout-tip
+::: callout-caution
 Avant de faire la carte, quizz !
 :::
 
