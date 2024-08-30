@@ -1,0 +1,61 @@
+le cours est sur : https://beababa.github.io/
+
+
+Béatrice Maranget
+ingénieure territoriale Mairie de Bondy
+géomaticienne
+
+beatrice.maranget@bondy.fr
+
+se connecter sur le compte geographie / mdp : herodote
+
+
+mettre son prénom sur un bout de papier
+
+9 h 12 h 13 h 16 h
+
+une pause toutes les 1 h 30 de 15 mn = 10 h 30 - 10 h 45
+
+pour le partage réseau : \\C210-P puis clic droit sur partage géographie\OSM et épingler à l'accès rapide
+
+13:00
+
+https://forum.openstreetmap.fr/
+
+créer votre profil sur openstreetmap.org
+
+LIENS à rajouter
+séquence 2 https://framaforms.org/paris8-bondy2023-premiere-saisie-1693156617
+
+séquence 3 pas de quizz, car surtout des cartos.
+
+
+tag = clé + valeur / key + value
+étiquette
+
+
+14 h 25 faire une contribution. utiliser ID.
+
+
+#Paris8-Bondy2024
+
+places PMR
+dessiner un polygone
+amenity=parking
+capacity:disabled=1 ou 2 ou 3...
+
+jusqu'à 15 h 29
+tagger une place PMR à Bondy
+en s'aidant de la carte pmr.html (point 2.4 du cours)
+
+le mettre dans le framacalc et expliquer pourquoi non le cas échéant
+
+extraction overpass turbo 
+extraire toutes les rues de bondy / tous les batiments
+les mettre dans qgis
+
+
+(highway=* or building=*) in bondy
+
+
+

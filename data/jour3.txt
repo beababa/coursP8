@@ -1,0 +1,72 @@
+pt sur signature
+
+vérification saisie : comment ?
+export et carte
+cours bv : nelle approche de la relation
+exercices josm avec osmecum + couper
+=> 2e saisie sur 2 polygones adjacents et détermination zones
+
+
+rues styles qgis
+
+
+polling_station=* in bondy
+
+(polling_station=* or boundary=political) in bondy
+--------------------
+refaire une carte avec les 2 types de bv (export osm + data.gouv)
+
+9 h 50 dépôt dans osm/cartes avec votre prenom.png
+
+----------------------------
+1 - Aller voir dans qgis, les problèmes de géométrie
+
+2 - Aller dans josm résoudre les pb de géométrie (donc télécharger la zone du bureau de vote)
+
+3 - dans josm, mettre (ou vérifier), les 3 tags polling_station=numBureau, 
+boundary=political, 
+political_division= bureau de vote
+
+12 h
+
+dans le framacalc, mettre ses numéros de bureau et les pb corrigés (ou pas) de géométrie.
+
+ne pas oublier le #
+
+(polling_station=* and  boundary=political and  political_division= 'bureau de vote') in  bondy
+
+
+---------------------
+
+1 - recenser les rues sur son secteur (y compris places et ponts, s'aider du plan sucette)
+
+2 - observer les noms de rue trop longs
+
+3 - si le nom est "abbréviable" automatiquement, le faire en utilisant les fonctions Qgis (utiliser un replace imbriqué)
+
+4 - si non, utiliser alt_name (dans la base OSM avec ID ou JOSM)
+
+5 - exporter overpass et faire la carte avec une belle sémiologie sur le champs highway(facultatif)
+
+6 - (j'ai oublié) mettre dans le framacalc le nb de alt_name mis et si vous avez réussi le replace imbriqué
+
+-------------
+
+1 - Export batiment dans qgis à partir d'overpass et style catégorisé sur le batiment (uniquement dans votre secteur)
+
+la couche des POI est dans bondy.gpkg et s'appelle tout_poi
+
+2 - A partir de la carte, sur son secteur, vérifier dans osm si le poi existe sur le building.
+
+attention ! pour les parcs, ne pas utiliser le building ! le tag est leisure=yes.
+
+Le tagger :
+- name
+- building
+ 
+3 - carte sur votre secteur dans osm/cartes avec votre prénom.png (facultatif)
+
+4 - et dans le framacalc,
+nb bat rajoutés et valeur pour building utilisée
+
+15 h 40

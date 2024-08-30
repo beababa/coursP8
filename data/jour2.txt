@@ -1,0 +1,40 @@
+(amenity=parking and capacity:disabled=*) in bondy
+
+Charger les couches
+- fond positron (plugin quick map services)
+- contours communes
+- cadastre sur data.gouv (etalab)
+- bureaux de vote
+
+Garder également les batiments et les rues d'hier
+
+toutes les indications sont dans le cours.
+
+A MIDI : rendre une copie d'écran dans
+le répertoire réseau OSM/cartes avec
+votre prenom.png (minuscules sans espace, sans accent) quelque soit votre avancement
+
+
+N'OUBLIER PAS D'ENREGISTRER REGULIEREMENT VOTRE TRAVAIL !!!!!!!
+
+Après la pause ne pas oublier
+- présentation Chafii
+- forum osm les routes
+- démo sur le pt rabelais
+- mise en page dans qgis
+- filtre qgis
+
+- utilisation josm :connexion
+
+- création profil utilisateur pour régler qgis défaillant
+
+
+
+carte 2 : superposer les 2 cartes de bv en respectant les consignes (20 mn, 15 h 05)
+
+mettre vos cartes prenom.png dans osm/cartes
+
+
+replace( "bureau",'93010_','')
+
+polling_station=1 ou 2 ...
