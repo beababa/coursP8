@@ -24,8 +24,7 @@ Le zonage en bureau de vote permettra ensuite aux étudiants de travailler sur u
 
 ## Les données : opendata et OSM
 
--   charger les bv existants sur data.gouv en utilisant le mot clé *reu* (Répertoire
-Électoral Unique) et en choisissant le travail de Frédéric Rodrigo.
+-   charger les bv existants sur data.gouv en utilisant le mot clé *reu* (Répertoire Électoral Unique) et en choisissant le travail de Frédéric Rodrigo.
 
 -   requête overpass dans l'assistant : boundary=political in bondy
 
@@ -80,7 +79,7 @@ voir [ici](02_carte1.html#primitives-géométriques-noeud-et-chemin)
 
 Détailler le fonctionnement.
 
-![](img/filtre2.png) 
+![](img/filtre2.png)
 
 Il s'agit de travailler uniquement sur les contours des bureaux de vote.
 
@@ -92,7 +91,7 @@ Pourquoi ce polygone est une polyligne ?
 
 Utiliser l'outil de sélection, d'identification, la loupe attributaire
 
-![](img/pbBV.png) 
+![](img/pbBV.png)
 
 Il faut unir les deux chemins ou plutôt superposer les noeuds.
 
@@ -100,7 +99,7 @@ Il faut unir les deux chemins ou plutôt superposer les noeuds.
 
 On les sélectionne les 2 géométries
 
-![](img/selectionJOSM.png) 
+![](img/selectionJOSM.png)
 
 Bien vérifier dans la fenêtre sélection c pour fusionner
 
@@ -114,7 +113,7 @@ sélectionner les 2 nœuds puis outil / couper le chemin
 
 Remarquer 2 outer et l' admin_centre.
 
-![](img/relationJOSM.png) 
+![](img/relationJOSM.png)
 
 Principe d'une relation
 

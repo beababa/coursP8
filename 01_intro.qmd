@@ -107,7 +107,7 @@ Mais une évaluation collective, de type, combien d'éléments rajoutés dans OS
 
 Eviter absolument le [retour de bâton OSM](https://forum.openstreetmap.fr/t/landuse-residential-supprime-a-bondy-et-pavillon-sous-bois/9562/9), notamment pour il y a deux ans.
 
-Donc, impérativement mettre dans le commentaire de changeset : **#Paris8-Bondy2024**
+Donc, impérativement mettre dans le commentaire de changeset : **#Paris8-Bondy2025**
 
 ![](img/tagContrib.png)
 

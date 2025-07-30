@@ -1,0 +1,332 @@
+
+{
+    "type": "FeatureCollection",
+    "generator": "JOSM",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "adresse": "34 Rue Jean Jaurès",
+                "an": "1910",
+                "anFormat": "1910-01-01",
+                "code": "93010",
+                "fid": "498",
+                "fid_2": "87",
+                "fid_3": "2839",
+                "geo_parcelle": "930010000AH0106",
+                "jannat": "1910",
+                "niveau": " 2",
+                "result_city": "Bondy",
+                "result_citycode": "93010",
+                "result_context": "93, Seine-Saint-Denis, Île-de-France",
+                "result_housenumber": "34",
+                "result_id": "93010_4740_00034",
+                "result_label": "34 Rue Jean Jaurés 93140 Bondy",
+                "result_name": "34 Rue Jean Jaurés",
+                "result_postcode": "93140",
+                "result_score": "0.97213363636363637",
+                "result_status": "ok",
+                "result_street": "Rue Jean Jaurés",
+                "result_type": "housenumber",
+                "typo": "Lotissements/maisons pavillonnaires",
+                "zone": "Mainguy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47611800000,
+                    48.90020400000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "adresse": "6bis Rue Yvonne",
+                "an": "1910",
+                "anFormat": "1910-01-01",
+                "code": "93010",
+                "fid": "613",
+                "fid_2": "87",
+                "fid_3": "2871",
+                "geo_parcelle": "930010000AH0148",
+                "jannat": "1910",
+                "niveau": " 2",
+                "result_city": "Bondy",
+                "result_citycode": "93010",
+                "result_context": "93, Seine-Saint-Denis, Île-de-France",
+                "result_housenumber": "6bis",
+                "result_id": "93010_9980_00006_bis",
+                "result_label": "6bis Rue Yvonne 93140 Bondy",
+                "result_name": "6bis Rue Yvonne",
+                "result_postcode": "93140",
+                "result_score": "0.97002636363636363",
+                "result_status": "ok",
+                "result_street": "Rue Yvonne",
+                "result_type": "housenumber",
+                "typo": "Lotissements/maisons pavillonnaires",
+                "zone": "Mainguy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47732800000,
+                    48.90094400000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "adresse": "47 Rue Jean Jaurès",
+                "an": "1900",
+                "anFormat": "1900-01-01",
+                "code": "93010",
+                "fid": "502",
+                "fid_2": "87",
+                "fid_3": "2861",
+                "geo_parcelle": "930010000AH0135",
+                "jannat": "1900",
+                "niveau": " 2",
+                "result_city": "Bondy",
+                "result_citycode": "93010",
+                "result_context": "93, Seine-Saint-Denis, Île-de-France",
+                "result_housenumber": "47",
+                "result_id": "93010_4740_00047",
+                "result_label": "47 Rue Jean Jaurés 93140 Bondy",
+                "result_name": "47 Rue Jean Jaurés",
+                "result_postcode": "93140",
+                "result_score": "0.97213363636363637",
+                "result_status": "ok",
+                "result_street": "Rue Jean Jaurés",
+                "result_type": "housenumber",
+                "typo": "Maisons de bourg",
+                "zone": "Mainguy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47668400000,
+                    48.90016600000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "adresse": "30 Rue Yvonne",
+                "an": "1935",
+                "anFormat": "1935-01-01",
+                "code": "93010",
+                "fid": "621",
+                "fid_2": "87",
+                "fid_3": "2882",
+                "geo_parcelle": "930010000AH0159",
+                "jannat": "1935",
+                "niveau": " 2",
+                "result_city": "Bondy",
+                "result_citycode": "93010",
+                "result_context": "93, Seine-Saint-Denis, Île-de-France",
+                "result_housenumber": "30",
+                "result_id": "93010_9980_00030",
+                "result_label": "30 Rue Yvonne 93140 Bondy",
+                "result_name": "30 Rue Yvonne",
+                "result_postcode": "93140",
+                "result_score": "0.97002636363636363",
+                "result_status": "ok",
+                "result_street": "Rue Yvonne",
+                "result_type": "housenumber",
+                "typo": "Lotissements/maisons pavillonnaires",
+                "zone": "Mainguy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47685400000,
+                    48.89988300000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "adresse": "15bis Rue Yvonne",
+                "an": "1908",
+                "anFormat": "1908-01-01",
+                "code": "93010",
+                "fid": "625",
+                "fid_2": "87",
+                "fid_3": "2894",
+                "geo_parcelle": "930010000AH0174",
+                "jannat": "1908",
+                "niveau": " 2",
+                "result_city": "Bondy",
+                "result_citycode": "93010",
+                "result_context": "93, Seine-Saint-Denis, Île-de-France",
+                "result_housenumber": "15bis",
+                "result_id": "93010_9980_00015_bis",
+                "result_label": "15bis Rue Yvonne 93140 Bondy",
+                "result_name": "15bis Rue Yvonne",
+                "result_postcode": "93140",
+                "result_score": "0.97002636363636363",
+                "result_status": "ok",
+                "result_street": "Rue Yvonne",
+                "result_type": "housenumber",
+                "typo": "Lotissements/maisons pavillonnaires",
+                "zone": "Mainguy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47761700000,
+                    48.90035100000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "adresse": "9bis Rue Beauregard",
+                "an": "1939",
+                "anFormat": "1939-01-01",
+                "code": "93010",
+                "fid": "270",
+                "fid_2": "87",
+                "fid_3": "2887",
+                "geo_parcelle": "930010000AH0164",
+                "jannat": "1939",
+                "niveau": " 2",
+                "result_city": "Bondy",
+                "result_citycode": "93010",
+                "result_context": "93, Seine-Saint-Denis, Île-de-France",
+                "result_housenumber": "9bis",
+                "result_id": "93010_0630_00009_bis",
+                "result_label": "9bis Rue Beauregard 93140 Bondy",
+                "result_name": "9bis Rue Beauregard",
+                "result_postcode": "93140",
+                "result_score": "0.96721272727272722",
+                "result_status": "ok",
+                "result_street": "Rue Beauregard",
+                "result_type": "housenumber",
+                "typo": "Lotissements/maisons pavillonnaires",
+                "zone": "Mainguy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47716400000,
+                    48.89949600000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "adresse": "12 Rue des droits de l homme",
+                "an": "1955",
+                "anFormat": "1955-01-01",
+                "code": "93010",
+                "fid": "332",
+                "fid_2": "87",
+                "fid_3": "2834",
+                "geo_parcelle": "930010000AH0101",
+                "niveau": " 2",
+                "result_city": "Bondy",
+                "result_citycode": "93010",
+                "result_context": "93, Seine-Saint-Denis, Île-de-France",
+                "result_housenumber": "12",
+                "result_id": "93010_2580_00012",
+                "result_label": "12 Rue des Droits de l'Homme 93140 Bondy",
+                "result_name": "12 Rue des Droits de l'Homme",
+                "result_postcode": "93140",
+                "result_score": "0.96625272727272715",
+                "result_status": "ok",
+                "result_street": "Rue des Droits de l'Homme",
+                "result_type": "housenumber",
+                "typo": "Lotissements/maisons pavillonnaires",
+                "zone": "Mainguy",
+                "builing:construction": "1955"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47546900000,
+                    48.90040000000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "adresse": "16 Rue des droits de l homme",
+                "an": "1910",
+                "anFormat": "1910-01-01",
+                "code": "93010",
+                "fid": "326",
+                "fid_2": "87",
+                "fid_3": "2836",
+                "geo_parcelle": "930010000AH0103",
+                "jannat": "1910",
+                "niveau": " 2",
+                "result_city": "Bondy",
+                "result_citycode": "93010",
+                "result_context": "93, Seine-Saint-Denis, Île-de-France",
+                "result_housenumber": "16",
+                "result_id": "93010_2580_00016",
+                "result_label": "16 Rue des Droits de l'Homme 93140 Bondy",
+                "result_name": "16 Rue des Droits de l'Homme",
+                "result_postcode": "93140",
+                "result_score": "0.96625272727272715",
+                "result_status": "ok",
+                "result_street": "Rue des Droits de l'Homme",
+                "result_type": "housenumber",
+                "typo": "Lotissements/maisons pavillonnaires",
+                "zone": "Mainguy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47584600000,
+                    48.90052900000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "adresse": "49 Rue du Breuil",
+                "an": "1924",
+                "anFormat": "1924-01-01",
+                "code": "93010",
+                "fid": "374",
+                "fid_2": "87",
+                "fid_3": "2808",
+                "geo_parcelle": "930010000AH0069",
+                "jannat": "1924",
+                "niveau": " 2",
+                "result_city": "Bondy",
+                "result_citycode": "93010",
+                "result_context": "93, Seine-Saint-Denis, Île-de-France",
+                "result_housenumber": "49",
+                "result_id": "93010_0780_00049",
+                "result_label": "49 Rue du Breuil 93140 Bondy",
+                "result_name": "49 Rue du Breuil",
+                "result_postcode": "93140",
+                "result_score": "0.97198454545454538",
+                "result_score_next": "0.46536999999999995",
+                "result_status": "ok",
+                "result_street": "Rue du Breuil",
+                "result_type": "housenumber",
+                "typo": "Lotissements/maisons pavillonnaires",
+                "zone": "Mainguy"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47530000000,
+                    48.90105700000
+                ]
+            }
+        }
+    ]
+}

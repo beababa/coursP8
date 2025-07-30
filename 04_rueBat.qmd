@@ -51,18 +51,14 @@ tab <-tail(rue  [order(rue$longueur),c("NATURE", "NOM2", "longueur")], decreasin
 knitr::kable (tab, row.names = F)
 ```
 
-
 ## En guise d'évaluation : état des lieux pour chaque étudiant
 
 dans le framapad, sur sa zone, nb de noms ajoutés
-
 
 ```{r}
 pbNoms <- read.csv("data/pbNoms.csv")
 knitr::kable(pbNoms)
 ```
-
-
 
 ## Les possibilités post saisie OSM dans QGIS
 
@@ -70,7 +66,7 @@ knitr::kable(pbNoms)
 
 Exemple d'une fonction complexe (cf bibliographie, A. Graser), à votre avis que fait-elle ?
 
-![Qgis Map Design chap. labeling](img/automatisationNomRue.png) 
+![Qgis Map Design chap. labeling](img/automatisationNomRue.png)
 
 Essayer d'utiliser juste la fonction *replace* imbriquée seulement pour remplacer Rue et Allée
 
@@ -92,7 +88,6 @@ inter <- inter [, c("NATURE", "NOM_1_G","numBureau")]
 # sauvegarde de la couche
 st_write(inter, "data/bondy.gpkg", "rueParBureau", delete_layer = T, quiet =T )
 ```
-
 
 ### Géotraitement : agréger les rues
 
@@ -131,7 +126,6 @@ write.csv(couleur, "data/equivCouleur.csv", fileEncoding = "UTF-8")
 knitr::kable (head(couleur))
 ```
 
-
 Faire une jointure sous Qgis après avoir fait évoluer les catégories.
 
 Utiliser également une jointure spatiale point / bâtiment / emprise pour faire le lien entre les différentes géométries.
@@ -156,8 +150,6 @@ Utiliser également une jointure spatiale point / bâtiment / emprise pour faire
 
 # Carte finale (carte 4)
 
-
-
 ::: callout-caution
 quizz avant la carte ! (Quelques astuces dans les quizz de l'intro)
 :::
@@ -167,4 +159,3 @@ Essayer de faire une carte de son secteur, puis de l'ensemble de la ville. Y-a-t
 ::: callout-caution
 évaluation de satisfaction !
 :::
-

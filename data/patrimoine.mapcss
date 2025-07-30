@@ -1,0 +1,22 @@
+/* Coloration de la zone patrimoine
+*/
+area[boundary=patrimoine] {
+    color: white;
+    fill-color: white;
+    fill-opacity: 0.5;
+    fill-extent: 100;
+    width: 12;
+}
+node[building:construction] {
+    z-index: -100; 
+    symbol-shape: circle; 
+    symbol-size: +12; 
+    symbol-fill-color:  #B0E0E6; 
+
+
+    text: "adresse"; 
+    text-anchor-horizontal: center; 
+    text-anchor-vertical: center; 
+    text-offset-x: -1; 
+    text-offset-y: -1; 
+}
