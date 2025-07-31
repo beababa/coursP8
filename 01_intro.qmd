@@ -12,33 +12,44 @@ execute:
   echo: true
 ---
 
-Faire un plan de ville *kalos kagathos* (καλὸς κἀγαθός) avec OSM.
+Patrimoine Bondy : du PLUi à OSM
 
-# Modèles
+# Différentes sources
 
-## Le plan sucette de la ville de Bondy
+## Le plan du patrimoine issu du PLUi
 
-A distribuer
-
-Qu'observe t on ?
-
--   les noms des rues : ils sont tous présents mais sous quel forme ?
-
--   les différents bâtiments
-
--   le graticule / la liste des rues / la liste des bâtiments
-
-Autres remarques.
+Qu'observe-t-on ?
 
 ![](img/exemple.png){width="300"}
 
-*extraction du plan sucette de la ville*
 
-## La proposition OSMatic
+*extraction du plan patrimoine PLUi M3*
 
-[OSMatic](https://print.get-map.org/)
+Toutes les données cartographiques et réglementaires sont en opendata sur le [GPU](https://www.geoportail-urbanisme.gouv.fr/) !
 
-voir notamment le menu *cartes*
+## Les listes
+
+Dans le document règlementaire de type .pdf
+Le document étant opposable, il a fallu ocr-isé les listes
+
+### Liste de la M3
+
+![](img/listeM3.png)
+
+### Liste de la M2
+
+![](img/listeM2.png)
+
+
+## Un outil collaboratif de carto web
+
+![](img/appli.png)
+
+
+## Des fiches scannés et re-scannés
+
+
+![](img/fiche.png)
 
 # Les outils
 
@@ -47,6 +58,8 @@ voir notamment le menu *cartes*
 Il va servir pour la présentation, la répartition des tâches etc... [Framapad Paris 8](https://lite.framacalc.org/9ilj-coursp8)
 
 ## OSM
+
+### Définir
 
 Faire une recherche internet pour définir OSM.
 
@@ -57,6 +70,12 @@ Questions :
 -   Que faut-il retenir des [10 commandements](https://www.openstreetmap.fr/les-10-cosmandements/) ?
 
 Créer son profil sur [openstreetmap.org](https://www.openstreetmap.org), attention au pseudo.
+
+
+## le tag
+
+
+
 
 ## JOSM
 
@@ -78,13 +97,14 @@ Il s'agit de mettre en place un *cercle vertueux* dans l'utilisation d'OSM : ext
 
 ## Déroulé
 
-JOUR 1 : Présentation et faire une première carte de la ville à partir des données OSM principalement.
+JOUR 1 : Analyser les données à intégrer dans OSM à partir des sources M3
 
-JOUR 2 : Répartition du zonage par bureau de vote et étude des rues OSM (nom et typologie : place et ponts)
+JOUR 2 : Faire une première session de saisie dans OSM
 
-JOUR 3 : Bâtiments, comment valoriser l'emprise du terrain qui les contient ? et carte finale,
+JOUR 3 : Extraire, faire un atlas sous QGIS bâtiment par bâtiment, utiliser les sources M2
+pour faire une deuxième sessions et produire un atlas plus complexe
 
-Pour finir, nous évoquerons la possibilité de traitement reproductible. Si les données changent, la carte évolue également.
+
 
 Au niveau du temps, cela donne :
 
@@ -92,20 +112,36 @@ Au niveau du temps, cela donne :
 #| echo: true 
 # stats temps / séquence
 temps <- read.csv("data/tps.csv")
-sum(temps$tps, na.rm=TRUE)
+sum(temps$temps, na.rm=TRUE)
 ```
 
-10 mn de trop et sans compter les pauses... 15 mn toutes les 1 H 30
+40 mn de moins... le temps des pauses... 15 mn toutes les 1 H 30, on sera un peu court.
 
 Voir également heures de repas et 1er jour
 
 ## Evaluation
 
-Pour chaque séquence, plusieurs cartes et des quizz pour valider les termes précis. pas d'évaluation officielle.
 
-Mais une évaluation collective, de type, combien d'éléments rajoutés dans OSM et un essai de mesure de leur qualité.
+::: callout-note
+pas d'évaluation officielle
+:::
 
-Eviter absolument le [retour de bâton OSM](https://forum.openstreetmap.fr/t/landuse-residential-supprime-a-bondy-et-pavillon-sous-bois/9562/9), notamment pour il y a deux ans.
+
+
+Un quizz par rapport aux notions de base puis plusieurs cartes que nous regarderons
+rapidement.
+
+CARTE 1 : compétences de base QGIS
+
+CARTE 2 : connaître sa donnée sur sa zone
+
+CARTE 3 : vérif de la 1e saisie et atlas (1 carte)
+
+CARTE 4 : vérif de la 2e saisie et atlas plus complexe (plusieurs cartes et un tableau)
+
+Pour la saisie OSM, chaque étudiant notera le nombre de saisies faites
+
+Concernant la qualité de la saisie, éviter absolument le [retour de bâton OSM](https://forum.openstreetmap.fr/t/landuse-residential-supprime-a-bondy-et-pavillon-sous-bois/9562/9), notamment pour il y a deux ans.
 
 Donc, impérativement mettre dans le commentaire de changeset : **#Paris8-Bondy2025**
 
@@ -115,11 +151,10 @@ Egalement, examiner les contributions dans le détail avec les outils de contrô
 
 ## Le collaboratif
 
-Un mot au sujet du collectif, ce cours est aussi l'occasion de tester une organisation de travail en groupe (c'est la raison d'être d'OSM) donc répartition des étudiants par bureau de vote (2).
+Un mot au sujet du collectif, ce cours est aussi l'occasion de tester une organisation de travail en groupe (c'est la raison d'être d'OSM) donc répartition des étudiants cluster de points.
 
 ![](img/attribBureau.png)
 
-L'attribution se fera par une [carte umap](http://u.osmfr.org/m/954238/)
 
 ## Précisions techniques
 
@@ -127,7 +162,7 @@ L'attribution se fera par une [carte umap](http://u.osmfr.org/m/954238/)
 
 Le support, fait sous R Quarto, sert uniquement de "fil rouge".
 
-Les procédures employées sous QGIS sont à rechercher sur internet.
+Les procédures employées sous QGIS sont résumées sur le support distribué ou à rechercher sur internet (merci l'IA).
 
 Essai : "Qgis compter les points dans un polygone" Quel est le menu qui permet de le faire ?
 
@@ -157,7 +192,7 @@ sur le [framacalc](https://lite.framacalc.org/9ilj-coursp8)
 
 Ce fichier va permettre de s'attribuer les zones de saisie et toutes les opérations collaboratives du cours.
 
-```{r}
+```{r, eval=FALSE}
 data <- read.csv("data/etudiant.csv")
 table(data$passé.lieu)
 par(mar = c(12,2,2,2))
@@ -175,16 +210,6 @@ quelle diffusion ?
 
 [Introduction](https://framaforms.org/paris8-bondy2024-introduction-1693048391)
 
-[Basiques OSM](https://framaforms.org/paris8-bondy2024-basiques-osm-1693075060)
-
-Début jour 3 après la 3e carte
-
-[Basiques JOSM et Qgis](https://framaforms.org/paris8-bondy2024-premiere-saisie-1693156617)
-
-A la fin du cours :
-
-[Quelques astuces](https://framaforms.org/astuces-qgis-et-osm-1724914508)
-
 [Évaluation de satisfaction](https://forms.gle/R5W9DooDPMmRn3kF6)
 
 # Sitographie
@@ -196,8 +221,6 @@ A la fin du cours :
 [ze manuel le tuto passage](https://tutoqgis.cnrs.fr/)
 
 une référence en livre : **QGIS Map Design - Second Edition** by Anita Graser and Gretchen N. Peterson
-
-[graticules](https://gis.stackexchange.com/questions/91612/adding-graticules-to-the-edge-of-the-map-only-in-qgis)
 
 ## OSM
 
@@ -216,6 +239,9 @@ une référence en livre : **QGIS Map Design - Second Edition** by Anita Graser 
 ### JOSM
 
 [base](https://learnosm.org/fr/josm/)
+
+[alterzorg](https://www.alterzorg.fr/josm/accueil)
+
 
 ### Le contrôle de qualité
 

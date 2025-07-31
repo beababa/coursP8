@@ -1,4 +1,0 @@
-"bat","type pb","solution"
-"Esplanade mairie","highway=pedestrian","déterminer l’emprise des places avec are=yes"
-"bains douches","absent","tag building=public et patimoine"
-"emprise bibilothèque","pas d’emprise","c’est un parc, il faut les rajouter à la rqt"

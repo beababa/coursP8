@@ -1,60 +1,63 @@
-"jour","op","détail","tps"
-"1_PRESENTATION","se présenter","sur framapad + niveau Qgis. Repérer les étudiants ressouces / numéros pc = num lg du framapad",60
-"1_PRESENTATION","définir objectif cours","Qu’est ce qu’une carte sucette ? Présentation plan Bondy et OSMatic (distribution)
-Définir caractéristiques.
-Cercles vertueux
-Quizz",60
-"1_PRESENTATION","vérifier les outils","création de compte / vérification JOSM et Qgis et java sur Azul",30
-"2_LA VILLE DE BONDY : 1e CARTE / OSM","définir OSM","carte collaborative. Distinguer osm fr et osm org les 10 commandements : https://www.openstreetmap.fr/les-10-cosmandements/",30
-"2_LA VILLE DE BONDY : 1e CARTE / OSM","primaires géométriques osm et utilisation josm","point chemin ouvrir JOSM / ergonomie générale
-Attention clic droit pour déplacer
-et utiliser a / s / w
-Faire un triangle / ajouter un point (a) et le déformer
-Ajouter un attribute",30
-"2_LA VILLE DE BONDY : 1e CARTE / OSM","Tag : key = value","faire une première contribution à un endroit connu à travers id / puis une contribution pmr sur Bondy",15
-"2_LA VILLE DE BONDY : 1e CARTE / OSM","utiliser neiss","voir les contributions pmr",10
-,"EXTRAIRE OSM",,
-"3_LA VILLE DE BONDY : 1e CARTE / Extraire OSM","rechercher tags","taginfo et wiki : on cherche rues et batiment",10
-"3_LA VILLE DE BONDY : 1e CARTE / Extraire OSM","extraire les tags","and et or / caractères joker",10
-"3_LA VILLE DE BONDY : 1e CARTE / Extraire OSM","donnée opendata cadastre","https://cadastre.data.gouv.fr/data/etalab-cadastre/2024-07-01/geojson/communes/93/93010/",10
-"3_LA VILLE DE BONDY : 1e CARTE / Extraire OSM","chercher liste des extensions et installer ","https://plugins.qgis.org/plugins/popular/",10
-"3_LA VILLE DE BONDY : 1e CARTE / Extraire OSM","faire une carte données OSM sur building et highway avec overpass","1e carte. Critère : respect des consignes",60
-"4_SE REPARTIR LE ZONAGE : BV","objectif","reprise des bureaux de vote : compléter la carte 1e utilisation JOSM",10
-"4_SE REPARTIR LE ZONAGE : BV","faire la carte Qgis superpostion","2e carte :petis trucs Qgis",60
-"4_SE REPARTIR LE ZONAGE : BV","lister les erreurs attribut et géométries","voir exemple
-Attribuer la correction",45
-"4_SE REPARTIR LE ZONAGE : BV","utiliser JOSM","répétition séquence intiitation",10
-"4_SE REPARTIR LE ZONAGE : BV","utiliser JOSM de manière avancée pour corriger","utiliser le pense bête. Exercices divers.",30
-"4_SE REPARTIR LE ZONAGE : BV","saisie","10 mn. Puis questions. Enfin passage auprès de chacun.",30
-"4_SE REPARTIR LE ZONAGE : BV","Import – export","cercle vertueux – amélioration ?",10
-"4_SE REPARTIR LE ZONAGE : BV","faire la carte Qgis superpostion","3e carte",60
-"4_SE REPARTIR LE ZONAGE : BV","partage des zones","utiliser umap ? Chq étudiant met son nom. Sinon framapad
-https://umap.openstreetmap.fr/fr/map/secteurs_954238#15/48.8960/2.4821
-Remplacer le prénom",10
-"5_LES RUES : 2 tags et pas de géométrie","OBSERVER OSM",,
-"5_LES RUES : 2 tags et pas de géométrie","utiliser le bouton idenitfication de qgis","reprise de la 1e carte zoom sur son bv",
-"5_LES RUES : 2 tags et pas de géométrie","tags autour du nom dans le fichier","à part name ? Les différents types de nom. Le pb des noms longs.
-Les surnoms : pourquoi ne pas utiliser les initiales ?",10
-"5_LES RUES : 2 tags et pas de géométrie","définir les tags highway","https://wiki.openstreetmap.org/wiki/Key:name",30
-"5_LES RUES : 2 tags et pas de géométrie","utiliser taginfo et le wiki","autres possibilités",
-"5_LES RUES : 2 tags et pas de géométrie","utiliser id ou josm au choix et saisir les attributs autour du nom",,30
-"5_LES RUES : 2 tags et pas de géométrie","saisir","comme première période de saisie",60
-"5_LES RUES : 2 tags et pas de géométrie","analyse saisie",,
-"5_LES RUES : 2 tags et pas de géométrie","contrôle de la saisie","quelle extraction et quel style dans Qgis ?",30
-"5_LES RUES : 2 tags et pas de géométrie","style qgis","3 e carte : choix des styles pour les rues",60
-"6_LES BATIMENTS : type et emprise","définir l’objectif double","Définir différentes catégories et pt ds bat ds emprise (landuse)",10
-"6_LES BATIMENTS : type et emprise","observer les tags buildings en général","recherche internet taginfo pour voir les plus utilisés",10
-"6_LES BATIMENTS : type et emprise","quels autres tags utiliser","Télécharger / cartographier en catégorie",30
-"6_LES BATIMENTS : type et emprise","définir en commun","se référer à la liste des POI et à OSM",
-"6_LES BATIMENTS : type et emprise","corriger les erreurs sur sa zoen","building=public pour tous les bat ?",
-"6_LES BATIMENTS : type et emprise","définir les emprises","observer JOSM sur son quartier. Quelles remarques ?",
-"6_LES BATIMENTS : type et emprise","cas parks","leisure",
-"6_LES BATIMENTS : type et emprise","cas écoles","https://forum.openstreetmap.fr/t/groupe-scolaire-plusieurs-ecoles-sur-un-meme-site/18175/2",
-"6_LES BATIMENTS : type et emprise","les résidences","Landuse = residential",
-"6_LES BATIMENTS : type et emprise","faire la carte Qgis apèrs modifcation","colorier les emprises en plus clair que les bâtiments. Code couleur.",
-"7_AUTOMATISER ET UNIFIER LE PROCESSUS","définir l’objectif","si le fond OSM change la carte change.et ceci pour toute la zone",10
-"7_AUTOMATISER ET UNIFIER LE PROCESSUS","le wikipedia de bondy","fixer les tags",10
-"7_AUTOMATISER ET UNIFIER LE PROCESSUS","rqt overpass","la rqt permet de vérifier les éléments importants en une seule rqt",60
-"7_AUTOMATISER ET UNIFIER LE PROCESSUS","styles Qgis","un seul style pour unir toutes les cartes",30
-"7_AUTOMATISER ET UNIFIER LE PROCESSUS","tables et grilles","intersections",60
-"7_AUTOMATISER ET UNIFIER LE PROCESSUS","faire une carte finale","4e carte : une carte ville",60
+OP,detail,temps,jour
+brise glace,repérer les étudiants ressources sous qgis / affichage des logos qgis helper / insister sur travail de groupe / cercle vertueux / comment gérer l’hétérogénéïté des niveaux ?,30,JOUR1
+définir l’objectif,"saisir les éléments de l’atlas du patrimoine dans OSM pour reproduire un atlas à jour
+Du PLUi à OSM, la patrimoine de Bondy",15,JOUR1
+définir les méthodes,LE,20,JOUR1
+présenter OSM et faire une première saisie pour comprendre tag / value,"Définir OSM, créer son profil",20,JOUR1
+lister les sources pour les tags,"taginfo, les features, osm, overpass",20,JOUR1
+trouver les tags les plus courants et les utiliser,building et road (site carte et mug),10,JOUR1
+utiliser JOSM,ouvrir la couche zones.geojson et utiliser le support / que comprendre des primitives géométriques dans OSM ?,10,JOUR1
+QUIZZ objectifs et définition de base,,10,JOUR1
+définir le GPU,données geoportail de l’urbanisme,10,JOUR1
+CARTE 1 : compétences de base sous QGIS,"lister les compétences dans le framcalc (ajouter couches / fond positron / style catégorisé puis avec des règles) / faire faire au tableau par un étudiant différent chaque manip / comparer avec le support.
+Pour les étudiants qui savent faire, les laisser intervenir.",30,JOUR1
+détailler autre source : le géocodage du tableau de la M3,"on récupère
+1 les adresses 
+2 une nouvelle typologie. 
+La mettre dans la carte et détailler la typo.
+Simplification de la couche, affichage du numéro de rue",30,JOUR1
+distinguer source 1 et 2 sur la carte,"fichier géourbanisme : données attributaires limitées
+Fichier géocodage : pas à la parcelle
+On va utiliser OSM pour fusionner les deux types d’attribut.
+",10,JOUR1
+comment étudier un semis de point ?,intro sur géo spatiale. Plusieurs méthodes. Utilisation de 2 méthodes au choix.,10,JOUR1
+diviser en quartiers : compter les points dans une grille et répartir les carreaux,à partir de la procédure,30,JOUR1
+diviser en quartiers : kmeans contraint ,installer le script pour les autres + procédure,,JOUR1
+partager les zones,récupérer un découpage. Numéroter et partager en fonction place dans la salle DESORMAIS chq étudiant travaille sur sa zone,10,JOUR1
+trouver les anomalies : recherche de méthode,"en général les points correspondent avec un batiment… sauf quelques uns qui sont peut-être des oubliés, ex = 161 rue édouard vaillant. Mettre une colonne fixme=position et mettre la valeur dans le addr:number",30,JOUR1
+détailler les typologies,"ensemble bati remarquable : repérage zonal, gestion patrimoniale globale ¨+ rajouter typologie liste géocodée : immeuble, pavillon, maison de bourg",10,JOUR1
+récupérer les années pour les bâtiments,"fichier cadastre. Couche cadastreannee. Il s’agit de la parcelle. Donc il faut reprendre la parcelle des batiments et faire une jointure pour récupérer l’année. (une intersection suffit, en discuter) puis agrégation pour récupérer le minimum",30,JOUR1
+améliorer les résultats du géocodage,"filtrer sur le result_housenumber et comparer avec l’ensemble de la ban. Également sur le résultat.
+Dans le framacalc nb lg blanches / nb corrigés",30,JOUR1
+CARTE 2 : connaître sa donnée sur sa zone,"faire une sémiologie par année  + num maison /
+analyser la carte, la faire et mettre son analyse pour sa zone genre : j’ai tant de bat dont les gros type / année",30,JOUR1
+faire correspondre tag OSM et typolgie,3 possibilités : taginfo / features / ia : 3 groupes et rendu des propositions,30,JOUR2
+ces tags sont-ils utilisés sur Bondy / IdF / F ?,"
+Rqt overpass",15,JOUR2
+préparer les 3 couches à mettre en fond dans JOSM,"3 couches en 4326 et geojson
+- celle des batiments avec la typo + année min / ET / 
+- Le pt adresse avec adresse et typo2 / ET /
+-  l’enveloppe convexe
+",60,JOUR2
+utiliser JOSM,"basiques, à noter un blog https://www.alterzorg.fr/josm/accueil exemple le panneau filtre",30,JOUR2
+utiliser JOSM pour les batiments – un peu de dessin,Cheatsheet = pts les plus imortatns,30,JOUR2
+utiliser JOSM sur les zones définies, Test sur une grosse zone / utiliser les enveloppes / mettre les points dans les enveloppes / mettre le raccourci,30,JOUR2
+coloriser sa donnée : fichier de couleur CSS,insérer le fichier dans l’outil palette,30,JOUR2
+trouver la méthode pour importer dans OSM,https://wiki.openstreetmap.org/wiki/Import/Catalogue EX des arbres OSM git@github.com:defuneste/arbresosm.git,20,JOUR2
+définir les pb à l’import en masse,https://forum.openstreetmap.fr/t/geomas-import-de-donnees-en-masse-dans-osm/6469/4,20,JOUR2
+Fusionner les 3 calques,c’est plus facile,10,JOUR2
+tagger dans JOSM,"chaque étudiant sur sa zone : d’abord manuel puis avec raccourci clavier. (au moins 2 contributions par étudiant en manuel)
+Ne pas oublier de compter ses saisies et de les mettre dans le frama calc + difficultés rencontrées",60,JOUR2
+export OSM avec overpass turbo,quel tag mettre ?,20,JOUR3
+Vérification et bilan de la saisie 1,comment vérifier la saisie ? Chaque étudiant compte les contributions dans sa zone et les met dans framacalc (nb fait / nb total),30,JOUR3
+CARTE 3 : verif saisie et atlas,création d’un atlas simple : adresse + affichage des tags,60,JOUR3
+lister les pb et saisie 2,bilan de la saisie : carte sur le nb de contributions ?,20,JOUR3
+utiliser autres sources : liste 2011 et citaviz (appli saisie campagne 2023),"comparer les items / utiliser google maps et fonds photos. Rajouter building:material. 
+EX 25 rue suzanne buisson
+EX Allee du moulin",20,JOUR3
+détailler les différents matériaux et trouver les équivalents + nelle typologie,"consulter le cahier de recommandations architecturales
+Bondy historique",20,JOUR3
+Saisie 2,"la saisie 2 se fait directement de la fiche à JOSM / pas de préparation de fichier ? On ajoute les 2 géocodes et les commentaires soit sur la carte / soit sur les fiches
+Ne pas oublier de noter le nb de saisies",60,JOUR3
+CARTE 4 : verif saisie ,expression régulière building,20,JOUR3
+faire pl cartes sur une page,utiliser les thèmes et les groupes de couche,60,JOUR3

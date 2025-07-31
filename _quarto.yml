@@ -2,19 +2,19 @@ project:
   type: website
 
 website:
-  title: "Cours P8 2024"
+  title: "Cours P8 2025 - Patrimoine : du PLUi à OSM"
   navbar:
     background: primary
     search: true
     left:
       - text: "Introduction |"
         href: 01_intro.qmd
-      - text: " Première carte |"
-        href: 02_carte1.qmd
-      - text: " Bureaux de vote |"
-        href: 03_bv.qmd
-      - text: " Rues et bâtiments |"
-        href: 04_rueBat.qmd
+      - text: " Sources PLUi |"
+        href: 02_jour1.qmd
+      - text: " Saisie 1 |"
+        href: 03_jour2.qmd
+      - text: " Saisie 2 "
+        href: 04_jour3.qmd
     right:
       - icon: github
         href: https://github.com/beababa/coursP8
