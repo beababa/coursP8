@@ -14,23 +14,41 @@ execute:
 
 Patrimoine Bondy : du PLUi à OSM
 
-# Différentes sources
+# Différentes sources autour de la construction du PLUi {#sources}
+
+```{r}
+data <- read.csv("data/sources.csv", fileEncoding = "UTF-8")
+knitr::kable(data)
+```
+
+![Qu'est ce que le PLUi ?](img/couverture.png){width="250"}
 
 ## Le plan du patrimoine issu du PLUi
 
-Qu'observe-t-on ?
-
-![](img/exemple.png){width="300"}
-
-
-*extraction du plan patrimoine PLUi M3*
+![extraction du plan patrimoine PLUi M3](img/planComplet.png)
 
 Toutes les données cartographiques et réglementaires sont en opendata sur le [GPU](https://www.geoportail-urbanisme.gouv.fr/) !
 
-## Les listes
+```{mermaid}
+flowchart LR
+  A[GPU \nprescriptions surf ] --> B(patrimoinePlui)
+  B --> C{Distinguer\ntypes}
+  C --> D[bâtiments  niveau 1 à 3]
+  C --> E[zones]
+```
 
-Dans le document règlementaire de type .pdf
-Le document étant opposable, il a fallu ocr-isé les listes
+## Les tableaux
+
+Dans le document réglementaire de type .pdf Le document étant opposable, il a fallu ocr-iser les listes
+
+```{r, warning=FALSE}
+library(pdftools)
+fic <- ("data_raw/5.2 Annexe PatrimoineM3.pdf")
+ficSel <- pdf_subset(fic, "data/pdfSel.pdf", pages = c(seq(89,104)))
+texte <- pdf_text(ficSel)
+texte2 <- strsplit(texte, "\n")
+head(texte2 [[1]],10)
+```
 
 ### Liste de la M3
 
@@ -38,18 +56,33 @@ Le document étant opposable, il a fallu ocr-isé les listes
 
 ### Liste de la M2
 
-![](img/listeM2.png)
+Il s'agit de la liste des adresses de l'atlas du patrimoine.
 
+![](img/listeM2.png)
 
 ## Un outil collaboratif de carto web
 
 ![](img/appli.png)
 
-
 ## Des fiches scannés et re-scannés
 
-
 ![](img/fiche.png)
+
+3 livrets (respectivement 269, 467 et 242 pages) issus d'un travail effectué en 2011.
+
+## Le cadastre
+
+Extrait de la table local10 des fichiers MAJIC du cadastre 2024
+
+[MCD données cadastrales](https://docs.3liz.org/QgisCadastrePlugin/database/relationships.html)
+
+Chercher la colonne *jannat* dans l'item *Columns*
+
+Spécificité des données MAJIC : elles sont soumises à un acte d'engagement dans lequel sont définies les finalités de traitement.
+
+![](img/finaliteTraitement.png)
+
+Une partie du cadastre existe en [opendata](https://cadastre.data.gouv.fr/)
 
 # Les outils
 
@@ -71,11 +104,7 @@ Questions :
 
 Créer son profil sur [openstreetmap.org](https://www.openstreetmap.org), attention au pseudo.
 
-
 ## le tag
-
-
-
 
 ## JOSM
 
@@ -101,10 +130,7 @@ JOUR 1 : Analyser les données à intégrer dans OSM à partir des sources M3
 
 JOUR 2 : Faire une première session de saisie dans OSM
 
-JOUR 3 : Extraire, faire un atlas sous QGIS bâtiment par bâtiment, utiliser les sources M2
-pour faire une deuxième sessions et produire un atlas plus complexe
-
-
+JOUR 3 : Extraire, faire un atlas sous QGIS bâtiment par bâtiment, utiliser les sources M2 pour faire une deuxième sessions et produire un atlas plus complexe
 
 Au niveau du temps, cela donne :
 
@@ -121,25 +147,39 @@ Voir également heures de repas et 1er jour
 
 ## Evaluation
 
-
-::: callout-note
+::: callout-important
 pas d'évaluation officielle
 :::
 
+### Deux quizz
 
+-   notions de base puis plusieurs cartes que nous regarderons rapidement
 
-Un quizz par rapport aux notions de base puis plusieurs cartes que nous regarderons
-rapidement.
+[Introduction](https://framaforms.org/paris8-bondy2024-introduction-1693048391)
+
+-   évaluation de satisfaction
+
+[Évaluation de satisfaction](https://forms.gle/R5W9DooDPMmRn3kF6)
+
+### Quatre cartes
 
 CARTE 1 : compétences de base QGIS
 
-CARTE 2 : connaître sa donnée sur sa zone
+CARTE 2 : une anomalie rencontrées sur la donné
 
-CARTE 3 : vérif de la 1e saisie et atlas (1 carte)
+CARTE 3 : connaître sa donnée sur sa zone
 
-CARTE 4 : vérif de la 2e saisie et atlas plus complexe (plusieurs cartes et un tableau)
+CARTE 4 : vérif de la 1e saisie et atlas (1 carte)
+
+CARTE 5 : vérif de la 2e saisie et atlas plus complexe (plusieurs cartes et un tableau)
+
+### Evaluer la saisie OSM
+
+#### Quantité
 
 Pour la saisie OSM, chaque étudiant notera le nombre de saisies faites
+
+#### Qualité
 
 Concernant la qualité de la saisie, éviter absolument le [retour de bâton OSM](https://forum.openstreetmap.fr/t/landuse-residential-supprime-a-bondy-et-pavillon-sous-bois/9562/9), notamment pour il y a deux ans.
 
@@ -155,22 +195,27 @@ Un mot au sujet du collectif, ce cours est aussi l'occasion de tester une organi
 
 ![](img/attribBureau.png)
 
-
 ## Précisions techniques
 
 ### Support et procédures
 
 Le support, fait sous R Quarto, sert uniquement de "fil rouge".
 
-Les procédures employées sous QGIS sont résumées sur le support distribué ou à rechercher sur internet (merci l'IA).
+Les procédures employées sous QGIS / JOSM sont résumées sur un support papier distribué.
 
-Essai : "Qgis compter les points dans un polygone" Quel est le menu qui permet de le faire ?
+Utilisation d'internet, exemple :
 
-### Dépôt des cartes
+"Qgis compter les points dans un polygone" Quel est le menu qui permet de le faire ?
 
-Le dépôt des cartes se fera sur le partage réseau.
+### Projet git
 
-Au niveau de la zone de recherche, taper
+En utilisant l'icone à droite du cours, copie du projet GIT en *début* et en *fin* de session (via l'option *download zip*)
+
+### Les données
+
+Directement sur le git ou sur le partage réseau au fur et à mesure.
+
+Partage réseau, au niveau de la zone de recherche, taper
 
 ```         
 \\C210-P
@@ -178,11 +223,11 @@ Au niveau de la zone de recherche, taper
 
 Sélectionner ensuite le répertoire *partage géographie* et *OSM*, clic droit *Ajouter un raccourci rapide*
 
-Déposer son image dans le répertoire *img/cartes* avec comme syntaxe : *prenom.png*
+### Dépôt des cartes
 
-### Projet git
+Le dépôt des cartes se fera sur le partage réseau.
 
-En utilisant l'icone à droite du cours, copie du projet GIT en *début* et en *fin* de session (via l'option *download zip*)
+Déposer sa carte dans le répertoire *img/cartes* avec comme syntaxe : *prenom.png*
 
 # Présentation en binôme
 
@@ -202,17 +247,13 @@ barplot(table(data$présent), las = 2)
 barplot(table(data$futur), las = 2)
 ```
 
-::: callout-note
-quelle diffusion ?
+::: callout-important
+quelle diffusion des données / du cours ?
 :::
 
-# Quizz
-
-[Introduction](https://framaforms.org/paris8-bondy2024-introduction-1693048391)
-
-[Évaluation de satisfaction](https://forms.gle/R5W9DooDPMmRn3kF6)
-
 # Sitographie
+
+Quelques liens utiles tout au long du cours
 
 [clin d'oeil](https://christophe-lebas.medium.com/tuto-visualiser-une-ville-et-ses-rues-gr%C3%A2ce-%C3%A0-qgis-simplement-avant-den-faire-un-mug-shp-et-a57cf4607f64)
 
@@ -220,7 +261,7 @@ quelle diffusion ?
 
 [ze manuel le tuto passage](https://tutoqgis.cnrs.fr/)
 
-une référence en livre : **QGIS Map Design - Second Edition** by Anita Graser and Gretchen N. Peterson
+une référence en livre : [QGIS Map Design - Second Edition](https://locatepress.com/book/qmd2) d'Anita Graser and Gretchen N. Peterson (2020)
 
 ## OSM
 
@@ -241,7 +282,6 @@ une référence en livre : **QGIS Map Design - Second Edition** by Anita Graser 
 [base](https://learnosm.org/fr/josm/)
 
 [alterzorg](https://www.alterzorg.fr/josm/accueil)
-
 
 ### Le contrôle de qualité
 

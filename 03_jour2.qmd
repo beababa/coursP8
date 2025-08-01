@@ -1,5 +1,5 @@
 ---
-title: "Se répartir le travail : les bureaux de vote"
+title: "Première session de saisie dans OSM"
 format:
   html:
     toc: true
@@ -14,46 +14,39 @@ execute:
 
 # Objectif
 
-Les étudiants de 2023 ont travaillé sur les bureaux de vote. L'idée est de repartir de leur travail pour montrer la nécessité du cercle vertueux.
+Une fois analysée la donnée, il s'agit de la saisir dans OSM.
 
-![](img/resSaisie.PNG)
 
-Le zonage en bureau de vote permettra ensuite aux étudiants de travailler sur une portion restreinte du territoire.
+# Lister les données
 
-# CARTE 2 : superposition des deux données
+# Recherche des tags pour la donnée
 
-## Les données : opendata et OSM
+outils vus au début : features et taginfo
 
--   charger les bv existants sur data.gouv en utilisant le mot clé *reu* (Répertoire Électoral Unique) et en choisissant le travail de Frédéric Rodrigo.
+Les étudiants travaillent en 3 groupes l'un sur features, l'autre sur taginfo, et le 3e uniquement sur l'IA.
 
--   requête overpass dans l'assistant : boundary=political in bondy
+# Validation des tags choisis en faisant des requêtes overpass
 
-## Mise en forme Qgis
+Sur plusieurs échelles : Bondy et l'Ile de France par exemple
 
-### Data.gouv
 
--   Filtrer sa couche sur le code INSEE (93010)
+# préparer sa donnée pour l'import dans JOSM
 
--   afficher les bv data.gouv avec étiquettes
+3 couches en 4326 et geojson
 
--   couleur du symbole pour l'étiquette (@symbol_color)
+- celle des batiments avec la typo + année min 
 
--   dans le constructeur d'expression des étiquettes, utiliser la fonction «replace » pour afficher uniquement le numéro du bv
+- Le pt adresse avec adresse et typo2
 
--   utiliser le champs couleur même si tout est vert...
+-  l’enveloppe convexe
 
-### OSM
+Pour chacune des 3 couches mettre uniquement les tags choisis par les étudiants
 
--   Rajouter un style catégorisé avec couleurs aléatoires
 
-# Lister les modifications à faire dans OSM
+# Utiliser JOSM
 
-Dans le [tableur](https://lite.framacalc.org/9ilj-coursp8), noter les modifications et attribuer aux étudiants la tâche sous JOSM
+## Rappel des éléments vus le 1er jour
 
-```{r}
-anomalie <- read.csv("data/anomalieBV.csv", fileEncoding = "UTF-8")
-knitr::kable(anomalie)
-```
 
 ## Attributs
 

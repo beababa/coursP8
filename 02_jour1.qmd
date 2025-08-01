@@ -1,5 +1,5 @@
 ---
-title: "Analyser les données"
+title: "Analyser les données en les cartographiant"
 format:
   html:
     toc: true
@@ -14,7 +14,15 @@ execute:
 
 # Objectif
 
-Au cours des 3 jours, il va falloir manipuler plusieurs données M2 / M3. Une carte présentant les données à analyser sera demandée à la fin de cette journée.
+Pour faire un peu d'OSM sur cette première journée, nous ferons uen première saisie.
+
+Mais l'objectif principal de la séquence est d'explorer les données proposées en les cartographiant.
+
+Une carte présentant les données à analyser sera donc demandée à la fin de cette journée.
+
+Les données étant plus nombreuses que les étudiants, chaque étudiant prendra 
+
+
 
 # 1e saisie pour comprendre
 
@@ -34,10 +42,13 @@ Ouvrir une page vierge sous JOSM et créer un triangle avec 3 noeuds en utilisan
 
 Faire le triangle, ajouter un point, le déformer.
 
+::: callout-tip
+Exercice : à partir du support
+:::
+
 ## La relation
 
-Il existe une 3e primitive, plus difficile à utiliser, la relation. Elle est utilisée pour construire les itinéraires de bus par exemple. Elle ne sera pas utilisée dans le cadre
-de ce cours.
+Il existe une 3e primitive, plus difficile à utiliser, la relation. Elle est utilisée pour construire les itinéraires de bus par exemple. Elle ne sera pas utilisée dans le cadre de ce cours.
 
 ## Tag = clé + valeur
 
@@ -85,17 +96,9 @@ Utiliser l'assistant et extraire rues et bâtiments avec le caractère joker.
 
 ## Autres extractions
 
--   les bureaux de vote (boundary=political)
+-   les limites de la commune (admin_level=8) : les enregistrer dans le gpkg patrimoine.gpkg.
 
--   et les limites de la commune (admin_level=8)
-
-# Autres données
-
-On va également utiliser le cadastre en opendata sur data.gouv, le télécharger pour la ville (code INSEE 93010)
-
-Enfin en fond de carte, on affichera OSM Positron obtenu à partir du [plugin](https://plugins.qgis.org/plugins/popular/)
-
-# CARTE 1 : les rues et les bâtiments OSM sous QGIS
+# CARTE 1 : les bâtiments et les zones du patrimoine d'après les données PLUi M3
 
 ::: callout-caution
 Avant de faire la carte, quizz !
@@ -103,36 +106,140 @@ Avant de faire la carte, quizz !
 
 ## Savoir-faire QGIS
 
--   mettre un favori dans l'explorateur sur le répertoire Téléchargement
+-   mettre un favori dans l'explorateur sur les répertoires Téléchargement et data
 
 -   intégrer une couche dans Qgis
 
--   étiquetage des rues sous Qgis
+-   utiliser un ensemble de règles
 
-![](img/rue.png)
-
--   style en polygone inversé et remplissage dégradé suivant la forme (ou plugin mask)
+-   fond positron avec le plugin QMS
 
 -   mise en page qgis (3 boutons)
 
-## Consignes
+-   style en polygone inversé et remplissage dégradé suivant la forme (ou plugin mask) pour les limites de la commune
 
-### Les couches
+-   mise en page dans Qgis : les 3
 
-![](img/couchesCarte1.png)
+## Autres données : la commune
 
-Le cadastre sert de fond afin de faire ressortir les axes, du coup, pas de symbole pour les rues uniquement des étiquettes. Pas d'utilisation de la donnée ponctuelle Fond positron (plugin Qgis)
+-   Tag = admin_level=8 in Bondy dans overpass-turbo
 
-### Les contours de la commune
+-   couche du cadastre
 
-Tag = admin_level=8 in Bondy
-
-style en polygone inversé et remplissage dégradé suivant la forme (ou plugin mask)
-
-### Les étiquettes des rues
-
-une police condensée / étroite et une position incurvée sur la ligne
-
-### Mise en page
+## Mise en page
 
 classique : titre / échelle / crédits
+
+::: callout-tip
+S'aider de la procédure du support *Faire une 1e carte QGIS*
+:::
+
+# Utiliser une deuxième source
+
+## Pourquoi une deuxième source ?
+
+Voir @sources , différence en nombre d'éléments.
+
+```{r}
+library(sf)
+carte <- st_read("data/patrimoine.gpkg", "patrimoineFiltre2154")
+elementsCarte <- length(carte$LIBELLE)
+geocodage <- st_read("data/patrimoine.gpkg", "geocodageM3")
+elementsGeocodage <- length(geocodage$typo)
+elementsCarte - elementsGeocodage
+```
+
+De plus, éléments complémentaires dans le .pdf
+
+-   une nouvelle typologie
+
+```{r}
+table(geocodage$typo)
+```
+
+## Superposition des deux informations sur une seule carte
+
+Résultat à obtenir : utiliser un symbole svg pour les points et un remplissage pour les polygones.
+
+![](img/geocodageETcarto.png)
+
+::: callout-tip
+S'aider de la procédure du support *Organiser son projet QGIS* et *Etiquettes : deux petits trucs*
+:::
+
+## Quels problèmes possibles ?
+
+```{r}
+matrice <- read.csv("data/avantageInconvenient.csv")
+knitr::kable(matrice)
+```
+
+La solution : intégrer point et polygone dans le polygone du bâtiment dans OSM
+
+# Une troisième source
+
+Une donnée essentielle pour le patrimoine est la date de construction du bâtiment. cette information est présente dans le cadastre.
+
+```{r}
+cadastreAn <- read.csv("data_raw/cadastreAnParcelle.csv")
+# 50 M
+cadastre <- st_read("data/patrimoine.gpkg", "cadastre")
+# 8 000
+jointure <- merge(cadastre, cadastreAn, by.x = "geo_parcelle", by.y = "parcelle" )
+# 50 M
+st_write(jointure, "data/patrimoine.gpkg", "cadastreAn", delete_layer = T)
+length(unique(jointure$geo_parcelle))
+# 5803 il y a des parcelles sans année
+```
+
+::: callout-tip
+Voir le support, procédure *Géotraitements QGIS : de la parcelle au bâtiment*
+:::
+
+# Vérification des données
+
+A vue d'oeil, point géocodé et polygone correspondent, mais, pour traiter finement la donnée, on va se la répartir.
+
+## Répartir le travail
+
+C'est l'occasion de faire de la géomatique avancée.
+
+::: callout-tip
+Le support présente les deux méthodes dans la procédure *Répartir le travail : quelle méthode utiliser ?*
+:::
+
+
+## Quelles vérifications ?
+
+Une fois les zones partagés, chaque étudiant fait une *intersection* sur sa zone, menu vecteur / géotraitement / intersection.
+
+Il vérifie que :
+
+- pour chaque bâtiment, il existe un point.
+
+- la typologie est cohérente : à quoi correspondent les bâtiments de niveau 3 en typologie ? 
+
+Toutes les anomalies sont notées dans le framacalc.
+
+Pour l'une des anomalies, l'étudiant en documente une sur une carte (CARTE 2) et rectifie au moins un géocodage.
+
+## Cas concrets
+
+
+::: callout-tip
+Le support, procédures *Relation entre liste géocodage et plan opposable* et *Vérifier le géocodage*
+:::
+
+
+## Conclusion de la journée : carte analysant la donnée (CARTE 3)
+
+Faire une carte zoomée sur sa zone (CARTE 3),  mettant en valeur 
+
+- les années par bâtiment (style gradué)
+
+![](img/styleGradue.png)
+
+- les points adresses
+
+Avec un commentaire décrivant la donnée de type "J'ai tant de bâtiments dont des gros de type / des petits, avec tant d'anomalies etc..."
+

@@ -1,0 +1,3 @@
+,avantage,inconvénient
+carte,localisation précise,topologie trop simple
+géocodage,topoloogie plus complexe,"dépend de la qualité du géocodage\nPas à la parcelle, mais au point adresse"
