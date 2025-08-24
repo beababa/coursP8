@@ -10,12 +10,12 @@ editor_options:
   chunk_output_type: console
 execute:
   echo: true
+  warning: false
 ---
 
 # Objectif
 
 Une fois analysée la donnée, il s'agit de la saisir dans OSM.
-
 
 # Lister les données
 
@@ -23,105 +23,148 @@ Une fois analysée la donnée, il s'agit de la saisir dans OSM.
 
 outils vus au début : features et taginfo
 
-Les étudiants travaillent en 3 groupes l'un sur features, l'autre sur taginfo, et le 3e uniquement sur l'IA.
+Les étudiants travaillent en 3 groupes :
+
+-   l'un sur features,
+
+-   l'autre sur taginfo,
+
+-   et le 3e uniquement sur l'IA.
 
 # Validation des tags choisis en faisant des requêtes overpass
 
 Sur plusieurs échelles : Bondy et l'Ile de France par exemple
 
+voir [ici](02_jour1.html#quels-tags)
 
-# préparer sa donnée pour l'import dans JOSM
+# Préparer sa donnée sous QGIS pour l'import dans JOSM
 
 3 couches en 4326 et geojson
 
-- celle des batiments avec la typo + année min 
+-   celle des batiments avec la typo + année min
 
-- Le pt adresse avec adresse et typo2
+-   Le pt adresse avec adresse et typo2
 
--  l’enveloppe convexe
+-   l'enveloppe convexe attribuée
 
 Pour chacune des 3 couches mettre uniquement les tags choisis par les étudiants
 
+![](img/export.png)
 
-# Utiliser JOSM
+::: callout-tip
+Le support présente les deux méthodes dans la procédure *Préparer ses couches sous QGIS* et encore une fois *Simplifier ses couches*
+:::
 
-## Rappel des éléments vus le 1er jour
+![](img/2calques.png)
 
+# JOSM : rappel et mise au point
+
+voir [ici](02_jour1.html#interface-josm)
 
 ## Attributs
 
-Observer les attributs, repérer les erreurs d'attributs
+Comment appelle-t-on les attributs dans OSM ?
+
+### Une multiplication d'attributs
+
+exemple pour les rues
+
+![](img/tagnom.png)
+
+### Des erreurs nombreuses
+
+Il n'y a rien de plus difficile que de recopier un texte. *building* peut devenir *Building* par exemple.
+
+Observer les attributs, repérer les erreurs d'attributs avec [osmose](http://osmose.openstreetmap.fr/fr/map/#zoom=16&lat=48.90695&lon=2.49237)
 
 ## Géométries
 
-Observer les géométries et noter les bureaux manquants ou incomplets (notamment polygone non fermés)
+Quels sont les deux primitives géométriques vues le premier jour ?
 
-utiliser les outils identification / sélection / loupe attributaire
+A priori, pas de travail sur la géométrie, mais il peut y avoir des opérations à mener sur la géométrie des bâtiments.
+
+Pas de panique, la communauté OSM a produit une [osmecum](https://wiki.openstreetmap.org/wiki/France/Osmecum) sur les bâtiments.
 
 # Saisie dans JOSM
 
-## Répétition de la séquence d'initiation
+## Import d'une zone spécifique
 
-voir [ici](02_carte1.html#primitives-géométriques-noeud-et-chemin)
+Les deux boutons
 
-## Saisie avancée, quelques points
+![](img/AR.png)
+
+Essayer de télécharger :
+
+-   l'ensemble de la ville à partir de l'onglet nominatim,
+
+![](img/nominatim.png)
+
+-   sa zone via une carte glissante,
+
+-   et enfin à partir du raccourci décrit dans la procédure *Importer sa zone*
+
+## Pourquoi ne pas importer en masse ?
+
+### C'est possible
+
+Le [tableau](https://wiki.openstreetmap.org/wiki/Import/Catalogue) des imports en masse dans OSM
+
+et notamment sur les arbres isolés de St Etienne :
+
+L'exemple d'un [projet git](https://github.com/defuneste/arbresosm) sur l'import des arbres dans OSM
+
+### Mais ce n'est pas conseillé
+
+voir sur [forum des utilisateurs OSM en France](https://forum.openstreetmap.fr/t/geomas-import-de-donnees-en-masse-dans-osm/6469/4)
+
+Ponctuellement, on peut essayer, faire la requête overpass sur *natural=tree in bondy*
+
+Trouver l'erreur dans le square Mitterrand.
+
+![](img/sqMitterrand.png)
+
+![](img/pavillonGlacon.png)
+
+Donc il vaut mieux faire un import au cas par cas, surtout que, pour les bâtiments patrimoniaux, le bâtiment existe déjà.
+
+## Facilitateurs
+
+Ces outils qui permettent une saisie plus facile
 
 ### Filtre
 
+### Outil de filtre
+
 [le wiki](https://josm.openstreetmap.de/wiki/Fr%3AHelp/Dialog/Filter)
 
-Détailler le fonctionnement.
+Détailler le fonctionnement, voir [alterzorg](https://www.alterzorg.fr/josm/filtre)
 
 ![](img/filtre2.png)
 
-Il s'agit de travailler uniquement sur les contours des bureaux de vote.
+Il s'agit de travailler uniquement sur les bâtiments.
 
-### Rassembler 2 lignes
+### Colorisation de la donnée
 
-Pourquoi ce polygone est une polyligne ?
-
-#### Analyse dans Qgis
-
-Utiliser l'outil de sélection, d'identification, la loupe attributaire
-
-![](img/pbBV.png)
-
-Il faut unir les deux chemins ou plutôt superposer les noeuds.
-
-#### Réparer dans JOSM
-
-On les sélectionne les 2 géométries
-
-![](img/selectionJOSM.png)
-
-Bien vérifier dans la fenêtre sélection c pour fusionner
-
-![](img/fusionAttention.png)
-
-### Couper une ligne
-
-sélectionner les 2 nœuds puis outil / couper le chemin
-
-### Comprendre une relation
-
-Remarquer 2 outer et l' admin_centre.
-
-![](img/relationJOSM.png)
-
-Principe d'une relation
-
-![](img/relationPrincipe.png)
-
-# Nouvelle extraction, nouvelle carte (carte 3)
-
-Y-a-t-il des améliorations ?
-
-::: callout-note
-quizz *basiques JOSM et Qgis* dans les quizz de l'intro !
+::: callout-tip
+Dans la procédure *Importer sa zone*, voir le point *3. Colorier sa zone*
 :::
 
-# Partage des zones
+Que dire d'une extension *.mapcss* ?\*
 
-[carte umap](https://umap.openstreetmap.fr/fr/map/secteurs_954238#15/48.8960/2.4821)
+## Méthode proposée
 
-Dans la carte umap, chaque étudiant remplace le prénom en fonction des bureaux attribués dans le [framacalc](https://lite.framacalc.org/9ilj-coursp8) (1 à 32)
+::: callout-tip
+Voir procédure *Saisie JOSM*
+:::
+
+Attention au commentaire du changeset ! (#Paris8_Bondy2025)
+
+![](img/changeset.png)
+
+Dans le framacalc, les étudiants mettent le nombre de saisies effectuées et les difficultés rencontrées
+
+Afin de vérifier la saisie, quel tag proposer dans Overpass turbo ?
+
+::: callout-tip
+Voir procédure *Utiliser overpass turbo*
+:::

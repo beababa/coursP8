@@ -1,5 +1,5 @@
 ---
-title: "Rues et bâtiments"
+title: "Cercle vertueux"
 format:
   html:
     toc: true
@@ -11,150 +11,152 @@ editor_options:
 execute:
   echo: true
   eval: true
+  warning: false
 ---
 
 # Objectif
 
-Exploiter rues et bâtiments dans OSM pour obtenir une carte sympathique.
+La première saisie va permettre la création d'un atlas simple sous QGIS à partir de l'export d'overpass turbo, qui permettra de faire une 2e saisie et un atlas plus complexe.
 
-# Les rues
+# Atlas
 
-## Le nom des rues
+::: callout-tip
+Voir la dernière procédure *Faire un atlas sous QGIS*
+:::
 
-Comment est caractérisé le nom des rues ?
+![](img/atlasSimple.png)
 
-Quels sont les différents types de tags utiliser pour les noms ?
+Savoir-faire QGIS
 
-Le [wiki](https://wiki.openstreetmap.org/wiki/Names) est très clair.
+-   atlas (avec expression pour le nom de la page)
 
-## Observer OSM
+-   table attributaire (avec filtre sur l'item de l'atlas)
 
-Reprendre la carte 1 et faire un zoom sur son bureau de vote.
+-   aperçu
 
-![](img/bv1.png)
+-   thèmes
 
-![](img/tagnom.png)
+# Bilan de la saisie
 
-## La solution du plan sucette
+Quelle est la différence entre le nombre de contributions saisies et le nombre de contribution réelle ?
 
-![](img/petitesRues.png)
+Les problèmes sont listés avant la 2e session de saisie.
 
-Quel tag utiliser pour régler ce problème.
+exemple de problème type
 
-Il s'agit également des noms de rue trop longs.
+![](img/overpassTurboExpressionReg.png) ![](img/erreur1.png) ![](img/erreur2.png)
 
-```{r}
-rue <- read.csv("data/rue.csv", fileEncoding = "UTF-8")
-rue$longueur <- nchar(rue$NOM2)
-hist(rue$longueur)
-tab <-tail(rue  [order(rue$longueur),c("NATURE", "NOM2", "longueur")], decreasing=F, 20)
-knitr::kable (tab, row.names = F)
-```
+# Deux dernières sources
 
-## En guise d'évaluation : état des lieux pour chaque étudiant
+## Présentation
 
-dans le framapad, sur sa zone, nb de noms ajoutés
+Elles donnent d'autres éléments pour la description mais leur reprise est plus problématique.
 
-```{r}
-pbNoms <- read.csv("data/pbNoms.csv")
-knitr::kable(pbNoms)
-```
+#### Citaviz
 
-## Les possibilités post saisie OSM dans QGIS
-
-### Les fonctions
-
-Exemple d'une fonction complexe (cf bibliographie, A. Graser), à votre avis que fait-elle ?
-
-![Qgis Map Design chap. labeling](img/automatisationNomRue.png)
-
-Essayer d'utiliser juste la fonction *replace* imbriquée seulement pour remplacer Rue et Allée
-
-Au passage, au niveau d'OSM, vérifier si les noms de rue sont corrects pour votre zone avec l'extraction suivante.
+Voir [ici](01_intro.html#un-outil-collaboratif-de-carto-web)
 
 ```{r}
 library(sf)
-# on charge bv et rue
-bv <- st_read("data/bondy.gpkg", "bureaudevoteinseereuopenstreetmap__bureauBondy", quiet=T)
-rue <- st_read("data/socle.gpkg", "rue2023__rue", quiet=T)
-# projection de bv modifiée
-bv <- st_transform(bv, crs = 2154)
-# extraction du numéro de bureau
-bv$numBureau <- gsub("93010_","",bv$bureau)
-# intersection rue et bv
-inter <- st_intersection(rue, bv)
-# filtrage sur 3 attributs
-inter <- inter [, c("NATURE", "NOM_1_G","numBureau")]
-# sauvegarde de la couche
-st_write(inter, "data/bondy.gpkg", "rueParBureau", delete_layer = T, quiet =T )
+citaviz <- st_read("data/patrimoine.gpkg", "geocodecitaviz")
+head(substring(citaviz$detail,1,20))
 ```
 
-### Géotraitement : agréger les rues
+#### Les fiches
 
-Trouver le géotraitement à utiliser pour que toutes les rues ayant le même nom soient avec une seule géométrie.
+voir [ici](01_intro.html#des-fiches-scannés-et-re-scannés)
 
-## Cercle vertueux
+Lister les propositions des étudiants
 
-Relever les problèmes, les solutions données au cas par cas.
+## Analyse de la donnée
 
-Saisie / Import / Carto (la 4e), le tout sur son secteur
+### La carte
 
-Quel progrès ? Comment les lister ?
+![](img/fichePatrimoine2011ETcollaboratif2024.png){width="300px"} ![](img/fichePatrimoine2011ETcollaboratif2024Zoom.png){width="300px"}
 
-# Les bâtiments
+## Que dit la carte ?
 
-La liste des bâtiments est à mettre à jour avec la carte des POI (à distribuer).
+```{mermaid}
+flowchart LR
+  A[fiches de 2011]  --> C{M3 de 2025}
+  B[collaboratif 2024] --> C
+```
 
-Repérer pour chaque secteur les bâtiments à changer et mettre le nombre de modifications dans le framacalc.
-
-## Deux axes
-
-Pour les bâtiments, deux aspects sont à étudier :
-
--   le type du bâtiment (la couleur)
-
--   l'emprise du terrain sur lequel est ce bâtiment (une couleur moins foncée)
-
-tableau des équivalences bâtiment / emprise pour faire la jointure
+## Evaluation chiffrée
 
 ```{r}
-poi <- st_read("data/socle.gpkg", "tout_poi", quiet=T)
-# retrouver la table d'équivalence des couleurs à partir du fichier final
-couleur <- poi [,c(1:2,5,6), drop=T]
-couleur <- unique(couleur)
-write.csv(couleur, "data/equivCouleur.csv", fileEncoding = "UTF-8")
-knitr::kable (head(couleur))
+citaviz2024 <- st_read("data/patrimoine.gpkg", "geocodecitaviz")
+fiche2011 <- st_read("data/patrimoine.gpkg", "geocodePatrimoineM2")
+sum(length(fiche2011$texte), length(citaviz2024$ID))
 ```
 
-Faire une jointure sous Qgis après avoir fait évoluer les catégories.
+A rapprocher des 719 éléments de cartographie M3.
 
-Utiliser également une jointure spatiale point / bâtiment / emprise pour faire le lien entre les différentes géométries.
+## Contenu
 
-## Méthode
+### Citaviz
 
--   étudier **tag info** et l'export avec QGIS (style catégorisé)
+Des bâtiments sans numéro
 
--   choisir les tags à mettre en valeur en commun
+```{r}
+pbNumMaison <- citaviz [is.na(citaviz$result_housenumber), ]
+knitr::kable(pbNumMaison [, c("adresse", "result_name"), drop = T])
+```
 
--   corriger son secteur
+### Les fiches
 
--   refaire un export et une carte
+Comment récupérer les données des [fiches](01_intro.html#des-fiches-scannés-et-re-scannés), et notamment les photos ?
 
-## Pour les emprises terrain, quelques idées
+### Nouveaux éléments
 
--   cas parcs (key *leisure*)
+Observer un nouvel élément de patrimoine
 
--   cas écoles (solution sur le [forum](https://forum.openstreetmap.fr/t/groupe-scolaire-plusieurs-ecoles-sur-un-meme-site/18175/2))
+```{r}
+table(citaviz$Couche)
+```
 
--   les résidences (landuse=residential)
+Il y a également une nouvelle typologie (cf le cahier des recommandations architecturales dans *7.4.19 Annexe anciennes fiches communes.pdf*, p. 943)
 
-# Carte finale (carte 4)
+![](img/nelleTypologie.png)
 
-::: callout-caution
-quizz avant la carte ! (Quelques astuces dans les quizz de l'intro)
-:::
+# Nouvelle saisie
 
-Essayer de faire une carte de son secteur, puis de l'ensemble de la ville. Y-a-t-il beaucoup d'incohérences ?
+Cette fois ci, on travaille directement sur le calque de données, on cherche la fiche avec l'index et on tague tous les éléments possibles à l'adresse. On travaille par rue puisque les fiches sont par rue.
+
+```{r}
+index <- read.csv("data_raw/indexPatrimoineCorrige.csv")
+head(index)
+tab <- table(index$livret)
+fin <- NULL
+for (i in c(1:3)){
+  tmp <- seq (1, tab [i])
+  fin <- c(fin, tmp)
+}
+index$numFiche <- fin
+write.csv(index,"data_raw/indexPatrimoineNumPage.csv")
+```
+
+En bilan, toujours le nombre de bâtiments et les problèmes rencontrés dans des fiches spécifiques particulièrement fournies.
+
+# Vérification
+
+Requête overpass sur le(s) nouveau(x) tag(s) et comparaison avec l'annoncé.
+
+Pour la qualité, on recherche avec les expressions régulières
+
+# Atlas complexe (CARTE 5)
+
+On cherche à se rapprocher le plus possible du modèle de fiche.
+
+![](img/atlasComplexe.png)
+
+Compétence QGIS
+
+Mettre en surbrillance l'élément de l'atlas : utiliser les variables d'atlas pour la mise en forme (cf [cours QGIS ministère transition écologique](https://www.camillechevrier.fr/formations/01_qgis_prise_en_main/M06_MiseEnPage_web_gen_web/co/45_N1_Atlas.html))
+
+Mais l'essentiel reste dans le tableau attributaire tous les éléments saisis dans OSM.
+
+![](img\10attributs.png)
 
 ::: callout-caution
 évaluation de satisfaction !

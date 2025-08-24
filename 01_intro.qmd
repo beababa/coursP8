@@ -10,18 +10,43 @@ editor_options:
   chunk_output_type: console
 execute:
   echo: true
+  warning: false
 ---
 
 Patrimoine Bondy : du PLUi à OSM
 
-# Différentes sources autour de la construction du PLUi {#sources}
+# Différentes sources autour de la construction du PLUi
+
+## Présentation du PLUi et tableau récapitulatif des sources pour le cours
+
+
+![Qu'est ce que le PLUi ?](img/couverture.png){width="250"}
 
 ```{r}
 data <- read.csv("data/sources.csv", fileEncoding = "UTF-8")
 knitr::kable(data)
 ```
 
-![Qu'est ce que le PLUi ?](img/couverture.png){width="250"}
+
+
+```{r}
+library(sf)
+# extraction des couches nécessaire pour la carte 1
+patrimoine <- st_layers("data/patrimoine.gpkg")
+patrimoine <- patrimoine$name
+couches <- c("cadastre","quartier","m3_prescription_surf","geocodageM3")
+for (c in couches){
+ print(c)
+ tmp <- st_read("data/patrimoine.gpkg", c)
+ assign(c, tmp)
+ st_write(tmp,"data/carte1.gpkg", c, delete_layer=T)
+}
+st_layers("data/carte1.gpkg")
+```
+
+
+
+
 
 ## Le plan du patrimoine issu du PLUi
 
@@ -69,6 +94,55 @@ Il s'agit de la liste des adresses de l'atlas du patrimoine.
 ![](img/fiche.png)
 
 3 livrets (respectivement 269, 467 et 242 pages) issus d'un travail effectué en 2011.
+
+L'ocr-isation ne fonctionne pas sur ce support.
+
+Reprise du titre
+
+```{r}
+library(pdftools)
+fic <- "data_raw/5.2 Annexe patrimoine (Bondy-livret1).pdf"
+ficSel <- pdf_subset(fic, 10, "data/fichePatrimoine.pdf")
+texte <- pdf_text(ficSel)
+strsplit(texte, "\n")
+```
+
+Pour le corps du texte, c'est trop incomplet, même en passant par une transformation en image.
+
+```{r}
+library(magick)
+library(tesseract)
+png <- pdf_convert("data/fichePatrimoine.pdf", dpi = 400)
+img <- image_read(png)
+# recherche du titre
+texte <- ocr(img)
+texte2 <- substring(texte, 1, 58)
+head(strsplit(texte, "\n"))
+texte3 <- gsub("\n|:", "_", texte2)
+texte4  <- gsub(" ","_", texte3)
+texte5  <- gsub("___","_", texte4)
+texte5
+```
+
+Une piste intéressante serait de stocker la photo et de la nommer avec l'adresse et le numéro de parcelle.
+
+```{r}
+gererPhoto <- function(img){
+  taille <- image_info(img)[2:3]
+  hauteur <-  taille [2]
+  largeur <- taille [1]
+  largeur < hauteur
+  hauteurPhoto <- hauteur * (100/297 )
+  largeurPhoto <- largeur *  (1000/210)
+  ht <-  round(hauteur * (160/297),0)
+  lg <-  round(largeur * (90/210),0)
+  photo <- image_crop(img, geometry = paste0( largeurPhoto,"x", hauteurPhoto-175,"+",lg+50,'+',ht/2.3+5))
+  photo <- image_trim(photo)
+  image_write(photo, path = paste0("img/", texte5, ".png"), format="png")
+}
+res <- gererPhoto(img)
+image_read(res)
+```
 
 ## Le cadastre
 
@@ -161,15 +235,15 @@ pas d'évaluation officielle
 
 [Évaluation de satisfaction](https://forms.gle/R5W9DooDPMmRn3kF6)
 
-### Quatre cartes
+### Cinq cartes
 
-CARTE 1 : compétences de base QGIS
+CARTE 1 : compétences de base QGIS, affichage de la donnée Patrimoine du PLUi M3
 
-CARTE 2 : une anomalie rencontrées sur la donné
+CARTE 2 : une anomalie rencontrée sur la donnée
 
 CARTE 3 : connaître sa donnée sur sa zone
 
-CARTE 4 : vérif de la 1e saisie et atlas (1 carte)
+CARTE 4 : vérif de la 1e saisie et atlas (1 carte et un tableau)
 
 CARTE 5 : vérif de la 2e saisie et atlas plus complexe (plusieurs cartes et un tableau)
 

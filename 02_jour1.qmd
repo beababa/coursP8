@@ -10,19 +10,18 @@ editor_options:
   chunk_output_type: console
 execute:
   echo: true
+  warning: false
 ---
 
 # Objectif
 
-Pour faire un peu d'OSM sur cette première journée, nous ferons uen première saisie.
+Pour faire un peu d'OSM sur cette première journée, nous ferons une première saisie.
 
 Mais l'objectif principal de la séquence est d'explorer les données proposées en les cartographiant.
 
 Une carte présentant les données à analyser sera donc demandée à la fin de cette journée.
 
-Les données étant plus nombreuses que les étudiants, chaque étudiant prendra 
-
-
+Les données étant plus nombreuses que les étudiants, chaque étudiant prendra en charge plusieurs adresses.
 
 # 1e saisie pour comprendre
 
@@ -46,29 +45,19 @@ Faire le triangle, ajouter un point, le déformer.
 Exercice : à partir du support
 :::
 
-## La relation
-
-Il existe une 3e primitive, plus difficile à utiliser, la relation. Elle est utilisée pour construire les itinéraires de bus par exemple. Elle ne sera pas utilisée dans le cadre de ce cours.
-
 ## Tag = clé + valeur
 
-https://taginfo.openstreetmap.org/
+[https://taginfo.openstreetmap.org/](https://taginfo.openstreetmap.org/)
 
-on utilise directement l'éditeur intégré id sur osm.org trouver le tag directement à partir de l'éditeur.
+on utilise directement l'éditeur intégré *id* sur osm.org trouver le tag directement à partir de l'éditeur.
 
-exercice 1 : faire une saisie sur un point connu
+exercice : faire une saisie sur un point connu
 
-exercice 2 : faire une saisie sur un [point pmr](img/pmr.html) sur Bondy, attention à la concordance image aérienne et carte terrain.
-
-![](img/pmrPHOTO.png)
-
-## outil de qualité
+## Outils de qualité
 
 [utilisation du changeset](https://resultmaps.neis-one.org/osm-changesets?comment=paris8#4/32.58/-6.77)
 
 [carte des utilisateurs](https://resultmaps.neis-one.org/oooc?zoom=15&lat=48.90494&lon=2.493&layers=BTFFFFFT&contributors=TTTTFF)
-
-Voir les saisies pmr effectuées par les étudiants avec overpass turbo
 
 également dans [osmose](http://osmose.openstreetmap.fr/fr/map/#zoom=16&lat=48.90695&lon=2.49237)
 
@@ -106,19 +95,19 @@ Avant de faire la carte, quizz !
 
 ## Savoir-faire QGIS
 
--   mettre un favori dans l'explorateur sur les répertoires Téléchargement et data
+-   mettre un favori dans l'explorateur sur les répertoires Téléchargement et data (vider le répertoire Téléchargement au passage)
 
 -   intégrer une couche dans Qgis
 
--   utiliser un ensemble de règles
+-   utiliser un ensemble de règles pour le style
 
 -   fond positron avec le plugin QMS
 
 -   mise en page qgis (3 boutons)
 
--   style en polygone inversé et remplissage dégradé suivant la forme (ou plugin mask) pour les limites de la commune
+-   style en polygone inversé et remplissage dégradé suivant la forme pour les limites de la commune
 
--   mise en page dans Qgis : les 3
+-   mise en page dans Qgis : les 3 boutons
 
 ## Autres données : la commune
 
@@ -138,16 +127,25 @@ S'aider de la procédure du support *Faire une 1e carte QGIS*
 
 ## Pourquoi une deuxième source ?
 
-Voir @sources , différence en nombre d'éléments.
+### Un nombre d'éléments différent
+
+Voir [tableau des sources](01_intro.html#pr%C3%A9sentation-du-plui-et-tableau-r%C3%A9capitulatif-des-sources-pour-le-cours), différence en nombre d'éléments.
 
 ```{r}
 library(sf)
+# lecture de la couche filtrée (issus de m3_prescription_surf)
 carte <- st_read("data/patrimoine.gpkg", "patrimoineFiltre2154")
+# nb d'éléments
 elementsCarte <- length(carte$LIBELLE)
+# lecture de la couche issue du tableau de la M3
 geocodage <- st_read("data/patrimoine.gpkg", "geocodageM3")
+# nb d'éléments
 elementsGeocodage <- length(geocodage$typo)
+# différence
 elementsCarte - elementsGeocodage
 ```
+
+### Une typologie complémentaire
 
 De plus, éléments complémentaires dans le .pdf
 
@@ -155,6 +153,8 @@ De plus, éléments complémentaires dans le .pdf
 
 ```{r}
 table(geocodage$typo)
+# plus riche que
+table(carte$LIBELLE)
 ```
 
 ## Superposition des deux informations sur une seule carte
@@ -167,6 +167,10 @@ Résultat à obtenir : utiliser un symbole svg pour les points et un remplissage
 S'aider de la procédure du support *Organiser son projet QGIS* et *Etiquettes : deux petits trucs*
 :::
 
+A rajouter dans les petits trucs sur les étiquettes : l'échelle de visibilité
+
+![](img/echelleVisibilite.png)
+
 ## Quels problèmes possibles ?
 
 ```{r}
@@ -174,7 +178,7 @@ matrice <- read.csv("data/avantageInconvenient.csv")
 knitr::kable(matrice)
 ```
 
-La solution : intégrer point et polygone dans le polygone du bâtiment dans OSM
+La solution : intégrer point et polygone dans le polygone du bâtiment dans OSM.
 
 # Une troisième source
 
@@ -189,8 +193,10 @@ jointure <- merge(cadastre, cadastreAn, by.x = "geo_parcelle", by.y = "parcelle"
 # 50 M
 st_write(jointure, "data/patrimoine.gpkg", "cadastreAn", delete_layer = T)
 length(unique(jointure$geo_parcelle))
-# 5803 il y a des parcelles sans année
+# 5803 il y a des parcelles qui ont plusieurs dates, pourquoi ?
 ```
+
+La jointure est faite, reste l'intersection pour récupérer les données de la parcelle dans le bâtiment.
 
 ::: callout-tip
 Voir le support, procédure *Géotraitements QGIS : de la parcelle au bâtiment*
@@ -202,44 +208,50 @@ A vue d'oeil, point géocodé et polygone correspondent, mais, pour traiter fine
 
 ## Répartir le travail
 
-C'est l'occasion de faire de la géomatique avancée.
+C'est l'occasion de faire de la géomatique avancée. Malheureusement, ce n'est pas l'objet du cours, donc, on passe vite sur le sujet.
 
 ::: callout-tip
 Le support présente les deux méthodes dans la procédure *Répartir le travail : quelle méthode utiliser ?*
 :::
 
+A noter, l'utilisation d'un script python trouvé sur internet : [constrainted_kmeans.py](https://spatialthoughts.com/2021/01/31/equal-sized-kmeans-qgis/)
 
-## Quelles vérifications ?
+## Quelles vérifications ? (CARTE 2)
+
+C'est l'étape dans laquelle, chaque étudiant ayant une petite zone, le collaboratif prend tout son sens. Encore faut-il définir la méthode...
 
 Une fois les zones partagés, chaque étudiant fait une *intersection* sur sa zone, menu vecteur / géotraitement / intersection.
 
+### Etude de cas particuliers
+
+#### Lister les anomalies
+
 Il vérifie que :
 
-- pour chaque bâtiment, il existe un point.
+-   pour chaque bâtiment, il existe un point.
 
-- la typologie est cohérente : à quoi correspondent les bâtiments de niveau 3 en typologie ? 
+-   la typologie est cohérente : à quoi correspondent les bâtiments de niveau 3 en typologie ?
 
-Toutes les anomalies sont notées dans le framacalc.
+Toutes les anomalies sont notées dans le framacalc dans les 2 colonnes prévues (correspondance bat-pt et cohérence typologie)
 
-Pour l'une des anomalies, l'étudiant en documente une sur une carte (CARTE 2) et rectifie au moins un géocodage.
+#### Cartographie et base adresse (CARTE 2)
 
-## Cas concrets
+Pour l'une des anomalies, l'étudiant en documente une sur une carte (CARTE 2) et rectifie au moins un géocodage sur la [base adresse](https://adresse.data.gouv.fr/decouvrir-la-BAN).
 
+### Exemples
 
 ::: callout-tip
-Le support, procédures *Relation entre liste géocodage et plan opposable* et *Vérifier le géocodage*
+Le support, procédures *Relation entre liste géocodage et plan opposable* et *Vérifier le géocodage* donne une idée de ce qui est attendu
 :::
 
+## Vue d'ensemble par secteur : carte analysant la donnée sur le secteur (CARTE 3)
 
-## Conclusion de la journée : carte analysant la donnée (CARTE 3)
+Faire une carte zoomée sur sa zone (CARTE 3), mettant en valeur
 
-Faire une carte zoomée sur sa zone (CARTE 3),  mettant en valeur 
-
-- les années par bâtiment (style gradué)
+-   les années par bâtiment (style gradué)
 
 ![](img/styleGradue.png)
 
-- les points adresses
+-   les points adresses
 
 Avec un commentaire décrivant la donnée de type "J'ai tant de bâtiments dont des gros de type / des petits, avec tant d'anomalies etc..."
-
