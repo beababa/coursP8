@@ -19,15 +19,12 @@ Patrimoine Bondy : du PLUi à OSM
 
 ## Présentation du PLUi et tableau récapitulatif des sources pour le cours
 
-
 ![Qu'est ce que le PLUi ?](img/couverture.png){width="250"}
 
 ```{r}
 data <- read.csv("data/sources.csv", fileEncoding = "UTF-8")
 knitr::kable(data)
 ```
-
-
 
 ```{r}
 library(sf)
@@ -43,10 +40,6 @@ for (c in couches){
 }
 st_layers("data/carte1.gpkg")
 ```
-
-
-
-
 
 ## Le plan du patrimoine issu du PLUi
 
@@ -178,7 +171,6 @@ Questions :
 
 Créer son profil sur [openstreetmap.org](https://www.openstreetmap.org), attention au pseudo.
 
-## le tag
 
 ## JOSM
 
