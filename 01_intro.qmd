@@ -221,7 +221,7 @@ pas d'évaluation officielle
 
 -   notions de base puis plusieurs cartes que nous regarderons rapidement
 
-[Introduction](https://framaforms.org/paris8-bondy2024-introduction-1693048391)
+[Introduction](https://framaforms.org/paris8-bondy2025-introduction-1693048391)
 
 -   évaluation de satisfaction
 
@@ -269,9 +269,6 @@ Le support, fait sous R Quarto, sert uniquement de "fil rouge".
 
 Les procédures employées sous QGIS / JOSM sont résumées sur un support papier distribué.
 
-Utilisation d'internet, exemple :
-
-"Qgis compter les points dans un polygone" Quel est le menu qui permet de le faire ?
 
 ### Projet git
 
