@@ -107,8 +107,6 @@ Avant de faire la carte, quizz !
 
 -   style en polygone inversé et remplissage dégradé suivant la forme pour les limites de la commune
 
--   mise en page dans Qgis : les 3 boutons
-
 ## Autres données : la commune
 
 -   Tag = admin_level=8 in Bondy dans overpass-turbo
