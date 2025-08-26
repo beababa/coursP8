@@ -21,6 +21,8 @@ Une fois analysée la donnée, il s'agit de la saisir dans OSM.
 
 # Recherche des tags pour la donnée
 
+## Méthode
+
 outils vus au début : features et taginfo
 
 Les étudiants travaillent en 3 groupes :
@@ -31,6 +33,30 @@ Les étudiants travaillent en 3 groupes :
 
 -   et le 3e uniquement sur l'IA.
 
+## Résultats : tags choisis
+
+- année de construction / nb de construction = 
+
+  * start_date
+  
+  * construction_date:nb
+
+- pour l'adresse = addr:housenumber / addr:street 	
+
+- pour la typologie = 
+  
+    * building:architecture= (immeuble/maison de bourg/pavillon)
+    
+    * building:architecture:niveau(emblématique/remarquable/représentatif)
+    
+- pour tous les bâtiments = historic:building=yes
+
+- Pour l'enveloppe
+
+  * boundary=patrimoine 
+  
+  * name= (par exemple, quartier Michelet)
+
 # Validation des tags choisis en faisant des requêtes overpass
 
 Sur plusieurs échelles : Bondy et l'Ile de France par exemple
@@ -39,13 +65,15 @@ voir [ici](02_jour1.html#quels-tags)
 
 # Préparer sa donnée sous QGIS pour l'import dans JOSM
 
+## Consigne
+
 3 couches en 4326 et geojson
 
--   celle des batiments avec la typo + année min
+-   celle des batiments avec la typo + année min (= mesBat4326  par exemple)
 
--   Le pt adresse avec adresse et typo2
+-   Le pt adresse avec adresse et typo2 (= mesAdresses4326)
 
--   l'enveloppe convexe attribuée
+-   l'enveloppe convexe attribuée (= maZone4326)
 
 Pour chacune des 3 couches mettre uniquement les tags choisis par les étudiants
 
@@ -56,6 +84,108 @@ Le support présente les deux méthodes dans la procédure *Préparer ses couche
 :::
 
 ![](img/2calques.png)
+
+## Fichiers à disposition
+
+Les fichiers pour les étudiants demandeurs
+
+### Secteurs à préparer
+
+```{r}
+demande <- read.csv("data/importJOSM.csv")
+table(demande$couches.à.importer.dans.JOSM..ok..help.)
+demande <- demande [demande$couches.à.importer.dans.JOSM..ok..help. != 'ok',]
+zone <- demande$nom.zone
+```
+
+
+### Récupération des données
+
+```{r}
+library(sf)
+enveloppe <- st_read("data/enveloppeParEtudiant.geojson")
+adresse <- st_read("data/patrimoine.gpkg", "geocodageM3")
+bat <- st_read("data/agregationCadastrePatrimoine.geojson")
+# conversion en 4326
+bat <- st_transform(bat, 4326)
+```
+
+### Travail sur les couches 
+
+#### Couche enveloppe
+
+```{r}
+# renommage tags
+names(enveloppe)
+enveloppe$boundary <- "patrimoine"
+enveloppe$name <- enveloppe$CLUSTER_ID
+library(mapsf)
+mf_map(enveloppe)
+mf_label(enveloppe, var = "name")
+mf_layout("Attributions des enveloppes", "cours 2025 OSM")
+# filtrage tags
+enveloppe <- enveloppe [, c("name", "boundary")]
+plot(enveloppe)
+```
+
+#### Couche adresse
+
+```{r}
+names(adresse)
+adresse$'building:architecture' <- adresse$typo
+adresse$'building:architecture:niveau'<- adresse$niveau
+adresse$'addr:housenumber' <- adresse$result_housenumber
+adresse$'addr:street' <- adresse$result_street
+adresse <- adresse [, c("building:architecture", "building:architecture:niveau", "addr:housenumber", "addr:street")]
+plot(adresse)
+```
+
+
+#### Couche bâtiment
+
+```{r}
+names(bat)
+names(bat)[1] <- "construction_date:nb"
+names(bat)[3] <- "start_date"
+bat$'historic:building' <- "yes"
+bat <- bat [, c("start_date", "construction_date:nb", "historic:building")]
+plot(bat)
+```
+
+### Intersection par enveloppe et enregistrement des couches
+
+
+Vérification de la validité des géométries
+
+```{r}
+table(st_is_valid(bat))
+bat <- bat [st_is_valid(bat),]
+```
+
+
+```{r}
+zone <- c(1, zone)
+for (z in zone){
+  print(z)
+  sel <- enveloppe [enveloppe$name == z,]
+  st_write(sel, paste0("data/demande/",z,"_zone.geojson"), append=F)
+  interBat <- st_intersection(bat, sel)
+  interBat
+  interBat <- interBat [,  c("start_date", "construction_date.nb", "historic.building")]
+  st_write(interBat, paste0("data/demande/",z,"_bat.geojson") , append = F)
+  interAdresse <- st_intersection(adresse, sel)
+  interAdresse <- interAdresse [, c("building.architecture", "building.architecture.niveau", "addr.housenumber", "addr.street")]
+  st_write(interAdresse, paste0("data/demande/",z,"_adresse.geojson") , append = F)
+}
+```
+
+### Correction de la donnée sous JOSM
+
+Attention, les ":" sont remplacés par des ".", il faut corriger sous JOSM avec un rechercher (CTRL + F)
+
+![](img/rechercherRemplacerJOSM.png)
+
+
 
 # JOSM : rappel et mise au point
 

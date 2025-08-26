@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -45,7 +79,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -54,6 +94,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -67,9 +108,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Cours P8 2025 - Patrimoine : du PLUi à OSM</span>
     </a>
@@ -81,32 +122,32 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./01_intro.html" rel="" target="">
- <span class="menu-text">Introduction |</span></a>
+    <a class="nav-link" href="./01_intro.html"> 
+<span class="menu-text">Introduction |</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./02_jour1.html" rel="" target="">
- <span class="menu-text">Sources PLUi |</span></a>
+    <a class="nav-link" href="./02_jour1.html"> 
+<span class="menu-text">Sources PLUi |</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./03_jour2.html" rel="" target="" aria-current="page">
- <span class="menu-text">Saisie 1 |</span></a>
+    <a class="nav-link active" href="./03_jour2.html" aria-current="page"> 
+<span class="menu-text">Saisie 1 |</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./04_jour3.html" rel="" target="">
- <span class="menu-text">Saisie 2</span></a>
+    <a class="nav-link" href="./04_jour3.html"> 
+<span class="menu-text">Saisie 2</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/beababa/coursP8" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/beababa/coursP8"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -121,9 +162,24 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#objectif" id="toc-objectif" class="nav-link active" data-scroll-target="#objectif"><span class="header-section-number">1</span> Objectif</a></li>
   <li><a href="#lister-les-données" id="toc-lister-les-données" class="nav-link" data-scroll-target="#lister-les-données"><span class="header-section-number">2</span> Lister les données</a></li>
-  <li><a href="#recherche-des-tags-pour-la-donnée" id="toc-recherche-des-tags-pour-la-donnée" class="nav-link" data-scroll-target="#recherche-des-tags-pour-la-donnée"><span class="header-section-number">3</span> Recherche des tags pour la donnée</a></li>
+  <li><a href="#recherche-des-tags-pour-la-donnée" id="toc-recherche-des-tags-pour-la-donnée" class="nav-link" data-scroll-target="#recherche-des-tags-pour-la-donnée"><span class="header-section-number">3</span> Recherche des tags pour la donnée</a>
+  <ul class="collapse">
+  <li><a href="#méthode" id="toc-méthode" class="nav-link" data-scroll-target="#méthode"><span class="header-section-number">3.1</span> Méthode</a></li>
+  <li><a href="#résultats-tags-choisis" id="toc-résultats-tags-choisis" class="nav-link" data-scroll-target="#résultats-tags-choisis"><span class="header-section-number">3.2</span> Résultats : tags choisis</a></li>
+  </ul></li>
   <li><a href="#validation-des-tags-choisis-en-faisant-des-requêtes-overpass" id="toc-validation-des-tags-choisis-en-faisant-des-requêtes-overpass" class="nav-link" data-scroll-target="#validation-des-tags-choisis-en-faisant-des-requêtes-overpass"><span class="header-section-number">4</span> Validation des tags choisis en faisant des requêtes overpass</a></li>
-  <li><a href="#préparer-sa-donnée-sous-qgis-pour-limport-dans-josm" id="toc-préparer-sa-donnée-sous-qgis-pour-limport-dans-josm" class="nav-link" data-scroll-target="#préparer-sa-donnée-sous-qgis-pour-limport-dans-josm"><span class="header-section-number">5</span> Préparer sa donnée sous QGIS pour l’import dans JOSM</a></li>
+  <li><a href="#préparer-sa-donnée-sous-qgis-pour-limport-dans-josm" id="toc-préparer-sa-donnée-sous-qgis-pour-limport-dans-josm" class="nav-link" data-scroll-target="#préparer-sa-donnée-sous-qgis-pour-limport-dans-josm"><span class="header-section-number">5</span> Préparer sa donnée sous QGIS pour l’import dans JOSM</a>
+  <ul class="collapse">
+  <li><a href="#consigne" id="toc-consigne" class="nav-link" data-scroll-target="#consigne"><span class="header-section-number">5.1</span> Consigne</a></li>
+  <li><a href="#fichiers-à-disposition" id="toc-fichiers-à-disposition" class="nav-link" data-scroll-target="#fichiers-à-disposition"><span class="header-section-number">5.2</span> Fichiers à disposition</a>
+  <ul class="collapse">
+  <li><a href="#secteurs-à-préparer" id="toc-secteurs-à-préparer" class="nav-link" data-scroll-target="#secteurs-à-préparer"><span class="header-section-number">5.2.1</span> Secteurs à préparer</a></li>
+  <li><a href="#récupération-des-données" id="toc-récupération-des-données" class="nav-link" data-scroll-target="#récupération-des-données"><span class="header-section-number">5.2.2</span> Récupération des données</a></li>
+  <li><a href="#travail-sur-les-couches" id="toc-travail-sur-les-couches" class="nav-link" data-scroll-target="#travail-sur-les-couches"><span class="header-section-number">5.2.3</span> Travail sur les couches</a></li>
+  <li><a href="#intersection-par-enveloppe-et-enregistrement-des-couches" id="toc-intersection-par-enveloppe-et-enregistrement-des-couches" class="nav-link" data-scroll-target="#intersection-par-enveloppe-et-enregistrement-des-couches"><span class="header-section-number">5.2.4</span> Intersection par enveloppe et enregistrement des couches</a></li>
+  <li><a href="#correction-de-la-donnée-sous-josm" id="toc-correction-de-la-donnée-sous-josm" class="nav-link" data-scroll-target="#correction-de-la-donnée-sous-josm"><span class="header-section-number">5.2.5</span> Correction de la donnée sous JOSM</a></li>
+  </ul></li>
+  </ul></li>
   <li><a href="#josm-rappel-et-mise-au-point" id="toc-josm-rappel-et-mise-au-point" class="nav-link" data-scroll-target="#josm-rappel-et-mise-au-point"><span class="header-section-number">6</span> JOSM : rappel et mise au point</a>
   <ul class="collapse">
   <li><a href="#attributs" id="toc-attributs" class="nav-link" data-scroll-target="#attributs"><span class="header-section-number">6.1</span> Attributs</a>
@@ -170,7 +226,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <section id="objectif" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Objectif</h1>
@@ -181,6 +239,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="recherche-des-tags-pour-la-donnée" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Recherche des tags pour la donnée</h1>
+<section id="méthode" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="méthode"><span class="header-section-number">3.1</span> Méthode</h2>
 <p>outils vus au début : features et taginfo</p>
 <p>Les étudiants travaillent en 3 groupes :</p>
 <ul>
@@ -189,6 +249,29 @@ ul.task-list li input[type="checkbox"] {
 <li><p>et le 3e uniquement sur l’IA.</p></li>
 </ul>
 </section>
+<section id="résultats-tags-choisis" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="résultats-tags-choisis"><span class="header-section-number">3.2</span> Résultats : tags choisis</h2>
+<ul>
+<li><p>année de construction / nb de construction =</p>
+<ul>
+<li><p>start_date</p></li>
+<li><p>construction_date:nb</p></li>
+</ul></li>
+<li><p>pour l’adresse = addr:housenumber / addr:street</p></li>
+<li><p>pour la typologie =</p>
+<ul>
+<li><p>building:architecture= (immeuble/maison de bourg/pavillon)</p></li>
+<li><p>building:architecture:niveau(emblématique/remarquable/représentatif)</p></li>
+</ul></li>
+<li><p>pour tous les bâtiments = historic:building=yes</p></li>
+<li><p>Pour l’enveloppe</p>
+<ul>
+<li><p>boundary=patrimoine</p></li>
+<li><p>name= (par exemple, quartier Michelet)</p></li>
+</ul></li>
+</ul>
+</section>
+</section>
 <section id="validation-des-tags-choisis-en-faisant-des-requêtes-overpass" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Validation des tags choisis en faisant des requêtes overpass</h1>
 <p>Sur plusieurs échelles : Bondy et l’Ile de France par exemple</p>
@@ -196,11 +279,13 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="préparer-sa-donnée-sous-qgis-pour-limport-dans-josm" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Préparer sa donnée sous QGIS pour l’import dans JOSM</h1>
+<section id="consigne" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="consigne"><span class="header-section-number">5.1</span> Consigne</h2>
 <p>3 couches en 4326 et geojson</p>
 <ul>
-<li><p>celle des batiments avec la typo + année min</p></li>
-<li><p>Le pt adresse avec adresse et typo2</p></li>
-<li><p>l’enveloppe convexe attribuée</p></li>
+<li><p>celle des batiments avec la typo + année min (= mesBat4326 par exemple)</p></li>
+<li><p>Le pt adresse avec adresse et typo2 (= mesAdresses4326)</p></li>
+<li><p>l’enveloppe convexe attribuée (= maZone4326)</p></li>
 </ul>
 <p>Pour chacune des 3 couches mettre uniquement les tags choisis par les étudiants</p>
 <p><img src="img/export.png" class="img-fluid"></p>
@@ -218,6 +303,468 @@ Tip
 </div>
 </div>
 <p><img src="img/2calques.png" class="img-fluid"></p>
+</section>
+<section id="fichiers-à-disposition" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="fichiers-à-disposition"><span class="header-section-number">5.2</span> Fichiers à disposition</h2>
+<p>Les fichiers pour les étudiants demandeurs</p>
+<section id="secteurs-à-préparer" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="secteurs-à-préparer"><span class="header-section-number">5.2.1</span> Secteurs à préparer</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>demande <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/importJOSM.csv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(demande<span class="sc">$</span>couches.à.importer.dans.JOSM..ok..help.)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+   ? help   ok 
+   4    7    3 </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>demande <span class="ot">&lt;-</span> demande [demande<span class="sc">$</span>couches.à.importer.dans.JOSM..ok..help. <span class="sc">!=</span> <span class="st">'ok'</span>,]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>zone <span class="ot">&lt;-</span> demande<span class="sc">$</span>nom.zone</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="récupération-des-données" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="récupération-des-données"><span class="header-section-number">5.2.2</span> Récupération des données</h3>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>enveloppe <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/enveloppeParEtudiant.geojson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading layer `enveloppeParEtudiant' from data source 
+  `C:\Users\geographie1\coursP8\data\enveloppeParEtudiant.geojson' 
+  using driver `GeoJSON'
+Simple feature collection with 15 features and 5 fields
+Geometry type: POLYGON
+Dimension:     XY
+Bounding box:  xmin: 2.470607 ymin: 48.88915 xmax: 2.499733 ymax: 48.917
+Geodetic CRS:  WGS 84</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>adresse <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/patrimoine.gpkg"</span>, <span class="st">"geocodageM3"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading layer `geocodageM3' from data source 
+  `C:\Users\geographie1\coursP8\data\patrimoine.gpkg' using driver `GPKG'
+Simple feature collection with 652 features and 20 fields
+Geometry type: POINT
+Dimension:     XY
+Bounding box:  xmin: 2.470726 ymin: 48.88918 xmax: 2.499813 ymax: 48.91284
+Geodetic CRS:  WGS 84</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>bat <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/agregationCadastrePatrimoine.geojson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Reading layer `agregationCadastrePatrimoine' from data source 
+  `C:\Users\geographie1\coursP8\data\agregationCadastrePatrimoine.geojson' 
+  using driver `GeoJSON'
+Simple feature collection with 1064 features and 5 fields
+Geometry type: MULTIPOLYGON
+Dimension:     XY
+Bounding box:  xmin: 661185.3 ymin: 6865576 xmax: 663328.2 ymax: 6868708
+Projected CRS: RGF93 v1 / Lambert-93</code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># conversion en 4326</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>bat <span class="ot">&lt;-</span> <span class="fu">st_transform</span>(bat, <span class="dv">4326</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+<section id="travail-sur-les-couches" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="travail-sur-les-couches"><span class="header-section-number">5.2.3</span> Travail sur les couches</h3>
+<section id="couche-enveloppe" class="level4" data-number="5.2.3.1">
+<h4 data-number="5.2.3.1" class="anchored" data-anchor-id="couche-enveloppe"><span class="header-section-number">5.2.3.1</span> Couche enveloppe</h4>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># renommage tags</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(enveloppe)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "CLUSTER_ID"                           
+[2] "CLUSTER_SIZE"                         
+[3] "anomalieEtudiant_prénom"              
+[4] "anomalieEtudiant_anomalie...géocodage"
+[5] "anomalieEtudiant_anomalie...typologie"
+[6] "geometry"                             </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>enveloppe<span class="sc">$</span>boundary <span class="ot">&lt;-</span> <span class="st">"patrimoine"</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>enveloppe<span class="sc">$</span>name <span class="ot">&lt;-</span> enveloppe<span class="sc">$</span>CLUSTER_ID</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mapsf)</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_map</span>(enveloppe)</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_label</span>(enveloppe, <span class="at">var =</span> <span class="st">"name"</span>)</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_layout</span>(<span class="st">"Attributions des enveloppes"</span>, <span class="st">"cours 2025 OSM"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03_jour2_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filtrage tags</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>enveloppe <span class="ot">&lt;-</span> enveloppe [, <span class="fu">c</span>(<span class="st">"name"</span>, <span class="st">"boundary"</span>)]</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(enveloppe)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03_jour2_files/figure-html/unnamed-chunk-3-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="couche-adresse" class="level4" data-number="5.2.3.2">
+<h4 data-number="5.2.3.2" class="anchored" data-anchor-id="couche-adresse"><span class="header-section-number">5.2.3.2</span> Couche adresse</h4>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(adresse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "typo"               "niveau"             "adresse"           
+ [4] "code"               "result_score"       "result_score_next" 
+ [7] "result_label"       "result_type"        "result_id"         
+[10] "result_housenumber" "result_name"        "result_street"     
+[13] "result_postcode"    "result_city"        "result_context"    
+[16] "result_citycode"    "result_oldcitycode" "result_oldcity"    
+[19] "result_district"    "result_status"      "geom"              </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>adresse<span class="sc">$</span><span class="st">'building:architecture'</span> <span class="ot">&lt;-</span> adresse<span class="sc">$</span>typo</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>adresse<span class="sc">$</span><span class="st">'building:architecture:niveau'</span><span class="ot">&lt;-</span> adresse<span class="sc">$</span>niveau</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>adresse<span class="sc">$</span><span class="st">'addr:housenumber'</span> <span class="ot">&lt;-</span> adresse<span class="sc">$</span>result_housenumber</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>adresse<span class="sc">$</span><span class="st">'addr:street'</span> <span class="ot">&lt;-</span> adresse<span class="sc">$</span>result_street</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>adresse <span class="ot">&lt;-</span> adresse [, <span class="fu">c</span>(<span class="st">"building:architecture"</span>, <span class="st">"building:architecture:niveau"</span>, <span class="st">"addr:housenumber"</span>, <span class="st">"addr:street"</span>)]</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(adresse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03_jour2_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="couche-bâtiment" class="level4" data-number="5.2.3.3">
+<h4 data-number="5.2.3.3" class="anchored" data-anchor-id="couche-bâtiment"><span class="header-section-number">5.2.3.3</span> Couche bâtiment</h4>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(bat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "nb"                           "parcelle"                    
+[3] "construction_date"            "building.architecture"       
+[5] "building.architecture.niveau" "geometry"                    </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(bat)[<span class="dv">1</span>] <span class="ot">&lt;-</span> <span class="st">"construction_date:nb"</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(bat)[<span class="dv">3</span>] <span class="ot">&lt;-</span> <span class="st">"start_date"</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>bat<span class="sc">$</span><span class="st">'historic:building'</span> <span class="ot">&lt;-</span> <span class="st">"yes"</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>bat <span class="ot">&lt;-</span> bat [, <span class="fu">c</span>(<span class="st">"start_date"</span>, <span class="st">"construction_date:nb"</span>, <span class="st">"historic:building"</span>)]</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="03_jour2_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="intersection-par-enveloppe-et-enregistrement-des-couches" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="intersection-par-enveloppe-et-enregistrement-des-couches"><span class="header-section-number">5.2.4</span> Intersection par enveloppe et enregistrement des couches</h3>
+<p>Vérification de la validité des géométries</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">st_is_valid</span>(bat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+FALSE  TRUE 
+    4  1060 </code></pre>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>bat <span class="ot">&lt;-</span> bat [<span class="fu">st_is_valid</span>(bat),]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>zone <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, zone)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (z <span class="cf">in</span> zone){</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(z)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>  sel <span class="ot">&lt;-</span> enveloppe [enveloppe<span class="sc">$</span>name <span class="sc">==</span> z,]</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_write</span>(sel, <span class="fu">paste0</span>(<span class="st">"data/demande/"</span>,z,<span class="st">"_zone.geojson"</span>), <span class="at">append=</span>F)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>  interBat <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(bat, sel)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  interBat</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>  interBat <span class="ot">&lt;-</span> interBat [,  <span class="fu">c</span>(<span class="st">"start_date"</span>, <span class="st">"construction_date.nb"</span>, <span class="st">"historic.building"</span>)]</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_write</span>(interBat, <span class="fu">paste0</span>(<span class="st">"data/demande/"</span>,z,<span class="st">"_bat.geojson"</span>) , <span class="at">append =</span> F)</span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>  interAdresse <span class="ot">&lt;-</span> <span class="fu">st_intersection</span>(adresse, sel)</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  interAdresse <span class="ot">&lt;-</span> interAdresse [, <span class="fu">c</span>(<span class="st">"building.architecture"</span>, <span class="st">"building.architecture.niveau"</span>, <span class="st">"addr.housenumber"</span>, <span class="st">"addr.street"</span>)]</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">st_write</span>(interAdresse, <span class="fu">paste0</span>(<span class="st">"data/demande/"</span>,z,<span class="st">"_adresse.geojson"</span>) , <span class="at">append =</span> F)</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `1_zone' failed
+Writing layer `1_zone' to data source 
+  `data/demande/1_zone.geojson' using driver `GeoJSON'
+Updating existing layer 1_zone
+Writing 1 features with 2 fields and geometry type Polygon.
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `1_bat' failed
+Writing layer `1_bat' to data source 
+  `data/demande/1_bat.geojson' using driver `GeoJSON'
+Updating existing layer 1_bat
+Writing 58 features with 3 fields and geometry type Unknown (any).
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `1_adresse' failed
+Writing layer `1_adresse' to data source 
+  `data/demande/1_adresse.geojson' using driver `GeoJSON'
+Updating existing layer 1_adresse
+Writing 43 features with 4 fields and geometry type Point.
+[1] 2
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `2_zone' failed
+Writing layer `2_zone' to data source 
+  `data/demande/2_zone.geojson' using driver `GeoJSON'
+Updating existing layer 2_zone
+Writing 1 features with 2 fields and geometry type Polygon.
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `2_bat' failed
+Writing layer `2_bat' to data source 
+  `data/demande/2_bat.geojson' using driver `GeoJSON'
+Updating existing layer 2_bat
+Writing 59 features with 3 fields and geometry type Unknown (any).
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `2_adresse' failed
+Writing layer `2_adresse' to data source 
+  `data/demande/2_adresse.geojson' using driver `GeoJSON'
+Updating existing layer 2_adresse
+Writing 22 features with 4 fields and geometry type Point.
+[1] 3
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `3_zone' failed
+Writing layer `3_zone' to data source 
+  `data/demande/3_zone.geojson' using driver `GeoJSON'
+Updating existing layer 3_zone
+Writing 1 features with 2 fields and geometry type Polygon.
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `3_bat' failed
+Writing layer `3_bat' to data source 
+  `data/demande/3_bat.geojson' using driver `GeoJSON'
+Updating existing layer 3_bat
+Writing 65 features with 3 fields and geometry type Unknown (any).
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `3_adresse' failed
+Writing layer `3_adresse' to data source 
+  `data/demande/3_adresse.geojson' using driver `GeoJSON'
+Updating existing layer 3_adresse
+Writing 42 features with 4 fields and geometry type Point.
+[1] 4
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `4_zone' failed
+Writing layer `4_zone' to data source 
+  `data/demande/4_zone.geojson' using driver `GeoJSON'
+Updating existing layer 4_zone
+Writing 1 features with 2 fields and geometry type Polygon.
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `4_bat' failed
+Writing layer `4_bat' to data source 
+  `data/demande/4_bat.geojson' using driver `GeoJSON'
+Updating existing layer 4_bat
+Writing 66 features with 3 fields and geometry type Unknown (any).
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `4_adresse' failed
+Writing layer `4_adresse' to data source 
+  `data/demande/4_adresse.geojson' using driver `GeoJSON'
+Updating existing layer 4_adresse
+Writing 34 features with 4 fields and geometry type Point.
+[1] 5
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `5_zone' failed
+Writing layer `5_zone' to data source 
+  `data/demande/5_zone.geojson' using driver `GeoJSON'
+Updating existing layer 5_zone
+Writing 1 features with 2 fields and geometry type Polygon.
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `5_bat' failed
+Writing layer `5_bat' to data source 
+  `data/demande/5_bat.geojson' using driver `GeoJSON'
+Updating existing layer 5_bat
+Writing 72 features with 3 fields and geometry type Unknown (any).
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `5_adresse' failed
+Writing layer `5_adresse' to data source 
+  `data/demande/5_adresse.geojson' using driver `GeoJSON'
+Updating existing layer 5_adresse
+Writing 32 features with 4 fields and geometry type Point.
+[1] 7
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `7_zone' failed
+Writing layer `7_zone' to data source 
+  `data/demande/7_zone.geojson' using driver `GeoJSON'
+Updating existing layer 7_zone
+Writing 1 features with 2 fields and geometry type Polygon.
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `7_bat' failed
+Writing layer `7_bat' to data source 
+  `data/demande/7_bat.geojson' using driver `GeoJSON'
+Updating existing layer 7_bat
+Writing 128 features with 3 fields and geometry type Unknown (any).
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `7_adresse' failed
+Writing layer `7_adresse' to data source 
+  `data/demande/7_adresse.geojson' using driver `GeoJSON'
+Updating existing layer 7_adresse
+Writing 27 features with 4 fields and geometry type Point.
+[1] 8
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `8_zone' failed
+Writing layer `8_zone' to data source 
+  `data/demande/8_zone.geojson' using driver `GeoJSON'
+Updating existing layer 8_zone
+Writing 1 features with 2 fields and geometry type Polygon.
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `8_bat' failed
+Writing layer `8_bat' to data source 
+  `data/demande/8_bat.geojson' using driver `GeoJSON'
+Updating existing layer 8_bat
+Writing 60 features with 3 fields and geometry type Unknown (any).
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `8_adresse' failed
+Writing layer `8_adresse' to data source 
+  `data/demande/8_adresse.geojson' using driver `GeoJSON'
+Updating existing layer 8_adresse
+Writing 32 features with 4 fields and geometry type Point.
+[1] 9
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `9_zone' failed
+Writing layer `9_zone' to data source 
+  `data/demande/9_zone.geojson' using driver `GeoJSON'
+Updating existing layer 9_zone
+Writing 1 features with 2 fields and geometry type Polygon.
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `9_bat' failed
+Writing layer `9_bat' to data source 
+  `data/demande/9_bat.geojson' using driver `GeoJSON'
+Updating existing layer 9_bat
+Writing 65 features with 3 fields and geometry type Unknown (any).
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `9_adresse' failed
+Writing layer `9_adresse' to data source 
+  `data/demande/9_adresse.geojson' using driver `GeoJSON'
+Updating existing layer 9_adresse
+Writing 40 features with 4 fields and geometry type Point.
+[1] 10
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `10_zone' failed
+Writing layer `10_zone' to data source 
+  `data/demande/10_zone.geojson' using driver `GeoJSON'
+Updating existing layer 10_zone
+Writing 1 features with 2 fields and geometry type Polygon.
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `10_bat' failed
+Writing layer `10_bat' to data source 
+  `data/demande/10_bat.geojson' using driver `GeoJSON'
+Updating existing layer 10_bat
+Writing 66 features with 3 fields and geometry type Unknown (any).
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `10_adresse' failed
+Writing layer `10_adresse' to data source 
+  `data/demande/10_adresse.geojson' using driver `GeoJSON'
+Updating existing layer 10_adresse
+Writing 37 features with 4 fields and geometry type Point.
+[1] 11
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `11_zone' failed
+Writing layer `11_zone' to data source 
+  `data/demande/11_zone.geojson' using driver `GeoJSON'
+Updating existing layer 11_zone
+Writing 1 features with 2 fields and geometry type Polygon.
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `11_bat' failed
+Writing layer `11_bat' to data source 
+  `data/demande/11_bat.geojson' using driver `GeoJSON'
+Updating existing layer 11_bat
+Writing 67 features with 3 fields and geometry type Unknown (any).
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `11_adresse' failed
+Writing layer `11_adresse' to data source 
+  `data/demande/11_adresse.geojson' using driver `GeoJSON'
+Updating existing layer 11_adresse
+Writing 42 features with 4 fields and geometry type Point.
+[1] 12
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `12_zone' failed
+Writing layer `12_zone' to data source 
+  `data/demande/12_zone.geojson' using driver `GeoJSON'
+Updating existing layer 12_zone
+Writing 1 features with 2 fields and geometry type Polygon.
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `12_bat' failed
+Writing layer `12_bat' to data source 
+  `data/demande/12_bat.geojson' using driver `GeoJSON'
+Updating existing layer 12_bat
+Writing 65 features with 3 fields and geometry type Unknown (any).
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `12_adresse' failed
+Writing layer `12_adresse' to data source 
+  `data/demande/12_adresse.geojson' using driver `GeoJSON'
+Updating existing layer 12_adresse
+Writing 35 features with 4 fields and geometry type Point.
+[1] 14
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `14_zone' failed
+Writing layer `14_zone' to data source 
+  `data/demande/14_zone.geojson' using driver `GeoJSON'
+Updating existing layer 14_zone
+Writing 1 features with 2 fields and geometry type Polygon.
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `14_bat' failed
+Writing layer `14_bat' to data source 
+  `data/demande/14_bat.geojson' using driver `GeoJSON'
+Updating existing layer 14_bat
+Writing 63 features with 3 fields and geometry type Unknown (any).
+Deleting layer not supported by driver `GeoJSON'
+Deleting layer `14_adresse' failed
+Writing layer `14_adresse' to data source 
+  `data/demande/14_adresse.geojson' using driver `GeoJSON'
+Updating existing layer 14_adresse
+Writing 46 features with 4 fields and geometry type Point.</code></pre>
+</div>
+</div>
+</section>
+<section id="correction-de-la-donnée-sous-josm" class="level3" data-number="5.2.5">
+<h3 data-number="5.2.5" class="anchored" data-anchor-id="correction-de-la-donnée-sous-josm"><span class="header-section-number">5.2.5</span> Correction de la donnée sous JOSM</h3>
+<p>Attention, les “:” sont remplacés par des “.”, il faut corriger sous JOSM avec un rechercher (CTRL + F)</p>
+<p><img src="img/rechercherRemplacerJOSM.png" class="img-fluid"></p>
+</section>
+</section>
 </section>
 <section id="josm-rappel-et-mise-au-point" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> JOSM : rappel et mise au point</h1>
@@ -425,10 +972,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -438,8 +1002,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -451,7 +1024,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -495,6 +1191,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -520,6 +1217,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -580,6 +1303,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 
