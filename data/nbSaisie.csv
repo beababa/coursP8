@@ -1,0 +1,17 @@
+nom zone,nb de batiments traités,difficultés,nb bat traités 2e saisie,difficultés,2e saisie (avec  tags complémentaires)
+6,40,pb de nom de clé,,,
+8,13,lecture simultané des deux tags,,conflit sur la donnée,
+11,1,,9,,1
+7,15,,,,
+9,1,"J'ai rencontré encore plus de divergences par rapport à la géométrie du 20 Rte de Villemomble. Aussi, mes bâtiments sur la limite de zone ne s'affichent pas entièrement",1,"La boulangerie ""La Hûche à Pain"", qui avait son nom saisi de façon incorrecte(La Huche à painq), semble avoir été définitivement fermée selon Google Maps",43
+10,7,fastidieux,19,,17
+13,3,,4,2 erreurs effectués et corrigées,
+5,8,,23,,
+12,,1,16,,1
+14,8,,26,,11
+3,17,enlever et remettre le filtre / pas fait l'adresse / voir seulement les batiments de ma zone,48,,
+2,8,le fait de passer d'un calque à l'autre / certains bâtiments ne corrspond pas au calque OSM:les Bâtiments à traiter sont sous une couche hachurée qui ne me permet pas de  sélectionner le bat à traiter/ Erreur de validité pour tag douteux avec historic.building,11,,
+4,13,,32,,
+15,14,,49,,5
+,,,,,
+,,,,,13

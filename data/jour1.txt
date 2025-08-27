@@ -34,28 +34,20 @@ tag = clé + valeur / key + value
 étiquette
 
 
-14 h 25 faire une contribution. utiliser ID.
+Faire une carte M3 PLUi patrimoine sur le modèle affiché et la déposer dans OSM/cartes/ avec votre prénom.png
+
+jusqu'à 15 h 00
+
+aller dans overpass turbo et télécharger les contours de la commune
+
+organiser son projet qgis et mettre en place la symbologie de la couche de géocodage
+
+faire les 2 géotraitements indiqués sur le support p. 14 afin de récupérer la date la plus ancienne pour le bâtiment.
+
+16 h 40
 
 
-#Paris8-Bondy2024
-
-places PMR
-dessiner un polygone
-amenity=parking
-capacity:disabled=1 ou 2 ou 3...
-
-jusqu'à 15 h 29
-tagger une place PMR à Bondy
-en s'aidant de la carte pmr.html (point 2.4 du cours)
-
-le mettre dans le framacalc et expliquer pourquoi non le cas échéant
-
-extraction overpass turbo 
-extraire toutes les rues de bondy / tous les batiments
-les mettre dans qgis
-
-
-(highway=* or building=*) in bondy
+.
 
 
 

@@ -1,93 +1,694 @@
 {
-"type": "FeatureCollection",
-"name": "1_adresse",
-"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
-"features": [
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "3", "addr.street": "Rue Beauregard" }, "geometry": { "type": "Point", "coordinates": [ 2.476349, 48.899399 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "4", "addr.street": "Rue Beauregard" }, "geometry": { "type": "Point", "coordinates": [ 2.476715, 48.899294 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "7", "addr.street": "Rue Beauregard" }, "geometry": { "type": "Point", "coordinates": [ 2.476742, 48.899375 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "3bis", "addr.street": "Rue Beauregard" }, "geometry": { "type": "Point", "coordinates": [ 2.476391, 48.899395 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "9bis", "addr.street": "Rue Beauregard" }, "geometry": { "type": "Point", "coordinates": [ 2.477164, 48.899496 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "41", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476643, 48.90056 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "24", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476685, 48.900944 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "26", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476609, 48.900776 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "28", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.47658, 48.900704 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "37", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476741, 48.900781 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "40", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476235, 48.899922 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "42", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476205, 48.899855 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "47", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476684, 48.900166 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "53", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476412, 48.900042 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "57", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476317, 48.899826 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "61", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476207, 48.899582 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "25", "addr.street": "Rue Paul Vaillant-couturier" }, "geometry": { "type": "Point", "coordinates": [ 2.477547, 48.901345 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "27", "addr.street": "Rue Paul Vaillant-couturier" }, "geometry": { "type": "Point", "coordinates": [ 2.477694, 48.901317 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "29", "addr.street": "Rue Paul Vaillant-couturier" }, "geometry": { "type": "Point", "coordinates": [ 2.477881, 48.901276 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "31", "addr.street": "Rue Paul Vaillant-couturier" }, "geometry": { "type": "Point", "coordinates": [ 2.478071, 48.901237 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "33", "addr.street": "Rue Paul Vaillant-couturier" }, "geometry": { "type": "Point", "coordinates": [ 2.478201, 48.901212 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "4", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477556, 48.901071 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "6", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477516, 48.900971 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "7", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477549, 48.90075 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "8", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477466, 48.900858 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "9", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477516, 48.900672 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "12", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477387, 48.900654 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "13", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477471, 48.90056 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Immeubles", "building.architecture.niveau": " 2", "addr.housenumber": "16", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477315, 48.90048 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "6bis", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477328, 48.900944 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "14", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477348, 48.900563 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "15", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477423, 48.900443 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "17", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477368, 48.900306 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "19", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477328, 48.900213 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "22", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477208, 48.900215 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "24", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.47717, 48.900126 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "26", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477126, 48.900021 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "30", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.476854, 48.899883 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "32", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477019, 48.89976 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "34", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.476988, 48.899683 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Immeubles", "building.architecture.niveau": " 2", "addr.housenumber": "36", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.476938, 48.899556 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "15bis", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477617, 48.900351 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "19bis", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477299, 48.900132 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "3", "addr.street": "Rue Beauregard" }, "geometry": { "type": "Point", "coordinates": [ 2.476349, 48.899399 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "4", "addr.street": "Rue Beauregard" }, "geometry": { "type": "Point", "coordinates": [ 2.476715, 48.899294 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "7", "addr.street": "Rue Beauregard" }, "geometry": { "type": "Point", "coordinates": [ 2.476742, 48.899375 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "3bis", "addr.street": "Rue Beauregard" }, "geometry": { "type": "Point", "coordinates": [ 2.476391, 48.899395 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "9bis", "addr.street": "Rue Beauregard" }, "geometry": { "type": "Point", "coordinates": [ 2.477164, 48.899496 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "41", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476643, 48.90056 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "24", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476685, 48.900944 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "26", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476609, 48.900776 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "28", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.47658, 48.900704 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "37", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476741, 48.900781 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "40", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476235, 48.899922 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "42", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476205, 48.899855 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "47", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476684, 48.900166 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "53", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476412, 48.900042 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "57", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476317, 48.899826 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "61", "addr.street": "Rue Jean Jaurés" }, "geometry": { "type": "Point", "coordinates": [ 2.476207, 48.899582 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "25", "addr.street": "Rue Paul Vaillant-couturier" }, "geometry": { "type": "Point", "coordinates": [ 2.477547, 48.901345 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "27", "addr.street": "Rue Paul Vaillant-couturier" }, "geometry": { "type": "Point", "coordinates": [ 2.477694, 48.901317 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "29", "addr.street": "Rue Paul Vaillant-couturier" }, "geometry": { "type": "Point", "coordinates": [ 2.477881, 48.901276 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "31", "addr.street": "Rue Paul Vaillant-couturier" }, "geometry": { "type": "Point", "coordinates": [ 2.478071, 48.901237 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "33", "addr.street": "Rue Paul Vaillant-couturier" }, "geometry": { "type": "Point", "coordinates": [ 2.478201, 48.901212 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "4", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477556, 48.901071 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "6", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477516, 48.900971 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "7", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477549, 48.90075 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "8", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477466, 48.900858 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "9", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477516, 48.900672 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "12", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477387, 48.900654 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "13", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477471, 48.90056 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Immeubles", "building.architecture.niveau": " 2", "addr.housenumber": "16", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477315, 48.90048 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "6bis", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477328, 48.900944 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "14", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477348, 48.900563 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "15", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477423, 48.900443 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Maisons de bourg", "building.architecture.niveau": " 2", "addr.housenumber": "17", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477368, 48.900306 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "19", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477328, 48.900213 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "22", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477208, 48.900215 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "24", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.47717, 48.900126 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "26", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477126, 48.900021 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "30", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.476854, 48.899883 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "32", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477019, 48.89976 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "34", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.476988, 48.899683 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Immeubles", "building.architecture.niveau": " 2", "addr.housenumber": "36", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.476938, 48.899556 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "15bis", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477617, 48.900351 ] } },
-{ "type": "Feature", "properties": { "building.architecture": "Lotissements\/maisons pavillonnaires", "building.architecture.niveau": " 2", "addr.housenumber": "19bis", "addr.street": "Rue Yvonne" }, "geometry": { "type": "Point", "coordinates": [ 2.477299, 48.900132 ] } }
-]
+    "type": "FeatureCollection",
+    "generator": "JOSM",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "3bis",
+                "addr:street": "Rue Beauregard",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47639100000,
+                    48.89939500000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "4",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Maisons de bourg",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47755600000,
+                    48.90107100000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "26",
+                "addr:street": "Rue Jean Jaurés",
+                "building:architecture": "Maisons de bourg",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47660900000,
+                    48.90077600000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "9",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Maisons de bourg",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47751600000,
+                    48.90067200000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "40",
+                "addr:street": "Rue Jean Jaurés",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47623500000,
+                    48.89992200000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "16",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Immeubles",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47731500000,
+                    48.90048000000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "27",
+                "addr:street": "Rue Paul Vaillant-couturier",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47769400000,
+                    48.90131700000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "24",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47717000000,
+                    48.90012600000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "7",
+                "addr:street": "Rue Beauregard",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47674200000,
+                    48.89937500000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "33",
+                "addr:street": "Rue Paul Vaillant-couturier",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47820100000,
+                    48.90121200000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "34",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47698800000,
+                    48.89968300000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "24",
+                "addr:street": "Rue Jean Jaurés",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47668500000,
+                    48.90094400000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "8",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Maisons de bourg",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47746600000,
+                    48.90085800000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "19bis",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47729900000,
+                    48.90013200000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "53",
+                "addr:street": "Rue Jean Jaurés",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47641200000,
+                    48.90004200000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "15",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47742300000,
+                    48.90044300000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "25",
+                "addr:street": "Rue Paul Vaillant-couturier",
+                "building:architecture": "Maisons de bourg",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47754700000,
+                    48.90134500000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "22",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47720800000,
+                    48.90021500000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "41",
+                "addr:street": "Rue Jean Jaurés",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47664300000,
+                    48.90056000000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "32",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47701900000,
+                    48.89976000000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "37",
+                "addr:street": "Rue Jean Jaurés",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47674100000,
+                    48.90078100000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "13",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47747100000,
+                    48.90056000000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "47",
+                "addr:street": "Rue Jean Jaurés",
+                "building:architecture": "Maisons de bourg",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47668400000,
+                    48.90016600000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "14",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47734800000,
+                    48.90056300000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "4",
+                "addr:street": "Rue Beauregard",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47671500000,
+                    48.89929400000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "31",
+                "addr:street": "Rue Paul Vaillant-couturier",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47807100000,
+                    48.90123700000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "30",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47685400000,
+                    48.89988300000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "9bis",
+                "addr:street": "Rue Beauregard",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47716400000,
+                    48.89949600000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "7",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47754900000,
+                    48.90075000000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "15bis",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47761700000,
+                    48.90035100000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "28",
+                "addr:street": "Rue Jean Jaurés",
+                "building:architecture": "Maisons de bourg",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47658000000,
+                    48.90070400000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "12",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Maisons de bourg",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47738700000,
+                    48.90065400000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "61",
+                "addr:street": "Rue Jean Jaurés",
+                "building:architecture": "Maisons de bourg",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47620700000,
+                    48.89958200000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "19",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47732800000,
+                    48.90021300000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "3",
+                "addr:street": "Rue Beauregard",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47634900000,
+                    48.89939900000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "29",
+                "addr:street": "Rue Paul Vaillant-couturier",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47788100000,
+                    48.90127600000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "26",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47712600000,
+                    48.90002100000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "6",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47751600000,
+                    48.90097100000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "36",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Immeubles",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47693800000,
+                    48.89955600000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "42",
+                "addr:street": "Rue Jean Jaurés",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47620500000,
+                    48.89985500000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "6bis",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Lotissements/maisons pavillonnaires",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47732800000,
+                    48.90094400000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "57",
+                "addr:street": "Rue Jean Jaurés",
+                "building:architecture": "Maisons de bourg",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47631700000,
+                    48.89982600000
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "addr:housenumber": "17",
+                "addr:street": "Rue Yvonne",
+                "building:architecture": "Maisons de bourg",
+                "building:architecture:niveau": "2"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    2.47736800000,
+                    48.90030600000
+                ]
+            }
+        }
+    ]
 }

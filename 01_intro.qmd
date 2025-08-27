@@ -171,7 +171,6 @@ Questions :
 
 Créer son profil sur [openstreetmap.org](https://www.openstreetmap.org), attention au pseudo.
 
-
 ## JOSM
 
 Paramétrage F12 pour lien remote
@@ -269,7 +268,6 @@ Le support, fait sous R Quarto, sert uniquement de "fil rouge".
 
 Les procédures employées sous QGIS / JOSM sont résumées sur un support papier distribué.
 
-
 ### Projet git
 
 En utilisant l'icone à droite du cours, copie du projet GIT en *début* et en *fin* de session (via l'option *download zip*)
@@ -348,6 +346,10 @@ une référence en livre : [QGIS Map Design - Second Edition](https://locatepres
 
 ### Le contrôle de qualité
 
-[neiss](http://resultmaps.neis-one.org)
+[neiss](http://resultmaps.neis-one.org) 
+
+- notamment [le nombre d'édition par tuile sur Bondy](https://resultmaps.neis-one.org/osm-edits-tile/#14/48.9008/2.4877)
+
+qui permet de remonter sur le détail de chaque contribution par changeset.
 
 [osmose](http://osmose.openstreetmap.fr/fr/map/#zoom=16&lat=48.90695&lon=2.49237)
