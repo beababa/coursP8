@@ -1,40 +1,59 @@
-(amenity=parking and capacity:disabled=*) in bondy
+Copier le .gpkg enveloppe_cluster
+Charger toutes les couches dans le groupe "géotraitement"
 
-Charger les couches
-- fond positron (plugin quick map services)
-- contours communes
-- cadastre sur data.gouv (etalab)
-- bureaux de vote
+Pourquoi va-t-on utiliser les clusters de Béa ? => 10 h 05 (si possible avec Qgis)
 
-Garder également les batiments et les rues d'hier
+-------------------------------------------------
+Attention, couche agregationAnBat.geojson dans OSM/data avec année minimum sur chaque bâtiment et nb de parcelles (fid)
 
-toutes les indications sont dans le cours.
+vérification à faire :
 
-A MIDI : rendre une copie d'écran dans
-le répertoire réseau OSM/cartes avec
-votre prenom.png (minuscules sans espace, sans accent) quelque soit votre avancement
+    - pour chaque bâtiment, il existe un point.
+
+    - la typologie est cohérente : à quoi correspondent les bâtiments de niveau 3 en typologie ?
+
+Toutes les anomalies sont notées dans le framacalc dans les 2 colonnes prévues (correspondance bat-pt et cohérence typologie)
+
+Puis carte 2 sur une anomalie et correction de géocodage sur la base adresse
+
+1 h au total, 30 mn un premier point.
+
+(copie numérique du support dans le partage OSM/data)= support.pdf
+---------------------------------------------------------------------------
+
+Faire une carte zoomée sur sa zone (CARTE 3), mettant en valeur
+
+    les années par bâtiment (style gradué)
+
+    les points adresses
+
+Avec un commentaire décrivant la donnée de type 
+“J’ai tant de bâtiments dont des gros de type / des petits, avec tant d’anomalies etc…”
+
+13 h15 - 14 h 15 / point 13 h 45
+---------------------------------------------------------------------------
+
+année / typologie / adresse en tag OSM features / taginfo OU l'IA
+
+14 h 36
+
+---------------------------------------------------------------------------
+
+tags finaux
+start_date /construction_date:nb
+addr:housenumber / addr:street 	
+building:architecture= (immeuble/maison de bourg/pavillon) / building:architecture:niveau(emblématique/remarquable/représentattif)	
+historic:building=yes
+Pour l'enveloppe :
+boundary=patrimoine ET name= (par exemple, quartier Michelet)
+
+Préparer ses 3 couches en renommant les champs et en enregistrant en 4326 et geosjon
 
 
-N'OUBLIER PAS D'ENREGISTRER REGULIEREMENT VOTRE TRAVAIL !!!!!!!
+-----------------------------------------------
 
-Après la pause ne pas oublier
-- présentation Chafii
-- forum osm les routes
-- démo sur le pt rabelais
-- mise en page dans qgis
-- filtre qgis
-
-- utilisation josm :connexion
-
-- création profil utilisateur pour régler qgis défaillant
+Ouvrir JOSM et charger les 3 couches
 
 
 
-carte 2 : superposer les 2 cartes de bv en respectant les consignes (20 mn, 15 h 05)
 
-mettre vos cartes prenom.png dans osm/cartes
-
-
-replace( "bureau",'93010_','')
-
-polling_station=1 ou 2 ...

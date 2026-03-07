@@ -19,15 +19,12 @@ Patrimoine Bondy : du PLUi à OSM
 
 ## Présentation du PLUi et tableau récapitulatif des sources pour le cours
 
-
 ![Qu'est ce que le PLUi ?](img/couverture.png){width="250"}
 
 ```{r}
 data <- read.csv("data/sources.csv", fileEncoding = "UTF-8")
 knitr::kable(data)
 ```
-
-
 
 ```{r}
 library(sf)
@@ -43,10 +40,6 @@ for (c in couches){
 }
 st_layers("data/carte1.gpkg")
 ```
-
-
-
-
 
 ## Le plan du patrimoine issu du PLUi
 
@@ -178,8 +171,6 @@ Questions :
 
 Créer son profil sur [openstreetmap.org](https://www.openstreetmap.org), attention au pseudo.
 
-## le tag
-
 ## JOSM
 
 Paramétrage F12 pour lien remote
@@ -229,7 +220,7 @@ pas d'évaluation officielle
 
 -   notions de base puis plusieurs cartes que nous regarderons rapidement
 
-[Introduction](https://framaforms.org/paris8-bondy2024-introduction-1693048391)
+[Introduction](https://framaforms.org/paris8-bondy2025-introduction-1693048391)
 
 -   évaluation de satisfaction
 
@@ -276,10 +267,6 @@ Un mot au sujet du collectif, ce cours est aussi l'occasion de tester une organi
 Le support, fait sous R Quarto, sert uniquement de "fil rouge".
 
 Les procédures employées sous QGIS / JOSM sont résumées sur un support papier distribué.
-
-Utilisation d'internet, exemple :
-
-"Qgis compter les points dans un polygone" Quel est le menu qui permet de le faire ?
 
 ### Projet git
 
@@ -359,6 +346,10 @@ une référence en livre : [QGIS Map Design - Second Edition](https://locatepres
 
 ### Le contrôle de qualité
 
-[neiss](http://resultmaps.neis-one.org)
+[neiss](http://resultmaps.neis-one.org) 
+
+- notamment [le nombre d'édition par tuile sur Bondy](https://resultmaps.neis-one.org/osm-edits-tile/#14/48.9008/2.4877)
+
+qui permet de remonter sur le détail de chaque contribution par changeset.
 
 [osmose](http://osmose.openstreetmap.fr/fr/map/#zoom=16&lat=48.90695&lon=2.49237)

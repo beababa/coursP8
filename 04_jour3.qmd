@@ -40,6 +40,33 @@ Savoir-faire QGIS
 
 Quelle est la différence entre le nombre de contributions saisies et le nombre de contribution réelle ?
 
+## Nb de contributions saisies
+
+```{r}
+nb <- read.csv("data/nbSaisie.csv")
+saisie1 <- sum(nb$nb.de.batiments.traités,na.rm=T)
+saisie2 <- sum(nb$nb.bat.traités.2e.saisie, na.rm=T)
+saisie3 <- sum(nb$X2e.saisie..avec..tags.complémentaires., na.rm=T)
+total <- t(data.frame(saisie1, saisie2, saisie3))
+barplot(total [,1], names.arg = rownames(total), col = "antiquewhite", border = NA, main = paste0(sum(total), " contributions annoncées"))
+```
+
+## Nb de contributions réelles
+
+[neis, carte des changesets](https://resultmaps.neis-one.org/osm-changesets?comment=Paris8#6/46.995/2.318)
+
+Number of Map Changes: 677 !
+
+Dans Overpass Turbo, on fait une recherche en utilisant le AND et le OR
+
+```
+start_date=* AND building:architecture=*  
+start_date=* OR building:architecture=*  
+```
+
+188 polygones et 472 polygones
+
+
 Les problèmes sont listés avant la 2e session de saisie.
 
 exemple de problème type

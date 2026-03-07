@@ -1,0 +1,16 @@
+prénom,nom zone,anomalie : géocodage,anomalie : typologie
+Thileni,2,Point ayant aucun 4 allées des courts sillons,
+Jade,3,4 Allée Rulhiere : Point dont le géocodage est pas bon,
+Anoé,4,57 rue Michelet = point mais pas de bâtiment agrégé,
+Wendy,5,98 avenue de la République = géocodage présent et abscence d'agrégation,
+ELISE,6,Pas de numéro (points) au 23 bis rue Jean Jaurès ,NA
+MAXINE,7,Absence d'identification sur le type de bâtit et de l'addresse du bâtiment situé sur les quai Hubertine Auclert,
+Falle,8,NA,immeuble codifié comme bati ou ensemble de bati ou monument historique 120 Rue Solengro IMMEUBLE NIVEAU 2
+GUILHERME,9,Autre erreur au 15 Rue des peupliers : la géométrie ne correspond pas avec OSM. Il semble que l'ancien bâtiment a été démoli et il y a désormais un pavillon,"Autre anomalie également au 20 Route de Villemomble, géométrie non correspondante avec OSM, qui est plutôt à jour. Il semble qu'une partie du bâtiment a été démolie"
+Colin,10,"137 rue Baudin : result_score=0,758 mais positionnement cohérent avec l'adresse de la BAN (non certifiée) - --121 rue du Vieux Moulin : bâtiment (école) non géocodé possiblement car large complexe s'étendant jusqu'à la rue parallèle (rue Salengro)","116 rue Baudin classée injustement ""Maison de bourg"" -> ""Lotissement/maison pavillonaire"
+Ali,11,abscence de numéro d'adressage au 13 Place Nicole Neuburger,"immeuble indiqué comme'une cités-jardins, cités-jardins indiqué comme un immeuble ( place Nicole Neuburger"
+cylia,12,"-53 bis Avenue des Sciences, pas de numero ni de batiment pour cette adresse,   -15 Av. des sciences pas de point de geocodage",
+Sarah,13,Confusion d'adresse : indique Villa Jeanette en latéral contre informations officielles qui donnent sur la rue Louis Auguste Blanqui,"Ecole elementaire indiquée ""Allé de la Villa Jeanette"" > 136 rue Louis Auguste Blanqui"
+Mihai,14,RAS,
+Paloma,15,"Pas de point au : 37, 39, 41, 41bis, 45, 45bis, 47, 47bis, 49, 51 rue de la liberté et au 14 avenue Denise. Pas de prescription surfacique au 16 Avenue Denise",
+Béatrice,1,,

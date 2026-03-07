@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -79,7 +79,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -88,6 +94,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -104,9 +111,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">Cours P8 2025 - Patrimoine : du PLUi à OSM</span>
     </a>
@@ -118,32 +125,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./01_intro.html" rel="" target="" aria-current="page">
- <span class="menu-text">Introduction |</span></a>
+    <a class="nav-link active" href="./01_intro.html" aria-current="page"> 
+<span class="menu-text">Introduction |</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./02_jour1.html" rel="" target="">
- <span class="menu-text">Sources PLUi |</span></a>
+    <a class="nav-link" href="./02_jour1.html"> 
+<span class="menu-text">Sources PLUi |</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./03_jour2.html" rel="" target="">
- <span class="menu-text">Saisie 1 |</span></a>
+    <a class="nav-link" href="./03_jour2.html"> 
+<span class="menu-text">Saisie 1 |</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./04_jour3.html" rel="" target="">
- <span class="menu-text">Saisie 2</span></a>
+    <a class="nav-link" href="./04_jour3.html"> 
+<span class="menu-text">Saisie 2</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/beababa/coursP8" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/beababa/coursP8"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -176,9 +183,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#définir" id="toc-définir" class="nav-link" data-scroll-target="#définir"><span class="header-section-number">2.2.1</span> Définir</a></li>
   </ul></li>
-  <li><a href="#le-tag" id="toc-le-tag" class="nav-link" data-scroll-target="#le-tag"><span class="header-section-number">2.3</span> le tag</a></li>
-  <li><a href="#josm" id="toc-josm" class="nav-link" data-scroll-target="#josm"><span class="header-section-number">2.4</span> JOSM</a></li>
-  <li><a href="#qgis" id="toc-qgis" class="nav-link" data-scroll-target="#qgis"><span class="header-section-number">2.5</span> Qgis</a></li>
+  <li><a href="#josm" id="toc-josm" class="nav-link" data-scroll-target="#josm"><span class="header-section-number">2.3</span> JOSM</a></li>
+  <li><a href="#qgis" id="toc-qgis" class="nav-link" data-scroll-target="#qgis"><span class="header-section-number">2.4</span> Qgis</a></li>
   </ul></li>
   <li><a href="#méthode-et-déroulé" id="toc-méthode-et-déroulé" class="nav-link" data-scroll-target="#méthode-et-déroulé"><span class="header-section-number">3</span> Méthode et déroulé</a>
   <ul class="collapse">
@@ -231,7 +237,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <p>Patrimoine Bondy : du PLUi à OSM</p>
 <section id="différentes-sources-autour-de-la-construction-du-plui" class="level1" data-number="1">
@@ -241,17 +249,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/couverture.png" class="img-fluid figure-img" width="250"></p>
-<figcaption class="figure-caption">Qu’est ce que le PLUi ?</figcaption>
+<figcaption>Qu’est ce que le PLUi ?</figcaption>
 </figure>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/sources.csv"</span>, <span class="at">fileEncoding =</span> <span class="st">"UTF-8"</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<table class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small">
 <colgroup>
 <col style="width: 14%">
 <col style="width: 58%">
@@ -316,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># extraction des couches nécessaire pour la carte 1</span></span>
@@ -333,7 +341,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "cadastre"
 Reading layer `cadastre' from data source 
-  `C:\Users\tachasa\coursP8\data\patrimoine.gpkg' using driver `GPKG'
+  `C:\Users\geographie1\coursP8\data\patrimoine.gpkg' using driver `GPKG'
 Simple feature collection with 7094 features and 1 field
 Geometry type: MULTIPOLYGON
 Dimension:     XY
@@ -344,7 +352,7 @@ Writing layer `cadastre' to data source `data/carte1.gpkg' using driver `GPKG'
 Writing 7094 features with 1 fields and geometry type Multi Polygon.
 [1] "quartier"
 Reading layer `quartier' from data source 
-  `C:\Users\tachasa\coursP8\data\patrimoine.gpkg' using driver `GPKG'
+  `C:\Users\geographie1\coursP8\data\patrimoine.gpkg' using driver `GPKG'
 Simple feature collection with 5 features and 1 field
 Geometry type: MULTIPOLYGON
 Dimension:     XY
@@ -355,7 +363,7 @@ Writing layer `quartier' to data source `data/carte1.gpkg' using driver `GPKG'
 Writing 5 features with 1 fields and geometry type Multi Polygon.
 [1] "m3_prescription_surf"
 Reading layer `m3_prescription_surf' from data source 
-  `C:\Users\tachasa\coursP8\data\patrimoine.gpkg' using driver `GPKG'
+  `C:\Users\geographie1\coursP8\data\patrimoine.gpkg' using driver `GPKG'
 Simple feature collection with 799 features and 17 fields
 Geometry type: MULTIPOLYGON
 Dimension:     XY
@@ -367,7 +375,7 @@ Writing layer `m3_prescription_surf' to data source
 Writing 799 features with 17 fields and geometry type Multi Polygon.
 [1] "geocodageM3"
 Reading layer `geocodageM3' from data source 
-  `C:\Users\tachasa\coursP8\data\patrimoine.gpkg' using driver `GPKG'
+  `C:\Users\geographie1\coursP8\data\patrimoine.gpkg' using driver `GPKG'
 Simple feature collection with 652 features and 20 fields
 Geometry type: POINT
 Dimension:     XY
@@ -377,7 +385,7 @@ Deleting layer `geocodageM3' using driver `GPKG'
 Writing layer `geocodageM3' to data source `data/carte1.gpkg' using driver `GPKG'
 Writing 652 features with 20 fields and geometry type Point.</code></pre>
 </div>
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">st_layers</span>(<span class="st">"data/carte1.gpkg"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -397,12 +405,12 @@ Available layers:
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/planComplet.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">extraction du plan patrimoine PLUi M3</figcaption>
+<figcaption>extraction du plan patrimoine PLUi M3</figcaption>
 </figure>
 </div>
 <p>Toutes les données cartographiques et réglementaires sont en opendata sur le <a href="https://www.geoportail-urbanisme.gouv.fr/">GPU</a> !</p>
-<div class="cell">
-<details>
+<div class="cell" data-layout-align="default">
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>flowchart LR</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  A[GPU \nprescriptions surf ] --&gt; B(patrimoinePlui)</span>
@@ -412,6 +420,7 @@ Available layers:
 </details>
 <div class="cell-output-display">
 <div>
+<p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart LR
   A[GPU \nprescriptions surf ] --&gt; B(patrimoinePlui)
@@ -420,6 +429,7 @@ Available layers:
   C --&gt; E[zones]
 </pre>
 </div>
+<p></p></figure><p></p>
 </div>
 </div>
 </div>
@@ -428,7 +438,7 @@ Available layers:
 <h2 data-number="1.3" class="anchored" data-anchor-id="les-tableaux"><span class="header-section-number">1.3</span> Les tableaux</h2>
 <p>Dans le document réglementaire de type .pdf Le document étant opposable, il a fallu ocr-iser les listes</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pdftools)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>fic <span class="ot">&lt;-</span> (<span class="st">"data_raw/5.2 Annexe PatrimoineM3.pdf"</span>)</span>
@@ -471,7 +481,7 @@ Available layers:
 <p>L’ocr-isation ne fonctionne pas sur ce support.</p>
 <p>Reprise du titre</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pdftools)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>fic <span class="ot">&lt;-</span> <span class="st">"data_raw/5.2 Annexe patrimoine (Bondy-livret1).pdf"</span></span>
@@ -495,7 +505,7 @@ Available layers:
 </div>
 <p>Pour le corps du texte, c’est trop incomplet, même en passant par une transformation en image.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magick)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tesseract)</span>
@@ -504,7 +514,7 @@ Available layers:
 <div class="cell-output cell-output-stdout">
 <pre><code>Converting page 1 to fichePatrimoine_1.png... done!</code></pre>
 </div>
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>img <span class="ot">&lt;-</span> <span class="fu">image_read</span>(png)</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># recherche du titre</span></span>
@@ -562,7 +572,7 @@ Available layers:
 [46] "Continuité des hauteurs"                          
 [47] "Lm a 10"                                          </code></pre>
 </div>
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>texte3 <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">|:"</span>, <span class="st">"_"</span>, texte2)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>texte4  <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">" "</span>,<span class="st">"_"</span>, texte3)</span>
@@ -575,7 +585,7 @@ Available layers:
 </div>
 <p>Une piste intéressante serait de stocker la photo et de la nommer avec l’adresse et le numéro de parcelle.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>gererPhoto <span class="ot">&lt;-</span> <span class="cf">function</span>(img){</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  taille <span class="ot">&lt;-</span> <span class="fu">image_info</span>(img)[<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>]</span>
@@ -594,7 +604,11 @@ Available layers:
 <span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a><span class="fu">image_read</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<p><img src="01_intro_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="760"></p>
+<div>
+<figure class="figure">
+<p><img src="01_intro_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -627,19 +641,16 @@ Available layers:
 <p>Créer son profil sur <a href="https://www.openstreetmap.org">openstreetmap.org</a>, attention au pseudo.</p>
 </section>
 </section>
-<section id="le-tag" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="le-tag"><span class="header-section-number">2.3</span> le tag</h2>
-</section>
-<section id="josm" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="josm"><span class="header-section-number">2.4</span> JOSM</h2>
+<section id="josm" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="josm"><span class="header-section-number">2.3</span> JOSM</h2>
 <p>Paramétrage F12 pour lien remote</p>
 <ul>
 <li><p>serveur OSM</p></li>
 <li><p>contrôle à distance</p></li>
 </ul>
 </section>
-<section id="qgis" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="qgis"><span class="header-section-number">2.5</span> Qgis</h2>
+<section id="qgis" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="qgis"><span class="header-section-number">2.4</span> Qgis</h2>
 <p>Qui connait Qgis ? quel niveau ? (remplir le framapad) =&gt; définir des étudiants ressource</p>
 </section>
 </section>
@@ -656,7 +667,7 @@ Available layers:
 <p>JOUR 3 : Extraire, faire un atlas sous QGIS bâtiment par bâtiment, utiliser les sources M2 pour faire une deuxième sessions et produire un atlas plus complexe</p>
 <p>Au niveau du temps, cela donne :</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># stats temps / séquence</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>temps <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/tps.csv"</span>)</span>
@@ -689,7 +700,7 @@ Important
 <ul>
 <li>notions de base puis plusieurs cartes que nous regarderons rapidement</li>
 </ul>
-<p><a href="https://framaforms.org/paris8-bondy2024-introduction-1693048391">Introduction</a></p>
+<p><a href="https://framaforms.org/paris8-bondy2025-introduction-1693048391">Introduction</a></p>
 <ul>
 <li>évaluation de satisfaction</li>
 </ul>
@@ -729,8 +740,6 @@ Important
 <h3 data-number="3.5.1" class="anchored" data-anchor-id="support-et-procédures"><span class="header-section-number">3.5.1</span> Support et procédures</h3>
 <p>Le support, fait sous R Quarto, sert uniquement de “fil rouge”.</p>
 <p>Les procédures employées sous QGIS / JOSM sont résumées sur un support papier distribué.</p>
-<p>Utilisation d’internet, exemple :</p>
-<p>“Qgis compter les points dans un polygone” Quel est le menu qui permet de le faire ?</p>
 </section>
 <section id="projet-git" class="level3" data-number="3.5.2">
 <h3 data-number="3.5.2" class="anchored" data-anchor-id="projet-git"><span class="header-section-number">3.5.2</span> Projet git</h3>
@@ -756,7 +765,7 @@ Important
 <p>sur le <a href="https://lite.framacalc.org/9ilj-coursp8">framacalc</a></p>
 <p>Ce fichier va permettre de s’attribuer les zones de saisie et toutes les opérations collaboratives du cours.</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/etudiant.csv"</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>passé.lieu)</span>
@@ -808,6 +817,10 @@ Important
 <section id="le-contrôle-de-qualité" class="level3" data-number="5.2.3">
 <h3 data-number="5.2.3" class="anchored" data-anchor-id="le-contrôle-de-qualité"><span class="header-section-number">5.2.3</span> Le contrôle de qualité</h3>
 <p><a href="http://resultmaps.neis-one.org">neiss</a></p>
+<ul>
+<li>notamment <a href="https://resultmaps.neis-one.org/osm-edits-tile/#14/48.9008/2.4877">le nombre d’édition par tuile sur Bondy</a></li>
+</ul>
+<p>qui permet de remonter sur le détail de chaque contribution par changeset.</p>
 <p><a href="http://osmose.openstreetmap.fr/fr/map/#zoom=16&amp;lat=48.90695&amp;lon=2.49237">osmose</a></p>
 
 
@@ -895,10 +908,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -908,8 +938,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -921,7 +960,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -965,6 +1127,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -990,6 +1153,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1050,6 +1239,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

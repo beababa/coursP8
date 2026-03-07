@@ -47,7 +47,7 @@ Exercice : à partir du support
 
 ## Tag = clé + valeur
 
-[https://taginfo.openstreetmap.org/](https://taginfo.openstreetmap.org/)
+<https://taginfo.openstreetmap.org/>
 
 on utilise directement l'éditeur intégré *id* sur osm.org trouver le tag directement à partir de l'éditeur.
 
@@ -106,8 +106,6 @@ Avant de faire la carte, quizz !
 -   mise en page qgis (3 boutons)
 
 -   style en polygone inversé et remplissage dégradé suivant la forme pour les limites de la commune
-
--   mise en page dans Qgis : les 3 boutons
 
 ## Autres données : la commune
 
