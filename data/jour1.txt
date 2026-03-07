@@ -37,7 +37,7 @@ tag = clé + valeur / key + value
 14 h 25 faire une contribution. utiliser ID.
 
 
-#Paris8-Bondy2024
+#Paris8-Bondy2025
 
 places PMR
 dessiner un polygone
