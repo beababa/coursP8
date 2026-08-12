@@ -35,27 +35,27 @@ Les étudiants travaillent en 3 groupes :
 
 ## Résultats : tags choisis
 
-- année de construction / nb de construction = 
+-   année de construction / nb de construction =
 
-  * start_date
-  
-  * construction_date:nb
+    -   start_date
 
-- pour l'adresse = addr:housenumber / addr:street 	
+    -   construction_date:nb
 
-- pour la typologie = 
-  
-    * building:architecture= (immeuble/maison de bourg/pavillon)
-    
-    * building:architecture:niveau(emblématique/remarquable/représentatif)
-    
-- pour tous les bâtiments = historic:building=yes
+-   pour l'adresse = addr:housenumber / addr:street
 
-- Pour l'enveloppe
+-   pour la typologie =
 
-  * boundary=patrimoine 
-  
-  * name= (par exemple, quartier Michelet)
+    -   building:architecture= (immeuble/maison de bourg/pavillon)
+
+    -   building:architecture:niveau(emblématique/remarquable/représentatif)
+
+-   pour tous les bâtiments = historic:building=yes
+
+-   Pour l'enveloppe
+
+    -   boundary=patrimoine
+
+    -   name= (par exemple, quartier Michelet)
 
 # Validation des tags choisis en faisant des requêtes overpass
 
@@ -69,7 +69,7 @@ voir [ici](02_jour1.html#quels-tags)
 
 3 couches en 4326 et geojson
 
--   celle des batiments avec la typo + année min (= mesBat4326  par exemple)
+-   celle des batiments avec la typo + année min (= mesBat4326 par exemple)
 
 -   Le pt adresse avec adresse et typo2 (= mesAdresses4326)
 
@@ -98,7 +98,6 @@ demande <- demande [demande$couches.à.importer.dans.JOSM..ok..help. != 'ok',]
 zone <- demande$nom.zone
 ```
 
-
 ### Récupération des données
 
 ```{r}
@@ -110,7 +109,7 @@ bat <- st_read("data/agregationCadastrePatrimoine.geojson")
 bat <- st_transform(bat, 4326)
 ```
 
-### Travail sur les couches 
+### Travail sur les couches
 
 #### Couche enveloppe
 
@@ -140,7 +139,6 @@ adresse <- adresse [, c("building:architecture", "building:architecture:niveau",
 plot(adresse)
 ```
 
-
 #### Couche bâtiment
 
 ```{r}
@@ -154,14 +152,12 @@ plot(bat)
 
 ### Intersection par enveloppe et enregistrement des couches
 
-
 Vérification de la validité des géométries
 
 ```{r}
 table(st_is_valid(bat))
 bat <- bat [st_is_valid(bat),]
 ```
-
 
 ```{r}
 zone <- c(1, zone)
@@ -184,8 +180,6 @@ for (z in zone){
 Attention, les ":" sont remplacés par des ".", il faut corriger sous JOSM avec un rechercher (CTRL + F)
 
 ![](img/rechercherRemplacerJOSM.png)
-
-
 
 # JOSM : rappel et mise au point
 

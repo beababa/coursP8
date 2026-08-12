@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Cours P8 2025 - Patrimoine : du PLUi à OSM"
+  title: "Cours P8 2026 - Plan marche"
   navbar:
     background: primary
     search: true

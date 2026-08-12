@@ -346,9 +346,9 @@ une référence en livre : [QGIS Map Design - Second Edition](https://locatepres
 
 ### Le contrôle de qualité
 
-[neiss](http://resultmaps.neis-one.org) 
+[neiss](http://resultmaps.neis-one.org)
 
-- notamment [le nombre d'édition par tuile sur Bondy](https://resultmaps.neis-one.org/osm-edits-tile/#14/48.9008/2.4877)
+-   notamment [le nombre d'édition par tuile sur Bondy](https://resultmaps.neis-one.org/osm-edits-tile/#14/48.9008/2.4877)
 
 qui permet de remonter sur le détail de chaque contribution par changeset.
 

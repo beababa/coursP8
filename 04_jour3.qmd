@@ -59,13 +59,12 @@ Number of Map Changes: 677 !
 
 Dans Overpass Turbo, on fait une recherche en utilisant le AND et le OR
 
-```
+```         
 start_date=* AND building:architecture=*  
 start_date=* OR building:architecture=*  
 ```
 
-188 polygones et 472 polygones
-
+188 et 472 polygones pour chacune des recherches
 
 Les problèmes sont listés avant la 2e session de saisie.
 
