@@ -15,9 +15,13 @@ execute:
 
 Plan marche : OSM et la marchabilité
 
-# %archer dans la ville avec OSM
+# Marcher dans la ville avec OSM
 
 ## Contexte : transition énergétique et marche à pied
+
+
+un plan *marchabilité* à Est Ensemble
+
 
 ## Elements de marchabilité dans OSM
 

@@ -1,63 +1,54 @@
-OP,detail,temps,jour
-brise glace,repérer les étudiants ressources sous qgis / affichage des logos qgis helper / insister sur travail de groupe / cercle vertueux / comment gérer l’hétérogénéïté des niveaux ?,30,JOUR1
-définir l’objectif,"saisir les éléments de l’atlas du patrimoine dans OSM pour reproduire un atlas à jour
-Du PLUi à OSM, la patrimoine de Bondy",15,JOUR1
-définir les méthodes,LE,20,JOUR1
-présenter OSM et faire une première saisie pour comprendre tag / value,"Définir OSM, créer son profil",20,JOUR1
-lister les sources pour les tags,"taginfo, les features, osm, overpass",20,JOUR1
-trouver les tags les plus courants et les utiliser,building et road (site carte et mug),10,JOUR1
-utiliser JOSM,ouvrir la couche zones.geojson et utiliser le support / que comprendre des primitives géométriques dans OSM ?,10,JOUR1
-QUIZZ objectifs et définition de base,,10,JOUR1
-définir le GPU,données geoportail de l’urbanisme,10,JOUR1
-CARTE 1 : compétences de base sous QGIS,"lister les compétences dans le framcalc (ajouter couches / fond positron / style catégorisé puis avec des règles) / faire faire au tableau par un étudiant différent chaque manip / comparer avec le support.
-Pour les étudiants qui savent faire, les laisser intervenir.",30,JOUR1
-détailler autre source : le géocodage du tableau de la M3,"on récupère
-1 les adresses 
-2 une nouvelle typologie. 
-La mettre dans la carte et détailler la typo.
-Simplification de la couche, affichage du numéro de rue",30,JOUR1
-distinguer source 1 et 2 sur la carte,"fichier géourbanisme : données attributaires limitées
-Fichier géocodage : pas à la parcelle
-On va utiliser OSM pour fusionner les deux types d’attribut.
-",10,JOUR1
-comment étudier un semis de point ?,intro sur géo spatiale. Plusieurs méthodes. Utilisation de 2 méthodes au choix.,10,JOUR1
-diviser en quartiers : compter les points dans une grille et répartir les carreaux,à partir de la procédure,30,JOUR1
-diviser en quartiers : kmeans contraint ,installer le script pour les autres + procédure,,JOUR1
-partager les zones,récupérer un découpage. Numéroter et partager en fonction place dans la salle DESORMAIS chq étudiant travaille sur sa zone,10,JOUR1
-trouver les anomalies : recherche de méthode,"en général les points correspondent avec un batiment… sauf quelques uns qui sont peut-être des oubliés, ex = 161 rue édouard vaillant. Mettre une colonne fixme=position et mettre la valeur dans le addr:number",30,JOUR1
-détailler les typologies,"ensemble bati remarquable : repérage zonal, gestion patrimoniale globale ¨+ rajouter typologie liste géocodée : immeuble, pavillon, maison de bourg",10,JOUR1
-récupérer les années pour les bâtiments,"fichier cadastre. Couche cadastreannee. Il s’agit de la parcelle. Donc il faut reprendre la parcelle des batiments et faire une jointure pour récupérer l’année. (une intersection suffit, en discuter) puis agrégation pour récupérer le minimum",30,JOUR1
-améliorer les résultats du géocodage,"filtrer sur le result_housenumber et comparer avec l’ensemble de la ban. Également sur le résultat.
-Dans le framacalc nb lg blanches / nb corrigés",30,JOUR1
+OP,detail,temps,jour,support
+brise glace,repérer les étudiants ressources sous qgis / affichage des logos qgis helper / insister sur travail de groupe / cercle vertueux / comment gérer l’hétérogénéïté des niveaux ?,30,JOUR1,
+définir l’objectif,saisir le graphe piéton dans OSM pour permettre à tout piéton de le compléter avec street complete,15,JOUR1,
+définir les méthodes,partage réseau = pl cartes à rendre / collaboratif OSM / utilisation du support / pas de notation,20,JOUR1,
+présenter OSM et faire une première saisie pour comprendre tag / value,"Définir OSM, créer son profil",20,JOUR1,
+lister les sources pour les tags,lien à retrouver (ordinateur boulot)  sinon maj p,20,JOUR1,
+trouver les tags les plus courants et les utiliser,building et road (site carte et mug),10,JOUR1,
+utiliser JOSM,ouvrir la couche iris.geojson et utiliser le support / que comprendre des primitives géométriques dans OSM,10,JOUR1,1
+utiliser JOSM pour tracer des chemins et trouver les raccourcis, cf doc pc boulot ou créer un chemin ouvert et fermé puis Q / maj P / aligner / répartir (maj B),,,2
+QUIZZ objectifs et définition de base,,10,JOUR1,
+Extraire la photo aérienne,pour plus de fluidité on récupère la photo aérienne en l’exportant / on fait la manip pour l’ensemble de la ville puis pour sa zone.,30,JOUR1,
+définir graphe piéton actuel = exemple de Paris,observer ,,,
+imaginer cheminement piéton / voiture,qgis fonction graphe chemin le plus court faire un graphe piéton / graphe voiture,,,
+définir graphe piéton actuel sur Bondy,données overpass turbo suite à extraction osm marchabilité https://osmarche.someware.fr/,,,
+extraire avec overpass,tous les passage piétons / tous les reoutes piétonnes higway = footway and crossing=*,10,JOUR1,
+CARTE 1 : compétences de base sous QGIS (photo aérienne + extraction),"lister les compétences dans le framcalc (ajouter couches / fond positron / style catégorisé puis avec des règles) / faire faire au tableau par un étudiant différent chaque manip / comparer avec le support.
+Pour les étudiants qui savent faire, les laisser intervenir.",30,JOUR1,
+partager les zones,"récupérer un découpage. Numéroter et partager en fonction place dans la salle DESORMAIS chq étudiant travaille sur sa zone
+http://u.osmfr.org/m/1446228/",,,
+"avec la photo aérienne, isoler les rues pour les passages piétons",traitement raster,,JOUR1,
+superposer dans qgis passage piétons OSM / photo,,,JOUR1,
+utiliser le plugin qgis pour créer les rues + passages piétons,,30,JOUR1,
 CARTE 2 : connaître sa donnée sur sa zone,"faire une sémiologie par année  + num maison /
-analyser la carte, la faire et mettre son analyse pour sa zone genre : j’ai tant de bat dont les gros type / année",30,JOUR1
-faire correspondre tag OSM et typolgie,3 possibilités : taginfo / features / ia : 3 groupes et rendu des propositions,30,JOUR2
+analyser la carte, la faire et mettre son analyse pour sa zone genre : j’ai tant de bat dont les gros type / année",30,JOUR1,
+faire correspondre tag OSM et typolgie,3 possibilités : taginfo / features / ia : 3 groupes et rendu des propositions,30,JOUR2,
 ces tags sont-ils utilisés sur Bondy / IdF / F ?,"
-Rqt overpass",15,JOUR2
+Rqt overpass",15,JOUR2,
 préparer les 3 couches à mettre en fond dans JOSM,"3 couches en 4326 et geojson
 - celle des batiments avec la typo + année min / ET / 
 - Le pt adresse avec adresse et typo2 / ET /
--  l’enveloppe convexe
-",60,JOUR2
-utiliser JOSM,"basiques, à noter un blog https://www.alterzorg.fr/josm/accueil exemple le panneau filtre",30,JOUR2
-utiliser JOSM pour les batiments – un peu de dessin,Cheatsheet = pts les plus imortatns,30,JOUR2
-utiliser JOSM sur les zones définies, Test sur une grosse zone / utiliser les enveloppes / mettre les points dans les enveloppes / mettre le raccourci,30,JOUR2
-coloriser sa donnée : fichier de couleur CSS,insérer le fichier dans l’outil palette,30,JOUR2
-trouver la méthode pour importer dans OSM,https://wiki.openstreetmap.org/wiki/Import/Catalogue EX des arbres OSM git@github.com:defuneste/arbresosm.git,20,JOUR2
-définir les pb à l’import en masse,https://forum.openstreetmap.fr/t/geomas-import-de-donnees-en-masse-dans-osm/6469/4,20,JOUR2
-Fusionner les 3 calques,c’est plus facile,10,JOUR2
+-  l’enveloppe convexe",60,JOUR2,
+utiliser JOSM,"basiques, à noter un blog https://www.alterzorg.fr/josm/accueil exemple le panneau filtre",30,JOUR2,
+utiliser JOSM pour les batiments – un peu de dessin,Cheatsheet = pts les plus imortatns,30,JOUR2,
+utiliser JOSM sur les zones définies, Test sur une grosse zone / utiliser les enveloppes / mettre les points dans les enveloppes / mettre le raccourci,30,JOUR2,
+coloriser sa donnée : fichier de couleur CSS,insérer le fichier dans l’outil palette,30,JOUR2,
+trouver la méthode pour importer dans OSM,https://wiki.openstreetmap.org/wiki/Import/Catalogue EX des arbres OSM git@github.com:defuneste/arbresosm.git,20,JOUR2,
+définir les pb à l’import en masse,https://forum.openstreetmap.fr/t/geomas-import-de-donnees-en-masse-dans-osm/6469/4,20,JOUR2,
+Fusionner les 3 calques,c’est plus facile,10,JOUR2,
+,,,,
 tagger dans JOSM,"chaque étudiant sur sa zone : d’abord manuel puis avec raccourci clavier. (au moins 2 contributions par étudiant en manuel)
-Ne pas oublier de compter ses saisies et de les mettre dans le frama calc + difficultés rencontrées",60,JOUR2
-export OSM avec overpass turbo,quel tag mettre ?,20,JOUR3
-Vérification et bilan de la saisie 1,comment vérifier la saisie ? Chaque étudiant compte les contributions dans sa zone et les met dans framacalc (nb fait / nb total),30,JOUR3
-CARTE 3 : verif saisie et atlas,création d’un atlas simple : adresse + affichage des tags,60,JOUR3
-lister les pb et saisie 2,bilan de la saisie : carte sur le nb de contributions ?,20,JOUR3
+Ne pas oublier de compter ses saisies et de les mettre dans le frama calc + difficultés rencontrées",60,JOUR2,
+export OSM avec overpass turbo,quel tag mettre ?,20,JOUR3,
+Vérification et bilan de la saisie 1,comment vérifier la saisie ? Chaque étudiant compte les contributions dans sa zone et les met dans framacalc (nb fait / nb total),30,JOUR3,
+CARTE 3 : verif saisie et atlas,création d’un atlas simple : adresse + affichage des tags,60,JOUR3,
+lister les pb et saisie 2,bilan de la saisie : carte sur le nb de contributions ?,20,JOUR3,
 utiliser autres sources : liste 2011 et citaviz (appli saisie campagne 2023),"comparer les items / utiliser google maps et fonds photos. Rajouter building:material. 
 EX 25 rue suzanne buisson
-EX Allee du moulin",20,JOUR3
+EX Allee du moulin",20,JOUR3,
 détailler les différents matériaux et trouver les équivalents + nelle typologie,"consulter le cahier de recommandations architecturales
-Bondy historique",20,JOUR3
+Bondy historique",20,JOUR3,
 Saisie 2,"la saisie 2 se fait directement de la fiche à JOSM / pas de préparation de fichier ? On ajoute les 2 géocodes et les commentaires soit sur la carte / soit sur les fiches
-Ne pas oublier de noter le nb de saisies",60,JOUR3
-CARTE 4 : verif saisie ,expression régulière building,20,JOUR3
-faire pl cartes sur une page,utiliser les thèmes et les groupes de couche,60,JOUR3
+Ne pas oublier de noter le nb de saisies",60,JOUR3,
+CARTE 4 : verif saisie ,expression régulière building,20,JOUR3,
+faire pl cartes sur une page,utiliser les thèmes et les groupes de couche,60,JOUR3,
