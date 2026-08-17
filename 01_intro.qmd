@@ -13,11 +13,15 @@ execute:
   warning: false
 ---
 
-Patrimoine Bondy : du PLUi à OSM
+Plan marche : OSM et la marchabilité
 
-# Différentes sources autour de la construction du PLUi
+# %archer dans la ville avec OSM
 
-## Présentation du PLUi et tableau récapitulatif des sources pour le cours
+## Contexte : transition énergétique et marche à pied
+
+## Elements de marchabilité dans OSM
+
+SOTM 2022
 
 ![Qu'est ce que le PLUi ?](img/couverture.png){width="250"}
 
