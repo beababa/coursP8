@@ -17,149 +17,20 @@ Plan marche : OSM et la marchabilité
 
 # Marcher dans la ville avec OSM
 
+
+
 ## Contexte : transition énergétique et marche à pied
 
-
-un plan *marchabilité* à Est Ensemble
-
+Après la *renaturation*, un plan *marchabilité* à Est Ensemble
 
 ## Elements de marchabilité dans OSM
 
-SOTM 2022
+vidéos SOTM 2022 2023 2024 2025 2026
 
-![Qu'est ce que le PLUi ?](img/couverture.png){width="250"}
 
-```{r}
-data <- read.csv("data/sources.csv", fileEncoding = "UTF-8")
-knitr::kable(data)
-```
+la carte état des lieux d'[OSM marche](https://osmarche.someware.fr/)
 
-```{r}
-library(sf)
-# extraction des couches nécessaire pour la carte 1
-patrimoine <- st_layers("data/patrimoine.gpkg")
-patrimoine <- patrimoine$name
-couches <- c("cadastre","quartier","m3_prescription_surf","geocodageM3")
-for (c in couches){
- print(c)
- tmp <- st_read("data/patrimoine.gpkg", c)
- assign(c, tmp)
- st_write(tmp,"data/carte1.gpkg", c, delete_layer=T)
-}
-st_layers("data/carte1.gpkg")
-```
-
-## Le plan du patrimoine issu du PLUi
-
-![extraction du plan patrimoine PLUi M3](img/planComplet.png)
-
-Toutes les données cartographiques et réglementaires sont en opendata sur le [GPU](https://www.geoportail-urbanisme.gouv.fr/) !
-
-```{mermaid}
-flowchart LR
-  A[GPU \nprescriptions surf ] --> B(patrimoinePlui)
-  B --> C{Distinguer\ntypes}
-  C --> D[bâtiments  niveau 1 à 3]
-  C --> E[zones]
-```
-
-## Les tableaux
-
-Dans le document réglementaire de type .pdf Le document étant opposable, il a fallu ocr-iser les listes
-
-```{r, warning=FALSE}
-library(pdftools)
-fic <- ("data_raw/5.2 Annexe PatrimoineM3.pdf")
-ficSel <- pdf_subset(fic, "data/pdfSel.pdf", pages = c(seq(89,104)))
-texte <- pdf_text(ficSel)
-texte2 <- strsplit(texte, "\n")
-head(texte2 [[1]],10)
-```
-
-### Liste de la M3
-
-![](img/listeM3.png)
-
-### Liste de la M2
-
-Il s'agit de la liste des adresses de l'atlas du patrimoine.
-
-![](img/listeM2.png)
-
-## Un outil collaboratif de carto web
-
-![](img/appli.png)
-
-## Des fiches scannés et re-scannés
-
-![](img/fiche.png)
-
-3 livrets (respectivement 269, 467 et 242 pages) issus d'un travail effectué en 2011.
-
-L'ocr-isation ne fonctionne pas sur ce support.
-
-Reprise du titre
-
-```{r}
-library(pdftools)
-fic <- "data_raw/5.2 Annexe patrimoine (Bondy-livret1).pdf"
-ficSel <- pdf_subset(fic, 10, "data/fichePatrimoine.pdf")
-texte <- pdf_text(ficSel)
-strsplit(texte, "\n")
-```
-
-Pour le corps du texte, c'est trop incomplet, même en passant par une transformation en image.
-
-```{r}
-library(magick)
-library(tesseract)
-png <- pdf_convert("data/fichePatrimoine.pdf", dpi = 400)
-img <- image_read(png)
-# recherche du titre
-texte <- ocr(img)
-texte2 <- substring(texte, 1, 58)
-head(strsplit(texte, "\n"))
-texte3 <- gsub("\n|:", "_", texte2)
-texte4  <- gsub(" ","_", texte3)
-texte5  <- gsub("___","_", texte4)
-texte5
-```
-
-Une piste intéressante serait de stocker la photo et de la nommer avec l'adresse et le numéro de parcelle.
-
-```{r}
-gererPhoto <- function(img){
-  taille <- image_info(img)[2:3]
-  hauteur <-  taille [2]
-  largeur <- taille [1]
-  largeur < hauteur
-  hauteurPhoto <- hauteur * (100/297 )
-  largeurPhoto <- largeur *  (1000/210)
-  ht <-  round(hauteur * (160/297),0)
-  lg <-  round(largeur * (90/210),0)
-  photo <- image_crop(img, geometry = paste0( largeurPhoto,"x", hauteurPhoto-175,"+",lg+50,'+',ht/2.3+5))
-  photo <- image_trim(photo)
-  image_write(photo, path = paste0("img/", texte5, ".png"), format="png")
-}
-res <- gererPhoto(img)
-image_read(res)
-```
-
-## Le cadastre
-
-Extrait de la table local10 des fichiers MAJIC du cadastre 2024
-
-[MCD données cadastrales](https://docs.3liz.org/QgisCadastrePlugin/database/relationships.html)
-
-Chercher la colonne *jannat* dans l'item *Columns*
-
-Spécificité des données MAJIC : elles sont soumises à un acte d'engagement dans lequel sont définies les finalités de traitement.
-
-![](img/finaliteTraitement.png)
-
-Une partie du cadastre existe en [opendata](https://cadastre.data.gouv.fr/)
-
-# Les outils
+# Les outils pour le cours
 
 ## Le framapad
 
@@ -199,11 +70,11 @@ Il s'agit de mettre en place un *cercle vertueux* dans l'utilisation d'OSM : ext
 
 ## Déroulé
 
-JOUR 1 : Analyser les données à intégrer dans OSM à partir des sources M3
+JOUR 1 : Etablir l'état des lieux, utiliser le plugin JOSM pour tracer quelques routes
 
-JOUR 2 : Faire une première session de saisie dans OSM
+JOUR 2 : Deuxième saisie, utiliser un plugin qgis et un import dans JOSM pour essayer d'aller plus rapidement ?
 
-JOUR 3 : Extraire, faire un atlas sous QGIS bâtiment par bâtiment, utiliser les sources M2 pour faire une deuxième sessions et produire un atlas plus complexe
+JOUR 3 : Faire un itinéraire dans Qgis et perfectionnner le graphe piéton en saisie manuelle dans JOSM
 
 Au niveau du temps, cela donne :
 
@@ -213,6 +84,8 @@ Au niveau du temps, cela donne :
 temps <- read.csv("data/tps.csv")
 sum(temps$temps, na.rm=TRUE)
 ```
+
+6 H par jour => 
 
 40 mn de moins... le temps des pauses... 15 mn toutes les 1 H 30, on sera un peu court.
 
@@ -234,17 +107,15 @@ pas d'évaluation officielle
 
 [Évaluation de satisfaction](https://forms.gle/R5W9DooDPMmRn3kF6)
 
-### Cinq cartes
+### Quatre cartes avec Qgis
 
-CARTE 1 : compétences de base QGIS, affichage de la donnée Patrimoine du PLUi M3
+CARTE 1 : compétences de base QGIS, affichage de la donnée piétonne sur fond positron
 
-CARTE 2 : une anomalie rencontrée sur la donnée
+CARTE 2 : un avant / après sur sa zone
 
-CARTE 3 : connaître sa donnée sur sa zone
+CARTE 3 : le résultat du plugin Qgis
 
-CARTE 4 : vérif de la 1e saisie et atlas (1 carte et un tableau)
-
-CARTE 5 : vérif de la 2e saisie et atlas plus complexe (plusieurs cartes et un tableau)
+CARTE 4 : vue d'ensemble et itinéraire piéton
 
 ### Evaluer la saisie OSM
 
@@ -256,7 +127,7 @@ Pour la saisie OSM, chaque étudiant notera le nombre de saisies faites
 
 Concernant la qualité de la saisie, éviter absolument le [retour de bâton OSM](https://forum.openstreetmap.fr/t/landuse-residential-supprime-a-bondy-et-pavillon-sous-bois/9562/9), notamment pour il y a deux ans.
 
-Donc, impérativement mettre dans le commentaire de changeset : **#Paris8-Bondy2025**
+Donc, impérativement mettre dans le commentaire de changeset : **#Paris8-Bondy2026**
 
 ![](img/tagContrib.png)
 
@@ -264,7 +135,7 @@ Egalement, examiner les contributions dans le détail avec les outils de contrô
 
 ## Le collaboratif
 
-Un mot au sujet du collectif, ce cours est aussi l'occasion de tester une organisation de travail en groupe (c'est la raison d'être d'OSM) donc répartition des étudiants cluster de points.
+Un mot au sujet du collectif, ce cours est aussi l'occasion de tester une organisation de travail en groupe (c'est la raison d'être d'OSM) donc répartition des étudiants sur chaque iris.
 
 ![](img/attribBureau.png)
 
@@ -346,6 +217,8 @@ une référence en livre : [QGIS Map Design - Second Edition](https://locatepres
 
 [overpass](https://overpass-turbo.eu/)
 
+[panoramax](https://panoramax.fr/)
+
 ### JOSM
 
 [base](https://learnosm.org/fr/josm/)
@@ -361,3 +234,16 @@ une référence en livre : [QGIS Map Design - Second Edition](https://locatepres
 qui permet de remonter sur le détail de chaque contribution par changeset.
 
 [osmose](http://osmose.openstreetmap.fr/fr/map/#zoom=16&lat=48.90695&lon=2.49237)
+
+### Sur la marchabilité
+
+[le projet marchabiilté](https://wiki.lafabriquedesmobilites.fr/wiki/Open_Marchabilit%C3%A9) et l'application [OSM marche](https://osmarche.someware.fr/)
+
+[Comment tagger le trottoir (en anglais) ?](https://www.youtube.com/watch?v=A38eNjdfXfI)
+
+[OSM Sidewalkkreator : A QGIS plugin](https://www.researchgate.net/publication/376472381_OSM_Sidewalkreator_A_QGIS_plugin_for_an_automated_drawing_of_sidewalk_networks_for_OpenStreetMap)
+
+
+
+
+

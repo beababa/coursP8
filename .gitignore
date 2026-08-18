@@ -2,3 +2,5 @@
 .Rproj.user
 /data_raw/
 /data/gros/
+
+**/*.quarto_ipynb

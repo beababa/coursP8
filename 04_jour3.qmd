@@ -1,5 +1,5 @@
 ---
-title: "Cercle vertueux"
+title: "3e saisie : Itinéraire et amélioration de la saisie"
 format:
   html:
     toc: true

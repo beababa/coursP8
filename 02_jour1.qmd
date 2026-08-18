@@ -1,5 +1,5 @@
 ---
-title: "Analyser les données en les cartographiant"
+title: "Saisie 1, découverte OSM et JOSM"
 format:
   html:
     toc: true
@@ -15,13 +15,13 @@ execute:
 
 # Objectif
 
-Pour faire un peu d'OSM sur cette première journée, nous ferons une première saisie.
+Aller au coeur de la nébuleuse OSM dés cette première journée, nous ferons une première saisie avec un éditeur simple et complexe à la fois, JOSM.
 
-Mais l'objectif principal de la séquence est d'explorer les données proposées en les cartographiant.
+Deux cartes seront demandées :
 
-Une carte présentant les données à analyser sera donc demandée à la fin de cette journée.
+-   Une carte d'ensemble établissant un diagnostic de la saisie autour de la marchabilité
 
-Les données étant plus nombreuses que les étudiants, chaque étudiant prendra en charge plusieurs adresses.
+-   Une carte avant / après la saisie pour chaque zone étudiée.
 
 # 1e saisie pour comprendre
 
@@ -36,20 +36,32 @@ Attention, clic droit pour se déplacer
 Ouvrir une page vierge sous JOSM et créer un triangle avec 3 noeuds en utilisant les modes :
 
 -   a pour ajout
+
 -   s pour sélection
--   w pour write
+
+-   succession de a et s pour tracer plusieurs chemins
 
 Faire le triangle, ajouter un point, le déformer.
 
 ::: callout-tip
-Exercice : à partir du support
+Exercice : à partir du support *Éditer sous JOSM = attention aux nœuds*
 :::
+
+## Les raccourcis : le nerf de la guerre
+
+Dans JOSM, les raccourcis permettent de travailler très très vite. Ils sont essentiels. Les raccourcis sont listés dans le menu *Outils*.
+
+![](img/raccourcisJOSM.png)
+
+Pour une mise en situation une [vidéo du capitaine Moustache](https://www.youtube.com/watch?v=R4lHkhWHkkE)
+
+Quels raccourcis vont servir le plus ?
 
 ## Tag = clé + valeur
 
 <https://taginfo.openstreetmap.org/>
 
-on utilise directement l'éditeur intégré *id* sur osm.org trouver le tag directement à partir de l'éditeur.
+on utilise directement l'éditeur intégré *id* sur openstreetmap.org trouver le tag directement à partir de l'éditeur.
 
 exercice : faire une saisie sur un point connu
 
@@ -69,7 +81,7 @@ Mais le mieux reste :
 
 ## Quels tags ?
 
-rues et bâtiments, aller dans taginfo. Quelles sont les principales valeurs ?
+rues (en général) et croisements, aller dans taginfo. Quelles sont les principales valeurs ? comment trouver les tags ?
 
 ## Overpass pour extraire
 
@@ -83,11 +95,20 @@ Utiliser l'assistant et extraire rues et bâtiments avec le caractère joker.
 
 -   attention au *et*
 
+
+exercice : combien de chemins et de noeuds pour cette requête ? pourquoi ?
+
+```
+crossing=* or highway=* et crossing=* and highway=*
+```
+
+
+
 ## Autres extractions
 
--   les limites de la commune (admin_level=8) : les enregistrer dans le gpkg patrimoine.gpkg.
+-   les iris ne sont pas dans OSM, mais les limites de la commune si (admin_level=8) : les enregistrer
 
-# CARTE 1 : les bâtiments et les zones du patrimoine d'après les données PLUi M3
+# CARTE 1 : Etat des lieux routes piétonnes sur l'ensemble de la ville
 
 ::: callout-caution
 Avant de faire la carte, quizz !
@@ -107,12 +128,6 @@ Avant de faire la carte, quizz !
 
 -   style en polygone inversé et remplissage dégradé suivant la forme pour les limites de la commune
 
-## Autres données : la commune
-
--   Tag = admin_level=8 in Bondy dans overpass-turbo
-
--   couche du cadastre
-
 ## Mise en page
 
 classique : titre / échelle / crédits
@@ -121,135 +136,91 @@ classique : titre / échelle / crédits
 S'aider de la procédure du support *Faire une 1e carte QGIS*
 :::
 
-# Utiliser une deuxième source
-
-## Pourquoi une deuxième source ?
-
-### Un nombre d'éléments différent
-
-Voir [tableau des sources](01_intro.html#pr%C3%A9sentation-du-plui-et-tableau-r%C3%A9capitulatif-des-sources-pour-le-cours), différence en nombre d'éléments.
-
-```{r}
-library(sf)
-# lecture de la couche filtrée (issus de m3_prescription_surf)
-carte <- st_read("data/patrimoine.gpkg", "patrimoineFiltre2154")
-# nb d'éléments
-elementsCarte <- length(carte$LIBELLE)
-# lecture de la couche issue du tableau de la M3
-geocodage <- st_read("data/patrimoine.gpkg", "geocodageM3")
-# nb d'éléments
-elementsGeocodage <- length(geocodage$typo)
-# différence
-elementsCarte - elementsGeocodage
-```
-
-### Une typologie complémentaire
-
-De plus, éléments complémentaires dans le .pdf
-
--   une nouvelle typologie
-
-```{r}
-table(geocodage$typo)
-# plus riche que
-table(carte$LIBELLE)
-```
-
 ## Superposition des deux informations sur une seule carte
 
-Résultat à obtenir : utiliser un symbole svg pour les points et un remplissage pour les polygones.
+Résultat à obtenir :
+
+-   deux couleurs différentes pour les routes (piéton / voiture)
+
+-   étiquettes de rue
+
+-   facultatif = passages piétons (symbole par rapport à l'angle de la rue)
 
 ![](img/geocodageETcarto.png)
 
 ::: callout-tip
-S'aider de la procédure du support *Organiser son projet QGIS* et *Etiquettes : deux petits trucs*
+S'aider de la procédure du support *Organiser son projet QGIS*, *Etiquettes : deux petits trucs*, *orienter son passage piéton*
 :::
 
 A rajouter dans les petits trucs sur les étiquettes : l'échelle de visibilité
 
 ![](img/echelleVisibilite.png)
 
-## Quels problèmes possibles ?
+## Quels difficultés rencontrées ?
 
 ```{r}
 matrice <- read.csv("data/avantageInconvenient.csv")
 knitr::kable(matrice)
 ```
 
-La solution : intégrer point et polygone dans le polygone du bâtiment dans OSM.
-
-# Une troisième source
-
-Une donnée essentielle pour le patrimoine est la date de construction du bâtiment. cette information est présente dans le cadastre.
+# Récupération de sa zone
 
 ```{r}
-cadastreAn <- read.csv("data_raw/cadastreAnParcelle.csv")
-# 50 M
-cadastre <- st_read("data/patrimoine.gpkg", "cadastre")
-# 8 000
-jointure <- merge(cadastre, cadastreAn, by.x = "geo_parcelle", by.y = "parcelle" )
-# 50 M
-st_write(jointure, "data/patrimoine.gpkg", "cadastreAn", delete_layer = T)
-length(unique(jointure$geo_parcelle))
-# 5803 il y a des parcelles qui ont plusieurs dates, pourquoi ?
+library(sf)
+library(mapsf)
+# lecture de la couche filtrée (issus de m3_prescription_surf)
+iris <- st_read("data/iris.geojson")
+# nb d'éléments
+nbIris <- length(iris$nom_iris)
+mf_map(iris, type = "typo", var = "nom_iris", leg_pos = NA, border = NA, pal = cm.colors(22))
+mf_label(iris, "nom_iris", overlap = F, col = "cadetblue4")
+mf_layout(paste0(nbIris, " iris sur Bondy"), credits = "data.gouv\nAoût 2026")
 ```
 
-La jointure est faite, reste l'intersection pour récupérer les données de la parcelle dans le bâtiment.
+Chaque étudiant clique sur une carte umap [iris](https://umap.openstreetmap.fr/fr/map/iris_1446228#15/48.906973/2.487459) mise en place pour le cours.
 
-::: callout-tip
-Voir le support, procédure *Géotraitements QGIS : de la parcelle au bâtiment*
-:::
+![](img/umap.png)
 
-# Vérification des données
+puis calque (1) et tableau(2)
 
-A vue d'oeil, point géocodé et polygone correspondent, mais, pour traiter finement la donnée, on va se la répartir.
+Attention à bien visualiser sa zone avec d'ouvrir le tableau !
 
-## Répartir le travail
+# 1e saisie
 
-C'est l'occasion de faire de la géomatique avancée. Malheureusement, ce n'est pas l'objet du cours, donc, on passe vite sur le sujet.
+On prépare la carte avant / après donc il faut sauvegarder les données mais pour sa zone uniquement
 
-::: callout-tip
-Le support présente les deux méthodes dans la procédure *Répartir le travail : quelle méthode utiliser ?*
-:::
+## Carte avant
 
-A noter, l'utilisation d'un script python trouvé sur internet : [constrainted_kmeans.py](https://spatialthoughts.com/2021/01/31/equal-sized-kmeans-qgis/)
+Une fois les zones partagés, sous Qgis, chaque étudiant fait une *intersection* sur sa zone, menu vecteur / géotraitement / intersection.
 
-## Quelles vérifications ? (CARTE 2)
+## Utilisation du [plugin sidewalk](https://community.openstreetmap.org/t/josm-sidewalk-plugin-tutorial/134088)
 
-C'est l'étape dans laquelle, chaque étudiant ayant une petite zone, le collaboratif prend tout son sens. Encore faut-il définir la méthode...
+### Paramétrage
 
-Une fois les zones partagés, chaque étudiant fait une *intersection* sur sa zone, menu vecteur / géotraitement / intersection.
+installation du plugin (F12 puis *greffon*)
 
-### Etude de cas particuliers
+installation du raccourci MAJ + s
 
-#### Lister les anomalies
+### Utilisation
 
-Il vérifie que :
+#### La base
 
--   pour chaque bâtiment, il existe un point.
+MAJ + s = observer le pointeur ![](img/curseur.png)
 
--   la typologie est cohérente : à quoi correspondent les bâtiments de niveau 3 en typologie ?
+on trace, puis s pour sortir du mode ajout et passer en mode sélection
 
-Toutes les anomalies sont notées dans le framacalc dans les 2 colonnes prévues (correspondance bat-pt et cohérence typologie)
+aa pour sortir du mode sidewalk (regarder le pointeur)
 
-#### Cartographie et base adresse (CARTE 2)
+![](img/pluginSideWalk.png)
 
-Pour l'une des anomalies, l'étudiant en documente une sur une carte (CARTE 2) et rectifie au moins un géocodage sur la [base adresse](https://adresse.data.gouv.fr/decouvrir-la-BAN).
+Que fait le plugin ?
 
-### Exemples
+#### Les croisements
 
-::: callout-tip
-Le support, procédures *Relation entre liste géocodage et plan opposable* et *Vérifier le géocodage* donne une idée de ce qui est attendu
-:::
+![](img/sidewalkCroisement.png)
 
-## Vue d'ensemble par secteur : carte analysant la donnée sur le secteur (CARTE 3)
+# CARTE 2 : Compléments pour la carte avant / après
 
-Faire une carte zoomée sur sa zone (CARTE 3), mettant en valeur
+Avec un commentaire décrivant la donnée de type "J'ai tant de chemins piétons et tant de croisements etc..."
 
--   les années par bâtiment (style gradué)
-
-![](img/styleGradue.png)
-
--   les points adresses
-
-Avec un commentaire décrivant la donnée de type "J'ai tant de bâtiments dont des gros de type / des petits, avec tant d'anomalies etc..."
+utilisation des thèmes

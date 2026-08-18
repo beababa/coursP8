@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<josm-session version="0.1">
+    <viewport>
+        <center lat="48.910443059049854" lon="2.476278898411083"/>
+        <scale meter-per-pixel="0.645499"/>
+    </viewport>
+    <projection>
+        <projection-choice>
+            <id>core:mercator</id>
+            <parameters/>
+        </projection-choice>
+        <code>EPSG:3857</code>
+    </projection>
+    <layers active="1">
+        <layer index="1" name="higwayORcrossing.geojson" type="osm-data" version="0.1" visible="true">
+            <file>file:/C:/Users/bmaranget/coursP8/data/higwayORcrossing.geojson</file>
+        </layer>
+        <layer index="2" name="irisSimplifie.geojson" type="osm-data" version="0.1" visible="true">
+            <file>file:/C:/Users/bmaranget/coursP8/data/irisSimplifie.geojson</file>
+        </layer>
+    </layers>
+</josm-session>
