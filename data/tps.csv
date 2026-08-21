@@ -1,47 +1,37 @@
 "OP","detail","temps","jour","support"
-"brise glace","comment gérer l’hétérogénéïté des niveaux ? : repérer les étudiants ressources sous qgis / affichage des logos qgis helper / insister sur travail de groupe / cercle vertueux / ",30,"JOUR1","site"
-"définir l’objectif","saisir le graphe piéton dans OSM pour permettre à tout piéton de le compléter avec street complete",15,"JOUR1",
-"définir les méthodes","partage réseau = pl cartes à rendre / collaboratif OSM / utilisation du support / pas de notation",20,"JOUR1",
-"présenter OSM et faire une première saisie pour comprendre tag / value","Définir OSM, créer son profil",20,"JOUR1",
-"lister les sources pour les tags","lien à retrouver (ordinateur boulot)  sinon maj p",20,"JOUR1",
-"trouver les tags les plus courants et les utiliser","building et road (site carte et mug)",10,"JOUR1",
-"utiliser JOSM","ouvrir la couche iris.geojson et utiliser le support / que comprendre des primitives géométriques dans OSM",10,"JOUR1",1
-"utiliser JOSM pour tracer des chemins et trouver les raccourcis"," cf doc pc boulot ou créer un chemin ouvert et fermé puis Q / maj P / aligner / répartir (maj B)",,,2
+"définir l’objectif","saisir le graphe piéton dans OSM pour permettre à tout piéton de le compléter avec street complete / EE / SOTM expliquer",5,"JOUR1","partie contexte / passer rapidement"
+"définir ce que change une vision piétonne","en carto impact sur parcelle / ilot / quartier / infra communal plus qu’avec structuration voie / on travaille à petite échelle (attention au terme)",,,"image structuration quartier / structuration ville"
+"brise glace","comment gérer l’hétérogénéïté des niveaux ? : repérer les étudiants ressources sous qgis / affichage des logos qgis helper / insister sur travail de groupe / cercle vertueux / ",30,"JOUR1","site intro / partie 1"
+"définir les méthodes","partage réseau = pl cartes à rendre / collaboratif OSM / utilisation du support / pas de notation",20,"JOUR1","site intro / outils pour le cours"
+"présenter OSM et faire une première saisie pour comprendre tag / value","Définir OSM, et créer son profil / mettre la connexion remote dans JOSM",20,"JOUR1","site intro / outils pour le cours"
+"utiliser JOSM","ouvrir la couche iris.geojson et utiliser le support / que comprendre des primitives géométriques dans OSM",10,,
+"utiliser JOSM pour tracer des chemins et trouver les raccourcis"," cf doc pc boulot ou créer un chemin ouvert et fermé puis Q / maj P / aligner / répartir (maj B)",,,
+"lister les sources pour les tags","tag info et features",20,"JOUR1",1
+"trouver les tags les plus courants et les utiliser","rues et croisements",10,,2
+"utiliser overpass turbo","répondre aux questions et faire les deux exercices",,"JOUR1",
+"extraire avec overpass","tous les passage piétons / tous les reoutes piétonnes higway = footway or crossing=*",10,"JOUR1",
 "QUIZZ objectifs et définition de base",,10,"JOUR1",
-"Extraire la photo aérienne","pour plus de fluidité on récupère la photo aérienne en l’exportant / on fait la manip pour l’ensemble de la ville puis pour sa zone.",30,"JOUR1",
-"définir graphe piéton actuel = exemple de Paris","observer ",,,
-"imaginer cheminement piéton / voiture","qgis fonction graphe chemin le plus court faire un graphe piéton / graphe voiture",,,
-"définir graphe piéton actuel sur Bondy","données overpass turbo suite à extraction osm marchabilité https://osmarche.someware.fr/",,,
-"extraire avec overpass","tous les passage piétons / tous les reoutes piétonnes higway = footway and crossing=*",10,"JOUR1",
-"CARTE 1 : compétences de base sous QGIS (photo aérienne + extraction)","lister les compétences dans le framcalc (ajouter couches / fond positron / style catégorisé puis avec des règles) / faire faire au tableau par un étudiant différent chaque manip / comparer avec le support.
+"définir graphe piéton actuel sur Bondy","données overpass turbo suite à extraction osm marchabilité https://osmarche.someware.fr/, cette carte sert de modèle pour la carte 1",,,
+"CARTE 1 : compétences de base sous QGIS","lister les compétences dans le framcalc (base / avancé) / faire faire au tableau par un étudiant différent chaque manip / comparer avec le support.
 Pour les étudiants qui savent faire, les laisser intervenir.",30,"JOUR1",
 "partager les zones","récupérer un découpage. Numéroter et partager en fonction place dans la salle DESORMAIS chq étudiant travaille sur sa zone
 http://u.osmfr.org/m/1446228/",,,
-"avec la photo aérienne, isoler les rues pour les passages piétons","traitement raster",,"JOUR1",
-"superposer dans qgis passage piétons OSM / photo",,,"JOUR1",
-"utiliser le plugin qgis pour créer les rues + passages piétons",,30,"JOUR1",
-"CARTE 2 : connaître sa donnée sur sa zone","faire une sémiologie par année  + num maison /
-analyser la carte, la faire et mettre son analyse pour sa zone genre : j’ai tant de bat dont les gros type / année",30,"JOUR1",
-"faire correspondre tag OSM et typolgie","3 possibilités : taginfo / features / ia : 3 groupes et rendu des propositions",30,"JOUR2",
-"ces tags sont-ils utilisés sur Bondy / IdF / F ?","
-Rqt overpass",15,"JOUR2",
-"préparer les 3 couches à mettre en fond dans JOSM","3 couches en 4326 et geojson
-- celle des batiments avec la typo + année min / ET / 
-- Le pt adresse avec adresse et typo2 / ET /
--  l’enveloppe convexe",60,"JOUR2",
-"utiliser JOSM","basiques, à noter un blog https://www.alterzorg.fr/josm/accueil exemple le panneau filtre",30,"JOUR2",
-"utiliser JOSM pour les batiments – un peu de dessin","Cheatsheet = pts les plus imortatns",30,"JOUR2",
-"utiliser JOSM sur les zones définies"," Test sur une grosse zone / utiliser les enveloppes / mettre les points dans les enveloppes / mettre le raccourci",30,"JOUR2",
-"coloriser sa donnée : fichier de couleur CSS","insérer le fichier dans l’outil palette",30,"JOUR2",
-"trouver la méthode pour importer dans OSM","https://wiki.openstreetmap.org/wiki/Import/Catalogue EX des arbres OSM git@github.com:defuneste/arbresosm.git",20,"JOUR2",
-"définir les pb à l’import en masse","https://forum.openstreetmap.fr/t/geomas-import-de-donnees-en-masse-dans-osm/6469/4",20,"JOUR2",
-"Fusionner les 3 calques","c’est plus facile",10,"JOUR2",
-,,,,
-"tagger dans JOSM","chaque étudiant sur sa zone : d’abord manuel puis avec raccourci clavier. (au moins 2 contributions par étudiant en manuel)
-Ne pas oublier de compter ses saisies et de les mettre dans le frama calc + difficultés rencontrées",60,"JOUR2",
-"export OSM avec overpass turbo","quel tag mettre ?",20,"JOUR3",
-"Vérification et bilan de la saisie 1","comment vérifier la saisie ? Chaque étudiant compte les contributions dans sa zone et les met dans framacalc (nb fait / nb total)",30,"JOUR3",
-"CARTE 3 : verif saisie et atlas","création d’un atlas simple : adresse + affichage des tags",60,"JOUR3",
+"couper sa zone en sous secteur (par zone de vie)","cela permettra d’utiliser plusierus techniques : au moins 2 par Iris pour chq plugin / lister les étapes / s’aider du cadastre et de l’imagerie aérienne / voire du lidar
+https://cartes.gouv.fr/telechargement/IGNF_NUAGES-DE-POINTS-LIDAR-HD",,,
+"ouvrir sa zone dans JOSM","suivre la procédure",,,
+"installer le plugin sidewalk",,,,
+"basiques, à noter un blog https://www.alterzorg.fr/josm/accueil exemple le panneau filtre",,,,
+"utiliser pour les routes",,,,
+"utiliser pour les croisements",,,,
+"renvoyer sa donnée",,,,
+"récupérer sa donnée",,,,
+"CARTE 2 : connaître sa donnée sur sa zone","double carte avant après",30,"JOUR1",
+"installer le plugin sidewalkreator sous Qgis",,30,"JOUR2",
+"le jouer sur sa zone avec les paramétrages les plus proches du par défaut","regarder la copie d’écran : quels choix ? Pourquoi ?",15,"JOUR2",
+"jouer sur les paramètres : élargir la zone","tampon attention enregistrement en geojson / type polygon uniquement (morceaux multiples => morceaux uniques) / tabulation pour activer le champs epsg 4326 PUIS couper avt l’import",60,"JOUR2",
+"jouer sur les paramètres : analyse réseau routier ville","redéfinir valeur primary / secondary etc. avec taginfo voir les valeurs utilisées, sur sa portion identifier si la ville de Bondy respecte le réseau structuré, changement dans JOSM pour sa zone",30,"JOUR2",
+"CARTE 3 : structuration du réseau","carte avt / après sur sa zone avec justification du changement
+Lister les étapes pour faire la carte et les sf QGIS",30,"JOUR2",
 "lister les pb et saisie 2","bilan de la saisie : carte sur le nb de contributions ?",20,"JOUR3",
 "utiliser autres sources : liste 2011 et citaviz (appli saisie campagne 2023)","comparer les items / utiliser google maps et fonds photos. Rajouter building:material. 
 EX 25 rue suzanne buisson
@@ -52,3 +42,21 @@ Bondy historique",20,"JOUR3",
 Ne pas oublier de noter le nb de saisies",60,"JOUR3",
 "CARTE 4 : verif saisie ","expression régulière building",20,"JOUR3",
 "faire pl cartes sur une page","utiliser les thèmes et les groupes de couche",60,"JOUR3",
+,,,,
+,,,,
+,,,,
+"imaginer cheminement piéton / voiture","qgis fonction graphe chemin le plus court faire un graphe piéton / graphe voiture",,,
+,,,,
+,,,,
+"Extraire la photo aérienne","pour plus de fluidité on récupère la photo aérienne en l’exportant / on fait la manip pour l’ensemble de la ville puis pour sa zone.",30,"JOUR3",
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+,,,,
+"avec la photo aérienne, isoler les rues pour les passages piétons","traitement raster",,"JOUR1",
+"superposer dans qgis passage piétons OSM / photo",,,"JOUR1",
+"utiliser le plugin qgis pour créer les rues + passages piétons",,30,"JOUR1",

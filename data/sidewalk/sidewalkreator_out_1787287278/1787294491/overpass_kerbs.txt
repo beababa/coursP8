@@ -1,0 +1,11 @@
+
+    (  
+        node["footway"="crossing"](48.907135206567,2.47234862897136,48.91358488563266,2.48409049505812);
+        
+        
+    );
+    /*added by auto repair*/
+    (._;>;);
+    /*end of auto repair*/
+    out;
+    

@@ -16,7 +16,7 @@ execute:
 
 # Objectif
 
-La première saisie va permettre la création d'un atlas simple sous QGIS à partir de l'export d'overpass turbo, qui permettra de faire une 2e saisie et un atlas plus complexe.
+Afin de voir ce qui manque dans notre graphie, on utilise la fonction itinéraire de Qgis
 
 # Atlas
 

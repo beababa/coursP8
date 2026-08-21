@@ -57,56 +57,51 @@ Pour une mise en situation une [vidéo du capitaine Moustache](https://www.youtu
 
 Quels raccourcis vont servir le plus ?
 
-## Tag = clé + valeur
+## Valeurs attributaires dans OSM : Tag = clé + valeur
 
 <https://taginfo.openstreetmap.org/>
 
-on utilise directement l'éditeur intégré *id* sur openstreetmap.org trouver le tag directement à partir de l'éditeur.
+### Editeur id ou le tag du bourgeois gentilhomme
 
+On utilise directement l'éditeur intégré *id* sur openstreetmap.org trouver le tag directement à partir de l'éditeur.
+
+::: callout-tip
 exercice : faire une saisie sur un point connu
+:::
 
-## Outils de qualité
+### Quels tags ?
 
-[utilisation du changeset](https://resultmaps.neis-one.org/osm-changesets?comment=paris8#4/32.58/-6.77)
+rues (en général) et croisements, découvrir taginfo.
 
-[carte des utilisateurs](https://resultmaps.neis-one.org/oooc?zoom=15&lat=48.90494&lon=2.493&layers=BTFFFFFT&contributors=TTTTFF)
+::: callout-tip
+exercice : Quelles sont les principales valeurs ? comment trouver les tags pour rues et croisements ?
+:::
 
-également dans [osmose](http://osmose.openstreetmap.fr/fr/map/#zoom=16&lat=48.90695&lon=2.49237)
+# Extraction OSM = overpass turbo
 
-Mais le mieux reste :
+Il existe beaucoup d'outils, y compris intégrés dans Qgis. Mais ils sont tous basés sur le même outil : *overpass turbo*
 
-[historique dans openstreetmap.org](https://www.openstreetmap.org/history#map=18/48.916214/2.486000)
+## Premère approche
 
-# Extractions diverses OSM
+Utiliser l'assistant et extraire rues et croisements avec le caractère joker.
 
-## Quels tags ?
-
-rues (en général) et croisements, aller dans taginfo. Quelles sont les principales valeurs ? comment trouver les tags ?
-
-## Overpass pour extraire
-
-Il existe beaucoup d'outils, y compris intégrés dans Qgis.
-
-Utiliser l'assistant et extraire rues et bâtiments avec le caractère joker.
-
--   comment limiter l'extraction à Bondy
+-   comment limiter l'extraction à Bondy ?
 
 -   quel est ce caractère ?
 
 -   attention au *et*
 
+::: callout-tip
+exercice : Combien de chemins et de noeuds pour cette requête ? pourquoi ?
 
-exercice : combien de chemins et de noeuds pour cette requête ? pourquoi ?
-
-```
+```         
 crossing=* or highway=* et crossing=* and highway=*
 ```
+:::
 
-
-
-## Autres extractions
-
--   les iris ne sont pas dans OSM, mais les limites de la commune si (admin_level=8) : les enregistrer
+::: callout-tip
+exercice : Les iris ne sont pas dans OSM, mais les limites de la commune si (admin_level=8) : les enregistrer
+:::
 
 # CARTE 1 : Etat des lieux routes piétonnes sur l'ensemble de la ville
 
@@ -114,56 +109,74 @@ crossing=* or highway=* et crossing=* and highway=*
 Avant de faire la carte, quizz !
 :::
 
-## Savoir-faire QGIS
+## L'objectif
+
+Avant de commencer à saisir dans OSM, on fait une carte de l'état de la saisie sur le modèle obtenu dans l'appli [OSM marche](https://osmarche.someware.fr/).
+
+![](img/OSMMarche.png) Pour la complexité des tags, regarder dans couche
+
+Par exemple, chemins piétons et trottoirs dessinés
+
+![](img/osmMarche2.png)
+
+## Savoir-faire QGIS de base
 
 -   mettre un favori dans l'explorateur sur les répertoires Téléchargement et data (vider le répertoire Téléchargement au passage)
 
 -   intégrer une couche dans Qgis
 
--   utiliser un ensemble de règles pour le style
-
 -   fond positron avec le plugin QMS
 
+-   utiliser une symbologie par catégorie
+
 -   mise en page qgis (3 boutons)
-
--   style en polygone inversé et remplissage dégradé suivant la forme pour les limites de la commune
-
-## Mise en page
-
-classique : titre / échelle / crédits
 
 ::: callout-tip
 S'aider de la procédure du support *Faire une 1e carte QGIS*
 :::
 
-## Superposition des deux informations sur une seule carte
+## Savoir-faire QGIS plus complexes
 
-Résultat à obtenir :
+-   organiser son projet
 
--   deux couleurs différentes pour les routes (piéton / voiture)
+-   style en polygone inversé et remplissage dégradé suivant la forme pour les limites de la commune
+
+-   règle de style : le style catégorisé doit être affiné
 
 -   étiquettes de rue
 
 -   facultatif = passages piétons (symbole par rapport à l'angle de la rue)
 
-![](img/geocodageETcarto.png)
-
 ::: callout-tip
-S'aider de la procédure du support *Organiser son projet QGIS*, *Etiquettes : deux petits trucs*, *orienter son passage piéton*
+S'aider de la procédure du support *Organiser son projet QGIS*, *style en polygone inversé*, *règle de style : voies piétonnes et les autres*, *Etiquettes : petits trucs*, *orienter son passage piéton*
 :::
 
 A rajouter dans les petits trucs sur les étiquettes : l'échelle de visibilité
 
 ![](img/echelleVisibilite.png)
 
-## Quels difficultés rencontrées ?
+## Fait / pas fait ?
+
+Reprendre le tableau oui / non et rajouter fait / pas fait
+
+couleur en fonction
+
+`r colorbox ("oui et fait", "green")` 
+`r colorbox ("oui et non fait", "red")` 
+`r colorbox ("non et fait", "orange")`
+`r colorbox ("non et non fait", "green")`
+
 
 ```{r}
-matrice <- read.csv("data/avantageInconvenient.csv")
+matrice <- read.csv("data/faitPasFait.csv")
 knitr::kable(matrice)
 ```
 
-# Récupération de sa zone
+
+# Première saisie
+
+
+## Récupération de sa zone : une carte umap
 
 ```{r}
 library(sf)
@@ -183,44 +196,44 @@ Chaque étudiant clique sur une carte umap [iris](https://umap.openstreetmap.fr/
 
 puis calque (1) et tableau(2)
 
-Attention à bien visualiser sa zone avec d'ouvrir le tableau !
+Attention à bien visualiser sa zone avant d'ouvrir le tableau !
 
-# 1e saisie
+## Ouvrir sa zone spécifique sous JOSM
+
+exporter en JOSM ses Iris
+
+::: callout-tip
+voir procédure *porter sa zone dans JOSM et paramétrer sa vue pour saisir*
+:::
+
+## 1e saisie
 
 On prépare la carte avant / après donc il faut sauvegarder les données mais pour sa zone uniquement
 
-## Carte avant
+### Carte avant
 
 Une fois les zones partagés, sous Qgis, chaque étudiant fait une *intersection* sur sa zone, menu vecteur / géotraitement / intersection.
 
-## Utilisation du [plugin sidewalk](https://community.openstreetmap.org/t/josm-sidewalk-plugin-tutorial/134088)
+### Utilisation du [plugin sidewalk](https://community.openstreetmap.org/t/josm-sidewalk-plugin-tutorial/134088)
 
-### Paramétrage
+::: callout-tip
+voir procédure *Saisie JOSM avec le plugin Sidewalk*
+:::
 
-installation du plugin (F12 puis *greffon*)
 
-installation du raccourci MAJ + s
 
-### Utilisation
+# CARTE 2 : résultat de la saisie
 
-#### La base
-
-MAJ + s = observer le pointeur ![](img/curseur.png)
-
-on trace, puis s pour sortir du mode ajout et passer en mode sélection
-
-aa pour sortir du mode sidewalk (regarder le pointeur)
-
-![](img/pluginSideWalk.png)
-
-Que fait le plugin ?
-
-#### Les croisements
-
-![](img/sidewalkCroisement.png)
-
-# CARTE 2 : Compléments pour la carte avant / après
+Compléments pour la carte avant / après
 
 Avec un commentaire décrivant la donnée de type "J'ai tant de chemins piétons et tant de croisements etc..."
 
-utilisation des thèmes
+
+::: callout-tip
+compétences Qgis pour le avant / après : utilisation des thèmes voir support *carte 2*
+:::
+
+
+![](img/carte1.png)
+
+Au vu du résultat, quelles autres compétences ?

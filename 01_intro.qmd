@@ -13,22 +13,52 @@ execute:
   warning: false
 ---
 
-Plan marche : OSM et la marchabilité
-
-# Marcher dans la ville avec OSM
+Objectif du cours : saisir le graphe piéton dans OSM pour permettre à tout piéton de le compléter avec street complete
 
 
+# Brise-glace : présentation en binôme
 
-## Contexte : transition énergétique et marche à pied
+- passé / présent / futur / attentes par rapport OSM / niveau QGIS fichier framapad, celui qui parle, celui qui écrit
 
-Après la *renaturation*, un plan *marchabilité* à Est Ensemble
+- Qui connait Qgis ? quel niveau ? (remplir le framapad) =\> définir des étudiants ressource
 
-## Elements de marchabilité dans OSM
+sur le [framacalc](https://lite.framacalc.org/9ilj-coursp8)
 
-vidéos SOTM 2022 2023 2024 2025 2026
+Ce fichier va permettre de s'attribuer les zones de saisie et toutes les opérations collaboratives du cours.
+
+```{r, eval=FALSE}
+data <- read.csv("data/etudiant.csv")
+table(data$passé.lieu)
+par(mar = c(12,2,2,2))
+barplot(table(data$passé.lieu), las = 2)
+barplot(table(data$passé.thème), las = 2)
+barplot(table(data$présent), las = 2)
+barplot(table(data$futur), las = 2)
+```
+
+::: callout-important
+quelle diffusion des données / du cours ?
+:::
+
+# Elements de contexte
+
+## Transition énergétique et marche à pied
+
+Après la *renaturation*, un plan *marchabilité* à Est Ensemble, l'occasion de voir beaucoup de cartes et d'avoir un AMO plein d'idées
 
 
-la carte état des lieux d'[OSM marche](https://osmarche.someware.fr/)
+![](img/planMarcheEE.png)
+
+## Marchabilité dans OSM
+
+Les vidéos des présentations des SOTM-FR (State Of the Map) permettent d'avoir un état des lieux
+
+vidéos SOTM [2022](https://peertube.openstreetmap.fr/w/scHwjR1TtSAdfpKcrcHY7P) => *Les données d'OSM sur le mode piéton et la marchabilité* consultant Montpellier / entreprise Someware
+[2023](https://peertube.openstreetmap.fr/w/v9AwT6kUxn5ax5W9zzaq3V) => *Retour sur l'expérimentation de collecte de données accessibilité du CD94* CD94 loi LOM mise en accessibilité de la voirie
+[2024](https://peertube.openstreetmap.fr/w/hD9m929abQqKctgw3nnjV8) => *Mapper des trottoirs pour l’accessibilité* Lons Le Saunier / Jungle Bus (outil sidewalker)
+[2025](https://peertube.openstreetmap.fr/w/hghC3My6UQ3GGK68gq57Xy) => CD94  Carto'Cité PC Ingénierie et 2 cabinets de géomètre *Du scanner 3D à OSM : le Val de Marne expérimente la production en masse de données d'accessibilité* automatiser le dessin des cheminements piétons
+
+Bref, la carte diagnostic d'[OSM marche](https://osmarche.someware.fr/)
 
 # Les outils pour le cours
 
@@ -48,7 +78,10 @@ Questions :
 
 -   Que faut-il retenir des [10 commandements](https://www.openstreetmap.fr/les-10-cosmandements/) ?
 
-Créer son profil sur [openstreetmap.org](https://www.openstreetmap.org), attention au pseudo.
+
+### Créer son profil
+
+[openstreetmap.org](https://www.openstreetmap.org), attention au pseudo.
 
 ## JOSM
 
@@ -58,9 +91,36 @@ Paramétrage F12 pour lien remote
 
 -   contrôle à distance
 
-## Qgis
 
-Qui connait Qgis ? quel niveau ? (remplir le framapad) =\> définir des étudiants ressource
+## Autres outils
+
+### Support et procédures
+
+Le support, fait sous R Quarto, sert uniquement de "fil rouge".
+
+Les procédures employées sous QGIS / JOSM sont résumées sur un support papier distribué.
+
+### Projet git
+
+En utilisant l'icone à droite du cours, copie du projet GIT en *début* et en *fin* de session (via l'option *download zip*)
+
+### Les données
+
+Directement sur le git ou sur le partage réseau au fur et à mesure.
+
+Partage réseau, au niveau de la zone de recherche, taper
+
+```         
+\\C210-P
+```
+
+Sélectionner ensuite le répertoire *partage géographie* et *OSM*, clic droit *Ajouter un raccourci rapide*
+
+### Dépôt des cartes
+
+Le dépôt des cartes se fera sur le partage réseau.
+
+Déposer sa carte dans le répertoire *img/cartes* avec comme syntaxe : *prenom.png*
 
 # Méthode et déroulé
 
@@ -70,11 +130,11 @@ Il s'agit de mettre en place un *cercle vertueux* dans l'utilisation d'OSM : ext
 
 ## Déroulé
 
-JOUR 1 : Etablir l'état des lieux, utiliser le plugin JOSM pour tracer quelques routes
+JOUR 1 : Etablir l'état des lieux des voies piétonnes, utiliser le plugin JOSM pour tracer quelques routes
 
-JOUR 2 : Deuxième saisie, utiliser un plugin qgis et un import dans JOSM pour essayer d'aller plus rapidement ?
+JOUR 2 : Deuxième saisie, utiliser un plugin QGIS et un import dans JOSM pour essayer d'aller plus rapidement. Est-ce possible ?
 
-JOUR 3 : Faire un itinéraire dans Qgis et perfectionnner le graphe piéton en saisie manuelle dans JOSM
+JOUR 3 : Faire un itinéraire dans Qgis et perfectionner le graphe piéton en saisie manuelle dans JOSM
 
 Au niveau du temps, cela donne :
 
@@ -85,7 +145,7 @@ temps <- read.csv("data/tps.csv")
 sum(temps$temps, na.rm=TRUE)
 ```
 
-6 H par jour => 
+6 H par jour =\>
 
 40 mn de moins... le temps des pauses... 15 mn toutes les 1 H 30, on sera un peu court.
 
@@ -139,57 +199,9 @@ Un mot au sujet du collectif, ce cours est aussi l'occasion de tester une organi
 
 ![](img/attribBureau.png)
 
-## Précisions techniques
 
-### Support et procédures
 
-Le support, fait sous R Quarto, sert uniquement de "fil rouge".
 
-Les procédures employées sous QGIS / JOSM sont résumées sur un support papier distribué.
-
-### Projet git
-
-En utilisant l'icone à droite du cours, copie du projet GIT en *début* et en *fin* de session (via l'option *download zip*)
-
-### Les données
-
-Directement sur le git ou sur le partage réseau au fur et à mesure.
-
-Partage réseau, au niveau de la zone de recherche, taper
-
-```         
-\\C210-P
-```
-
-Sélectionner ensuite le répertoire *partage géographie* et *OSM*, clic droit *Ajouter un raccourci rapide*
-
-### Dépôt des cartes
-
-Le dépôt des cartes se fera sur le partage réseau.
-
-Déposer sa carte dans le répertoire *img/cartes* avec comme syntaxe : *prenom.png*
-
-# Présentation en binôme
-
-passé / présent / futur / attentes par rapport OSM / niveau QGIS fichier framapad, celui qui parle, celui qui écrit
-
-sur le [framacalc](https://lite.framacalc.org/9ilj-coursp8)
-
-Ce fichier va permettre de s'attribuer les zones de saisie et toutes les opérations collaboratives du cours.
-
-```{r, eval=FALSE}
-data <- read.csv("data/etudiant.csv")
-table(data$passé.lieu)
-par(mar = c(12,2,2,2))
-barplot(table(data$passé.lieu), las = 2)
-barplot(table(data$passé.thème), las = 2)
-barplot(table(data$présent), las = 2)
-barplot(table(data$futur), las = 2)
-```
-
-::: callout-important
-quelle diffusion des données / du cours ?
-:::
 
 # Sitographie
 
@@ -235,6 +247,19 @@ qui permet de remonter sur le détail de chaque contribution par changeset.
 
 [osmose](http://osmose.openstreetmap.fr/fr/map/#zoom=16&lat=48.90695&lon=2.49237)
 
+
+# Outils de qualité
+
+[utilisation du changeset](https://resultmaps.neis-one.org/osm-changesets?comment=paris8#4/32.58/-6.77)
+
+[carte des utilisateurs](https://resultmaps.neis-one.org/oooc?zoom=15&lat=48.90494&lon=2.493&layers=BTFFFFFT&contributors=TTTTFF)
+
+également dans [osmose](http://osmose.openstreetmap.fr/fr/map/#zoom=16&lat=48.90695&lon=2.49237)
+
+Mais le mieux reste :
+
+[historique dans openstreetmap.org](https://www.openstreetmap.org/history#map=18/48.916214/2.486000)
+
 ### Sur la marchabilité
 
 [le projet marchabiilté](https://wiki.lafabriquedesmobilites.fr/wiki/Open_Marchabilit%C3%A9) et l'application [OSM marche](https://osmarche.someware.fr/)
@@ -242,8 +267,3 @@ qui permet de remonter sur le détail de chaque contribution par changeset.
 [Comment tagger le trottoir (en anglais) ?](https://www.youtube.com/watch?v=A38eNjdfXfI)
 
 [OSM Sidewalkkreator : A QGIS plugin](https://www.researchgate.net/publication/376472381_OSM_Sidewalkreator_A_QGIS_plugin_for_an_automated_drawing_of_sidewalk_networks_for_OpenStreetMap)
-
-
-
-
-
