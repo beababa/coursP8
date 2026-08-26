@@ -15,12 +15,11 @@ execute:
 
 Objectif du cours : saisir le graphe piéton dans OSM pour permettre à tout piéton de le compléter avec street complete
 
-
 # Brise-glace : présentation en binôme
 
-- passé / présent / futur / attentes par rapport OSM / niveau QGIS fichier framapad, celui qui parle, celui qui écrit
+-   passé / présent / futur / attentes par rapport OSM / niveau QGIS fichier framapad, celui qui parle, celui qui écrit
 
-- Qui connait Qgis ? quel niveau ? (remplir le framapad) =\> définir des étudiants ressource
+-   Qui connait Qgis ? quel niveau ? (remplir le framapad) =\> définir des étudiants ressource
 
 sur le [framacalc](https://lite.framacalc.org/9ilj-coursp8)
 
@@ -46,17 +45,13 @@ quelle diffusion des données / du cours ?
 
 Après la *renaturation*, un plan *marchabilité* à Est Ensemble, l'occasion de voir beaucoup de cartes et d'avoir un AMO plein d'idées
 
-
 ![](img/planMarcheEE.png)
 
 ## Marchabilité dans OSM
 
 Les vidéos des présentations des SOTM-FR (State Of the Map) permettent d'avoir un état des lieux
 
-vidéos SOTM [2022](https://peertube.openstreetmap.fr/w/scHwjR1TtSAdfpKcrcHY7P) => *Les données d'OSM sur le mode piéton et la marchabilité* consultant Montpellier / entreprise Someware
-[2023](https://peertube.openstreetmap.fr/w/v9AwT6kUxn5ax5W9zzaq3V) => *Retour sur l'expérimentation de collecte de données accessibilité du CD94* CD94 loi LOM mise en accessibilité de la voirie
-[2024](https://peertube.openstreetmap.fr/w/hD9m929abQqKctgw3nnjV8) => *Mapper des trottoirs pour l’accessibilité* Lons Le Saunier / Jungle Bus (outil sidewalker)
-[2025](https://peertube.openstreetmap.fr/w/hghC3My6UQ3GGK68gq57Xy) => CD94  Carto'Cité PC Ingénierie et 2 cabinets de géomètre *Du scanner 3D à OSM : le Val de Marne expérimente la production en masse de données d'accessibilité* automatiser le dessin des cheminements piétons
+vidéos SOTM [2022](https://peertube.openstreetmap.fr/w/scHwjR1TtSAdfpKcrcHY7P) =\> *Les données d'OSM sur le mode piéton et la marchabilité* consultant Montpellier / entreprise Someware [2023](https://peertube.openstreetmap.fr/w/v9AwT6kUxn5ax5W9zzaq3V) =\> *Retour sur l'expérimentation de collecte de données accessibilité du CD94* CD94 loi LOM mise en accessibilité de la voirie [2024](https://peertube.openstreetmap.fr/w/hD9m929abQqKctgw3nnjV8) =\> *Mapper des trottoirs pour l’accessibilité* Lons Le Saunier / Jungle Bus (outil sidewalker) [2025](https://peertube.openstreetmap.fr/w/hghC3My6UQ3GGK68gq57Xy) =\> CD94 Carto'Cité PC Ingénierie et 2 cabinets de géomètre *Du scanner 3D à OSM : le Val de Marne expérimente la production en masse de données d'accessibilité* automatiser le dessin des cheminements piétons
 
 Bref, la carte diagnostic d'[OSM marche](https://osmarche.someware.fr/)
 
@@ -78,7 +73,6 @@ Questions :
 
 -   Que faut-il retenir des [10 commandements](https://www.openstreetmap.fr/les-10-cosmandements/) ?
 
-
 ### Créer son profil
 
 [openstreetmap.org](https://www.openstreetmap.org), attention au pseudo.
@@ -90,7 +84,6 @@ Paramétrage F12 pour lien remote
 -   serveur OSM
 
 -   contrôle à distance
-
 
 ## Autres outils
 
@@ -199,10 +192,6 @@ Un mot au sujet du collectif, ce cours est aussi l'occasion de tester une organi
 
 ![](img/attribBureau.png)
 
-
-
-
-
 # Sitographie
 
 Quelques liens utiles tout au long du cours
@@ -247,7 +236,6 @@ qui permet de remonter sur le détail de chaque contribution par changeset.
 
 [osmose](http://osmose.openstreetmap.fr/fr/map/#zoom=16&lat=48.90695&lon=2.49237)
 
-
 # Outils de qualité
 
 [utilisation du changeset](https://resultmaps.neis-one.org/osm-changesets?comment=paris8#4/32.58/-6.77)
@@ -264,6 +252,6 @@ Mais le mieux reste :
 
 [le projet marchabiilté](https://wiki.lafabriquedesmobilites.fr/wiki/Open_Marchabilit%C3%A9) et l'application [OSM marche](https://osmarche.someware.fr/)
 
-[Comment tagger le trottoir (en anglais) ?](https://www.youtube.com/watch?v=A38eNjdfXfI)
+[Comment tagger le trottoir (en anglais) ?](https://www.youtube.com/watch?v=A38eNjdfXfI) saisie manuelle dans l'éditeur id et utilisation de la photo
 
 [OSM Sidewalkkreator : A QGIS plugin](https://www.researchgate.net/publication/376472381_OSM_Sidewalkreator_A_QGIS_plugin_for_an_automated_drawing_of_sidewalk_networks_for_OpenStreetMap)

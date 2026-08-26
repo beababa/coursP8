@@ -161,20 +161,14 @@ Reprendre le tableau oui / non et rajouter fait / pas fait
 
 couleur en fonction
 
-`r colorbox ("oui et fait", "green")` 
-`r colorbox ("oui et non fait", "red")` 
-`r colorbox ("non et fait", "orange")`
-`r colorbox ("non et non fait", "green")`
-
+`r colorbox ("oui et fait", "green")` `r colorbox ("oui et non fait", "red")` `r colorbox ("non et fait", "orange")` `r colorbox ("non et non fait", "green")`
 
 ```{r}
 matrice <- read.csv("data/faitPasFait.csv")
 knitr::kable(matrice)
 ```
 
-
 # Première saisie
-
 
 ## Récupération de sa zone : une carte umap
 
@@ -220,19 +214,15 @@ Une fois les zones partagés, sous Qgis, chaque étudiant fait une *intersection
 voir procédure *Saisie JOSM avec le plugin Sidewalk*
 :::
 
-
-
 # CARTE 2 : résultat de la saisie
 
 Compléments pour la carte avant / après
 
 Avec un commentaire décrivant la donnée de type "J'ai tant de chemins piétons et tant de croisements etc..."
 
-
 ::: callout-tip
 compétences Qgis pour le avant / après : utilisation des thèmes voir support *carte 2*
 :::
-
 
 ![](img/carte1.png)
 

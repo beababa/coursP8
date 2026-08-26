@@ -27,7 +27,6 @@ Observer, pour son secteur, si la voirie OSM respecte bien le plan de circulatio
 
 Rectifier le cas échéant dans JOSM.
 
-
 # Présentation du plugin QGIS
 
 [SOTM mondial 2022](https://www.youtube.com/watch?v=B--1ge42UHY)
@@ -54,10 +53,26 @@ Il vaut mieux examiner le cas particulier.
 
 ![](img/sidewalkNO.png)
 
-
-
-
 # Quelques tests
+
+
+Afin de comprendre les options proposées dans le plugin, on fait quelques tests avant / après.
+
+Le cours permet de voir ce qui se passe si on joue :
+
+- un buffer
+
+
+- la largeur des rues
+
+
+- l'indicateur fourni sur le rapport périmètre / aire
+
+
+- la distance aux bâtiments
+
+
+Enfin, observer les zones sûres et d'exclusion permet également de comprendre le taggage existant.
 
 ## Carte 3 : Un test sur un zone et son buffer
 
@@ -95,7 +110,7 @@ Quelles modification possibles ici ?
 
 Rajouter cette voie change la perspective du plugin. Si on la rajoute en service, il faudra alors modifier la largeur dans le plugin.
 
-#### Indicateurs : aire et périmètre
+### Indicateurs : aire et périmètre (carte 4)
 
 Ce rapport aire / périmètre permet de repérer des zones problématiques :
 
@@ -115,8 +130,13 @@ En fait, il convient vraiment de se poser la question des aménagements piétons
 
 Nous verrons la deuxième zone plus bas.
 
-
 CARTE 4 : intégrer un histogramme dans une mise en page Qgis
+
+![](img/carteHisto.png)
+
+::: callout-tip
+compétences Qgis : - style gradué sur l'indicateur aire / périmètre avec utilisation de l'histogramme dans la boite de dialogue Voir aussi - outils de traitement = *histogramme* (enregistrer en .png pour le remettre dans la mise en page) ![](img/pngHisto.png)
+:::
 
 ### Bâtimens ou pas ?
 
@@ -126,22 +146,25 @@ A noter que cette zone était déjà repérable grâce au ratio aire / périmèt
 
 ![](img/pluginpbRatio2.png)
 
-Il manque une voie de service, on la rajoute puis on relance avec les paramètres par défaut et une voie de service avec une largeur de 2.
+#### Rajouter des voies
 
-#### Supprimer de bâtiments
 
-#### Jouer sur distance bâtiments - voie
+En fait, l'image met en relief l'absence de voie.
+
+Il manque ici une voie de service, on la rajoute puis on relance avec les paramètres par défaut et une voie de service avec une largeur de 2.
+
+
+#### Jouer sur distance bâtiments - voie (carte 5)
 
 ![](img/batMauvais.png)
 
 Pour obtenir, un non chevauchement sur les bâtiments on met au minimum :
 
--   la distance aux bâtimetns et la largeur
+-   la distance aux bâtiments et la largeur
 
 -   la distance à ajouter à la largeur
 
 ![](img/batBon,.png)
-
 
 CARTE 5 : carte avant après avoir joué sur les paramètres
 
@@ -154,3 +177,21 @@ Il s'agit de prévoir l'intégration dans OSM.
 Ici, comme la rue est taggée sidewalk=both, le plugin ne rajoute pas de voie piétonne. pour le Plugin, c'est une zone *sûre*. A l'utilisateur de supprimer le tag dans OSM et de rejouer le plugin pour permettre que le trottoir soit retracé *correctement*.
 
 Il existe égalemetn les zones d'exclusions : si dans la surface, il y a plus de 50 % de footway existante, le plugin ne propose aucun trottoir. Le travail a déjà été fait, le plugin ne propose aucune modification.
+
+
+# Import dans JOSM
+
+
+
+## Exercice d'entraînement
+
+
+Avant de faire une nouvelle saisie, farie l'[exercice sur la création de rond-point](https://josm.openstreetmap.de/wiki/Fr%3AHowTo) afin d'aborder la question des raccourcis.
+
+
+
+
+On ouvre le geojson résultant du plugin directement dans JOSM, on affiche l'imagerie, et on observe.
+
+![](img/importAttention.png)
+
