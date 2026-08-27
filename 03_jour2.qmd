@@ -55,26 +55,23 @@ Il vaut mieux examiner le cas particulier.
 
 # Quelques tests
 
-
 Afin de comprendre les options proposées dans le plugin, on fait quelques tests avant / après.
 
 Le cours permet de voir ce qui se passe si on joue :
 
-- un buffer
+-   un buffer
 
+-   la largeur des rues
 
-- la largeur des rues
+-   l'indicateur fourni sur le rapport périmètre / aire
 
-
-- l'indicateur fourni sur le rapport périmètre / aire
-
-
-- la distance aux bâtiments
-
+-   la distance aux bâtiments
 
 Enfin, observer les zones sûres et d'exclusion permet également de comprendre le taggage existant.
 
 ## Carte 3 : Un test sur un zone et son buffer
+
+Faire le buffer (cf procédure 8 *Géotraitements QGIS*)
 
 Lister les sf Qgis permettant d'aller rapidement
 
@@ -135,7 +132,9 @@ CARTE 4 : intégrer un histogramme dans une mise en page Qgis
 ![](img/carteHisto.png)
 
 ::: callout-tip
-compétences Qgis : - style gradué sur l'indicateur aire / périmètre avec utilisation de l'histogramme dans la boite de dialogue Voir aussi - outils de traitement = *histogramme* (enregistrer en .png pour le remettre dans la mise en page) ![](img/pngHisto.png)
+compétences Qgis : - style gradué sur l'indicateur aire / périmètre avec utilisation de l'histogramme dans la boite de dialogue Voir aussi - outils de traitement = *histogramme* (enregistrer en .png pour le remettre dans la mise en page)
+![](img/pngHisto.png)
+![](img/qgisHisto.png)
 :::
 
 ### Bâtimens ou pas ?
@@ -148,11 +147,9 @@ A noter que cette zone était déjà repérable grâce au ratio aire / périmèt
 
 #### Rajouter des voies
 
-
 En fait, l'image met en relief l'absence de voie.
 
 Il manque ici une voie de service, on la rajoute puis on relance avec les paramètres par défaut et une voie de service avec une largeur de 2.
-
 
 #### Jouer sur distance bâtiments - voie (carte 5)
 
@@ -178,20 +175,42 @@ Ici, comme la rue est taggée sidewalk=both, le plugin ne rajoute pas de voie pi
 
 Il existe égalemetn les zones d'exclusions : si dans la surface, il y a plus de 50 % de footway existante, le plugin ne propose aucun trottoir. Le travail a déjà été fait, le plugin ne propose aucune modification.
 
-
 # Import dans JOSM
+
+
+![](img/arboSWK.png)
+
 
 
 
 ## Exercice d'entraînement
 
-
 Avant de faire une nouvelle saisie, farie l'[exercice sur la création de rond-point](https://josm.openstreetmap.de/wiki/Fr%3AHowTo) afin d'aborder la question des raccourcis.
-
-
-
 
 On ouvre le geojson résultant du plugin directement dans JOSM, on affiche l'imagerie, et on observe.
 
 ![](img/importAttention.png)
 
+
+
+
+
+## Envoi direct
+
+![](img/envoiDissuade.png)
+
+
+
+## Ajustement à la photo
+
+Quels sont les raccourcis qui vont être nécessaire ?
+
+
+## Utilisation du validateur
+
+
+![](img/validateur.png)
+
+## Commentaire
+
+![](img/swkcomment.png)

@@ -1,67 +1,64 @@
 "OP","detail","temps","jour","support"
 "définir l’objectif","saisir le graphe piéton dans OSM pour permettre à tout piéton de le compléter avec street complete / EE / SOTM expliquer",5,"JOUR1","partie contexte / passer rapidement"
-"définir ce que change une vision piétonne","en carto impact sur parcelle / ilot / quartier / infra communal plus qu’avec structuration voie / on travaille à petite échelle (attention au terme)",,,"image structuration quartier / structuration ville"
+"définir ce que change une vision piétonne","en carto impact sur parcelle / ilot / quartier / infra communal plus qu’avec structuration voie / on travaille à grande échelle (attention au terme)",,"JOUR1","image structuration quartier / structuration ville"
 "brise glace","comment gérer l’hétérogénéïté des niveaux ? : repérer les étudiants ressources sous qgis / affichage des logos qgis helper / insister sur travail de groupe / cercle vertueux / ",30,"JOUR1","site intro / partie 1"
 "définir les méthodes","partage réseau = pl cartes à rendre / collaboratif OSM / utilisation du support / pas de notation",20,"JOUR1","site intro / outils pour le cours"
 "présenter OSM et faire une première saisie pour comprendre tag / value","Définir OSM, et créer son profil / mettre la connexion remote dans JOSM",20,"JOUR1","site intro / outils pour le cours"
-"utiliser JOSM","ouvrir la couche iris.geojson et utiliser le support / que comprendre des primitives géométriques dans OSM",10,,
-"utiliser JOSM : croisement de chemin","sur espace vide tracer 2 droites = sont elles connectées ? Non, il faut tracer un point et la connexion se fait automatiquement, vérifier le nb de nœud. Vue fil de fer.",,,
-"utiliser JOSM pour tracer des chemins et trouver les raccourcis"," cf doc pc boulot ou créer un chemin ouvert et fermé puis Q / maj P / aligner / répartir (maj B)",,,
-"lister les sources pour les tags","tag info et features",20,"JOUR1",1
-"trouver les tags les plus courants et les utiliser","rues et croisements",10,,2
-"utiliser overpass turbo","répondre aux questions et faire les deux exercices",,"JOUR1",
+"utiliser JOSM : les modes","a s ECHAP (w)",2,"JOUR1","vidéopro"
+"utiliser JOSM : croisement de chemin","sur espace vide tracer 2 droites  = sont elles connectées ? Non, il faut tracer un point et la connexion se fait automatiquement, vérifier le nb de nœud. Vue fil de fer.",5,"JOUR1","vidéopro"
+"utiliser JOSM pour tracer des chemins et trouver les raccourcis"," cf doc pc boulot ou créer un chemin ouvert et fermé puis Q / maj P / aligner / répartir (maj B)",5,"JOUR1","PROC 1"
+"utiliser JOSM","ouvrir la couche iris.geojson et utiliser le support / que comprendre des primitives géométriques dans OSM",10,"JOUR1","PROC 2"
+"lister les sources pour les tags","tag info et features",10,"JOUR1","vidéopro"
+"trouver les tags les plus courants et les utiliser","rues et croisements",10,"JOUR1","vidéopro"
+"utiliser overpass turbo","répondre aux questions et faire les deux exercices",20,"JOUR1","site  extraction  OSM"
 "extraire avec overpass","tous les passage piétons / tous les reoutes piétonnes higway = footway or crossing=*",10,"JOUR1",
+"extraire avec overpass limite commune","dans répertoire data",5,"JOUR1",
 "QUIZZ objectifs et définition de base",,10,"JOUR1",
-"définir graphe piéton actuel sur Bondy","données overpass turbo suite à extraction osm marchabilité https://osmarche.someware.fr/, cette carte sert de modèle pour la carte 1",,,
+"définir graphe piéton actuel sur Bondy","données overpass turbo suite à extraction osm marchabilité https://osmarche.someware.fr/, cette carte sert de modèle pour la carte 1",,"JOUR1",
 "CARTE 1 : compétences de base sous QGIS","lister les compétences dans le framcalc (base / avancé) / faire faire au tableau par un étudiant différent chaque manip / comparer avec le support.
-Pour les étudiants qui savent faire, les laisser intervenir.",30,"JOUR1",
+Pour les étudiants qui savent faire, les laisser intervenir.",30,"JOUR1","PRO 4  5 6"
 "partager les zones","récupérer un découpage. Numéroter et partager en fonction place dans la salle DESORMAIS chq étudiant travaille sur sa zone
-http://u.osmfr.org/m/1446228/",,,
+http://u.osmfr.org/m/1446228/",15,"JOUR1","carte umap"
 "couper sa zone en sous secteur (par zone de vie)","cela permettra d’utiliser plusierus techniques : au moins 2 par Iris pour chq plugin / lister les étapes / s’aider du cadastre et de l’imagerie aérienne / voire du lidar
-https://cartes.gouv.fr/telechargement/IGNF_NUAGES-DE-POINTS-LIDAR-HD",,,
-"ouvrir sa zone dans JOSM","suivre la procédure",,,
-"installer le plugin sidewalk","F12 greffon",,,
-"basiques, à noter un blog https://www.alterzorg.fr/josm/accueil exemple le panneau filtre","voir aussi filtre dans le wiki JOSM",,,
-"utiliser pour les routes",,,,
-"utiliser pour les croisements",,,,
+https://cartes.gouv.fr/telechargement/IGNF_NUAGES-DE-POINTS-LIDAR-HD",30,"JOUR1","PROC 8"
+"ouvrir sa zone dans JOSM","suivre la procédure rn plus couleur et calques + filtre",10,"JOUR1","PROC 7"
+"installer le plugin sidewalk","F12 greffon",10,"JOUR1",
+"utiliser pour les routes","Tracer 2 trottoirs le long d’une route droite MAJ S + a + ESC",10,"JOUR1",
+"utiliser pour les croisements","Prendre n’importe quel carrefour, tracer puis les routes qui se croisent puis les passages piétons",15,"JOUR1","PROC 9"
 "utiliser le validateur","https://josm.eu/wiki/Fr%3AHelp/Dialog/Validator
-Utiliser notamment le réparer",,,
-"renvoyer sa donnée","attention tag",,,
-"récupérer sa donnée","ovepass turbo quels tags ?",,,
+Utiliser notamment le réparer",10,"JOUR1",
+"renvoyer sa donnée","attention tag",5,"JOUR1",
+"récupérer sa donnée","ovepass turbo quels tags ? ",5,"JOUR1",
 "CARTE 2 : connaître sa donnée sur sa zone","double carte avant après",30,"JOUR1",
-"contrôle de qualité","chiffrer en linéaire combien de m entre 1 et 2 / chiffrer en tps / est-ce satisfaisant ?",,,
+"contrôle de qualité","chiffrer en linéaire combien de m entre 1 et 2 / chiffrer en tps / est-ce satisfaisant ?",10,"JOUR2",
 "rappeler les tags : analyse du réseau routier ville","redéfinir valeur primary / secondary etc. avec taginfo voir les valeurs utilisées, sur sa portion identifier si la ville de Bondy respecte le réseau structuré, changement dans JOSM pour sa zone / interventions orales",30,"JOUR2",
-"présenter le plugin QGIS sidewalKreator","l’objectif : gagner en tps, serait-ce possible en qualité ?",,,
+"présenter le plugin QGIS sidewalKreator","l’objectif : gagner en tps, serait-ce possible en qualité ?",10,,
 "installer le plugin sidewalkreator sous Qgis","mise à jour Qgis ?",30,"JOUR2",
-"attention  pb overpass turbo","pb déjà rencontré le plugin fait la relance automatique en cas d’échec … rallongement du temps",,,
-"attention collaboratif","avec l’exemple tag sidewalk",,,
+"attention  pb overpass turbo","pb déjà rencontré le plugin fait la relance automatique en cas d’échec … rallongement du temps",5,,
+"attention collaboratif","avec l’exemple tag sidewalk",5,,
 "le jouer sur sa zone avec les paramétrages les plus proches du par défaut","regarder la copie d’écran : quels choix ? Pourquoi ?",15,"JOUR2",
 "jouer sur les paramètres : élargir la zone","tampon attention enregistrement en geojson / type polygon uniquement (morceaux multiples => morceaux uniques) / tabulation pour activer le champs epsg 4326 PUIS couper avt l’import",60,"JOUR2",
-"CARTE 3 : avant après buffer","dupliquer la mise en page et changer juste les titres et les thèmes",,,
-"paramètres : jouer sur la largeur rue","Avt / après : attention ? Les étudiants ont-ils à modifier la largeur ?",,,
-"paramètres : indicateur aire et périmètre","les étudiants remplissent description d’un cas où aire et périmètre posent pb",,,
-"CARTE 4 : intégrer un hist dans une mise en page","outil histogramme intégré dans QGIS. Exporter comme .png mais pb couleur",,,
-"paramètres : essayer d’avoir rues et bat","Avt / après",,,
-"CARTE 5 : avant après modif","faire un test significatif",,,
-"paramétres : zones d’exclusion / zone sûres","revoir l’avertissement sur la modif de la donnée",,,
-"paramètres : ne pas couper les portions trottoirs",,,,
-"import dans OSM","les outils de JOSM permettent de créer les liens entre les croisements et les rues (?)",,,
-"contrôle de qualité","combien de sidewalk rajouté ? (ouvrir overpass turbo juste avt et attendre après)",,,
-"créer un rond point","https://josm.openstreetmap.de/wiki/Fr%3AHowTo permet de se rappeler les raccourcis",,,
-,,,,
-,,,,
-"trouver la différence de taggage entre les 2 outils","au niveau des croisements. Quel est le plus logique ?",,,
-"Positionnement rectifier avec l’image aérienne","positionnement…",,,
-"thématique","les passages piétons sont des espaces verts ou des rond points",,,
+"CARTE 3 : avant après buffer","dupliquer la mise en page et changer juste les titres et les thèmes",60,"JOUR2",
+"paramètres : jouer sur la largeur rue","Avt / après : attention ? Les étudiants ont-ils à modifier la largeur ?",30,"JOUR2",
+"paramètres : indicateur aire et périmètre","les étudiants remplissent description d’un cas où aire et périmètre posent pb",30,"JOUR2",
+"CARTE 4 : intégrer un hist dans une mise en page","outil histogramme intégré dans QGIS. Exporter comme .png mais pb couleur",60,"JOUR2",
+"CARTE 5 : avant après modif","faire un test significatif",60,"JOUR2",
+"paramétres : zones d’exclusion / zone sûres",,10,"JOUR2",
+"import dans OSM","revoir l’avertissement sur la modif de la donnée",10,"JOUR2",
+"import dans OSM","les outils de JOSM permettent de créer les liens entre les croisements et les rues (?)",10,"JOUR2",
+"contrôle de qualité","combien de sidewalk rajouté ? (ouvrir overpass turbo juste avt et attendre après)",10,"JOUR2",
+"présenter partie 3","rectification manuelle mais avec idée graphe",5,"JOUR3",
+"créer un rond point","https://josm.openstreetmap.de/wiki/Fr%3AHowTo permet de se rappeler les raccourcis",10,"JOUR3",
+"trouver la différence de taggage entre les 2 outils","au niveau des croisements. Quel est le plus logique ?",10,"JOUR3",
+"Positionnement rectifier avec l’image aérienne","positionnement…",10,"JOUR3",
+"thématique","les passages piétons sont des espaces verts ou des rond points",10,"JOUR3",
 "
-Thématique : distinguer zebra et pas","uncontrolled (pas de feu) et unmarked (créé par l’appli)",,,
-,,,,
-"utiliser le validateur","décôcher la couche pour mieux voir les pb / essayer de les régler",,,
-"présenter partie 3","rectification manuelle mais avec idée graphe",,,
-"imaginer cheminement piéton / voiture","qgis fonction graphe chemin le plus court faire un graphe piéton / graphe voiture avec extrait higway=* puis filtre",,,
-"faire des vraies barrières","https://forum.openstreetmap.fr/t/comprendre-la-cle-access-et-ses-valeurs-private-surtout/10804",,,
-"corriger l’itinéraire","il manque les crossings / chemin barré = faut-il mettre sur la route et sur les chemins ? Refaire les sorties complétement ?????",,,
-"refaire pour valider","utiliser graphooper par rapport aux barrières",,,
-"Carte 5 avant après","sur une problématique graphe piéton",,,
-"faire un itinéraire sur l’ensemble de la ville ","openbar",,,
-"et après…","Panoramax / street complete",,,
+Thématique : distinguer zebra et pas","uncontrolled (pas de feu) et unmarked (créé par l’appli)",10,"JOUR3",
+"utiliser le validateur","décôcher la couche pour mieux voir les pb / essayer de les régler",10,"JOUR3",
+"imaginer cheminement piéton / voiture","qgis fonction graphe chemin le plus court faire un graphe piéton / graphe voiture avec extrait higway=* puis filtre",10,"JOUR3",
+"faire des vraies barrières","https://forum.openstreetmap.fr/t/comprendre-la-cle-access-et-ses-valeurs-private-surtout/10804",10,"JOUR3",
+"corriger l’itinéraire","il manque les crossings / chemin barré = faut-il mettre sur la route et sur les chemins ? Refaire les sorties complétement ?????",10,"JOUR3",
+"refaire pour valider","utiliser graphooper par rapport aux barrières",10,"JOUR3",
+"Carte 5 avant après","sur une problématique graphe piéton",30,"JOUR3",
+"faire un itinéraire sur l’ensemble de la ville ","openbar",30,"JOUR3",
+"et après…","Panoramax / street complete",10,"JOUR3",

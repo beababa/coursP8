@@ -16,14 +16,97 @@ execute:
 
 # Objectif
 
-
 Afin de voir ce qui manque dans notre graphie, on utilise la fonction itinéraire de Qgis
 
 
+Dans le projet Qgis, on en est à l'étape *saisie 3*
+
+
+![](img/exploCouches.png)
 
 # Un premier round d'observation
 
+Il convient de revenir sur ce que le plugin a permis de faire en faisant une requête overpass
 
-Il convient de revenir sur ce que le plugin a permis de faire
+![](img/rqtOSMgraphe.png)
+ou
 
+
+![](img/rqtOverpass.png)
+
+
+## Dessiner les jardins
+
+
+![](img/dessinerJardin.png)
+
+
+
+![](img/dessinerJardinSuivantBat.png)
+
+Pour le raccourci voir la procédure 1 (voir également l'outil dessiner à l'échelle)
+
+## Changer des tags
+
+![](img/changerTag.png)
+
+
+## Compléter le tag crossing
+
+
+![](img/raffinementTagCrossing.png)
+
+## 2 manières de figurer un passage piéton
+
+
+![](img/crossingV1.png)
+
+
+
+![](img/crossingV1b.png)
+
+## 2 manières de représenter une porte empêchant le passage
+
+
+![](img/crossingV1.png)
+
+
+![](img/crossingV2.png)
+
+
+
+# Utilisation de l'outil plus court chemin dans QGIS
+
+
+Après avoir fait une premier itinéraire, on modifie notamment les barrier=gate et on regarde si cela génère autre chose
+
+
+![](img/graphePieton.png)
+
+Encore une carte avant et après :
+
+![](img/carte5.png)
+
+Quelle est la manière de faire ?
+
+
+Autre outil à utiliser : grass hooper
+
+
+
+
+Voir dans le forum, la discussion https://forum.openstreetmap.fr/t/comprendre-la-cle-access-et-ses-valeurs-private-surtout/10804
+
+
+# En guise de conclusion, ce qu'il reste à faire
+
+
+2 novueaux outils
+
+## Panoramax
+
+## Street Complete
+
+
+# 
 

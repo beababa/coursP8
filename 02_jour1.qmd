@@ -15,7 +15,7 @@ execute:
 
 # Objectif
 
-Aller au coeur de la nébuleuse OSM dés cette première journée, nous ferons une première saisie avec un éditeur simple et complexe à la fois, JOSM.
+Aller au coeur de la nébuleuse OSM dés cette première journée, nous ferons une première saisie avec un éditeur simple et complexe à la fois, JOSM (toute une partie de la journée est consacré à sa découverte)
 
 Deux cartes seront demandées :
 
@@ -23,13 +23,14 @@ Deux cartes seront demandées :
 
 -   Une carte avant / après la saisie pour chaque zone étudiée.
 
-# 1e saisie pour comprendre
+# A la découverte de JOSM
 
 ## Interface JOSM
 
 [interface (panneaux)](https://manual.inasafe.org/_images/4_017.png)
 
 Attention, clic droit pour se déplacer
+
 
 ## Primitives géométriques : noeud et chemin
 
@@ -44,7 +45,7 @@ Ouvrir une page vierge sous JOSM et créer un triangle avec 3 noeuds en utilisan
 Faire le triangle, ajouter un point, le déformer.
 
 ::: callout-tip
-Exercice : à partir du support *Éditer sous JOSM = attention aux nœuds*
+Exercice : à partir du support procédure 2 *Éditer sous JOSM = attention aux nœuds*
 :::
 
 ## Les raccourcis : le nerf de la guerre
@@ -99,6 +100,10 @@ crossing=* or highway=* et crossing=* and highway=*
 ```
 :::
 
+
+## Les limites de la commune
+
+
 ::: callout-tip
 exercice : Les iris ne sont pas dans OSM, mais les limites de la commune si (admin_level=8) : les enregistrer
 :::
@@ -121,7 +126,7 @@ Par exemple, chemins piétons et trottoirs dessinés
 
 ## Savoir-faire QGIS de base
 
--   mettre un favori dans l'explorateur sur les répertoires Téléchargement et data (vider le répertoire Téléchargement au passage)
+-   mettre un favori dans l'explorateur sur les répertoires Téléchargement et data (vider le répertoire Téléchargement au passage), voir support procédure 
 
 -   intégrer une couche dans Qgis
 
@@ -132,28 +137,20 @@ Par exemple, chemins piétons et trottoirs dessinés
 -   mise en page qgis (3 boutons)
 
 ::: callout-tip
-S'aider de la procédure du support *Faire une 1e carte QGIS*
+S'aider de la procédure 4 du support *Ma 1e carte QGIS*
 :::
 
 ## Savoir-faire QGIS plus complexes
 
--   organiser son projet
+-   organiser son projet cf procédure 5 *Paramétrage QGIS*
 
 -   style en polygone inversé et remplissage dégradé suivant la forme pour les limites de la commune
 
 -   règle de style : le style catégorisé doit être affiné
 
--   étiquettes de rue
+-   étiquettes de rue (cf procédure 6 *Etiquettes petits trucs*
 
--   facultatif = passages piétons (symbole par rapport à l'angle de la rue)
 
-::: callout-tip
-S'aider de la procédure du support *Organiser son projet QGIS*, *style en polygone inversé*, *règle de style : voies piétonnes et les autres*, *Etiquettes : petits trucs*, *orienter son passage piéton*
-:::
-
-A rajouter dans les petits trucs sur les étiquettes : l'échelle de visibilité
-
-![](img/echelleVisibilite.png)
 
 ## Fait / pas fait ?
 
@@ -169,6 +166,8 @@ knitr::kable(matrice)
 ```
 
 # Première saisie
+
+Enfin ! Il est temps d'effectuer une saisie
 
 ## Récupération de sa zone : une carte umap
 
@@ -197,7 +196,7 @@ Attention à bien visualiser sa zone avant d'ouvrir le tableau !
 exporter en JOSM ses Iris
 
 ::: callout-tip
-voir procédure *porter sa zone dans JOSM et paramétrer sa vue pour saisir*
+voir procédure 7 *Importer sa zone dans JOSM et paramétrer sa vue pour saisir*
 :::
 
 ## 1e saisie
@@ -206,12 +205,12 @@ On prépare la carte avant / après donc il faut sauvegarder les données mais p
 
 ### Carte avant
 
-Une fois les zones partagés, sous Qgis, chaque étudiant fait une *intersection* sur sa zone, menu vecteur / géotraitement / intersection.
+Une fois les zones partagés, sous Qgis, chaque étudiant fait une *intersection* sur sa zone, menu vecteur / géotraitement / intersection (voir procédure 8 *Géotraitements QGIS*)
 
 ### Utilisation du [plugin sidewalk](https://community.openstreetmap.org/t/josm-sidewalk-plugin-tutorial/134088)
 
 ::: callout-tip
-voir procédure *Saisie JOSM avec le plugin Sidewalk*
+voir procédure 9 *Saisie JOSM avec le plugin Sidewalk*
 :::
 
 # CARTE 2 : résultat de la saisie
@@ -220,10 +219,14 @@ Compléments pour la carte avant / après
 
 Avec un commentaire décrivant la donnée de type "J'ai tant de chemins piétons et tant de croisements etc..."
 
-::: callout-tip
-compétences Qgis pour le avant / après : utilisation des thèmes voir support *carte 2*
-:::
 
-![](img/carte1.png)
+
+![](img/carte2.png)
 
 Au vu du résultat, quelles autres compétences ?
+
+
+
+::: callout-tip
+compétences Qgis pour le avant / après : utilisation des thèmes voir support procédure 10 *carte 2*
+:::
