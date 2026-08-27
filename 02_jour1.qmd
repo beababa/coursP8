@@ -31,7 +31,6 @@ Deux cartes seront demandées :
 
 Attention, clic droit pour se déplacer
 
-
 ## Primitives géométriques : noeud et chemin
 
 Ouvrir une page vierge sous JOSM et créer un triangle avec 3 noeuds en utilisant les modes :
@@ -100,9 +99,7 @@ crossing=* or highway=* et crossing=* and highway=*
 ```
 :::
 
-
 ## Les limites de la commune
-
 
 ::: callout-tip
 exercice : Les iris ne sont pas dans OSM, mais les limites de la commune si (admin_level=8) : les enregistrer
@@ -126,7 +123,7 @@ Par exemple, chemins piétons et trottoirs dessinés
 
 ## Savoir-faire QGIS de base
 
--   mettre un favori dans l'explorateur sur les répertoires Téléchargement et data (vider le répertoire Téléchargement au passage), voir support procédure 
+-   mettre un favori dans l'explorateur sur les répertoires Téléchargement et data (vider le répertoire Téléchargement au passage), voir support procédure
 
 -   intégrer une couche dans Qgis
 
@@ -150,18 +147,20 @@ S'aider de la procédure 4 du support *Ma 1e carte QGIS*
 
 -   étiquettes de rue (cf procédure 6 *Etiquettes petits trucs*
 
-
-
 ## Fait / pas fait ?
 
 Reprendre le tableau oui / non et rajouter fait / pas fait
 
 couleur en fonction
 
+```{r}
+library(colorize)
+```
+
 `r colorbox ("oui et fait", "green")` `r colorbox ("oui et non fait", "red")` `r colorbox ("non et fait", "orange")` `r colorbox ("non et non fait", "green")`
 
 ```{r}
-matrice <- read.csv("data/faitPasFait.csv")
+matrice <- read.csv("data/faitPasfait.csv")
 knitr::kable(matrice)
 ```
 
@@ -219,13 +218,9 @@ Compléments pour la carte avant / après
 
 Avec un commentaire décrivant la donnée de type "J'ai tant de chemins piétons et tant de croisements etc..."
 
-
-
 ![](img/carte2.png)
 
 Au vu du résultat, quelles autres compétences ?
-
-
 
 ::: callout-tip
 compétences Qgis pour le avant / après : utilisation des thèmes voir support procédure 10 *carte 2*

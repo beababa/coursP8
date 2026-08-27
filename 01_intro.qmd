@@ -138,9 +138,17 @@ temps <- read.csv("data/tps.csv")
 sum(temps$temps, na.rm=TRUE)
 ```
 
-6 H par jour =\>
+6 H par jour =\> 3 \* 180 = 540
 
 40 mn de moins... le temps des pauses... 15 mn toutes les 1 H 30, on sera un peu court.
+
+horaires
+
+lundi : 10 - 17 h
+
+mardi : 9 - 16 h
+
+mercredi 9 - 12 h / 14 h 45 - 17 h 45 car réunion de rentrée à 12 h 30
 
 Voir également heures de repas et 1er jour
 
@@ -160,15 +168,17 @@ pas d'évaluation officielle
 
 [Évaluation de satisfaction](https://forms.gle/R5W9DooDPMmRn3kF6)
 
-### Quatre cartes avec Qgis
+### Cinq cartes avec Qgis
 
 CARTE 1 : compétences de base QGIS, affichage de la donnée piétonne sur fond positron
 
 CARTE 2 : un avant / après sur sa zone
 
-CARTE 3 : le résultat du plugin Qgis
+CARTE 3 : le résultat du plugin Qgis avant et après buffer
 
-CARTE 4 : vue d'ensemble et itinéraire piéton
+CARTE 4 : itinéraire piéton avant après
+
+CARTE 5 : graphe piéton ensemble de la commune
 
 ### Evaluer la saisie OSM
 
