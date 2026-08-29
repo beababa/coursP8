@@ -132,15 +132,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./02_jour1.html"> 
-<span class="menu-text">Sources PLUi |</span></a>
+<span class="menu-text">Plugin JOSM |</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./03_jour2.html"> 
-<span class="menu-text">Saisie 1 |</span></a>
+<span class="menu-text">Plugin QGIS |</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./04_jour3.html"> 
-<span class="menu-text">Saisie 2</span></a>
+<span class="menu-text">Rectifications</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -168,8 +168,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#brise-glace-présentation-en-binôme" id="toc-brise-glace-présentation-en-binôme" class="nav-link active" data-scroll-target="#brise-glace-présentation-en-binôme"><span class="header-section-number">1</span> Brise-glace : présentation en binôme</a></li>
   <li><a href="#elements-de-contexte" id="toc-elements-de-contexte" class="nav-link" data-scroll-target="#elements-de-contexte"><span class="header-section-number">2</span> Elements de contexte</a>
   <ul class="collapse">
-  <li><a href="#transition-énergétique-et-marche-à-pied" id="toc-transition-énergétique-et-marche-à-pied" class="nav-link" data-scroll-target="#transition-énergétique-et-marche-à-pied"><span class="header-section-number">2.1</span> Transition énergétique et marche à pied</a></li>
-  <li><a href="#marchabilité-dans-osm" id="toc-marchabilité-dans-osm" class="nav-link" data-scroll-target="#marchabilité-dans-osm"><span class="header-section-number">2.2</span> Marchabilité dans OSM</a></li>
+  <li><a href="#loi-lom-2019-loi-dorientation-des-mobilités" id="toc-loi-lom-2019-loi-dorientation-des-mobilités" class="nav-link" data-scroll-target="#loi-lom-2019-loi-dorientation-des-mobilités"><span class="header-section-number">2.1</span> Loi LOM 2019 (loi d’orientation des mobilités)</a></li>
+  <li><a href="#le-plan-marche" id="toc-le-plan-marche" class="nav-link" data-scroll-target="#le-plan-marche"><span class="header-section-number">2.2</span> Le plan marche</a></li>
+  <li><a href="#marchabilité-dans-osm" id="toc-marchabilité-dans-osm" class="nav-link" data-scroll-target="#marchabilité-dans-osm"><span class="header-section-number">2.3</span> Marchabilité dans OSM</a></li>
   </ul></li>
   <li><a href="#les-outils-pour-le-cours" id="toc-les-outils-pour-le-cours" class="nav-link" data-scroll-target="#les-outils-pour-le-cours"><span class="header-section-number">3</span> Les outils pour le cours</a>
   <ul class="collapse">
@@ -195,7 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#evaluation" id="toc-evaluation" class="nav-link" data-scroll-target="#evaluation"><span class="header-section-number">4.3</span> Evaluation</a>
   <ul class="collapse">
   <li><a href="#deux-quizz" id="toc-deux-quizz" class="nav-link" data-scroll-target="#deux-quizz"><span class="header-section-number">4.3.1</span> Deux quizz</a></li>
-  <li><a href="#quatre-cartes-avec-qgis" id="toc-quatre-cartes-avec-qgis" class="nav-link" data-scroll-target="#quatre-cartes-avec-qgis"><span class="header-section-number">4.3.2</span> Quatre cartes avec Qgis</a></li>
+  <li><a href="#cinq-cartes-avec-qgis" id="toc-cinq-cartes-avec-qgis" class="nav-link" data-scroll-target="#cinq-cartes-avec-qgis"><span class="header-section-number">4.3.2</span> Cinq cartes avec Qgis</a></li>
   <li><a href="#evaluer-la-saisie-osm" id="toc-evaluer-la-saisie-osm" class="nav-link" data-scroll-target="#evaluer-la-saisie-osm"><span class="header-section-number">4.3.3</span> Evaluer la saisie OSM</a></li>
   </ul></li>
   <li><a href="#le-collaboratif" id="toc-le-collaboratif" class="nav-link" data-scroll-target="#le-collaboratif"><span class="header-section-number">4.4</span> Le collaboratif</a></li>
@@ -206,13 +207,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#osm-1" id="toc-osm-1" class="nav-link" data-scroll-target="#osm-1"><span class="header-section-number">5.2</span> OSM</a>
   <ul class="collapse">
   <li><a href="#la-base" id="toc-la-base" class="nav-link" data-scroll-target="#la-base"><span class="header-section-number">5.2.1</span> La base</a></li>
-  <li><a href="#josm-1" id="toc-josm-1" class="nav-link" data-scroll-target="#josm-1"><span class="header-section-number">5.2.2</span> JOSM</a></li>
-  <li><a href="#le-contrôle-de-qualité" id="toc-le-contrôle-de-qualité" class="nav-link" data-scroll-target="#le-contrôle-de-qualité"><span class="header-section-number">5.2.3</span> Le contrôle de qualité</a></li>
+  <li><a href="#sur-la-marchabilité" id="toc-sur-la-marchabilité" class="nav-link" data-scroll-target="#sur-la-marchabilité"><span class="header-section-number">5.2.2</span> Sur la marchabilité</a></li>
+  <li><a href="#josm-1" id="toc-josm-1" class="nav-link" data-scroll-target="#josm-1"><span class="header-section-number">5.2.3</span> JOSM</a></li>
+  <li><a href="#le-contrôle-de-qualité" id="toc-le-contrôle-de-qualité" class="nav-link" data-scroll-target="#le-contrôle-de-qualité"><span class="header-section-number">5.2.4</span> Le contrôle de qualité</a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#outils-de-qualité" id="toc-outils-de-qualité" class="nav-link" data-scroll-target="#outils-de-qualité"><span class="header-section-number">6</span> Outils de qualité</a>
-  <ul class="collapse">
-  <li><a href="#sur-la-marchabilité" id="toc-sur-la-marchabilité" class="nav-link" data-scroll-target="#sur-la-marchabilité"><span class="header-section-number">6.0.1</span> Sur la marchabilité</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -239,7 +237,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Objectif du cours : saisir le graphe piéton dans OSM pour permettre à tout piéton de le compléter avec street complete</p>
+<p>Objectif du cours : saisir le graphe piéton dans OSM pour permettre à tout piéton de le compléter avec Street Complete.</p>
 <section id="brise-glace-présentation-en-binôme" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Brise-glace : présentation en binôme</h1>
 <ul>
@@ -276,15 +274,22 @@ Important
 </section>
 <section id="elements-de-contexte" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Elements de contexte</h1>
-<section id="transition-énergétique-et-marche-à-pied" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="transition-énergétique-et-marche-à-pied"><span class="header-section-number">2.1</span> Transition énergétique et marche à pied</h2>
-<p>Après la <em>renaturation</em>, un plan <em>marchabilité</em> à Est Ensemble, l’occasion de voir beaucoup de cartes et d’avoir un AMO plein d’idées</p>
+<section id="loi-lom-2019-loi-dorientation-des-mobilités" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="loi-lom-2019-loi-dorientation-des-mobilités"><span class="header-section-number">2.1</span> Loi LOM 2019 (loi d’orientation des mobilités)</h2>
+<p>Au niveau communal, très concrètement, il s’agit de mettre en conformité les passages piétons : aucun stationnement motorisé à moins de 5 m en amont d’un passage piéton (côté droit). Cela permet une meilleur visibilité.</p>
+</section>
+<section id="le-plan-marche" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="le-plan-marche"><span class="header-section-number">2.2</span> Le plan marche</h2>
+<p>Après la <em>renaturation</em>, un plan <em>marche</em> à Est Ensemble, l’occasion de voir beaucoup de cartes et d’avoir une AMO plein d’idées</p>
 <p><img src="img/planMarcheEE.png" class="img-fluid"></p>
 </section>
-<section id="marchabilité-dans-osm" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="marchabilité-dans-osm"><span class="header-section-number">2.2</span> Marchabilité dans OSM</h2>
+<section id="marchabilité-dans-osm" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="marchabilité-dans-osm"><span class="header-section-number">2.3</span> Marchabilité dans OSM</h2>
 <p>Les vidéos des présentations des SOTM-FR (State Of the Map) permettent d’avoir un état des lieux</p>
-<p>vidéos SOTM <a href="https://peertube.openstreetmap.fr/w/scHwjR1TtSAdfpKcrcHY7P">2022</a> =&gt; <em>Les données d’OSM sur le mode piéton et la marchabilité</em> consultant Montpellier / entreprise Someware <a href="https://peertube.openstreetmap.fr/w/v9AwT6kUxn5ax5W9zzaq3V">2023</a> =&gt; <em>Retour sur l’expérimentation de collecte de données accessibilité du CD94</em> CD94 loi LOM mise en accessibilité de la voirie <a href="https://peertube.openstreetmap.fr/w/hD9m929abQqKctgw3nnjV8">2024</a> =&gt; <em>Mapper des trottoirs pour l’accessibilité</em> Lons Le Saunier / Jungle Bus (outil sidewalker) <a href="https://peertube.openstreetmap.fr/w/hghC3My6UQ3GGK68gq57Xy">2025</a> =&gt; CD94 Carto’Cité PC Ingénierie et 2 cabinets de géomètre <em>Du scanner 3D à OSM : le Val de Marne expérimente la production en masse de données d’accessibilité</em> automatiser le dessin des cheminements piétons</p>
+<p>vidéos SOTM <a href="https://peertube.openstreetmap.fr/w/scHwjR1TtSAdfpKcrcHY7P">2022</a> =&gt; <em>Les données d’OSM sur le mode piéton et la marchabilité</em> consultant Montpellier / entreprise Someware</p>
+<p><a href="https://peertube.openstreetmap.fr/w/v9AwT6kUxn5ax5W9zzaq3V">2023</a> =&gt; <em>Retour sur l’expérimentation de collecte de données accessibilité du CD94</em> CD94 loi LOM mise en accessibilité de la voirie</p>
+<p><a href="https://peertube.openstreetmap.fr/w/hD9m929abQqKctgw3nnjV8">2024</a> =&gt; <em>Mapper des trottoirs pour l’accessibilité</em> Lons Le Saunier / Jungle Bus (outil sidewalker)</p>
+<p><a href="https://peertube.openstreetmap.fr/w/hghC3My6UQ3GGK68gq57Xy">2025</a> =&gt; CD94 Carto’Cité PC Ingénierie et 2 cabinets de géomètre <em>Du scanner 3D à OSM : le Val de Marne expérimente la production en masse de données d’accessibilité</em> automatiser le dessin des cheminements piétons</p>
 <p>Bref, la carte diagnostic d’<a href="https://osmarche.someware.fr/">OSM marche</a></p>
 </section>
 </section>
@@ -400,8 +405,8 @@ Important
 </ul>
 <p><a href="https://forms.gle/R5W9DooDPMmRn3kF6">Évaluation de satisfaction</a></p>
 </section>
-<section id="quatre-cartes-avec-qgis" class="level3" data-number="4.3.2">
-<h3 data-number="4.3.2" class="anchored" data-anchor-id="quatre-cartes-avec-qgis"><span class="header-section-number">4.3.2</span> Quatre cartes avec Qgis</h3>
+<section id="cinq-cartes-avec-qgis" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="cinq-cartes-avec-qgis"><span class="header-section-number">4.3.2</span> Cinq cartes avec Qgis</h3>
 <p>CARTE 1 : compétences de base QGIS, affichage de la donnée piétonne sur fond positron</p>
 <p>CARTE 2 : un avant / après sur sa zone</p>
 <p>CARTE 3 : le résultat du plugin Qgis avant et après buffer</p>
@@ -416,23 +421,22 @@ Important
 </section>
 <section id="qualité" class="level4" data-number="4.3.3.2">
 <h4 data-number="4.3.3.2" class="anchored" data-anchor-id="qualité"><span class="header-section-number">4.3.3.2</span> Qualité</h4>
-<p>Concernant la qualité de la saisie, éviter absolument le <a href="https://forum.openstreetmap.fr/t/landuse-residential-supprime-a-bondy-et-pavillon-sous-bois/9562/9">retour de bâton OSM</a>, notamment pour il y a deux ans.</p>
+<p>Concernant la qualité de la saisie, éviter absolument le <a href="https://forum.openstreetmap.fr/t/landuse-residential-supprime-a-bondy-et-pavillon-sous-bois/9562/9">retour de bâton OSM</a> quatre ans en arrière.</p>
 <p>Donc, impérativement mettre dans le commentaire de changeset : <strong>#Paris8-Bondy2026</strong></p>
 <p><img src="img/tagContrib.png" class="img-fluid"></p>
+<p>On rajoutera selon le cas échéant <em>#plugin QGIS SideWalKreator</em> ou <em>plugin JOSM sidewalk</em></p>
 <p>Egalement, examiner les contributions dans le détail avec les outils de contrôle de qualité d’OSM : chez <a href="https://resultmaps.neis-one.org/">neis</a></p>
 </section>
 </section>
 </section>
 <section id="le-collaboratif" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="le-collaboratif"><span class="header-section-number">4.4</span> Le collaboratif</h2>
-<p>Un mot au sujet du collectif, ce cours est aussi l’occasion de tester une organisation de travail en groupe (c’est la raison d’être d’OSM) donc répartition des étudiants sur chaque iris.</p>
-<p><img src="img/attribBureau.png" class="img-fluid"></p>
+<p>Un mot au sujet du collectif, ce cours est aussi l’occasion de tester une organisation de travail en groupe (c’est la raison d’être d’OSM) donc répartition des étudiants sur <a href="https://umap.openstreetmap.fr/fr/map/iris_1446228#15/48.906973/2.487459">chaque iris</a>.</p>
 </section>
 </section>
 <section id="sitographie" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Sitographie</h1>
 <p>Quelques liens utiles tout au long du cours</p>
-<p><a href="https://christophe-lebas.medium.com/tuto-visualiser-une-ville-et-ses-rues-gr%C3%A2ce-%C3%A0-qgis-simplement-avant-den-faire-un-mug-shp-et-a57cf4607f64">clin d’oeil</a></p>
 <section id="qgis" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="qgis"><span class="header-section-number">5.1</span> Qgis</h2>
 <p><a href="https://tutoqgis.cnrs.fr/">ze manuel le tuto passage</a></p>
@@ -449,36 +453,35 @@ Important
 <p><a href="https://overpass-turbo.eu/">overpass</a></p>
 <p><a href="https://panoramax.fr/">panoramax</a></p>
 </section>
-<section id="josm-1" class="level3" data-number="5.2.2">
-<h3 data-number="5.2.2" class="anchored" data-anchor-id="josm-1"><span class="header-section-number">5.2.2</span> JOSM</h3>
+<section id="sur-la-marchabilité" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="sur-la-marchabilité"><span class="header-section-number">5.2.2</span> Sur la marchabilité</h3>
+<p><a href="https://wiki.lafabriquedesmobilites.fr/wiki/Open_Marchabilit%C3%A9">le projet marchabiilté</a> et l’application <a href="https://osmarche.someware.fr/">OSM marche</a></p>
+<p><a href="https://www.youtube.com/watch?v=A38eNjdfXfI">Comment tagger le trottoir (en anglais) ?</a> saisie manuelle dans l’éditeur id et utilisation de la photo</p>
+<p><a href="https://www.researchgate.net/publication/376472381_OSM_Sidewalkreator_A_QGIS_plugin_for_an_automated_drawing_of_sidewalk_networks_for_OpenStreetMap">OSM Sidewalkkreator : A QGIS plugin</a></p>
+</section>
+<section id="josm-1" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="josm-1"><span class="header-section-number">5.2.3</span> JOSM</h3>
 <p><a href="https://learnosm.org/fr/josm/">base</a></p>
+<p>également le wiki, saisir <em>wiki josm filtre</em> et on obtient <a href="https://josm.openstreetmap.de/wiki/Fr%3AHelp/Dialog/Filter">cette page</a></p>
 <p><a href="https://www.alterzorg.fr/josm/accueil">alterzorg</a></p>
 </section>
-<section id="le-contrôle-de-qualité" class="level3" data-number="5.2.3">
-<h3 data-number="5.2.3" class="anchored" data-anchor-id="le-contrôle-de-qualité"><span class="header-section-number">5.2.3</span> Le contrôle de qualité</h3>
+<section id="le-contrôle-de-qualité" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="le-contrôle-de-qualité"><span class="header-section-number">5.2.4</span> Le contrôle de qualité</h3>
 <p><a href="http://resultmaps.neis-one.org">neiss</a></p>
 <ul>
 <li>notamment <a href="https://resultmaps.neis-one.org/osm-edits-tile/#14/48.9008/2.4877">le nombre d’édition par tuile sur Bondy</a></li>
 </ul>
 <p>qui permet de remonter sur le détail de chaque contribution par changeset.</p>
-<p><a href="http://osmose.openstreetmap.fr/fr/map/#zoom=16&amp;lat=48.90695&amp;lon=2.49237">osmose</a></p>
-</section>
-</section>
-</section>
-<section id="outils-de-qualité" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Outils de qualité</h1>
+<p>voir aussi :</p>
 <p><a href="https://resultmaps.neis-one.org/osm-changesets?comment=paris8#4/32.58/-6.77">utilisation du changeset</a></p>
 <p><a href="https://resultmaps.neis-one.org/oooc?zoom=15&amp;lat=48.90494&amp;lon=2.493&amp;layers=BTFFFFFT&amp;contributors=TTTTFF">carte des utilisateurs</a></p>
-<p>également dans <a href="http://osmose.openstreetmap.fr/fr/map/#zoom=16&amp;lat=48.90695&amp;lon=2.49237">osmose</a></p>
-<p>Mais le mieux reste :</p>
+<p>L’outil incontournable (que nous contournerons)</p>
+<p><a href="http://osmose.openstreetmap.fr/fr/map/#zoom=16&amp;lat=48.90695&amp;lon=2.49237">osmose</a></p>
+<p>Et beaucoup plus simplement :</p>
 <p><a href="https://www.openstreetmap.org/history#map=18/48.916214/2.486000">historique dans openstreetmap.org</a></p>
-<section id="sur-la-marchabilité" class="level3" data-number="6.0.1">
-<h3 data-number="6.0.1" class="anchored" data-anchor-id="sur-la-marchabilité"><span class="header-section-number">6.0.1</span> Sur la marchabilité</h3>
-<p><a href="https://wiki.lafabriquedesmobilites.fr/wiki/Open_Marchabilit%C3%A9">le projet marchabiilté</a> et l’application <a href="https://osmarche.someware.fr/">OSM marche</a></p>
-<p><a href="https://www.youtube.com/watch?v=A38eNjdfXfI">Comment tagger le trottoir (en anglais) ?</a> saisie manuelle dans l’éditeur id et utilisation de la photo</p>
-<p><a href="https://www.researchgate.net/publication/376472381_OSM_Sidewalkreator_A_QGIS_plugin_for_an_automated_drawing_of_sidewalk_networks_for_OpenStreetMap">OSM Sidewalkkreator : A QGIS plugin</a></p>
 
 
+</section>
 </section>
 </section>
 

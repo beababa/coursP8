@@ -132,12 +132,10 @@ CARTE 4 : intégrer un histogramme dans une mise en page Qgis
 ![](img/carteHisto.png)
 
 ::: callout-tip
-compétences Qgis : - style gradué sur l'indicateur aire / périmètre avec utilisation de l'histogramme dans la boite de dialogue Voir aussi - outils de traitement = *histogramme* (enregistrer en .png pour le remettre dans la mise en page)
-![](img/pngHisto.png)
-![](img/qgisHisto.png)
+compétences Qgis : - style gradué sur l'indicateur aire / périmètre avec utilisation de l'histogramme dans la boite de dialogue Voir aussi - outils de traitement = *histogramme* (enregistrer en .png pour le remettre dans la mise en page) ![](img/pngHisto.png) ![](img/qgisHisto.png)
 :::
 
-### Bâtimens ou pas ?
+### Bâtiments ou pas ?
 
 ![](img/pluginBAT.png)
 
@@ -173,41 +171,28 @@ Il s'agit de prévoir l'intégration dans OSM.
 
 Ici, comme la rue est taggée sidewalk=both, le plugin ne rajoute pas de voie piétonne. pour le Plugin, c'est une zone *sûre*. A l'utilisateur de supprimer le tag dans OSM et de rejouer le plugin pour permettre que le trottoir soit retracé *correctement*.
 
-Il existe égalemetn les zones d'exclusions : si dans la surface, il y a plus de 50 % de footway existante, le plugin ne propose aucun trottoir. Le travail a déjà été fait, le plugin ne propose aucune modification.
+Il existe également les *zones d'exclusion* : si dans la surface, il y a plus de 50 % de footway existante, le plugin ne propose aucun trottoir. Le travail a déjà été fait, le plugin ne propose aucune modification.
 
 # Import dans JOSM
 
-
 ![](img/arboSWK.png)
-
-
-
 
 ## Exercice d'entraînement
 
 Avant de faire une nouvelle saisie, farie l'[exercice sur la création de rond-point](https://josm.openstreetmap.de/wiki/Fr%3AHowTo) afin d'aborder la question des raccourcis.
+
+## Envoi de données dissuadé
 
 On ouvre le geojson résultant du plugin directement dans JOSM, on affiche l'imagerie, et on observe.
 
 ![](img/importAttention.png)
 
 
-
-
-
-## Envoi direct
-
-![](img/envoiDissuade.png)
-
-
-
 ## Ajustement à la photo
 
 Quels sont les raccourcis qui vont être nécessaire ?
 
-
 ## Utilisation du validateur
-
 
 ![](img/validateur.png)
 

@@ -132,15 +132,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./02_jour1.html" aria-current="page"> 
-<span class="menu-text">Sources PLUi |</span></a>
+<span class="menu-text">Plugin JOSM |</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./03_jour2.html"> 
-<span class="menu-text">Saisie 1 |</span></a>
+<span class="menu-text">Plugin QGIS |</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./04_jour3.html"> 
-<span class="menu-text">Saisie 2</span></a>
+<span class="menu-text">Rectifications</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -169,7 +169,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#a-la-découverte-de-josm" id="toc-a-la-découverte-de-josm" class="nav-link" data-scroll-target="#a-la-découverte-de-josm"><span class="header-section-number">2</span> A la découverte de JOSM</a>
   <ul class="collapse">
   <li><a href="#interface-josm" id="toc-interface-josm" class="nav-link" data-scroll-target="#interface-josm"><span class="header-section-number">2.1</span> Interface JOSM</a></li>
-  <li><a href="#primitives-géométriques-noeud-et-chemin" id="toc-primitives-géométriques-noeud-et-chemin" class="nav-link" data-scroll-target="#primitives-géométriques-noeud-et-chemin"><span class="header-section-number">2.2</span> Primitives géométriques : noeud et chemin</a></li>
+  <li><a href="#primitives-géométriques-noeud-et-chemin" id="toc-primitives-géométriques-noeud-et-chemin" class="nav-link" data-scroll-target="#primitives-géométriques-noeud-et-chemin"><span class="header-section-number">2.2</span> Primitives géométriques : noeud et chemin</a>
+  <ul class="collapse">
+  <li><a href="#les-modes-a-et-s" id="toc-les-modes-a-et-s" class="nav-link" data-scroll-target="#les-modes-a-et-s"><span class="header-section-number">2.2.1</span> Les modes a et s</a></li>
+  <li><a href="#croiser-deux-chemins" id="toc-croiser-deux-chemins" class="nav-link" data-scroll-target="#croiser-deux-chemins"><span class="header-section-number">2.2.2</span> Croiser deux chemins</a></li>
+  <li><a href="#le-validateur" id="toc-le-validateur" class="nav-link" data-scroll-target="#le-validateur"><span class="header-section-number">2.2.3</span> Le validateur</a></li>
+  </ul></li>
   <li><a href="#les-raccourcis-le-nerf-de-la-guerre" id="toc-les-raccourcis-le-nerf-de-la-guerre" class="nav-link" data-scroll-target="#les-raccourcis-le-nerf-de-la-guerre"><span class="header-section-number">2.3</span> Les raccourcis : le nerf de la guerre</a></li>
   <li><a href="#valeurs-attributaires-dans-osm-tag-clé-valeur" id="toc-valeurs-attributaires-dans-osm-tag-clé-valeur" class="nav-link" data-scroll-target="#valeurs-attributaires-dans-osm-tag-clé-valeur"><span class="header-section-number">2.4</span> Valeurs attributaires dans OSM : Tag = clé + valeur</a>
   <ul class="collapse">
@@ -230,8 +235,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Aller au coeur de la nébuleuse OSM dés cette première journée, nous ferons une première saisie avec un éditeur simple et complexe à la fois, JOSM (toute une partie de la journée est consacré à sa découverte)</p>
 <p>Deux cartes seront demandées :</p>
 <ul>
-<li><p>Une carte d’ensemble établissant un diagnostic de la saisie autour de la marchabilité</p></li>
-<li><p>Une carte avant / après la saisie pour chaque zone étudiée.</p></li>
+<li><p>Une carte d’ensemble établissant un diagnostic de la saisie autour des trottoirs</p></li>
+<li><p>Une carte avant / après la saisie pour chaque zone étudiée</p></li>
 </ul>
 </section>
 <section id="a-la-découverte-de-josm" class="level1" data-number="2">
@@ -240,9 +245,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="2.1" class="anchored" data-anchor-id="interface-josm"><span class="header-section-number">2.1</span> Interface JOSM</h2>
 <p><a href="https://manual.inasafe.org/_images/4_017.png">interface (panneaux)</a></p>
 <p>Attention, clic droit pour se déplacer</p>
+<p>A noter dés le départ envoi / récup <img src="img/AR.png" class="img-fluid"></p>
+<p>Donc, comment fait-on pour avoir une page vierge ….?</p>
 </section>
 <section id="primitives-géométriques-noeud-et-chemin" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="primitives-géométriques-noeud-et-chemin"><span class="header-section-number">2.2</span> Primitives géométriques : noeud et chemin</h2>
+<section id="les-modes-a-et-s" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="les-modes-a-et-s"><span class="header-section-number">2.2.1</span> Les modes a et s</h3>
 <p>Ouvrir une page vierge sous JOSM et créer un triangle avec 3 noeuds en utilisant les modes :</p>
 <ul>
 <li><p>a pour ajout</p></li>
@@ -260,9 +269,20 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Exercice : à partir du support procédure 2 <em>Éditer sous JOSM = attention aux nœuds</em></p>
+<p>Exercice : à partir du support procédure 2 <em>Éditer sous JOSM = attention aux nœuds</em> Que montre cet exercice ?</p>
 </div>
 </div>
+</section>
+<section id="croiser-deux-chemins" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="croiser-deux-chemins"><span class="header-section-number">2.2.2</span> Croiser deux chemins</h3>
+<p>tracer 2 chemins se croisant, le croisement est-il marqué par un point ?</p>
+<p>Que permet la visualisation <em>fil de fer</em> ? (CTRL + W)</p>
+</section>
+<section id="le-validateur" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="le-validateur"><span class="header-section-number">2.2.3</span> Le validateur</h3>
+<p>Ouvrir le validateur, tout sélectionner et valider. Comment comprendre le message ?</p>
+<p>Il faut toujours utliser le validateur avant d’envoyer sur le serveur.</p>
+</section>
 </section>
 <section id="les-raccourcis-le-nerf-de-la-guerre" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="les-raccourcis-le-nerf-de-la-guerre"><span class="header-section-number">2.3</span> Les raccourcis : le nerf de la guerre</h2>
@@ -293,7 +313,7 @@ Tip
 </section>
 <section id="quels-tags" class="level3" data-number="2.4.2">
 <h3 data-number="2.4.2" class="anchored" data-anchor-id="quels-tags"><span class="header-section-number">2.4.2</span> Quels tags ?</h3>
-<p>rues (en général) et croisements, découvrir taginfo.</p>
+<p>rues (en général) et passages piétons (crossings), découvrir taginfo.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -304,7 +324,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>exercice : Quelles sont les principales valeurs ? comment trouver les tags pour rues et croisements ?</p>
+<p>exercice : Quelles sont les principales valeurs ? comment trouver les tags pour rues et passages piétons ?</p>
 </div>
 </div>
 </section>
@@ -365,7 +385,7 @@ Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Avant de faire la carte, quizz !</p>
+<p>Avant de faire la carte, <a href="https://framaforms.org/paris8-bondy2025-introduction-1693048391">quizz</a> !</p>
 </div>
 </div>
 <section id="lobjectif" class="level2" data-number="4.1">
@@ -404,7 +424,7 @@ Tip
 <li><p>organiser son projet cf procédure 5 <em>Paramétrage QGIS</em></p></li>
 <li><p>style en polygone inversé et remplissage dégradé suivant la forme pour les limites de la commune</p></li>
 <li><p>règle de style : le style catégorisé doit être affiné</p></li>
-<li><p>étiquettes de rue (cf procédure 6 <em>Etiquettes petits trucs</em></p></li>
+<li><p>étiquettes de rue (cf procédure 6 <em>Etiquettes petits trucs</em>)</p></li>
 </ul>
 </section>
 <section id="fait-pas-fait" class="level2" data-number="4.4">
@@ -466,24 +486,12 @@ Tip
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sf)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(mapsf)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># lecture de la couche filtrée (issus de m3_prescription_surf)</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>iris <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/iris.geojson"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-<div class="cell-output cell-output-stdout">
-<pre><code>Reading layer `iris' from data source 
-  `C:\Users\bmaranget\coursP8\data\iris.geojson' using driver `GeoJSON'
-Simple feature collection with 22 features and 9 fields
-Geometry type: POLYGON
-Dimension:     XY
-Bounding box:  xmin: 2.469134 ymin: 48.88698 xmax: 2.500152 ymax: 48.92024
-Geodetic CRS:  WGS 84</code></pre>
-</div>
-<details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># nb d'éléments</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>nbIris <span class="ot">&lt;-</span> <span class="fu">length</span>(iris<span class="sc">$</span>nom_iris)</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_map</span>(iris, <span class="at">type =</span> <span class="st">"typo"</span>, <span class="at">var =</span> <span class="st">"nom_iris"</span>, <span class="at">leg_pos =</span> <span class="cn">NA</span>, <span class="at">border =</span> <span class="cn">NA</span>, <span class="at">pal =</span> <span class="fu">cm.colors</span>(<span class="dv">22</span>))</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_label</span>(iris, <span class="st">"nom_iris"</span>, <span class="at">overlap =</span> F, <span class="at">col =</span> <span class="st">"cadetblue4"</span>)</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_layout</span>(<span class="fu">paste0</span>(nbIris, <span class="st">" iris sur Bondy"</span>), <span class="at">credits =</span> <span class="st">"data.gouv</span><span class="sc">\n</span><span class="st">Août 2026"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>iris <span class="ot">&lt;-</span> <span class="fu">st_read</span>(<span class="st">"data/iris.geojson"</span>, <span class="at">quiet =</span> T)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># nb d'éléments</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>nbIris <span class="ot">&lt;-</span> <span class="fu">length</span>(iris<span class="sc">$</span>nom_iris)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_map</span>(iris, <span class="at">type =</span> <span class="st">"typo"</span>, <span class="at">var =</span> <span class="st">"nom_iris"</span>, <span class="at">leg_pos =</span> <span class="cn">NA</span>, <span class="at">border =</span> <span class="cn">NA</span>, <span class="at">pal =</span> <span class="fu">cm.colors</span>(<span class="dv">22</span>))</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_label</span>(iris, <span class="st">"nom_iris"</span>, <span class="at">overlap =</span> F, <span class="at">col =</span> <span class="st">"cadetblue4"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">mf_layout</span>(<span class="fu">paste0</span>(nbIris, <span class="st">" iris sur Bondy"</span>), <span class="at">credits =</span> <span class="st">"data.gouv</span><span class="sc">\n</span><span class="st">Août 2026"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>

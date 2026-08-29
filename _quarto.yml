@@ -9,11 +9,11 @@ website:
     left:
       - text: "Introduction |"
         href: 01_intro.qmd
-      - text: " Sources PLUi |"
+      - text: " Plugin JOSM |"
         href: 02_jour1.qmd
-      - text: " Saisie 1 |"
+      - text: " Plugin QGIS |"
         href: 03_jour2.qmd
-      - text: " Saisie 2 "
+      - text: " Rectifications "
         href: 04_jour3.qmd
     right:
       - icon: github

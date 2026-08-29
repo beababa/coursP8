@@ -1,24 +1,255 @@
 [
   {
+    "objectID": "02_jour1.html",
+    "href": "02_jour1.html",
+    "title": "Saisie 1, découverte OSM et JOSM",
+    "section": "",
+    "text": "Aller au coeur de la nébuleuse OSM dés cette première journée, nous ferons une première saisie avec un éditeur simple et complexe à la fois, JOSM (toute une partie de la journée est consacré à sa découverte)\nDeux cartes seront demandées :\n\nUne carte d’ensemble établissant un diagnostic de la saisie autour des trottoirs\nUne carte avant / après la saisie pour chaque zone étudiée"
+  },
+  {
+    "objectID": "02_jour1.html#interface-josm",
+    "href": "02_jour1.html#interface-josm",
+    "title": "Saisie 1, découverte OSM et JOSM",
+    "section": "2.1 Interface JOSM",
+    "text": "2.1 Interface JOSM\ninterface (panneaux)\nAttention, clic droit pour se déplacer\nA noter dés le départ envoi / récup \nDonc, comment fait-on pour avoir une page vierge ….?"
+  },
+  {
+    "objectID": "02_jour1.html#primitives-géométriques-noeud-et-chemin",
+    "href": "02_jour1.html#primitives-géométriques-noeud-et-chemin",
+    "title": "Saisie 1, découverte OSM et JOSM",
+    "section": "2.2 Primitives géométriques : noeud et chemin",
+    "text": "2.2 Primitives géométriques : noeud et chemin\n\n2.2.1 Les modes a et s\nOuvrir une page vierge sous JOSM et créer un triangle avec 3 noeuds en utilisant les modes :\n\na pour ajout\ns pour sélection\nsuccession de a et s pour tracer plusieurs chemins\n\nFaire le triangle, ajouter un point, le déformer.\n\n\n\n\n\n\nTip\n\n\n\nExercice : à partir du support procédure 2 Éditer sous JOSM = attention aux nœuds Que montre cet exercice ?\n\n\n\n\n2.2.2 Croiser deux chemins\ntracer 2 chemins se croisant, le croisement est-il marqué par un point ?\nQue permet la visualisation fil de fer ? (CTRL + W)\n\n\n2.2.3 Le validateur\nOuvrir le validateur, tout sélectionner et valider. Comment comprendre le message ?\nIl faut toujours utliser le validateur avant d’envoyer sur le serveur."
+  },
+  {
+    "objectID": "02_jour1.html#les-raccourcis-le-nerf-de-la-guerre",
+    "href": "02_jour1.html#les-raccourcis-le-nerf-de-la-guerre",
+    "title": "Saisie 1, découverte OSM et JOSM",
+    "section": "2.3 Les raccourcis : le nerf de la guerre",
+    "text": "2.3 Les raccourcis : le nerf de la guerre\nDans JOSM, les raccourcis permettent de travailler très très vite. Ils sont essentiels. Les raccourcis sont listés dans le menu Outils.\n\nPour une mise en situation une vidéo du capitaine Moustache\nQuels raccourcis vont servir le plus ?"
+  },
+  {
+    "objectID": "02_jour1.html#valeurs-attributaires-dans-osm-tag-clé-valeur",
+    "href": "02_jour1.html#valeurs-attributaires-dans-osm-tag-clé-valeur",
+    "title": "Saisie 1, découverte OSM et JOSM",
+    "section": "2.4 Valeurs attributaires dans OSM : Tag = clé + valeur",
+    "text": "2.4 Valeurs attributaires dans OSM : Tag = clé + valeur\nhttps://taginfo.openstreetmap.org/\n\n2.4.1 Editeur id ou le tag du bourgeois gentilhomme\nOn utilise directement l’éditeur intégré id sur openstreetmap.org trouver le tag directement à partir de l’éditeur.\n\n\n\n\n\n\nTip\n\n\n\nexercice : faire une saisie sur un point connu\n\n\n\n\n2.4.2 Quels tags ?\nrues (en général) et passages piétons (crossings), découvrir taginfo.\n\n\n\n\n\n\nTip\n\n\n\nexercice : Quelles sont les principales valeurs ? comment trouver les tags pour rues et passages piétons ?"
+  },
+  {
+    "objectID": "02_jour1.html#premère-approche",
+    "href": "02_jour1.html#premère-approche",
+    "title": "Saisie 1, découverte OSM et JOSM",
+    "section": "3.1 Premère approche",
+    "text": "3.1 Premère approche\nUtiliser l’assistant et extraire rues et croisements avec le caractère joker.\n\ncomment limiter l’extraction à Bondy ?\nquel est ce caractère ?\nattention au et\n\n\n\n\n\n\n\nTip\n\n\n\nexercice : Combien de chemins et de noeuds pour cette requête ? pourquoi ?\ncrossing=* or highway=* et crossing=* and highway=*"
+  },
+  {
+    "objectID": "02_jour1.html#les-limites-de-la-commune",
+    "href": "02_jour1.html#les-limites-de-la-commune",
+    "title": "Saisie 1, découverte OSM et JOSM",
+    "section": "3.2 Les limites de la commune",
+    "text": "3.2 Les limites de la commune\n\n\n\n\n\n\nTip\n\n\n\nexercice : Les iris ne sont pas dans OSM, mais les limites de la commune si (admin_level=8) : les enregistrer"
+  },
+  {
+    "objectID": "02_jour1.html#lobjectif",
+    "href": "02_jour1.html#lobjectif",
+    "title": "Saisie 1, découverte OSM et JOSM",
+    "section": "4.1 L’objectif",
+    "text": "4.1 L’objectif\nAvant de commencer à saisir dans OSM, on fait une carte de l’état de la saisie sur le modèle obtenu dans l’appli OSM marche.\n Pour la complexité des tags, regarder dans couche\nPar exemple, chemins piétons et trottoirs dessinés"
+  },
+  {
+    "objectID": "02_jour1.html#savoir-faire-qgis-de-base",
+    "href": "02_jour1.html#savoir-faire-qgis-de-base",
+    "title": "Saisie 1, découverte OSM et JOSM",
+    "section": "4.2 Savoir-faire QGIS de base",
+    "text": "4.2 Savoir-faire QGIS de base\n\nmettre un favori dans l’explorateur sur les répertoires Téléchargement et data (vider le répertoire Téléchargement au passage), voir support procédure\nintégrer une couche dans Qgis\nfond positron avec le plugin QMS\nutiliser une symbologie par catégorie\nmise en page qgis (3 boutons)\n\n\n\n\n\n\n\nTip\n\n\n\nS’aider de la procédure 4 du support Ma 1e carte QGIS"
+  },
+  {
+    "objectID": "02_jour1.html#savoir-faire-qgis-plus-complexes",
+    "href": "02_jour1.html#savoir-faire-qgis-plus-complexes",
+    "title": "Saisie 1, découverte OSM et JOSM",
+    "section": "4.3 Savoir-faire QGIS plus complexes",
+    "text": "4.3 Savoir-faire QGIS plus complexes\n\norganiser son projet cf procédure 5 Paramétrage QGIS\nstyle en polygone inversé et remplissage dégradé suivant la forme pour les limites de la commune\nrègle de style : le style catégorisé doit être affiné\nétiquettes de rue (cf procédure 6 Etiquettes petits trucs)"
+  },
+  {
+    "objectID": "02_jour1.html#fait-pas-fait",
+    "href": "02_jour1.html#fait-pas-fait",
+    "title": "Saisie 1, découverte OSM et JOSM",
+    "section": "4.4 Fait / pas fait ?",
+    "text": "4.4 Fait / pas fait ?\nReprendre le tableau oui / non et rajouter fait / pas fait\ncouleur en fonction\n\n\nCode\nlibrary(colorize)\n\n\noui et fait oui et non fait non et fait non et non fait\n\n\nCode\nmatrice &lt;- read.csv(\"data/faitPasfait.csv\")\nknitr::kable(matrice)\n\n\n\n\n\n\n\n\n\n\nX\navantage\ninconvénient\n\n\n\n\ncarte\nlocalisation précise\ntopologie trop simple\n\n\ngéocodage\ntopologie plus complexe\ndépend de la qualité du géocodageà la parcelle, mais au point adresse"
+  },
+  {
+    "objectID": "02_jour1.html#récupération-de-sa-zone-une-carte-umap",
+    "href": "02_jour1.html#récupération-de-sa-zone-une-carte-umap",
+    "title": "Saisie 1, découverte OSM et JOSM",
+    "section": "5.1 Récupération de sa zone : une carte umap",
+    "text": "5.1 Récupération de sa zone : une carte umap\n\n\nCode\nlibrary(sf)\nlibrary(mapsf)\n# lecture de la couche filtrée (issus de m3_prescription_surf)\niris &lt;- st_read(\"data/iris.geojson\", quiet = T)\n# nb d'éléments\nnbIris &lt;- length(iris$nom_iris)\nmf_map(iris, type = \"typo\", var = \"nom_iris\", leg_pos = NA, border = NA, pal = cm.colors(22))\nmf_label(iris, \"nom_iris\", overlap = F, col = \"cadetblue4\")\nmf_layout(paste0(nbIris, \" iris sur Bondy\"), credits = \"data.gouv\\nAoût 2026\")\n\n\n\n\n\n\n\n\n\nChaque étudiant clique sur une carte umap iris mise en place pour le cours.\n\npuis calque (1) et tableau(2)\nAttention à bien visualiser sa zone avant d’ouvrir le tableau !"
+  },
+  {
+    "objectID": "02_jour1.html#ouvrir-sa-zone-spécifique-sous-josm",
+    "href": "02_jour1.html#ouvrir-sa-zone-spécifique-sous-josm",
+    "title": "Saisie 1, découverte OSM et JOSM",
+    "section": "5.2 Ouvrir sa zone spécifique sous JOSM",
+    "text": "5.2 Ouvrir sa zone spécifique sous JOSM\nexporter en JOSM ses Iris\n\n\n\n\n\n\nTip\n\n\n\nvoir procédure 7 Importer sa zone dans JOSM et paramétrer sa vue pour saisir"
+  },
+  {
+    "objectID": "02_jour1.html#e-saisie",
+    "href": "02_jour1.html#e-saisie",
+    "title": "Saisie 1, découverte OSM et JOSM",
+    "section": "5.3 1e saisie",
+    "text": "5.3 1e saisie\nOn prépare la carte avant / après donc il faut sauvegarder les données mais pour sa zone uniquement\n\n5.3.1 Carte avant\nUne fois les zones partagés, sous Qgis, chaque étudiant fait une intersection sur sa zone, menu vecteur / géotraitement / intersection (voir procédure 8 Géotraitements QGIS)\n\n\n5.3.2 Utilisation du plugin sidewalk\n\n\n\n\n\n\nTip\n\n\n\nvoir procédure 9 Saisie JOSM avec le plugin Sidewalk"
+  },
+  {
+    "objectID": "03_jour2.html",
+    "href": "03_jour2.html",
+    "title": "Deuxième session de saisie dans OSM",
+    "section": "",
+    "text": "Utiliser un plugin QGIS pour saisir le graphe piéton et importer le résultat dans OSM."
+  },
+  {
+    "objectID": "03_jour2.html#carte-3-un-test-sur-un-zone-et-son-buffer",
+    "href": "03_jour2.html#carte-3-un-test-sur-un-zone-et-son-buffer",
+    "title": "Deuxième session de saisie dans OSM",
+    "section": "5.1 Carte 3 : Un test sur un zone et son buffer",
+    "text": "5.1 Carte 3 : Un test sur un zone et son buffer\nFaire le buffer (cf procédure 8 Géotraitements QGIS)\nLister les sf Qgis permettant d’aller rapidement\ndonner 5 mn pour faire la carte"
+  },
+  {
+    "objectID": "03_jour2.html#quels-paramètres",
+    "href": "03_jour2.html#quels-paramètres",
+    "title": "Deuxième session de saisie dans OSM",
+    "section": "5.2 Quels paramètres ?",
+    "text": "5.2 Quels paramètres ?\n\n5.2.1 Largeur des rues\n\n5.2.1.1 Hiérachie OSM\n\ndans taginfo, repérer les valeurs et leur signification.\nfaire une proposition de modification\n\n\n5.2.1.2 Choix largeurs\n\nPar défaut :\n\nQuelles modification possibles ici ?\n\n\nRajouter cette voie change la perspective du plugin. Si on la rajoute en service, il faudra alors modifier la largeur dans le plugin.\n\n\n\n5.2.2 Indicateurs : aire et périmètre (carte 4)\nCe rapport aire / périmètre permet de repérer des zones problématiques :\n Dans la plupart des cas, l’aire de la zone trottoir et le périmètre tourne autour de 0,1. Cela signifie que pour 1 m² de trottoir, il y a 10 cm de longueur.\nQuand ce rapport augmente, on se retrouve avec trop de m². Cela permet de repérer les îlots et les rond points (normalement pas de franchissement piéton).\nDans notre cas, il y a 3 zones problématiques.\n\nIci il s’agit d’un ilôt et le cheminement piéton sera de toutes façons uncontrolled parce que non prévu ! Il faudrait prévoir un aménagement.\nEn fait, il convient vraiment de se poser la question des aménagements piétons sur la zone :\n\nNous verrons la deuxième zone plus bas.\nCARTE 4 : intégrer un histogramme dans une mise en page Qgis\n\n\n\n\n\n\n\nTip\n\n\n\ncompétences Qgis : - style gradué sur l’indicateur aire / périmètre avec utilisation de l’histogramme dans la boite de dialogue Voir aussi - outils de traitement = histogramme (enregistrer en .png pour le remettre dans la mise en page)  \n\n\n\n\n5.2.3 Bâtiments ou pas ?\n\nA noter que cette zone était déjà repérable grâce au ratio aire / périmètre\n\n\n5.2.3.1 Rajouter des voies\nEn fait, l’image met en relief l’absence de voie.\nIl manque ici une voie de service, on la rajoute puis on relance avec les paramètres par défaut et une voie de service avec une largeur de 2.\n\n\n5.2.3.2 Jouer sur distance bâtiments - voie (carte 5)\n\nPour obtenir, un non chevauchement sur les bâtiments on met au minimum :\n\nla distance aux bâtiments et la largeur\nla distance à ajouter à la largeur\n\n\nCARTE 5 : carte avant après avoir joué sur les paramètres\n\n\n\n5.2.4 Zones d’exclusion ou zones sûres\nIl s’agit de prévoir l’intégration dans OSM.\n\nIci, comme la rue est taggée sidewalk=both, le plugin ne rajoute pas de voie piétonne. pour le Plugin, c’est une zone sûre. A l’utilisateur de supprimer le tag dans OSM et de rejouer le plugin pour permettre que le trottoir soit retracé correctement.\nIl existe également les zones d’exclusion : si dans la surface, il y a plus de 50 % de footway existante, le plugin ne propose aucun trottoir. Le travail a déjà été fait, le plugin ne propose aucune modification."
+  },
+  {
+    "objectID": "03_jour2.html#exercice-dentraînement",
+    "href": "03_jour2.html#exercice-dentraînement",
+    "title": "Deuxième session de saisie dans OSM",
+    "section": "6.1 Exercice d’entraînement",
+    "text": "6.1 Exercice d’entraînement\nAvant de faire une nouvelle saisie, farie l’exercice sur la création de rond-point afin d’aborder la question des raccourcis."
+  },
+  {
+    "objectID": "03_jour2.html#envoi-direct",
+    "href": "03_jour2.html#envoi-direct",
+    "title": "Deuxième session de saisie dans OSM",
+    "section": "6.2 Envoi direct",
+    "text": "6.2 Envoi direct"
+  },
+  {
+    "objectID": "03_jour2.html#ajustement-à-la-photo",
+    "href": "03_jour2.html#ajustement-à-la-photo",
+    "title": "Deuxième session de saisie dans OSM",
+    "section": "6.3 Ajustement à la photo",
+    "text": "6.3 Ajustement à la photo\nQuels sont les raccourcis qui vont être nécessaire ?"
+  },
+  {
+    "objectID": "03_jour2.html#utilisation-du-validateur",
+    "href": "03_jour2.html#utilisation-du-validateur",
+    "title": "Deuxième session de saisie dans OSM",
+    "section": "6.4 Utilisation du validateur",
+    "text": "6.4 Utilisation du validateur"
+  },
+  {
+    "objectID": "03_jour2.html#commentaire",
+    "href": "03_jour2.html#commentaire",
+    "title": "Deuxième session de saisie dans OSM",
+    "section": "6.5 Commentaire",
+    "text": "6.5 Commentaire"
+  },
+  {
+    "objectID": "03_jour2.html#envoi-de-données-dissuadé",
+    "href": "03_jour2.html#envoi-de-données-dissuadé",
+    "title": "Deuxième session de saisie dans OSM",
+    "section": "6.2 Envoi de données dissuadé",
+    "text": "6.2 Envoi de données dissuadé\nOn ouvre le geojson résultant du plugin directement dans JOSM, on affiche l’imagerie, et on observe."
+  },
+  {
+    "objectID": "04_jour3.html",
+    "href": "04_jour3.html",
+    "title": "3e saisie : Itinéraire et amélioration de la saisie",
+    "section": "",
+    "text": "Afin de voir ce qui manque dans notre graphe, on utilise la fonction itinéraire de Qgis\nDans le projet Qgis, on en est à l’étape saisie 3"
+  },
+  {
+    "objectID": "04_jour3.html#dessiner-les-jardins",
+    "href": "04_jour3.html#dessiner-les-jardins",
+    "title": "3e saisie : Itinéraire et amélioration de la saisie",
+    "section": "2.1 Dessiner les jardins",
+    "text": "2.1 Dessiner les jardins\nLe fait de tracer les trottoirs amènent à tracer de nouveaux objets, par exemple, les jardins.\n\n\nPour le raccourci voir la procédure 1"
+  },
+  {
+    "objectID": "04_jour3.html#changer-des-tags",
+    "href": "04_jour3.html#changer-des-tags",
+    "title": "3e saisie : Itinéraire et amélioration de la saisie",
+    "section": "2.2 Changer des tags",
+    "text": "2.2 Changer des tags\nCertains trottoirs sont plutôt des ilôts"
+  },
+  {
+    "objectID": "04_jour3.html#compléter-le-tag-crossing",
+    "href": "04_jour3.html#compléter-le-tag-crossing",
+    "title": "3e saisie : Itinéraire et amélioration de la saisie",
+    "section": "2.3 Compléter le tag crossing",
+    "text": "2.3 Compléter le tag crossing\nEnfin, il est possible dés ce niveau de distinguer les passages piétons marqués ou pas."
+  },
+  {
+    "objectID": "04_jour3.html#manières-de-figurer-un-passage-piéton",
+    "href": "04_jour3.html#manières-de-figurer-un-passage-piéton",
+    "title": "3e saisie : Itinéraire et amélioration de la saisie",
+    "section": "2.4 2 manières de figurer un passage piéton",
+    "text": "2.4 2 manières de figurer un passage piéton\nLes 2 plugins utilisés amènent à deux façons de tagger, cela se voit avec la représentation graphique utilisé dans JOSM."
+  },
+  {
+    "objectID": "04_jour3.html#manières-de-représenter-une-porte-empêchant-le-passage",
+    "href": "04_jour3.html#manières-de-représenter-une-porte-empêchant-le-passage",
+    "title": "3e saisie : Itinéraire et amélioration de la saisie",
+    "section": "2.5 2 manières de représenter une porte empêchant le passage",
+    "text": "2.5 2 manières de représenter une porte empêchant le passage\nEtre piéton, cela transforme la vision d’une porte fermée"
+  },
+  {
+    "objectID": "04_jour3.html#osmi",
+    "href": "04_jour3.html#osmi",
+    "title": "3e saisie : Itinéraire et amélioration de la saisie",
+    "section": "4.1 OSMI",
+    "text": "4.1 OSMI\nVoir intervention\nD’après le commentaire, utilisation d’OSMI"
+  },
+  {
+    "objectID": "04_jour3.html#panoramax",
+    "href": "04_jour3.html#panoramax",
+    "title": "3e saisie : Itinéraire et amélioration de la saisie",
+    "section": "4.2 Panoramax",
+    "text": "4.2 Panoramax\nDe l’art et de la manière de faire des photos"
+  },
+  {
+    "objectID": "04_jour3.html#street-complete",
+    "href": "04_jour3.html#street-complete",
+    "title": "3e saisie : Itinéraire et amélioration de la saisie",
+    "section": "4.3 Street Complete",
+    "text": "4.3 Street Complete\nRien ne vaut le terrain en nombre !"
+  },
+  {
     "objectID": "01_intro.html",
     "href": "01_intro.html",
     "title": "0bjectif et méthode",
     "section": "",
-    "text": "Objectif du cours : saisir le graphe piéton dans OSM pour permettre à tout piéton de le compléter avec street complete"
+    "text": "Objectif du cours : saisir le graphe piéton dans OSM pour permettre à tout piéton de le compléter avec Street Complete."
   },
   {
-    "objectID": "01_intro.html#transition-énergétique-et-marche-à-pied",
-    "href": "01_intro.html#transition-énergétique-et-marche-à-pied",
+    "objectID": "01_intro.html#loi-lom-2019-loi-dorientation-des-mobilités",
+    "href": "01_intro.html#loi-lom-2019-loi-dorientation-des-mobilités",
     "title": "0bjectif et méthode",
-    "section": "2.1 Transition énergétique et marche à pied",
-    "text": "2.1 Transition énergétique et marche à pied\nAprès la renaturation, un plan marchabilité à Est Ensemble, l’occasion de voir beaucoup de cartes et d’avoir un AMO plein d’idées"
+    "section": "2.1 Loi LOM 2019 (loi d’orientation des mobilités)",
+    "text": "2.1 Loi LOM 2019 (loi d’orientation des mobilités)\nAu niveau communal, très concrètement, il s’agit de mettre en conformité les passages piétons : aucun stationnement motorisé à moins de 5 m en amont d’un passage piéton (côté droit). Cela permet une meilleur visibilité."
+  },
+  {
+    "objectID": "01_intro.html#le-plan-marche",
+    "href": "01_intro.html#le-plan-marche",
+    "title": "0bjectif et méthode",
+    "section": "2.2 Le plan marche",
+    "text": "2.2 Le plan marche\nAprès la renaturation, un plan marche à Est Ensemble, l’occasion de voir beaucoup de cartes et d’avoir une AMO plein d’idées"
   },
   {
     "objectID": "01_intro.html#marchabilité-dans-osm",
     "href": "01_intro.html#marchabilité-dans-osm",
     "title": "0bjectif et méthode",
-    "section": "2.2 Marchabilité dans OSM",
-    "text": "2.2 Marchabilité dans OSM\nLes vidéos des présentations des SOTM-FR (State Of the Map) permettent d’avoir un état des lieux\nvidéos SOTM 2022 =&gt; Les données d’OSM sur le mode piéton et la marchabilité consultant Montpellier / entreprise Someware 2023 =&gt; Retour sur l’expérimentation de collecte de données accessibilité du CD94 CD94 loi LOM mise en accessibilité de la voirie 2024 =&gt; Mapper des trottoirs pour l’accessibilité Lons Le Saunier / Jungle Bus (outil sidewalker) 2025 =&gt; CD94 Carto’Cité PC Ingénierie et 2 cabinets de géomètre Du scanner 3D à OSM : le Val de Marne expérimente la production en masse de données d’accessibilité automatiser le dessin des cheminements piétons\nBref, la carte diagnostic d’OSM marche"
+    "section": "2.3 Marchabilité dans OSM",
+    "text": "2.3 Marchabilité dans OSM\nLes vidéos des présentations des SOTM-FR (State Of the Map) permettent d’avoir un état des lieux\nvidéos SOTM 2022 =&gt; Les données d’OSM sur le mode piéton et la marchabilité consultant Montpellier / entreprise Someware\n2023 =&gt; Retour sur l’expérimentation de collecte de données accessibilité du CD94 CD94 loi LOM mise en accessibilité de la voirie\n2024 =&gt; Mapper des trottoirs pour l’accessibilité Lons Le Saunier / Jungle Bus (outil sidewalker)\n2025 =&gt; CD94 Carto’Cité PC Ingénierie et 2 cabinets de géomètre Du scanner 3D à OSM : le Val de Marne expérimente la production en masse de données d’accessibilité automatiser le dessin des cheminements piétons\nBref, la carte diagnostic d’OSM marche"
   },
   {
     "objectID": "01_intro.html#le-framapad",
@@ -67,7 +298,7 @@
     "href": "01_intro.html#evaluation",
     "title": "0bjectif et méthode",
     "section": "4.3 Evaluation",
-    "text": "4.3 Evaluation\n\n\n\n\n\n\nImportant\n\n\n\npas d’évaluation officielle\n\n\n\n4.3.1 Deux quizz\n\nnotions de base puis plusieurs cartes que nous regarderons rapidement\n\nIntroduction\n\névaluation de satisfaction\n\nÉvaluation de satisfaction\n\n\n4.3.2 Quatre cartes avec Qgis\nCARTE 1 : compétences de base QGIS, affichage de la donnée piétonne sur fond positron\nCARTE 2 : un avant / après sur sa zone\nCARTE 3 : le résultat du plugin Qgis avant et après buffer\nCARTE 4 : itinéraire piéton avant après\nCARTE 5 : graphe piéton ensemble de la commune\n\n\n4.3.3 Evaluer la saisie OSM\n\n4.3.3.1 Quantité\nPour la saisie OSM, chaque étudiant notera le nombre de saisies faites\n\n\n4.3.3.2 Qualité\nConcernant la qualité de la saisie, éviter absolument le retour de bâton OSM, notamment pour il y a deux ans.\nDonc, impérativement mettre dans le commentaire de changeset : #Paris8-Bondy2026\n\nEgalement, examiner les contributions dans le détail avec les outils de contrôle de qualité d’OSM : chez neis"
+    "text": "4.3 Evaluation\n\n\n\n\n\n\nImportant\n\n\n\npas d’évaluation officielle\n\n\n\n4.3.1 Deux quizz\n\nnotions de base puis plusieurs cartes que nous regarderons rapidement\n\nIntroduction\n\névaluation de satisfaction\n\nÉvaluation de satisfaction\n\n\n4.3.2 Cinq cartes avec Qgis\nCARTE 1 : compétences de base QGIS, affichage de la donnée piétonne sur fond positron\nCARTE 2 : un avant / après sur sa zone\nCARTE 3 : le résultat du plugin Qgis avant et après buffer\nCARTE 4 : itinéraire piéton avant après\nCARTE 5 : graphe piéton ensemble de la commune\n\n\n4.3.3 Evaluer la saisie OSM\n\n4.3.3.1 Quantité\nPour la saisie OSM, chaque étudiant notera le nombre de saisies faites\n\n\n4.3.3.2 Qualité\nConcernant la qualité de la saisie, éviter absolument le retour de bâton OSM quatre ans en arrière.\nDonc, impérativement mettre dans le commentaire de changeset : #Paris8-Bondy2026\n\nOn rajoutera selon le cas échéant #plugin QGIS SideWalKreator ou plugin JOSM sidewalk\nEgalement, examiner les contributions dans le détail avec les outils de contrôle de qualité d’OSM : chez neis"
   },
   {
     "objectID": "01_intro.html#le-collaboratif",
@@ -88,216 +319,6 @@
     "href": "01_intro.html#osm-1",
     "title": "0bjectif et méthode",
     "section": "5.2 OSM",
-    "text": "5.2 OSM\n\n5.2.1 La base\nforum\nwiki\nfeatures souvent très lent\ntaginfo plus rapide\noverpass\npanoramax\n\n\n5.2.2 JOSM\nbase\nalterzorg\n\n\n5.2.3 Le contrôle de qualité\nneiss\n\nnotamment le nombre d’édition par tuile sur Bondy\n\nqui permet de remonter sur le détail de chaque contribution par changeset.\nosmose"
-  },
-  {
-    "objectID": "04_jour3.html",
-    "href": "04_jour3.html",
-    "title": "3e saisie : Itinéraire et amélioration de la saisie",
-    "section": "",
-    "text": "Afin de voir ce qui manque dans notre graphie, on utilise la fonction itinéraire de Qgis\nDans le projet Qgis, on en est à l’étape saisie 3"
-  },
-  {
-    "objectID": "04_jour3.html#dessiner-les-jardins",
-    "href": "04_jour3.html#dessiner-les-jardins",
-    "title": "3e saisie : Itinéraire et amélioration de la saisie",
-    "section": "2.1 Dessiner les jardins",
-    "text": "2.1 Dessiner les jardins\n\n\nPour le raccourci voir la procédure 1 (voir également l’outil dessiner à l’échelle)"
-  },
-  {
-    "objectID": "04_jour3.html#changer-des-tags",
-    "href": "04_jour3.html#changer-des-tags",
-    "title": "3e saisie : Itinéraire et amélioration de la saisie",
-    "section": "2.2 Changer des tags",
-    "text": "2.2 Changer des tags"
-  },
-  {
-    "objectID": "04_jour3.html#compléter-le-tag-crossing",
-    "href": "04_jour3.html#compléter-le-tag-crossing",
-    "title": "3e saisie : Itinéraire et amélioration de la saisie",
-    "section": "2.3 Compléter le tag crossing",
-    "text": "2.3 Compléter le tag crossing"
-  },
-  {
-    "objectID": "04_jour3.html#manières-de-figurer-un-passage-piéton",
-    "href": "04_jour3.html#manières-de-figurer-un-passage-piéton",
-    "title": "3e saisie : Itinéraire et amélioration de la saisie",
-    "section": "2.4 2 manières de figurer un passage piéton",
-    "text": "2.4 2 manières de figurer un passage piéton"
-  },
-  {
-    "objectID": "04_jour3.html#manières-de-représenter-une-porte-empêchant-le-passage",
-    "href": "04_jour3.html#manières-de-représenter-une-porte-empêchant-le-passage",
-    "title": "3e saisie : Itinéraire et amélioration de la saisie",
-    "section": "2.5 2 manières de représenter une porte empêchant le passage",
-    "text": "2.5 2 manières de représenter une porte empêchant le passage"
-  },
-  {
-    "objectID": "04_jour3.html#panoramax",
-    "href": "04_jour3.html#panoramax",
-    "title": "3e saisie : Itinéraire et amélioration de la saisie",
-    "section": "4.1 Panoramax",
-    "text": "4.1 Panoramax"
-  },
-  {
-    "objectID": "04_jour3.html#street-complete",
-    "href": "04_jour3.html#street-complete",
-    "title": "3e saisie : Itinéraire et amélioration de la saisie",
-    "section": "4.2 Street Complete",
-    "text": "4.2 Street Complete"
-  },
-  {
-    "objectID": "02_jour1.html",
-    "href": "02_jour1.html",
-    "title": "Saisie 1, découverte OSM et JOSM",
-    "section": "",
-    "text": "Aller au coeur de la nébuleuse OSM dés cette première journée, nous ferons une première saisie avec un éditeur simple et complexe à la fois, JOSM (toute une partie de la journée est consacré à sa découverte)\nDeux cartes seront demandées :\n\nUne carte d’ensemble établissant un diagnostic de la saisie autour de la marchabilité\nUne carte avant / après la saisie pour chaque zone étudiée."
-  },
-  {
-    "objectID": "02_jour1.html#interface-josm",
-    "href": "02_jour1.html#interface-josm",
-    "title": "Saisie 1, découverte OSM et JOSM",
-    "section": "2.1 Interface JOSM",
-    "text": "2.1 Interface JOSM\ninterface (panneaux)\nAttention, clic droit pour se déplacer"
-  },
-  {
-    "objectID": "02_jour1.html#primitives-géométriques-noeud-et-chemin",
-    "href": "02_jour1.html#primitives-géométriques-noeud-et-chemin",
-    "title": "Saisie 1, découverte OSM et JOSM",
-    "section": "2.2 Primitives géométriques : noeud et chemin",
-    "text": "2.2 Primitives géométriques : noeud et chemin\nOuvrir une page vierge sous JOSM et créer un triangle avec 3 noeuds en utilisant les modes :\n\na pour ajout\ns pour sélection\nsuccession de a et s pour tracer plusieurs chemins\n\nFaire le triangle, ajouter un point, le déformer.\n\n\n\n\n\n\nTip\n\n\n\nExercice : à partir du support procédure 2 Éditer sous JOSM = attention aux nœuds"
-  },
-  {
-    "objectID": "02_jour1.html#les-raccourcis-le-nerf-de-la-guerre",
-    "href": "02_jour1.html#les-raccourcis-le-nerf-de-la-guerre",
-    "title": "Saisie 1, découverte OSM et JOSM",
-    "section": "2.3 Les raccourcis : le nerf de la guerre",
-    "text": "2.3 Les raccourcis : le nerf de la guerre\nDans JOSM, les raccourcis permettent de travailler très très vite. Ils sont essentiels. Les raccourcis sont listés dans le menu Outils.\n\nPour une mise en situation une vidéo du capitaine Moustache\nQuels raccourcis vont servir le plus ?"
-  },
-  {
-    "objectID": "02_jour1.html#valeurs-attributaires-dans-osm-tag-clé-valeur",
-    "href": "02_jour1.html#valeurs-attributaires-dans-osm-tag-clé-valeur",
-    "title": "Saisie 1, découverte OSM et JOSM",
-    "section": "2.4 Valeurs attributaires dans OSM : Tag = clé + valeur",
-    "text": "2.4 Valeurs attributaires dans OSM : Tag = clé + valeur\nhttps://taginfo.openstreetmap.org/\n\n2.4.1 Editeur id ou le tag du bourgeois gentilhomme\nOn utilise directement l’éditeur intégré id sur openstreetmap.org trouver le tag directement à partir de l’éditeur.\n\n\n\n\n\n\nTip\n\n\n\nexercice : faire une saisie sur un point connu\n\n\n\n\n2.4.2 Quels tags ?\nrues (en général) et croisements, découvrir taginfo.\n\n\n\n\n\n\nTip\n\n\n\nexercice : Quelles sont les principales valeurs ? comment trouver les tags pour rues et croisements ?"
-  },
-  {
-    "objectID": "02_jour1.html#premère-approche",
-    "href": "02_jour1.html#premère-approche",
-    "title": "Saisie 1, découverte OSM et JOSM",
-    "section": "3.1 Premère approche",
-    "text": "3.1 Premère approche\nUtiliser l’assistant et extraire rues et croisements avec le caractère joker.\n\ncomment limiter l’extraction à Bondy ?\nquel est ce caractère ?\nattention au et\n\n\n\n\n\n\n\nTip\n\n\n\nexercice : Combien de chemins et de noeuds pour cette requête ? pourquoi ?\ncrossing=* or highway=* et crossing=* and highway=*"
-  },
-  {
-    "objectID": "02_jour1.html#les-limites-de-la-commune",
-    "href": "02_jour1.html#les-limites-de-la-commune",
-    "title": "Saisie 1, découverte OSM et JOSM",
-    "section": "3.2 Les limites de la commune",
-    "text": "3.2 Les limites de la commune\n\n\n\n\n\n\nTip\n\n\n\nexercice : Les iris ne sont pas dans OSM, mais les limites de la commune si (admin_level=8) : les enregistrer"
-  },
-  {
-    "objectID": "02_jour1.html#lobjectif",
-    "href": "02_jour1.html#lobjectif",
-    "title": "Saisie 1, découverte OSM et JOSM",
-    "section": "4.1 L’objectif",
-    "text": "4.1 L’objectif\nAvant de commencer à saisir dans OSM, on fait une carte de l’état de la saisie sur le modèle obtenu dans l’appli OSM marche.\n Pour la complexité des tags, regarder dans couche\nPar exemple, chemins piétons et trottoirs dessinés"
-  },
-  {
-    "objectID": "02_jour1.html#savoir-faire-qgis-de-base",
-    "href": "02_jour1.html#savoir-faire-qgis-de-base",
-    "title": "Saisie 1, découverte OSM et JOSM",
-    "section": "4.2 Savoir-faire QGIS de base",
-    "text": "4.2 Savoir-faire QGIS de base\n\nmettre un favori dans l’explorateur sur les répertoires Téléchargement et data (vider le répertoire Téléchargement au passage), voir support procédure\nintégrer une couche dans Qgis\nfond positron avec le plugin QMS\nutiliser une symbologie par catégorie\nmise en page qgis (3 boutons)\n\n\n\n\n\n\n\nTip\n\n\n\nS’aider de la procédure 4 du support Ma 1e carte QGIS"
-  },
-  {
-    "objectID": "02_jour1.html#savoir-faire-qgis-plus-complexes",
-    "href": "02_jour1.html#savoir-faire-qgis-plus-complexes",
-    "title": "Saisie 1, découverte OSM et JOSM",
-    "section": "4.3 Savoir-faire QGIS plus complexes",
-    "text": "4.3 Savoir-faire QGIS plus complexes\n\norganiser son projet cf procédure 5 Paramétrage QGIS\nstyle en polygone inversé et remplissage dégradé suivant la forme pour les limites de la commune\nrègle de style : le style catégorisé doit être affiné\nétiquettes de rue (cf procédure 6 Etiquettes petits trucs"
-  },
-  {
-    "objectID": "02_jour1.html#fait-pas-fait",
-    "href": "02_jour1.html#fait-pas-fait",
-    "title": "Saisie 1, découverte OSM et JOSM",
-    "section": "4.4 Fait / pas fait ?",
-    "text": "4.4 Fait / pas fait ?\nReprendre le tableau oui / non et rajouter fait / pas fait\ncouleur en fonction\n\n\nCode\nlibrary(colorize)\n\n\noui et fait oui et non fait non et fait non et non fait\n\n\nCode\nmatrice &lt;- read.csv(\"data/faitPasfait.csv\")\nknitr::kable(matrice)\n\n\n\n\n\n\n\n\n\n\nX\navantage\ninconvénient\n\n\n\n\ncarte\nlocalisation précise\ntopologie trop simple\n\n\ngéocodage\ntopologie plus complexe\ndépend de la qualité du géocodageà la parcelle, mais au point adresse"
-  },
-  {
-    "objectID": "02_jour1.html#récupération-de-sa-zone-une-carte-umap",
-    "href": "02_jour1.html#récupération-de-sa-zone-une-carte-umap",
-    "title": "Saisie 1, découverte OSM et JOSM",
-    "section": "5.1 Récupération de sa zone : une carte umap",
-    "text": "5.1 Récupération de sa zone : une carte umap\n\n\nCode\nlibrary(sf)\nlibrary(mapsf)\n# lecture de la couche filtrée (issus de m3_prescription_surf)\niris &lt;- st_read(\"data/iris.geojson\")\n\n\nReading layer `iris' from data source \n  `C:\\Users\\bmaranget\\coursP8\\data\\iris.geojson' using driver `GeoJSON'\nSimple feature collection with 22 features and 9 fields\nGeometry type: POLYGON\nDimension:     XY\nBounding box:  xmin: 2.469134 ymin: 48.88698 xmax: 2.500152 ymax: 48.92024\nGeodetic CRS:  WGS 84\n\n\nCode\n# nb d'éléments\nnbIris &lt;- length(iris$nom_iris)\nmf_map(iris, type = \"typo\", var = \"nom_iris\", leg_pos = NA, border = NA, pal = cm.colors(22))\nmf_label(iris, \"nom_iris\", overlap = F, col = \"cadetblue4\")\nmf_layout(paste0(nbIris, \" iris sur Bondy\"), credits = \"data.gouv\\nAoût 2026\")\n\n\n\n\n\n\n\n\n\nChaque étudiant clique sur une carte umap iris mise en place pour le cours.\n\npuis calque (1) et tableau(2)\nAttention à bien visualiser sa zone avant d’ouvrir le tableau !"
-  },
-  {
-    "objectID": "02_jour1.html#ouvrir-sa-zone-spécifique-sous-josm",
-    "href": "02_jour1.html#ouvrir-sa-zone-spécifique-sous-josm",
-    "title": "Saisie 1, découverte OSM et JOSM",
-    "section": "5.2 Ouvrir sa zone spécifique sous JOSM",
-    "text": "5.2 Ouvrir sa zone spécifique sous JOSM\nexporter en JOSM ses Iris\n\n\n\n\n\n\nTip\n\n\n\nvoir procédure 7 Importer sa zone dans JOSM et paramétrer sa vue pour saisir"
-  },
-  {
-    "objectID": "02_jour1.html#e-saisie",
-    "href": "02_jour1.html#e-saisie",
-    "title": "Saisie 1, découverte OSM et JOSM",
-    "section": "5.3 1e saisie",
-    "text": "5.3 1e saisie\nOn prépare la carte avant / après donc il faut sauvegarder les données mais pour sa zone uniquement\n\n5.3.1 Carte avant\nUne fois les zones partagés, sous Qgis, chaque étudiant fait une intersection sur sa zone, menu vecteur / géotraitement / intersection (voir procédure 8 Géotraitements QGIS)\n\n\n5.3.2 Utilisation du plugin sidewalk\n\n\n\n\n\n\nTip\n\n\n\nvoir procédure 9 Saisie JOSM avec le plugin Sidewalk"
-  },
-  {
-    "objectID": "03_jour2.html",
-    "href": "03_jour2.html",
-    "title": "Deuxième session de saisie dans OSM",
-    "section": "",
-    "text": "Utiliser un plugin QGIS pour saisir le graphe piéton et importer le résultat dans OSM."
-  },
-  {
-    "objectID": "03_jour2.html#carte-3-un-test-sur-un-zone-et-son-buffer",
-    "href": "03_jour2.html#carte-3-un-test-sur-un-zone-et-son-buffer",
-    "title": "Deuxième session de saisie dans OSM",
-    "section": "5.1 Carte 3 : Un test sur un zone et son buffer",
-    "text": "5.1 Carte 3 : Un test sur un zone et son buffer\nFaire le buffer (cf procédure 8 Géotraitements QGIS)\nLister les sf Qgis permettant d’aller rapidement\ndonner 5 mn pour faire la carte"
-  },
-  {
-    "objectID": "03_jour2.html#quels-paramètres",
-    "href": "03_jour2.html#quels-paramètres",
-    "title": "Deuxième session de saisie dans OSM",
-    "section": "5.2 Quels paramètres ?",
-    "text": "5.2 Quels paramètres ?\n\n5.2.1 Largeur des rues\n\n5.2.1.1 Hiérachie OSM\n\ndans taginfo, repérer les valeurs et leur signification.\nfaire une proposition de modification\n\n\n5.2.1.2 Choix largeurs\n\nPar défaut :\n\nQuelles modification possibles ici ?\n\n\nRajouter cette voie change la perspective du plugin. Si on la rajoute en service, il faudra alors modifier la largeur dans le plugin.\n\n\n\n5.2.2 Indicateurs : aire et périmètre (carte 4)\nCe rapport aire / périmètre permet de repérer des zones problématiques :\n Dans la plupart des cas, l’aire de la zone trottoir et le périmètre tourne autour de 0,1. Cela signifie que pour 1 m² de trottoir, il y a 10 cm de longueur.\nQuand ce rapport augmente, on se retrouve avec trop de m². Cela permet de repérer les îlots et les rond points (normalement pas de franchissement piéton).\nDans notre cas, il y a 3 zones problématiques.\n\nIci il s’agit d’un ilôt et le cheminement piéton sera de toutes façons uncontrolled parce que non prévu ! Il faudrait prévoir un aménagement.\nEn fait, il convient vraiment de se poser la question des aménagements piétons sur la zone :\n\nNous verrons la deuxième zone plus bas.\nCARTE 4 : intégrer un histogramme dans une mise en page Qgis\n\n\n\n\n\n\n\nTip\n\n\n\ncompétences Qgis : - style gradué sur l’indicateur aire / périmètre avec utilisation de l’histogramme dans la boite de dialogue Voir aussi - outils de traitement = histogramme (enregistrer en .png pour le remettre dans la mise en page)  \n\n\n\n\n5.2.3 Bâtimens ou pas ?\n\nA noter que cette zone était déjà repérable grâce au ratio aire / périmètre\n\n\n5.2.3.1 Rajouter des voies\nEn fait, l’image met en relief l’absence de voie.\nIl manque ici une voie de service, on la rajoute puis on relance avec les paramètres par défaut et une voie de service avec une largeur de 2.\n\n\n5.2.3.2 Jouer sur distance bâtiments - voie (carte 5)\n\nPour obtenir, un non chevauchement sur les bâtiments on met au minimum :\n\nla distance aux bâtiments et la largeur\nla distance à ajouter à la largeur\n\n\nCARTE 5 : carte avant après avoir joué sur les paramètres\n\n\n\n5.2.4 Zones d’exclusion ou zones sûres\nIl s’agit de prévoir l’intégration dans OSM.\n\nIci, comme la rue est taggée sidewalk=both, le plugin ne rajoute pas de voie piétonne. pour le Plugin, c’est une zone sûre. A l’utilisateur de supprimer le tag dans OSM et de rejouer le plugin pour permettre que le trottoir soit retracé correctement.\nIl existe égalemetn les zones d’exclusions : si dans la surface, il y a plus de 50 % de footway existante, le plugin ne propose aucun trottoir. Le travail a déjà été fait, le plugin ne propose aucune modification."
-  },
-  {
-    "objectID": "03_jour2.html#exercice-dentraînement",
-    "href": "03_jour2.html#exercice-dentraînement",
-    "title": "Deuxième session de saisie dans OSM",
-    "section": "6.1 Exercice d’entraînement",
-    "text": "6.1 Exercice d’entraînement\nAvant de faire une nouvelle saisie, farie l’exercice sur la création de rond-point afin d’aborder la question des raccourcis.\nOn ouvre le geojson résultant du plugin directement dans JOSM, on affiche l’imagerie, et on observe."
-  },
-  {
-    "objectID": "03_jour2.html#envoi-direct",
-    "href": "03_jour2.html#envoi-direct",
-    "title": "Deuxième session de saisie dans OSM",
-    "section": "6.2 Envoi direct",
-    "text": "6.2 Envoi direct"
-  },
-  {
-    "objectID": "03_jour2.html#ajustement-à-la-photo",
-    "href": "03_jour2.html#ajustement-à-la-photo",
-    "title": "Deuxième session de saisie dans OSM",
-    "section": "6.3 Ajustement à la photo",
-    "text": "6.3 Ajustement à la photo\nQuels sont les raccourcis qui vont être nécessaire ?"
-  },
-  {
-    "objectID": "03_jour2.html#utilisation-du-validateur",
-    "href": "03_jour2.html#utilisation-du-validateur",
-    "title": "Deuxième session de saisie dans OSM",
-    "section": "6.4 Utilisation du validateur",
-    "text": "6.4 Utilisation du validateur"
-  },
-  {
-    "objectID": "03_jour2.html#commentaire",
-    "href": "03_jour2.html#commentaire",
-    "title": "Deuxième session de saisie dans OSM",
-    "section": "6.5 Commentaire",
-    "text": "6.5 Commentaire"
+    "text": "5.2 OSM\n\n5.2.1 La base\nforum\nwiki\nfeatures souvent très lent\ntaginfo plus rapide\noverpass\npanoramax\n\n\n5.2.2 Sur la marchabilité\nle projet marchabiilté et l’application OSM marche\nComment tagger le trottoir (en anglais) ? saisie manuelle dans l’éditeur id et utilisation de la photo\nOSM Sidewalkkreator : A QGIS plugin\n\n\n5.2.3 JOSM\nbase\négalement le wiki, saisir wiki josm filtre et on obtient cette page\nalterzorg\n\n\n5.2.4 Le contrôle de qualité\nneiss\n\nnotamment le nombre d’édition par tuile sur Bondy\n\nqui permet de remonter sur le détail de chaque contribution par changeset.\nvoir aussi :\nutilisation du changeset\ncarte des utilisateurs\nL’outil incontournable (que nous contournerons)\nosmose\nEt beaucoup plus simplement :\nhistorique dans openstreetmap.org"
   }
 ]

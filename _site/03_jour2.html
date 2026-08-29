@@ -97,15 +97,15 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./02_jour1.html"> 
-<span class="menu-text">Sources PLUi |</span></a>
+<span class="menu-text">Plugin JOSM |</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./03_jour2.html" aria-current="page"> 
-<span class="menu-text">Saisie 1 |</span></a>
+<span class="menu-text">Plugin QGIS |</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./04_jour3.html"> 
-<span class="menu-text">Saisie 2</span></a>
+<span class="menu-text">Rectifications</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -141,14 +141,14 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#largeur-des-rues" id="toc-largeur-des-rues" class="nav-link" data-scroll-target="#largeur-des-rues"><span class="header-section-number">5.2.1</span> Largeur des rues</a></li>
   <li><a href="#indicateurs-aire-et-périmètre-carte-4" id="toc-indicateurs-aire-et-périmètre-carte-4" class="nav-link" data-scroll-target="#indicateurs-aire-et-périmètre-carte-4"><span class="header-section-number">5.2.2</span> Indicateurs : aire et périmètre (carte 4)</a></li>
-  <li><a href="#bâtimens-ou-pas" id="toc-bâtimens-ou-pas" class="nav-link" data-scroll-target="#bâtimens-ou-pas"><span class="header-section-number">5.2.3</span> Bâtimens ou pas ?</a></li>
+  <li><a href="#bâtiments-ou-pas" id="toc-bâtiments-ou-pas" class="nav-link" data-scroll-target="#bâtiments-ou-pas"><span class="header-section-number">5.2.3</span> Bâtiments ou pas ?</a></li>
   <li><a href="#zones-dexclusion-ou-zones-sûres" id="toc-zones-dexclusion-ou-zones-sûres" class="nav-link" data-scroll-target="#zones-dexclusion-ou-zones-sûres"><span class="header-section-number">5.2.4</span> Zones d’exclusion ou zones sûres</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#import-dans-josm" id="toc-import-dans-josm" class="nav-link" data-scroll-target="#import-dans-josm"><span class="header-section-number">6</span> Import dans JOSM</a>
   <ul class="collapse">
   <li><a href="#exercice-dentraînement" id="toc-exercice-dentraînement" class="nav-link" data-scroll-target="#exercice-dentraînement"><span class="header-section-number">6.1</span> Exercice d’entraînement</a></li>
-  <li><a href="#envoi-direct" id="toc-envoi-direct" class="nav-link" data-scroll-target="#envoi-direct"><span class="header-section-number">6.2</span> Envoi direct</a></li>
+  <li><a href="#envoi-de-données-dissuadé" id="toc-envoi-de-données-dissuadé" class="nav-link" data-scroll-target="#envoi-de-données-dissuadé"><span class="header-section-number">6.2</span> Envoi de données dissuadé</a></li>
   <li><a href="#ajustement-à-la-photo" id="toc-ajustement-à-la-photo" class="nav-link" data-scroll-target="#ajustement-à-la-photo"><span class="header-section-number">6.3</span> Ajustement à la photo</a></li>
   <li><a href="#utilisation-du-validateur" id="toc-utilisation-du-validateur" class="nav-link" data-scroll-target="#utilisation-du-validateur"><span class="header-section-number">6.4</span> Utilisation du validateur</a></li>
   <li><a href="#commentaire" id="toc-commentaire" class="nav-link" data-scroll-target="#commentaire"><span class="header-section-number">6.5</span> Commentaire</a></li>
@@ -272,8 +272,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="bâtimens-ou-pas" class="level3" data-number="5.2.3">
-<h3 data-number="5.2.3" class="anchored" data-anchor-id="bâtimens-ou-pas"><span class="header-section-number">5.2.3</span> Bâtimens ou pas ?</h3>
+<section id="bâtiments-ou-pas" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="bâtiments-ou-pas"><span class="header-section-number">5.2.3</span> Bâtiments ou pas ?</h3>
 <p><img src="img/pluginBAT.png" class="img-fluid"></p>
 <p>A noter que cette zone était déjà repérable grâce au ratio aire / périmètre</p>
 <p><img src="img/pluginpbRatio2.png" class="img-fluid"></p>
@@ -299,7 +299,7 @@ Tip
 <p>Il s’agit de prévoir l’intégration dans OSM.</p>
 <p><img src="img/pluginZoneOKay.png" class="img-fluid"></p>
 <p>Ici, comme la rue est taggée sidewalk=both, le plugin ne rajoute pas de voie piétonne. pour le Plugin, c’est une zone <em>sûre</em>. A l’utilisateur de supprimer le tag dans OSM et de rejouer le plugin pour permettre que le trottoir soit retracé <em>correctement</em>.</p>
-<p>Il existe égalemetn les zones d’exclusions : si dans la surface, il y a plus de 50 % de footway existante, le plugin ne propose aucun trottoir. Le travail a déjà été fait, le plugin ne propose aucune modification.</p>
+<p>Il existe également les <em>zones d’exclusion</em> : si dans la surface, il y a plus de 50 % de footway existante, le plugin ne propose aucun trottoir. Le travail a déjà été fait, le plugin ne propose aucune modification.</p>
 </section>
 </section>
 </section>
@@ -309,12 +309,11 @@ Tip
 <section id="exercice-dentraînement" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="exercice-dentraînement"><span class="header-section-number">6.1</span> Exercice d’entraînement</h2>
 <p>Avant de faire une nouvelle saisie, farie l’<a href="https://josm.openstreetmap.de/wiki/Fr%3AHowTo">exercice sur la création de rond-point</a> afin d’aborder la question des raccourcis.</p>
+</section>
+<section id="envoi-de-données-dissuadé" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="envoi-de-données-dissuadé"><span class="header-section-number">6.2</span> Envoi de données dissuadé</h2>
 <p>On ouvre le geojson résultant du plugin directement dans JOSM, on affiche l’imagerie, et on observe.</p>
 <p><img src="img/importAttention.png" class="img-fluid"></p>
-</section>
-<section id="envoi-direct" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="envoi-direct"><span class="header-section-number">6.2</span> Envoi direct</h2>
-<p><img src="img/envoiDissuade.png" class="img-fluid"></p>
 </section>
 <section id="ajustement-à-la-photo" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="ajustement-à-la-photo"><span class="header-section-number">6.3</span> Ajustement à la photo</h2>

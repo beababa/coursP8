@@ -3,6 +3,7 @@ title: "0bjectif et méthode"
 format:
   html:
     toc: true
+    
     number-sections: true
     code-fold: true
 editor: visual
@@ -13,7 +14,7 @@ execute:
   warning: false
 ---
 
-Objectif du cours : saisir le graphe piéton dans OSM pour permettre à tout piéton de le compléter avec street complete
+Objectif du cours : saisir le graphe piéton dans OSM pour permettre à tout piéton de le compléter avec Street Complete.
 
 # Brise-glace : présentation en binôme
 
@@ -41,9 +42,17 @@ quelle diffusion des données / du cours ?
 
 # Elements de contexte
 
-## Transition énergétique et marche à pied
+## Loi LOM 2019 (loi d'orientation des mobilités)
 
-Après la *renaturation*, un plan *marchabilité* à Est Ensemble, l'occasion de voir beaucoup de cartes et d'avoir un AMO plein d'idées
+Au niveau communal, très concrètement, il s'agit de mettre en conformité les passages piétons : aucun stationnement
+motorisé à moins de 5 m en amont d'un passage piéton (côté droit). Cela permet une meilleur visibilité.
+
+
+
+
+## Le plan marche
+
+Après la *renaturation*, un plan *marche* à Est Ensemble, l'occasion de voir beaucoup de cartes et d'avoir une AMO plein d'idées
 
 ![](img/planMarcheEE.png)
 
@@ -51,7 +60,13 @@ Après la *renaturation*, un plan *marchabilité* à Est Ensemble, l'occasion de
 
 Les vidéos des présentations des SOTM-FR (State Of the Map) permettent d'avoir un état des lieux
 
-vidéos SOTM [2022](https://peertube.openstreetmap.fr/w/scHwjR1TtSAdfpKcrcHY7P) =\> *Les données d'OSM sur le mode piéton et la marchabilité* consultant Montpellier / entreprise Someware [2023](https://peertube.openstreetmap.fr/w/v9AwT6kUxn5ax5W9zzaq3V) =\> *Retour sur l'expérimentation de collecte de données accessibilité du CD94* CD94 loi LOM mise en accessibilité de la voirie [2024](https://peertube.openstreetmap.fr/w/hD9m929abQqKctgw3nnjV8) =\> *Mapper des trottoirs pour l’accessibilité* Lons Le Saunier / Jungle Bus (outil sidewalker) [2025](https://peertube.openstreetmap.fr/w/hghC3My6UQ3GGK68gq57Xy) =\> CD94 Carto'Cité PC Ingénierie et 2 cabinets de géomètre *Du scanner 3D à OSM : le Val de Marne expérimente la production en masse de données d'accessibilité* automatiser le dessin des cheminements piétons
+vidéos SOTM [2022](https://peertube.openstreetmap.fr/w/scHwjR1TtSAdfpKcrcHY7P) =\> *Les données d'OSM sur le mode piéton et la marchabilité* consultant Montpellier / entreprise Someware 
+
+[2023](https://peertube.openstreetmap.fr/w/v9AwT6kUxn5ax5W9zzaq3V) =\> *Retour sur l'expérimentation de collecte de données accessibilité du CD94* CD94 loi LOM mise en accessibilité de la voirie 
+
+[2024](https://peertube.openstreetmap.fr/w/hD9m929abQqKctgw3nnjV8) =\> *Mapper des trottoirs pour l’accessibilité* Lons Le Saunier / Jungle Bus (outil sidewalker) 
+
+[2025](https://peertube.openstreetmap.fr/w/hghC3My6UQ3GGK68gq57Xy) =\> CD94 Carto'Cité PC Ingénierie et 2 cabinets de géomètre *Du scanner 3D à OSM : le Val de Marne expérimente la production en masse de données d'accessibilité* automatiser le dessin des cheminements piétons
 
 Bref, la carte diagnostic d'[OSM marche](https://osmarche.someware.fr/)
 
@@ -188,25 +203,26 @@ Pour la saisie OSM, chaque étudiant notera le nombre de saisies faites
 
 #### Qualité
 
-Concernant la qualité de la saisie, éviter absolument le [retour de bâton OSM](https://forum.openstreetmap.fr/t/landuse-residential-supprime-a-bondy-et-pavillon-sous-bois/9562/9), notamment pour il y a deux ans.
+Concernant la qualité de la saisie, éviter absolument le [retour de bâton OSM](https://forum.openstreetmap.fr/t/landuse-residential-supprime-a-bondy-et-pavillon-sous-bois/9562/9) quatre ans en arrière.
 
 Donc, impérativement mettre dans le commentaire de changeset : **#Paris8-Bondy2026**
 
 ![](img/tagContrib.png)
 
+On rajoutera selon le cas échéant *#plugin QGIS SideWalKreator* ou *plugin JOSM sidewalk*
+
+
 Egalement, examiner les contributions dans le détail avec les outils de contrôle de qualité d'OSM : chez [neis](https://resultmaps.neis-one.org/)
 
 ## Le collaboratif
 
-Un mot au sujet du collectif, ce cours est aussi l'occasion de tester une organisation de travail en groupe (c'est la raison d'être d'OSM) donc répartition des étudiants sur chaque iris.
+Un mot au sujet du collectif, ce cours est aussi l'occasion de tester une organisation de travail en groupe (c'est la raison d'être d'OSM) donc répartition des étudiants sur [chaque iris](https://umap.openstreetmap.fr/fr/map/iris_1446228#15/48.906973/2.487459).
 
-![](img/attribBureau.png)
 
 # Sitographie
 
 Quelques liens utiles tout au long du cours
 
-[clin d'oeil](https://christophe-lebas.medium.com/tuto-visualiser-une-ville-et-ses-rues-gr%C3%A2ce-%C3%A0-qgis-simplement-avant-den-faire-un-mug-shp-et-a57cf4607f64)
 
 ## Qgis
 
@@ -230,9 +246,22 @@ une référence en livre : [QGIS Map Design - Second Edition](https://locatepres
 
 [panoramax](https://panoramax.fr/)
 
+
+### Sur la marchabilité
+
+[le projet marchabiilté](https://wiki.lafabriquedesmobilites.fr/wiki/Open_Marchabilit%C3%A9) et l'application [OSM marche](https://osmarche.someware.fr/)
+
+[Comment tagger le trottoir (en anglais) ?](https://www.youtube.com/watch?v=A38eNjdfXfI) saisie manuelle dans l'éditeur id et utilisation de la photo
+
+[OSM Sidewalkkreator : A QGIS plugin](https://www.researchgate.net/publication/376472381_OSM_Sidewalkreator_A_QGIS_plugin_for_an_automated_drawing_of_sidewalk_networks_for_OpenStreetMap)
+
+
 ### JOSM
 
 [base](https://learnosm.org/fr/josm/)
+
+également le wiki, saisir *wiki josm filtre* et on obtient  [cette page](https://josm.openstreetmap.de/wiki/Fr%3AHelp/Dialog/Filter)
+
 
 [alterzorg](https://www.alterzorg.fr/josm/accueil)
 
@@ -244,24 +273,19 @@ une référence en livre : [QGIS Map Design - Second Edition](https://locatepres
 
 qui permet de remonter sur le détail de chaque contribution par changeset.
 
-[osmose](http://osmose.openstreetmap.fr/fr/map/#zoom=16&lat=48.90695&lon=2.49237)
-
-# Outils de qualité
+voir aussi :
 
 [utilisation du changeset](https://resultmaps.neis-one.org/osm-changesets?comment=paris8#4/32.58/-6.77)
 
 [carte des utilisateurs](https://resultmaps.neis-one.org/oooc?zoom=15&lat=48.90494&lon=2.493&layers=BTFFFFFT&contributors=TTTTFF)
 
-également dans [osmose](http://osmose.openstreetmap.fr/fr/map/#zoom=16&lat=48.90695&lon=2.49237)
 
-Mais le mieux reste :
+L'outil incontournable (que nous contournerons)
+
+
+[osmose](http://osmose.openstreetmap.fr/fr/map/#zoom=16&lat=48.90695&lon=2.49237)
+
+Et beaucoup plus simplement :
 
 [historique dans openstreetmap.org](https://www.openstreetmap.org/history#map=18/48.916214/2.486000)
 
-### Sur la marchabilité
-
-[le projet marchabiilté](https://wiki.lafabriquedesmobilites.fr/wiki/Open_Marchabilit%C3%A9) et l'application [OSM marche](https://osmarche.someware.fr/)
-
-[Comment tagger le trottoir (en anglais) ?](https://www.youtube.com/watch?v=A38eNjdfXfI) saisie manuelle dans l'éditeur id et utilisation de la photo
-
-[OSM Sidewalkkreator : A QGIS plugin](https://www.researchgate.net/publication/376472381_OSM_Sidewalkreator_A_QGIS_plugin_for_an_automated_drawing_of_sidewalk_networks_for_OpenStreetMap)

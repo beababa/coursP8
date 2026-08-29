@@ -3,6 +3,7 @@ title: "Saisie 1, découverte OSM et JOSM"
 format:
   html:
     toc: true
+    toc-depth: 3
     number-sections: true
     code-fold: true
 editor: visual
@@ -19,9 +20,9 @@ Aller au coeur de la nébuleuse OSM dés cette première journée, nous ferons u
 
 Deux cartes seront demandées :
 
--   Une carte d'ensemble établissant un diagnostic de la saisie autour de la marchabilité
+-   Une carte d'ensemble établissant un diagnostic de la saisie autour des trottoirs
 
--   Une carte avant / après la saisie pour chaque zone étudiée.
+-   Une carte avant / après la saisie pour chaque zone étudiée
 
 # A la découverte de JOSM
 
@@ -31,7 +32,14 @@ Deux cartes seront demandées :
 
 Attention, clic droit pour se déplacer
 
+A noter dés le départ envoi / récup ![](img/AR.png)
+
+Donc, comment fait-on pour avoir une page vierge ....?
+
 ## Primitives géométriques : noeud et chemin
+
+
+### Les modes a et s
 
 Ouvrir une page vierge sous JOSM et créer un triangle avec 3 noeuds en utilisant les modes :
 
@@ -45,7 +53,23 @@ Faire le triangle, ajouter un point, le déformer.
 
 ::: callout-tip
 Exercice : à partir du support procédure 2 *Éditer sous JOSM = attention aux nœuds*
+Que montre cet exercice ?
 :::
+
+
+### Croiser deux chemins
+
+
+tracer 2 chemins se croisant, le croisement est-il marqué par un point ?
+
+Que permet la visualisation *fil de fer* ? (CTRL + W)
+
+
+### Le validateur
+
+Ouvrir le validateur, tout sélectionner et valider. Comment comprendre le message ?
+
+Il faut toujours utliser le validateur avant d'envoyer sur le serveur.
 
 ## Les raccourcis : le nerf de la guerre
 
@@ -71,10 +95,10 @@ exercice : faire une saisie sur un point connu
 
 ### Quels tags ?
 
-rues (en général) et croisements, découvrir taginfo.
+rues (en général) et passages piétons (crossings), découvrir taginfo.
 
 ::: callout-tip
-exercice : Quelles sont les principales valeurs ? comment trouver les tags pour rues et croisements ?
+exercice : Quelles sont les principales valeurs ? comment trouver les tags pour rues et passages piétons ?
 :::
 
 # Extraction OSM = overpass turbo
@@ -108,7 +132,7 @@ exercice : Les iris ne sont pas dans OSM, mais les limites de la commune si (adm
 # CARTE 1 : Etat des lieux routes piétonnes sur l'ensemble de la ville
 
 ::: callout-caution
-Avant de faire la carte, quizz !
+Avant de faire la carte, [quizz](https://framaforms.org/paris8-bondy2025-introduction-1693048391) !
 :::
 
 ## L'objectif
@@ -145,7 +169,7 @@ S'aider de la procédure 4 du support *Ma 1e carte QGIS*
 
 -   règle de style : le style catégorisé doit être affiné
 
--   étiquettes de rue (cf procédure 6 *Etiquettes petits trucs*
+-   étiquettes de rue (cf procédure 6 *Etiquettes petits trucs*)
 
 ## Fait / pas fait ?
 
@@ -174,7 +198,7 @@ Enfin ! Il est temps d'effectuer une saisie
 library(sf)
 library(mapsf)
 # lecture de la couche filtrée (issus de m3_prescription_surf)
-iris <- st_read("data/iris.geojson")
+iris <- st_read("data/iris.geojson", quiet = T)
 # nb d'éléments
 nbIris <- length(iris$nom_iris)
 mf_map(iris, type = "typo", var = "nom_iris", leg_pos = NA, border = NA, pal = cm.colors(22))
@@ -189,6 +213,7 @@ Chaque étudiant clique sur une carte umap [iris](https://umap.openstreetmap.fr/
 puis calque (1) et tableau(2)
 
 Attention à bien visualiser sa zone avant d'ouvrir le tableau !
+
 
 ## Ouvrir sa zone spécifique sous JOSM
 
