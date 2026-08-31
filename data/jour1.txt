@@ -12,46 +12,11 @@ se connecter sur le compte geographie / mdp : herodote
 
 mettre son prénom sur un bout de papier
 
-9 h 12 h 13 h 16 h
+10 h 13 h 14 h 17 h
 
-une pause toutes les 1 h 30 de 15 mn = 10 h 30 - 10 h 45
+une pause toutes les 1 h 30 de 15 mn = 11 h 30 - 11 h 45
 
 pour le partage réseau : \\C210-P puis clic droit sur partage géographie\OSM et épingler à l'accès rapide
-
-13:00
-
-https://forum.openstreetmap.fr/
-
-créer votre profil sur openstreetmap.org
-
-LIENS à rajouter
-séquence 2 https://framaforms.org/paris8-bondy2023-premiere-saisie-1693156617
-
-séquence 3 pas de quizz, car surtout des cartos.
-
-
-tag = clé + valeur / key + value
-étiquette
-
-
-Faire une carte M3 PLUi patrimoine sur le modèle affiché et la déposer dans OSM/cartes/ avec votre prénom.png
-
-jusqu'à 15 h 00
-
-<<<<<<< HEAD
-#Paris8-Bondy2025
-=======
-aller dans overpass turbo et télécharger les contours de la commune
->>>>>>> 5c4c1ff4004b950de6d705aab220623d429120b0
-
-organiser son projet qgis et mettre en place la symbologie de la couche de géocodage
-
-faire les 2 géotraitements indiqués sur le support p. 14 afin de récupérer la date la plus ancienne pour le bâtiment.
-
-16 h 40
-
-
-.
 
 
 
