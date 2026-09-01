@@ -1,1 +1,0 @@
-Sidewalks and Crossings created by the QGIS Plugin 'OSM SidewalKreator', the user was advised to check the resulting data before the upload #SidewalKreator #LabGeoLivreUFPR #mapealivreUFPR
