@@ -2,8 +2,9 @@ le cours est sur : https://beababa.github.io/
 
 
 Béatrice Maranget
-ingénieure territoriale Mairie de Bondy
+ingénieure territoriale Mairie de Bondy (EPT Est Ensemble)
 géomaticienne
+enseignante vacataire depuis 10 ans (Sorbonne Clignancourt stats et géomatique L3 géographie, P8 OSM)
 
 beatrice.maranget@bondy.fr
 
@@ -12,11 +13,37 @@ se connecter sur le compte geographie / mdp : herodote
 
 mettre son prénom sur un bout de papier
 
-10 h 13 h 14 h 17 h
+10 h 13 h - 14 h 17 h
 
-une pause toutes les 1 h 30 de 15 mn = 11 h 30 - 11 h 45
+une pause toutes les 1 h 30 de 15 mn = 11 h 32 - 11 h 47
 
 pour le partage réseau : \\C210-P puis clic droit sur partage géographie\OSM et épingler à l'accès rapide
 
+#Paris8-bondy2026
 
+JOSM mise à jour ?
+
+
+noeud et chemin / node et ways
+
+tag = key + value
+
+highway=footway et crossing=unmarked
+
+les passages piétons dans bondy
+
+rqt overpass : crossing = * in bondy
+
+v19160 version  2 et 9
+
+
+------------------------------------
+1) tracer
+
+2) tagger (désactiver filtre) highway=footway
+
+----------------------------------
+
+
+installation du plugin sidewalk dans F12 greffon
 
