@@ -1,0 +1,30 @@
+pour J2
+
+intro : état des saisies
+
+https://www.openstreetmap.org/changeset/188294496#map=13/48.90388/2.46766
+
+
+on a vu :
+
+pb overpass
+
+carte qgis base / paramétrage josm 
+
+à faire  :
+carte qgis extraction sur votre zone avant après en comptant.
+
+pour avant :
+
+faire une carte QGIS à partir de l'export highway=footway OR crossing=footway OR barrier = kerb
+
+pour après : noter le nb de nœuds / ways que vous envoyez sur le serveur
+
+Dans JOSM revenir sur l'ouverture (neau calque)
+
+également la colorisation
+
+
+J3 filtre uniquement sur les rues non piétonnes dans QGIS
+
+tampon
