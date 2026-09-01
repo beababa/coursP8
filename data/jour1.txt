@@ -42,8 +42,54 @@ v19160 version  2 et 9
 
 2) tagger (désactiver filtre) highway=footway
 
+
+
+
 ----------------------------------
 
 
 installation du plugin sidewalk dans F12 greffon
+
+
+-------------------------------------
+
+
+raccourci maj + s
+
+coloriage : sidewalk and footways (with knobs on)
+
+afficher le panneau et sélectionner le mode 
+---------------------
+
+utiliser le validateur
+
+mettre le commentaire #Paris8-Bondy2026
+
+---------------------
+marchabiliteEtudiant.gpkg
+sidewalkPlugin
+
+
+-------------
+
+- couper sidewalkplugin avec votre iris
+- faire un style gradué sur le ratio 
+- faire une carte avec histogramme en zoomant sur une zone "louche".
+- déposer dans carte 4 (initiales)
+- remplir le framacalc colonne utilisation histogramme (outil de traitement)
+
+15 h 30-----
+
+---- préparer sa couche
+ouvrir dans josm votre extraction de la couche résultat du plugin
+
+sidewalkreator output : ouvrir votre extraction iris dans JOSM
+
+afficher votre imagerie dans JOSM
+
+rectifier sur les noeuds
+
+--- MAIS AVANT faire l'exercice sur les ronds points sur une feuille vierge dans JOSM
+
+
 
