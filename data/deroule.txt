@@ -94,7 +94,7 @@ rectifier sur les noeuds
 
 JOUR 3
 
-Saisie (matin) et carte avant après, en fin de mâtinée présentation Mathias ?
+Saisie (matin) et carte avant après par iris, en fin de mâtinée présentation Mathias ?
 
 Itinéraire (après midi) avec le problème des frontières entre les zones
 
@@ -108,4 +108,42 @@ en intro :
 
 
 point 6 pluginQGIS + procédure 1
+
+
+
+
+
+
+
+
+CARTE AVANT APRES 30 MN - copier coller jour3.geosjon dans le partage (extraction overpass)
+
+
+pour avant reprendre highwayORfootway.geojson (si vous n'avez pas de data)
+
+
+mettre dans carte 5 avant après 2 avec vos initiales
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
