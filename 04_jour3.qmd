@@ -22,25 +22,26 @@ Dans le projet Qgis, on en est à l'étape *saisie 3*
 
 ![](img/exploCouches.png)
 
+# Intervention communauté OSM
+
+un [commentaire](https://www.openstreetmap.org/changeset/188358162#map=18/48.906946/2.479706)
+
+
 # Un premier round d'observation
 
 Il convient de revenir sur ce que le plugin a permis de faire en faisant une requête overpass
 
-```
+```         
 highway=footway or barrier=*
-highway=footway or access=*
 ```
-
 
 ## Dessiner les jardins
 
 Le fait de tracer les trottoirs amènent à tracer de nouveaux objets, par exemple, les jardins.
 
-
 ![](img/dessinerJardin.png)
 
 ![](img/dessinerJardinSuivantBat.png)
-
 
 Pour le raccourci voir la procédure 1
 
@@ -58,8 +59,7 @@ Enfin, il est possible dés ce niveau de distinguer les passages piétons marqu�
 
 ## 2 manières de figurer un passage piéton
 
-Les 2 plugins utilisés amènent à deux façons de tagger, cela se voit avec la représentation
-graphique utilisé dans JOSM.
+Les 2 plugins utilisés amènent à deux façons de tagger, cela se voit avec la représentation graphique utilisé dans JOSM.
 
 ![](img/crossingV1.png)
 
@@ -75,8 +75,7 @@ Etre piéton, cela transforme la vision d'une porte fermée
 
 # Utilisation de l'outil plus court chemin dans QGIS
 
-Après avoir fait une premier itinéraire, on modifie notamment les *barrier=gate* en ajoutant
-et *locked=yes*, on regarde si cela génère autre chose
+Après avoir fait une premier itinéraire, on modifie notamment les *barrier=gate* en ajoutant et *locked=yes*, on regarde si cela génère autre chose
 
 ![](img/graphePieton.png)
 
@@ -93,7 +92,6 @@ Voir dans le forum, la [discussion](https://forum.openstreetmap.fr/t/comprendre-
 # En guise de conclusion, ce qu'il reste à faire
 
 3 nouveaux outils
-
 
 ## OSMI
 

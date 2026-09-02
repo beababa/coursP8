@@ -92,4 +92,20 @@ rectifier sur les noeuds
 --- MAIS AVANT faire l'exercice sur les ronds points sur une feuille vierge dans JOSM
 
 
+JOUR 3
+
+Saisie (matin) et carte avant après, en fin de mâtinée présentation Mathias ?
+
+Itinéraire (après midi) avec le problème des frontières entre les zones
+
+en intro :
+
+- matrice des savoir faire
+
+- carte umap / le geosjon est dans le partage
+
+- intervention OSM (voir lien dans cours)
+
+
+point 6 pluginQGIS + procédure 1
 

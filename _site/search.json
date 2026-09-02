@@ -171,57 +171,57 @@
     "objectID": "04_jour3.html#dessiner-les-jardins",
     "href": "04_jour3.html#dessiner-les-jardins",
     "title": "3e saisie : Itinéraire et amélioration de la saisie",
-    "section": "2.1 Dessiner les jardins",
-    "text": "2.1 Dessiner les jardins\nLe fait de tracer les trottoirs amènent à tracer de nouveaux objets, par exemple, les jardins.\n\n\nPour le raccourci voir la procédure 1"
+    "section": "3.1 Dessiner les jardins",
+    "text": "3.1 Dessiner les jardins\nLe fait de tracer les trottoirs amènent à tracer de nouveaux objets, par exemple, les jardins.\n\n\nPour le raccourci voir la procédure 1"
   },
   {
     "objectID": "04_jour3.html#changer-des-tags",
     "href": "04_jour3.html#changer-des-tags",
     "title": "3e saisie : Itinéraire et amélioration de la saisie",
-    "section": "2.2 Changer des tags",
-    "text": "2.2 Changer des tags\nCertains trottoirs sont plutôt des ilôts"
+    "section": "3.2 Changer des tags",
+    "text": "3.2 Changer des tags\nCertains trottoirs sont plutôt des ilôts"
   },
   {
     "objectID": "04_jour3.html#compléter-le-tag-crossing",
     "href": "04_jour3.html#compléter-le-tag-crossing",
     "title": "3e saisie : Itinéraire et amélioration de la saisie",
-    "section": "2.3 Compléter le tag crossing",
-    "text": "2.3 Compléter le tag crossing\nEnfin, il est possible dés ce niveau de distinguer les passages piétons marqués ou pas."
+    "section": "3.3 Compléter le tag crossing",
+    "text": "3.3 Compléter le tag crossing\nEnfin, il est possible dés ce niveau de distinguer les passages piétons marqués ou pas."
   },
   {
     "objectID": "04_jour3.html#manières-de-figurer-un-passage-piéton",
     "href": "04_jour3.html#manières-de-figurer-un-passage-piéton",
     "title": "3e saisie : Itinéraire et amélioration de la saisie",
-    "section": "2.4 2 manières de figurer un passage piéton",
-    "text": "2.4 2 manières de figurer un passage piéton\nLes 2 plugins utilisés amènent à deux façons de tagger, cela se voit avec la représentation graphique utilisé dans JOSM."
+    "section": "3.4 2 manières de figurer un passage piéton",
+    "text": "3.4 2 manières de figurer un passage piéton\nLes 2 plugins utilisés amènent à deux façons de tagger, cela se voit avec la représentation graphique utilisé dans JOSM."
   },
   {
     "objectID": "04_jour3.html#manières-de-représenter-une-porte-empêchant-le-passage",
     "href": "04_jour3.html#manières-de-représenter-une-porte-empêchant-le-passage",
     "title": "3e saisie : Itinéraire et amélioration de la saisie",
-    "section": "2.5 2 manières de représenter une porte empêchant le passage",
-    "text": "2.5 2 manières de représenter une porte empêchant le passage\nEtre piéton, cela transforme la vision d’une porte fermée"
+    "section": "3.5 2 manières de représenter une porte empêchant le passage",
+    "text": "3.5 2 manières de représenter une porte empêchant le passage\nEtre piéton, cela transforme la vision d’une porte fermée"
   },
   {
     "objectID": "04_jour3.html#osmi",
     "href": "04_jour3.html#osmi",
     "title": "3e saisie : Itinéraire et amélioration de la saisie",
-    "section": "4.1 OSMI",
-    "text": "4.1 OSMI\nVoir intervention\nD’après le commentaire, utilisation d’OSMI"
+    "section": "5.1 OSMI",
+    "text": "5.1 OSMI\nVoir intervention\nD’après le commentaire, utilisation d’OSMI"
   },
   {
     "objectID": "04_jour3.html#panoramax",
     "href": "04_jour3.html#panoramax",
     "title": "3e saisie : Itinéraire et amélioration de la saisie",
-    "section": "4.2 Panoramax",
-    "text": "4.2 Panoramax\nDe l’art et de la manière de faire des photos"
+    "section": "5.2 Panoramax",
+    "text": "5.2 Panoramax\nDe l’art et de la manière de faire des photos"
   },
   {
     "objectID": "04_jour3.html#street-complete",
     "href": "04_jour3.html#street-complete",
     "title": "3e saisie : Itinéraire et amélioration de la saisie",
-    "section": "4.3 Street Complete",
-    "text": "4.3 Street Complete\nRien ne vaut le terrain en nombre !"
+    "section": "5.3 Street Complete",
+    "text": "5.3 Street Complete\nRien ne vaut le terrain en nombre !"
   },
   {
     "objectID": "01_intro.html",
@@ -320,5 +320,12 @@
     "title": "0bjectif et méthode",
     "section": "5.2 OSM",
     "text": "5.2 OSM\n\n5.2.1 La base\nforum\nwiki\nfeatures souvent très lent\ntaginfo plus rapide\noverpass\npanoramax\n\n\n5.2.2 Sur la marchabilité\nle projet marchabiilté et l’application OSM marche\nComment tagger le trottoir (en anglais) ? saisie manuelle dans l’éditeur id et utilisation de la photo\nOSM Sidewalkkreator : A QGIS plugin\n\n\n5.2.3 JOSM\nbase\négalement le wiki, saisir wiki josm filtre et on obtient cette page\nalterzorg\n\n\n5.2.4 Le contrôle de qualité\nneiss\n\nnotamment le nombre d’édition par tuile sur Bondy\n\nqui permet de remonter sur le détail de chaque contribution par changeset.\nvoir aussi :\nutilisation du changeset\ncarte des utilisateurs\nL’outil incontournable (que nous contournerons)\nosmose\nEt beaucoup plus simplement :\nhistorique dans openstreetmap.org"
+  },
+  {
+    "objectID": "data/monIrisCours.html",
+    "href": "data/monIrisCours.html",
+    "title": "Cours P8 2026 - Plan marche",
+    "section": "",
+    "text": "&lt;!DOCTYPE qgis PUBLIC ‘http://mrcc.com/qgis.dtd’ ‘SYSTEM’&gt;     dataset\n\n\n                GEOGCRS[“WGS 84”,ENSEMBLE[“World Geodetic System 1984 ensemble”,MEMBER[“World Geodetic System 1984 (Transit)”],MEMBER[“World Geodetic System 1984 (G730)”],MEMBER[“World Geodetic System 1984 (G873)”],MEMBER[“World Geodetic System 1984 (G1150)”],MEMBER[“World Geodetic System 1984 (G1674)”],MEMBER[“World Geodetic System 1984 (G1762)”],MEMBER[“World Geodetic System 1984 (G2139)”],MEMBER[“World Geodetic System 1984 (G2296)”],ELLIPSOID[“WGS 84”,6378137,298.257223563,LENGTHUNIT[“metre”,1]],ENSEMBLEACCURACY[2.0]],PRIMEM[“Greenwich”,0,ANGLEUNIT[“degree”,0.0174532925199433]],CS[ellipsoidal,2],AXIS[“geodetic latitude (Lat)”,north,ORDER[1],ANGLEUNIT[“degree”,0.0174532925199433]],AXIS[“geodetic longitude (Lon)”,east,ORDER[2],ANGLEUNIT[“degree”,0.0174532925199433]],USAGE[SCOPE[“Horizontal component of 3D system.”],AREA[“World.”],BBOX[-90,-180,90,180]],ID[“EPSG”,4326]] +proj=longlat +datum=WGS84 +no_defs 3452 4326 EPSG:4326 WGS 84 longlat EPSG:7030 true"
   }
 ]
