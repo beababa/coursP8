@@ -1,0 +1,11 @@
+
+    (  
+        
+        way["footway"="sidewalk"](48.886986404310015,2.4688669999999995,48.920245699698555,2.5001206);
+        
+    );
+    /*added by auto repair*/
+    (._;>;);
+    /*end of auto repair*/
+    out;
+    

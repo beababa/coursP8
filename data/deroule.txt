@@ -151,6 +151,51 @@ voies d'amélioration ?
 - les chemins manquants
 
 
+----------------------------
+
+faire une carte avec osrm routing et le plus court chemin. Y a t il des différences ?
+
+poser sa carte dans carte 7 - 2 routeurs
+
+15 h 15 puis pause 15 h 15 - 15 h 30
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
