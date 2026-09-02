@@ -124,6 +124,33 @@ pour avant reprendre highwayORfootway.geojson (si vous n'avez pas de data)
 
 mettre dans carte 5 avant après 2 avec vos initiales
 
+-------------------------------------
+
+ITINERAIRE
+
+
+option dans JOSM par rapport à l'affichage
+
+retour sur la saisie : 2 exemples + OMI
+
+pcc sous Qgis
+
+- un essai sur son iris
+
+- un essai sur l'ensemble de la ville
+
+autre routeur : osmr, plugin osm
+
+faire les mêmes essais
+
+
+voies d'amélioration ?
+
+- les portes / les accès
+
+- les chemins manquants
+
+
 
 
 
